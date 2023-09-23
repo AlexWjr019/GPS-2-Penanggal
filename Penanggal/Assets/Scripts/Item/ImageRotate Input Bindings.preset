@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ImageRotate Input Bindings
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: d3feec4cc1d2c764d8585af4e1444648,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_Name
+    value: Pressed
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_Type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_ExpectedControlType
+    value: Button
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_Id
+    value: ed7e739e-b7a8-40c6-87f7-ee775401787d
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_Interactions
+    value: Press
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Id
+    value: 0c368fd2-c86e-403f-934f-7d9703d7af23
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Path
+    value: <Mouse>/leftButton
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Groups
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Action
+    value: Pressed
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[0].m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Id
+    value: 2a38cf9b-efff-4407-824b-e584ee79316e
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Path
+    value: <Touchscreen>/Press
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Groups
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Action
+    value: Pressed
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_SingletonActionBindings.Array.data[1].m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pressed.m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_Name
+    value: Axis
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_Type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_ExpectedControlType
+    value: Vector2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_Id
+    value: 63777030-f5e0-4902-a54e-056f7c8fdb2a
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Id
+    value: d2acebdf-ffc7-483c-85ed-da15a21fa7c4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Path
+    value: <Mouse>/delta
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Groups
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Action
+    value: Axis
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[0].m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Name
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Id
+    value: 28211e7f-82d0-4998-aee6-34dd7ae406ec
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Path
+    value: <Touchscreen>/delta
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Interactions
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Processors
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Groups
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Action
+    value: Axis
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_SingletonActionBindings.Array.data[1].m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: axis.m_Flags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rotateSpeed
+    value: 0.3
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
