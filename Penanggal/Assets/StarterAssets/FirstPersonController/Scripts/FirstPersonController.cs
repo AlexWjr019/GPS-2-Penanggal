@@ -85,6 +85,11 @@ namespace StarterAssets
             Move();
             CameraRotation(); // Call the camera rotation method
         }
+        private void FixedUpdate()
+        {
+            CameraRotation(); // Call the camera rotation method
+        }
+
 
         private void GroundedCheck()
         {
@@ -179,7 +184,7 @@ namespace StarterAssets
                         // Check if the touch is within the UI area
                         if (IsTouchInUIArea(touch.position))
                         {
-                            rotation = Vector2.zero;
+                            // Optionally, you can reset rotation.x and rotation.y here if needed.
                         }
                         break;
 
@@ -205,6 +210,7 @@ namespace StarterAssets
                 }
             }
         }
+
 
         // 检查触摸是否在UI区域内
         private bool IsTouchInUIArea(Vector2 touchPosition)
