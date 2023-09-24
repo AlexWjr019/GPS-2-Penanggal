@@ -17,6 +17,10 @@ public class ImageRotate : MonoBehaviour
     {
         pressed.Enable();
         axis.Enable();
+    }
+
+    private void Update()
+    {
         pressed.performed += _ => { StartCoroutine(Rotate()); };
         pressed.canceled += _ => { rotateAllowed = false; };
         axis.performed += context => { rotation = context.ReadValue<Vector2>(); };

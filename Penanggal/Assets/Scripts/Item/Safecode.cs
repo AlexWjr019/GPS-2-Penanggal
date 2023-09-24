@@ -67,6 +67,18 @@ public class Safecode : MonoBehaviour
 
     }
 
+    public void ResetCode()
+    {
+        UiText.color = Color.black;
+        if(UiText.text != "Successful")
+        {
+            UiText.text = "Safecode...";
+        }
+        Num = null;
+        buttonInteractable = true;
+        isBlinking = false;
+    }
+
     private IEnumerator UnlockSafe()
     {
         yield return new WaitForSeconds(3f);
