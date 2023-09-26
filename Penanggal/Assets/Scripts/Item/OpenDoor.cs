@@ -7,27 +7,80 @@ public class OpenDoor : MonoBehaviour
 {
     public Animation doorAnimations;
     private bool doorIsOpen;
+    public bool door, sealDoor;
 
     private void OnMouseDown()
     {
-        // Create a ray from the mouse position
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        // Check if the ray hits any GameObject
-        if (Physics.Raycast(ray, out hit))
+        if (door)
         {
-            GameObject clickedObject = hit.collider.gameObject;
+            // Create a ray from the mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            // Check if the clicked GameObject is the door
-            if (clickedObject.CompareTag("Door"))
+            // Check if the ray hits any GameObject
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject clickedObject = hit.collider.gameObject;
+
+                // Check if the clicked GameObject is the door
+                if (clickedObject.CompareTag("Door"))
+                {
+                    if (Key.getKey && !doorIsOpen)
+                    {
+                        doorIsOpen = true;
+                        doorAnimations.Play("OpenDoor");
+                    }
+                    else if (doorIsOpen)
+                    {
+                        doorIsOpen = false;
+                        doorAnimations.Play("CloseDoor");
+                    }
+                }
+            }
+        }
+
+        if(sealDoor)
+        {
+            // Create a ray from the mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            // Check if the ray hits any GameObject
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject clickedObject = hit.collider.gameObject;
+
+                // Check if the clicked GameObject is the door
+                if (clickedObject.CompareTag("Door"))
+                {
+                    if (Seal.CursePaperDestroyed && !doorIsOpen)
+                    {
+                        doorIsOpen = true;
+                        doorAnimations.Play("OpenDoor");
+                    }
+                    else if (doorIsOpen)
+                    {
+                        doorIsOpen = false;
+                        doorAnimations.Play("CloseDoor");
+                    }
+                }
+            }
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (door)
+        {
+            // Check if the GameObject that was clicked is the door
+            if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Door"))
             {
                 if (Key.getKey && !doorIsOpen)
                 {
                     doorIsOpen = true;
                     doorAnimations.Play("OpenDoor");
                 }
-                else if(doorIsOpen)
+                else if (doorIsOpen)
                 {
                     doorIsOpen = false;
                     doorAnimations.Play("CloseDoor");
@@ -35,23 +88,23 @@ public class OpenDoor : MonoBehaviour
             }
         }
 
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        // Check if the GameObject that was clicked is the door
-        if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Door"))
+        if (sealDoor)
         {
-            if (Key.getKey && !doorIsOpen)
+            // Check if the GameObject that was clicked is the door
+            if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Door"))
             {
-                doorIsOpen = true;
-                doorAnimations.Play("OpenDoor");
-            }
-            else if (doorIsOpen)
-            {
-                doorIsOpen = false;
-                doorAnimations.Play("CloseDoor");
+                if (Seal.CursePaperDestroyed && !doorIsOpen)
+                {
+                    doorIsOpen = true;
+                    doorAnimations.Play("OpenDoor");
+                }
+                else if (doorIsOpen)
+                {
+                    doorIsOpen = false;
+                    doorAnimations.Play("CloseDoor");
+                }
             }
         }
+
     }
 }
