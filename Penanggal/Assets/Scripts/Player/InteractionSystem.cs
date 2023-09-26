@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractionSystem : MonoBehaviour
 {
@@ -9,48 +8,40 @@ public class InteractionSystem : MonoBehaviour
     public GameObject interactionUI;
     private GameObject currentInteractable;
 
+    private float raycastDistance = 3f;
+
     private void Update()
     {
-        if (Input.touchCount > 0)
+        Vector3 cameraPosition = Camera.main.transform.position;
+        Vector3 cameraForward = Camera.main.transform.forward;
+        Ray ray = new Ray(cameraPosition, cameraForward);
+
+        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.blue, 1f);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
         {
-            Touch touch = Input.GetTouch(0);
+            GameObject hitObject = hit.collider.gameObject;
 
-
-            if (touch.phase == TouchPhase.Began)
+            if (hitObject != currentInteractable)
             {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
+                HideInteractionUI();
 
-                Debug.DrawRay(ray.origin, ray.direction * 100f, Color.blue, 1f); // Color.blue 表示线的颜色，1f 表示线的持续时间
+                ShowInteractionUI(hitObject);
 
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactableLayer))
-                {
-                    GameObject hitObject = hit.collider.gameObject;
-
-                    if (hitObject != currentInteractable)
-                    {
-                        HideInteractionUI();
-
-                        ShowInteractionUI(hitObject);
-
-                        currentInteractable = hitObject;
-                    }
-                    else
-                    {
-                        // If the same object or UI is touched again, perform the interaction (make it disappear).
-                        InteractWithObject(hitObject);
-
-                        // Hide the interaction UI
-                        HideInteractionUI();
-                    }
-                }
-                else
-                {
-                    // If the touch didn't hit any interactable object, hide the interaction UI.
-                    HideInteractionUI();
-                    currentInteractable = null;
-                }
+                currentInteractable = hitObject;
             }
+            else
+            {
+                // Check for button click in the Update method
+                CheckForButtonClick();
+            }
+        }
+        else
+        {
+            HideInteractionUI();
+            currentInteractable = null;
         }
     }
 
@@ -59,8 +50,6 @@ public class InteractionSystem : MonoBehaviour
         if (interactionUI != null)
         {
             interactionUI.SetActive(true);
-            // You can set the position of the UI element based on the interactableObject's position here.
-            // For example: interactionUI.transform.position = interactableObject.transform.position + Vector3.up * 2.0f;
         }
     }
 
@@ -72,9 +61,25 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    private void InteractWithObject(GameObject interactableObject)
+    private void CheckForButtonClick()
     {
-        // You can implement your interaction logic here, such as making the object disappear.
-        interactableObject.SetActive(false);
+        if (Input.GetButtonDown("Button1"))
+        {
+            // Call the interaction function when the button is clicked
+            InteractWithCurrentObject();
+        }
+    }
+
+    public void InteractWithCurrentObject()
+    {
+        if (currentInteractable != null)
+        {
+            // Implement your interaction logic here
+            currentInteractable.SetActive(false);
+
+            // Hide the interaction UI
+            HideInteractionUI();
+        }
     }
 }
+

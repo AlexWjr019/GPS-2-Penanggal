@@ -247,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
     public float BottomClamp = -80.0f; // Adjust as needed
     public float TopClamp = 80.0f; // Adjust as needed
     public Transform CinemachineCameraTarget;
-    private bool IsCurrentDeviceMouse = true; // Adjust as needed
+    //private bool IsCurrentDeviceMouse = true; // Adjust as needed
 
     private void Start()
     {
