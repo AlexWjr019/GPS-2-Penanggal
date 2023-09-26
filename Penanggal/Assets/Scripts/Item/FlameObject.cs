@@ -8,9 +8,9 @@ public class FlameObject : MonoBehaviour, IPointerClickHandler
 {
     public GameObject particleSystemObject;
     public Image fillImage;
-    public Canvas canvasToDestroy;
     private float fillSpeed = 0.5f;
     private bool isCursePaperClicked = false;
+    public Seal seal;
 
     private void Update()
     {
@@ -23,7 +23,9 @@ public class FlameObject : MonoBehaviour, IPointerClickHandler
             // If the fill amount reaches 0, destroy the canvas
             if (fillImage.fillAmount <= 0)
             {
-                DestroyCanvas();
+                Destroy(gameObject);
+                Seal seal = FindObjectOfType<Seal>();
+                seal.OnCursePaperDestroyed();
             }
         }
     }
@@ -77,21 +79,11 @@ public class FlameObject : MonoBehaviour, IPointerClickHandler
                 fillImage.fillAmount -= fillSpeed * Time.deltaTime;
                 if (fillImage.fillAmount <= 0)
                 {
-                    DestroyCanvas();
+                    Seal seal = FindObjectOfType<Seal>();
+                    seal.OnCursePaperDestroyed();
+                    Destroy(gameObject);
                 }
             }
-        }
-    }
-
-    private void DestroyCanvas()
-    {
-        if (canvasToDestroy != null)
-        {
-            Destroy(canvasToDestroy.gameObject);
-        }
-        else
-        {
-            Debug.LogError("Canvas to destroy is not assigned.");
         }
     }
 }
