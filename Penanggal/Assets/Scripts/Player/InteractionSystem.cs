@@ -34,7 +34,6 @@ public class InteractionSystem : MonoBehaviour
             }
             else
             {
-                // Check for button click in the Update method
                 CheckForButtonClick();
             }
         }
@@ -65,7 +64,6 @@ public class InteractionSystem : MonoBehaviour
     {
         if (Input.GetButtonDown("Button1"))
         {
-            // Call the interaction function when the button is clicked
             InteractWithCurrentObject();
         }
     }
@@ -74,10 +72,8 @@ public class InteractionSystem : MonoBehaviour
     {
         if (currentInteractable != null)
         {
-            // Implement your interaction logic here
             currentInteractable.SetActive(false);
 
-            // Hide the interaction UI
             HideInteractionUI();
         }
     }
