@@ -103,10 +103,10 @@ namespace StarterAssets
             // Get the magnitude of the move input (normalized analog stick position)
             float moveInputMagnitude = _input.move.magnitude;
 
-            // Set the target speed based on move speed, sprint speed, and if sprint is pressed
+            // Set the player speed based on move speed, sprint speed, and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
-            // Calculate the actual speed as a combination of target speed and move input magnitude
+            // Calculate the actual speed as a combination of player speed and move input magnitude
             float actualSpeed = targetSpeed * moveInputMagnitude;
 
             // Get the forward direction of the camera

@@ -354,7 +354,7 @@ public class PlayerMovement : MonoBehaviour
                 // Clamp pitch rotation
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-                // Update Cinemachine camera target pitch
+                // Update Cinemachine camera player pitch
                 CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
                 // Rotate the player left and right
