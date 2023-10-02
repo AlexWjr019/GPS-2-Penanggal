@@ -131,7 +131,7 @@ public class Safecode : MonoBehaviour
     //            yield return null;
     //        }
 
-    //        // Ensure the text reaches the target alpha exactly.
+    //        // Ensure the text reaches the player alpha exactly.
     //        Color finalColor = UiText.color;
     //        finalColor.a = targetAlpha;
     //        UiText.color = finalColor;
