@@ -9,6 +9,8 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [Header("UI")]
     public Image image;
     public GameObject interactedSphere;
+    public Transform canvasTransform;
+
     [HideInInspector] public Transform parentAfterDrag;
 
     public void ShowInteractedSphere()
@@ -32,7 +34,7 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(canvasTransform);
     }
 
     public void OnDrag(PointerEventData eventData)
