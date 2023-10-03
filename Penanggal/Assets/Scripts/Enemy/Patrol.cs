@@ -6,15 +6,14 @@ using UnityEngine.AI;
 public class Patrol : MonoBehaviour
 {
     public List<Transform> points = new List<Transform>();
-    private int destPoint = 0;
-    private NavMeshAgent agent;
+    int destPoint = 0;
+    [HideInInspector]
+    public NavMeshAgent agent;
 
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        //agent.autoBraking = false;
 
         GotoNextPoint();
     }
