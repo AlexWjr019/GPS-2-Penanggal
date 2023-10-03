@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
+public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckable
 {
+    public bool IsAggroed { get; set; }
+    public bool IsWithinStrikingDistance { get; set; }
+
     #region State Machine Variables
 
     public EnemyStateMachine StateMachine { get; set; }
@@ -15,7 +18,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
 
     #region Idle Variables
 
-    public float 
+    public float randomMovementRange = 5f;
+    public float randomMovementSpeed = 1f;
 
     #endregion
 
@@ -42,10 +46,28 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
         StateMachine.CurrentEnemyState.PhysicsUpdate();
     }
 
+    #region Health / Die Functions
+    
     public void Die()
     {
 
     }
+
+    #endregion
+
+    #region Distance Checks
+
+    public void SetAggroStatus(bool isAggroed)
+    {
+        IsAggroed = isAggroed;
+    }
+
+    public void SetStrikingDistanceBool(bool isWithinStrikingDistance)
+    {
+        IsWithinStrikingDistance = isWithinStrikingDistance;
+    }
+
+    #endregion
 
     #region Animation Triggers
 
@@ -59,4 +81,6 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable
         EnemyDamaged,
         PlayFootstepsSound
     }
+
+    #endregion
 }
