@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyChaseState : EnemyState
 {
     private Transform playerTransform;
-    private float movementSpeed = 1.75f;
 
     public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
@@ -21,6 +21,13 @@ public class EnemyChaseState : EnemyState
     {
         base.EnterState();
 
+        enemy.agent = enemy.GetComponent<NavMeshAgent>();
+
+        //enemy.p = enemy.GetComponent<Patrol>();
+
+        //enemy.p.agent.ResetPath();
+        enemy.agent.SetDestination(enemy.player.transform.position);
+
         Debug.Log("chase state");
     }
 
@@ -33,16 +40,18 @@ public class EnemyChaseState : EnemyState
     {
         base.FrameUpdate();
 
-        //calculate direction to the player every frame
-        Vector2 moveDirection = (playerTransform.position - enemy.transform.position).normalized;
+        enemy.agent.SetDestination(enemy.player.transform.position);
 
-        //move player
-        //enemy.MoveEnemy(moveDirection * movementSpeed);
+        ////calculate direction to the player every frame
+        //Vector2 moveDirection = (playerTransform.position - enemy.transform.position).normalized;
 
-        if(enemy.IsWithinStrikingDistance)
-        {
-            enemy.StateMachine.ChangeState(enemy.AttackState);
-        }
+        ////move player
+        ////enemy.MoveEnemy(moveDirection * movementSpeed);
+
+        //if(enemy.IsWithinStrikingDistance)
+        //{
+        //    enemy.StateMachine.ChangeState(enemy.AttackState);
+        //}
     }
 
     public override void PhysicsUpdate()
