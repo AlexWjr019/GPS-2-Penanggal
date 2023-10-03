@@ -4,10 +4,13 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioMixerGroup audioMixer;
+    [SerializeField] private AudioMixerGroup musicMixer;
+    [SerializeField] private AudioMixerGroup sfxMixer;
 
     public Sound[] music;
     public Sound[] sfx;
+
+    //public AudioSource audiosource;
 
     public static AudioManager instance;
 
@@ -25,25 +28,32 @@ public class AudioManager : MonoBehaviour
         }
         #endregion
 
+        //audiosource.outputAudioMixerGroup = audioMixerGroup;
+
         foreach(Sound m in music)
         {
             m.source = gameObject.AddComponent<AudioSource>();
-            m.source.outputAudioMixerGroup = audioMixer;
+            //m.source.outputAudioMixerGroup = audioMixerGroup;
             m.source.clip = m.clip;
 
             m.source.volume = m.volume;
             m.source.pitch = m.pitch;
             m.source.loop = m.loop;
+
+            m.source.outputAudioMixerGroup = musicMixer;
         }
 
         foreach (Sound s in sfx)
         {
             s.source = gameObject.AddComponent<AudioSource>();
+            //s.source.outputAudioMixerGroup = audioMixerGroup;
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
+            s.source.outputAudioMixerGroup = sfxMixer;
         }
 
     }
