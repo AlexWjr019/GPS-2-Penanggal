@@ -69,22 +69,37 @@ public class InteractionSystem : MonoBehaviour
     {
         if (currentInteractable != null)
         {
-            InventorySlot emptySlot = InventoryManager.Instance.GetEmptySlot();
-            if (emptySlot != null)
+            IInteractableItem interactableItem = currentInteractable.GetComponent<IInteractableItem>();
+            if (interactableItem != null)
             {
-                InventoryItems newInventoryItem = Instantiate(inventoryItemPrefab, emptySlot.transform);
-                newInventoryItem.transform.localPosition = Vector3.zero;
-                newInventoryItem.transform.localScale = Vector3.one;
-                newInventoryItem.name = "InventoryItem";
-                newInventoryItem.gameObject.SetActive(true);
+                string itemName = interactableItem.GetName();
+                //Material itemMaterial = interactableItem.GetMaterial();
+                Sprite spr = interactableItem.GetSprite();
 
-                currentInteractable.SetActive(false);
+                InventorySlot emptySlot = InventoryManager.Instance.GetEmptySlot();
+                if (emptySlot != null)
+                {
+                    InventoryItems newInventoryItem = Instantiate(inventoryItemPrefab, emptySlot.transform);
+                    newInventoryItem.transform.localPosition = Vector3.zero;
+                    newInventoryItem.transform.localScale = Vector3.one;
+                    newInventoryItem.name = "InventoryItem";
+                    newInventoryItem.gameObject.SetActive(true);
+
+                    newInventoryItem.Configure(itemName,/*itemMaterial*/ spr);
+
+                    currentInteractable.SetActive(false);
+                }
+                else
+                {
+                    Debug.LogError("No available InventorySlot to place the item!");
+                }
             }
             else
             {
-                Debug.LogError("inventoryItemPrefab is not assigned!");
-                Debug.LogWarning("没有可用的 InventorySlot 来放置物品！");
+                Debug.LogWarning("The interactable object does not implement IInteractableItem!");
             }
         }
     }
+
+
 }

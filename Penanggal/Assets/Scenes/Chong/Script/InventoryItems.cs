@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -13,6 +11,11 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     [HideInInspector] public Transform parentAfterDrag;
 
+    void Start()
+    {
+        canvasTransform = FindObjectOfType<Canvas>().transform;
+    }
+
     public void ShowInteractedSphere()
     {
         if (interactedSphere != null)
@@ -23,13 +26,13 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 Material sphereMaterial = sphereRenderer.material;
                 if (sphereMaterial != null)
                 {
-                    image.sprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0, 0, 1, 1), Vector2.zero);
+                    image.sprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0, 0, 1, 1), new Vector2(0.5f, 0.5f));
                     image.material = sphereMaterial;
                 }
             }
         }
     }
-    //drag and drop
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         image.raycastTarget = false;
@@ -46,5 +49,19 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
+    }
+
+    // 我理解你想要的是"Configure"方法替换"SetupItem"方法，所以在这里我将"SetupItem"替换成"Configure"
+    public void Configure(string itemName, /*Material itemMaterial*/ Sprite itemSprite)
+    {
+        //if (itemMaterial != null)
+        //{
+        //    image.material = itemMaterial;
+        //}
+
+        if (itemSprite != null)
+        {
+            image.sprite = itemSprite; 
+        }
     }
 }
