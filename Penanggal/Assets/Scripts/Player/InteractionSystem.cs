@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class InteractionSystem : MonoBehaviour
 {
@@ -60,6 +59,7 @@ public class InteractionSystem : MonoBehaviour
 
                     InteractWithCurrentObject();
                 }
+
             }
         }
     }
@@ -100,6 +100,4 @@ public class InteractionSystem : MonoBehaviour
             }
         }
     }
-
-
 }
