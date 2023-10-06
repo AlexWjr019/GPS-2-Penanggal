@@ -82,7 +82,8 @@ public class InteractionSystem : MonoBehaviour
                     InventoryItems newInventoryItem = Instantiate(inventoryItemPrefab, emptySlot.transform);
                     newInventoryItem.transform.localPosition = Vector3.zero;
                     newInventoryItem.transform.localScale = Vector3.one;
-                    newInventoryItem.name = "InventoryItem";
+                    //newInventoryItem.name = "InventoryItem";
+                    newInventoryItem.name = itemName;
                     newInventoryItem.gameObject.SetActive(true);
 
                     newInventoryItem.Configure(itemName,/*itemMaterial*/ spr);

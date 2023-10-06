@@ -60,4 +60,11 @@ public class InventorySlot : MonoBehaviour , IDropHandler, IPointerClickHandler
             inventoryItems.parentAfterDrag = transform;
         }
     }
+
+    public InventoryItems GetCurrentItem()
+    {
+        // Assuming the item is a child of the slot
+        return GetComponentInChildren<InventoryItems>();
+    }
+
 }

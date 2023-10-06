@@ -8,6 +8,7 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public Image image;
     public GameObject interactedSphere;
     public Transform canvasTransform;
+    public string itemName;
 
     [HideInInspector] public Transform parentAfterDrag;
 
@@ -51,17 +52,19 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         transform.SetParent(parentAfterDrag);
     }
 
-    // 我理解你想要的是"Configure"方法替换"SetupItem"方法，所以在这里我将"SetupItem"替换成"Configure"
-    public void Configure(string itemName, /*Material itemMaterial*/ Sprite itemSprite)
+    public void Configure(string newItemName, /*Material itemMaterial*/ Sprite itemSprite)
     {
         //if (itemMaterial != null)
         //{
         //    image.material = itemMaterial;
         //}
 
+        this.itemName = newItemName;
+
         if (itemSprite != null)
         {
-            image.sprite = itemSprite; 
+            image.sprite = itemSprite;
         }
     }
+
 }

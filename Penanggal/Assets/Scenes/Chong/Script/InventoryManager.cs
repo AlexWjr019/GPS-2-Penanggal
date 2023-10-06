@@ -44,6 +44,38 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public string GetSelectedInventoryItemName()
+    {
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            if (slot.isSelected)
+            {
+                InventoryItems item = slot.GetCurrentItem();
+                if (item != null)
+                {
+                    return item.name;
+                }
+            }
+        }
+        return null;
+    }
+
+
+    public void DestroySelectedItem()
+    {
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            if (slot.isSelected)
+            {
+                InventoryItems item = slot.GetCurrentItem();
+                if (item != null)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+        }
+    }
+
     void ChangeSelectedSlot(int newValue)
     {
         if (selectedSlot >= 0)
