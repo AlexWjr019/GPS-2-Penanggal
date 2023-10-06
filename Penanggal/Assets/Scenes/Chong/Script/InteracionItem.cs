@@ -21,7 +21,6 @@ public class InteracionItem : MonoBehaviour, IInteractableItem
         return itemSprite;
     }
 
-    // 新的方法，返回3D预制体的引用
     public GameObject GetPrefab3D()
     {
         return itemPrefab3D;

@@ -48,8 +48,6 @@ public class PlayerMovement : MonoBehaviour
     public Image StaminaBar;
     public bool AutoRun = false;
 
-
-    // Add your input and camera control variables here
     private Vector2 _input;
     private float _cinemachineTargetPitch;
     private float _rotationVelocity;
@@ -131,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         if (stamina <= 0 && IsRunning)
         {
             IsRunning = false;
-            AutoRun = false; // 体力耗尽时停止自动奔跑
+            AutoRun = false;
             targetSpeed = MoveSpeed;
         }
 
@@ -146,8 +144,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJoystickOutput(Vector2 output)
     {
-        // 这里我们检查摇杆是否有输出，如果有，我们将AutoRun设为false
-        // 这样当摇杆被操作时，角色将退出自动奔跑模式
         if (output.magnitude > 0.1f)
         {
             AutoRun = false;
@@ -158,14 +154,11 @@ public class PlayerMovement : MonoBehaviour
         float joystickMagnitude = moveDirection.magnitude;
         IsRunning = joyStick.IsRunning && stamina > 1;
 
-        // 如果我们在摇杆的"奔跑"区域并且体力充足，AutoRun将被设置为true
         if (IsRunning && joystickMagnitude >= 1f)
         {
             AutoRun = true;
         }
 
-        // 如果AutoRun是false，我们根据摇杆输入来设定速度。
-        // 否则，角色将继续以奔跑速度前进（在Move函数中处理）
         if (!AutoRun)
         {
             targetSpeed = (joystickMagnitude >= 1f && IsRunning) ? SprintSpeed : MoveSpeed;
@@ -217,26 +210,19 @@ public class PlayerMovement : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            // Check the phase of the touch
             if (touch.phase == TouchPhase.Moved && IsTouchInUIArea(touch.position))
             {
-                // Get the delta position of the touch
                 Vector2 deltaPosition = touch.deltaPosition;
 
-                // Don't multiply touch input by Time.deltaTime
                 float deltaTimeMultiplier = 1.0f;
 
-                // Calculate pitch and yaw based on touch input
                 _cinemachineTargetPitch -= deltaPosition.y * RotationSpeed * deltaTimeMultiplier;
                 _rotationVelocity = deltaPosition.x * RotationSpeed * deltaTimeMultiplier;
 
-                // Clamp pitch rotation
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-                // Update Cinemachine camera player pitch
                 CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
-                // Rotate the player left and right
                 transform.Rotate(Vector3.up * _rotationVelocity);
             }
         }
