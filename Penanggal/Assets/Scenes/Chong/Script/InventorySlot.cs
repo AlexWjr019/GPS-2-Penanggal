@@ -103,6 +103,15 @@ public class InventorySlot : MonoBehaviour /*, IDropHandler*/, IPointerClickHand
         return transform.childCount == 0;
     }
 
+    public void ClearSlot()
+    {
+        if (transform.childCount > 0)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+        }
+        Deselected();
+    }
+
     public void SwapItem(InventoryItems newItem)
     {
         InteractionSystem interactionSystem = FindObjectOfType<InteractionSystem>();
