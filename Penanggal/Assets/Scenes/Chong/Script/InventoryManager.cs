@@ -8,8 +8,9 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
 
-    int selectedSlot = -1;
+    //int selectedSlot = -1;
     public static InventoryManager Instance { get; private set; }
+    public InventorySlot selectedSlot;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeSelectedSlot(0);
+        //ChangeSelectedSlot(0);
         if (interactButton != null)
         {
             interactButton.SetActive(false);
@@ -34,14 +35,33 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (inventorySlots[0].isSelected)
+        foreach (InventorySlot slot in inventorySlots)
         {
-            inventorySlots[1].isSelected = false;
+            if (slot != selectedSlot && slot.isSelected)
+            {
+                slot.Deselected();
+            }
         }
-        if (inventorySlots[1].isSelected)
+    }
+
+    public void UpdateSelectedSlot(InventorySlot newSelectedSlot)
+    {
+        if (selectedSlot != null)
         {
-            inventorySlots[0].isSelected = false;
+            selectedSlot.Deselected();
         }
+
+        selectedSlot = newSelectedSlot;
+
+        if (selectedSlot != null)
+        {
+            selectedSlot.Selected();
+        }
+    }
+
+    public InventorySlot GetSlotToReplace()
+    {
+        return selectedSlot;
     }
 
     public string GetSelectedInventoryItemName()
@@ -76,16 +96,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    void ChangeSelectedSlot(int newValue)
-    {
-        if (selectedSlot >= 0)
-        {
-            inventorySlots[selectedSlot].Deselected();
-        }
-        inventorySlots[newValue].Selected();
-        selectedSlot = newValue;
-    }
-
     public InventorySlot GetEmptySlot()
     {
         foreach (InventorySlot slot in inventorySlots)
@@ -97,4 +107,32 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
+
+    public bool IsInventoryFull()
+    {
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.IsEmpty())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public void SwapItems(InventorySlot slot, InventoryItems newItem, Vector3 dropPosition)
+    {
+        InventoryItems currentItem = slot.GetCurrentItem();
+        if (currentItem != null)
+        {
+            Instantiate(currentItem.itemPrefab3D, dropPosition, Quaternion.identity);
+            Destroy(currentItem.gameObject);
+        }
+
+        newItem.transform.SetParent(slot.transform);
+        newItem.transform.localPosition = Vector3.zero;
+        newItem.transform.localScale = Vector3.one;
+    }
+
 }

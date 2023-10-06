@@ -10,6 +10,9 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public Transform canvasTransform;
     public string itemName;
 
+    [Header("3D Prefab")]
+    public GameObject itemPrefab3D;
+
     [HideInInspector] public Transform parentAfterDrag;
 
     void Start()
@@ -52,14 +55,10 @@ public class InventoryItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         transform.SetParent(parentAfterDrag);
     }
 
-    public void Configure(string newItemName, /*Material itemMaterial*/ Sprite itemSprite)
+    public void Configure(string newItemName, Sprite itemSprite, GameObject prefab3D)
     {
-        //if (itemMaterial != null)
-        //{
-        //    image.material = itemMaterial;
-        //}
-
-        this.itemName = newItemName;
+        itemName = newItemName;
+        itemPrefab3D = prefab3D;
 
         if (itemSprite != null)
         {

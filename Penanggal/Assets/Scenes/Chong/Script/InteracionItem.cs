@@ -3,13 +3,12 @@ using UnityEngine;
 public class InteracionItem : MonoBehaviour, IInteractableItem
 {
     public string itemName;
-    //public Material itemMaterial;
     public Sprite itemSprite;
+    public GameObject itemPrefab3D;
 
     private void Start()
     {
         itemName = gameObject.name;
-        //itemMaterial = GetComponent<MeshRenderer>().material;
     }
 
     public string GetName()
@@ -17,14 +16,14 @@ public class InteracionItem : MonoBehaviour, IInteractableItem
         return itemName;
     }
 
-    //public Material GetMaterial()
-    //{
-    //    return itemMaterial;
-    //}
-
-    // Added method: Getter method to access the itemSprite.
     public Sprite GetSprite()
     {
         return itemSprite;
+    }
+
+    // 新的方法，返回3D预制体的引用
+    public GameObject GetPrefab3D()
+    {
+        return itemPrefab3D;
     }
 }

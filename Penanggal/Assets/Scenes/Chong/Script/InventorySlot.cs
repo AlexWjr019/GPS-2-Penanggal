@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour , IDropHandler, IPointerClickHandler
+public class InventorySlot : MonoBehaviour /*, IDropHandler*/, IPointerClickHandler
 {
     public Image image;
     public Color selecterColor, notSelectedColor;
@@ -46,25 +46,77 @@ public class InventorySlot : MonoBehaviour , IDropHandler, IPointerClickHandler
         if (isSelected)
         {
             Deselected();
+            InventoryManager.Instance.UpdateSelectedSlot(null);
         }
         else
         {
             Selected();
+            InventoryManager.Instance.UpdateSelectedSlot(this);
         }
     }
-    public void OnDrop(PointerEventData eventData)
+    //public void OnDrop(PointerEventData eventData)
+    //{
+    //    InventoryItems draggedItem = eventData.pointerDrag.GetComponent<InventoryItems>();
+    //    if (draggedItem != null)
+    //    {
+    //        if (transform.childCount == 0)
+    //        {
+    //            draggedItem.parentAfterDrag = transform;
+    //        }
+    //        else
+    //        {
+    //            // Using SwapItems method from InventoryManager
+    //            InventoryManager.Instance.SwapItems(this, draggedItem, draggedItem.transform.position);
+    //        }
+    //    }
+    //}
+
+
+    public string GetCurrentItemName()
     {
-        if(transform.childCount == 0)
+        if (transform.childCount > 0)
         {
-            InventoryItems inventoryItems = eventData.pointerDrag.GetComponent<InventoryItems>();
-            inventoryItems.parentAfterDrag = transform;
+            InventoryItems item = transform.GetChild(0).GetComponent<InventoryItems>();
+            if (item != null)
+            {
+                return item.itemName;
+            }
         }
+        return null;
     }
 
     public InventoryItems GetCurrentItem()
     {
-        // Assuming the item is a child of the slot
-        return GetComponentInChildren<InventoryItems>();
+        if (transform.childCount > 0)
+        {
+            InventoryItems item = transform.GetChild(0).GetComponent<InventoryItems>();
+            if (item != null)
+            {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public bool IsEmpty()
+    {
+        return transform.childCount == 0;
+    }
+
+    public void SwapItem(InventoryItems newItem)
+    {
+        InteractionSystem interactionSystem = FindObjectOfType<InteractionSystem>();
+
+        InventoryItems currentItem = transform.GetChild(0).GetComponent<InventoryItems>();
+
+        currentItem.transform.SetParent(null);
+        newItem.transform.SetParent(transform);
+        newItem.transform.localPosition = Vector3.zero;
+        newItem.transform.localScale = Vector3.one;
+
+        GameObject droppedItem3D = Instantiate(currentItem.itemPrefab3D, interactionSystem.LastInteractedItemPosition(), Quaternion.identity);
+
+        Destroy(currentItem.gameObject);
     }
 
 }

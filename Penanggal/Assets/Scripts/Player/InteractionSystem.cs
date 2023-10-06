@@ -7,9 +7,10 @@ public class InteractionSystem : MonoBehaviour
 {
     public LayerMask interactableLayer;
     public GameObject interactionUI;
-    private GameObject currentInteractable;
     public InventoryItems inventoryItemPrefab;
 
+    private GameObject currentInteractable;
+    private Vector3 lastInteractedItemPosition;
     private float raycastDistance = 3f;
 
     private void Update()
@@ -28,7 +29,6 @@ public class InteractionSystem : MonoBehaviour
 
             if (hitObject != currentInteractable)
             {
-
                 currentInteractable = hitObject;
             }
             else
@@ -56,14 +56,16 @@ public class InteractionSystem : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
                 {
                     currentInteractable = hit.collider.gameObject;
-
                     InteractWithCurrentObject();
                 }
-
             }
         }
     }
 
+    public Vector3 LastInteractedItemPosition()
+    {
+        return lastInteractedItemPosition;
+    }
 
     public void InteractWithCurrentObject()
     {
@@ -73,26 +75,20 @@ public class InteractionSystem : MonoBehaviour
             if (interactableItem != null)
             {
                 string itemName = interactableItem.GetName();
-                //Material itemMaterial = interactableItem.GetMaterial();
-                Sprite spr = interactableItem.GetSprite();
+                Sprite itemSprite = interactableItem.GetSprite();
+                GameObject itemPrefab3D = interactableItem.GetPrefab3D();
 
-                InventorySlot emptySlot = InventoryManager.Instance.GetEmptySlot();
-                if (emptySlot != null)
+                if (InventoryManager.Instance.IsInventoryFull())
                 {
-                    InventoryItems newInventoryItem = Instantiate(inventoryItemPrefab, emptySlot.transform);
-                    newInventoryItem.transform.localPosition = Vector3.zero;
-                    newInventoryItem.transform.localScale = Vector3.one;
-                    //newInventoryItem.name = "InventoryItem";
-                    newInventoryItem.name = itemName;
-                    newInventoryItem.gameObject.SetActive(true);
-
-                    newInventoryItem.Configure(itemName,/*itemMaterial*/ spr);
-
-                    currentInteractable.SetActive(false);
+                    InventorySlot slotToReplace = InventoryManager.Instance.GetSlotToReplace();
+                    Vector3 dropPosition = LastInteractedItemPosition();
+                    ReplaceItem(slotToReplace, itemName, itemSprite, itemPrefab3D, dropPosition);
                 }
                 else
                 {
-                    Debug.LogError("No available InventorySlot to place the item!");
+                    InventorySlot emptySlot = InventoryManager.Instance.GetEmptySlot();
+                    AddItemToSlot(emptySlot, itemName, itemSprite, itemPrefab3D);
+                    currentInteractable.SetActive(false);
                 }
             }
             else
@@ -101,4 +97,37 @@ public class InteractionSystem : MonoBehaviour
             }
         }
     }
+    private void AddItemToSlot(InventorySlot slot, string itemName, Sprite itemSprite, GameObject itemPrefab3D)
+    {
+        Debug.Log("Adding item: " + itemName + " with prefab: " + itemPrefab3D);
+
+        lastInteractedItemPosition = currentInteractable.transform.position;
+        InventoryItems newInventoryItem = Instantiate(inventoryItemPrefab, slot.transform);
+        newInventoryItem.transform.localPosition = Vector3.zero;
+        newInventoryItem.transform.localScale = Vector3.one;
+        newInventoryItem.name = itemName;
+        newInventoryItem.gameObject.SetActive(true);
+        newInventoryItem.Configure(itemName, itemSprite, itemPrefab3D);
+        currentInteractable.SetActive(false);
+    }
+    public void ReplaceItem(InventorySlot selectedSlot, string newItemName, Sprite newItemSprite, GameObject newItemPrefab, Vector3 dropPosition)
+    {
+        if (selectedSlot != null && !selectedSlot.IsEmpty())
+        {
+            InventoryItems currentItem = selectedSlot.GetCurrentItem();
+
+            currentItem.itemPrefab3D.transform.position = currentInteractable.transform.position;
+            currentItem.itemPrefab3D.SetActive(true);
+
+            currentItem.Configure(newItemName, newItemSprite, newItemPrefab);
+
+            currentInteractable.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("No slot is selected or slot is empty");
+        }
+    }
+
+
 }

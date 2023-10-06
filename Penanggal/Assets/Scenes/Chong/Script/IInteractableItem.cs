@@ -6,6 +6,6 @@ using UnityEngine;
 public interface IInteractableItem
 {
     string GetName();
-    //Material GetMaterial();
     Sprite GetSprite();
+    GameObject GetPrefab3D();
 }
