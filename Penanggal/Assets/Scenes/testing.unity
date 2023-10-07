@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &50082568
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -610,13 +610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ba5f9029ec03541b957d787319d5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: BGM
-    clip: {fileID: 8300000, guid: 8f8796195cd2dbe43b48b226319fe271, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
+  musicMixer: {fileID: 0}
+  sfxMixer: {fileID: 0}
+  music: []
+  sfx: []
 --- !u!4 &1048445360
 Transform:
   m_ObjectHideFlags: 0
@@ -739,6 +736,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1612627919
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_Name
+      value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_Name
+      value: HouseLayout with props
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193116225275613732, guid: df741c7ae35d2634f8c1a15b9d626dac,
+        type: 3}
+      propertyPath: m_Name
+      value: Toilet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df741c7ae35d2634f8c1a15b9d626dac, type: 3}
 --- !u!1 &1699377027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1366,7 @@ MonoBehaviour:
   joystickOutputEvent:
     m_PersistentCalls:
       m_Calls: []
+  runZoneCollider2D: {fileID: 0}
 --- !u!1 &1986461634414322844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,10 +1503,17 @@ MonoBehaviour:
   sensitivity: 0.5
   uiAreaRect: {fileID: 4043232784883674765}
   joyStick: {fileID: 1986461633555620243}
+  stamina: 0
+  MaxStamina: 100
+  StaminaDecreaseRate: 10
+  StaminaRecoveryRate: 5
+  StaminaBar: {fileID: 0}
+  AutoRun: 0
   RotationSpeed: 0.5
   BottomClamp: -80
   TopClamp: 80
   CinemachineCameraTarget: {fileID: 6169760043604411001}
+  RunZoneCollider2D: {fileID: 0}
 --- !u!224 &3140691548448214300
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1534,6 +1622,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  runZoneCollider2D: {fileID: 0}
 --- !u!114 &3621003087621739392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,6 +2501,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   interactionUI: {fileID: 1699377027}
+  inventoryItemPrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2423,3 +2513,4 @@ SceneRoots:
   - {fileID: 50082570}
   - {fileID: 2943966099228211001}
   - {fileID: 1048445360}
+  - {fileID: 1612627919}
