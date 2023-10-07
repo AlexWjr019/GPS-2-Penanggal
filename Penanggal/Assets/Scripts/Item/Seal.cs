@@ -6,7 +6,7 @@ public class Seal : MonoBehaviour
 {
     public GameObject[] cursePaper;
     public GameObject seal;
-    public static bool CursePaperDestroyed;
+    public static bool cursePaperDestroyed;
 
     private int destroyedCount = 0;
 
@@ -17,7 +17,7 @@ public class Seal : MonoBehaviour
         // Check if all "CursePaper" objects have been destroyed
         if (destroyedCount == 4)
         {
-            CursePaperDestroyed = true;
+            cursePaperDestroyed = true;
             // Destroy the "seal" object
             Destroy(seal);
         }

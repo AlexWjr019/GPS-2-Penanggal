@@ -5,17 +5,48 @@ public class OpenDoor : MonoBehaviour
     public Animation doorAnimations;
     private bool doorIsOpen;
     public string requiredItemName;
+    private float raycastDistance = 3f;
+    public bool door, sealDoor;
 
-    private void OnMouseDown()
+    private void Update()
     {
-        InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
-
-        if (selectedSlot != null &&!selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
+        if (Input.touchCount > 0)
         {
-            ToggleDoor();
+            Touch touch = Input.GetTouch(0);
 
-            Destroy(selectedSlot.GetCurrentItem().gameObject);
-            selectedSlot.ClearSlot();
+            if (touch.phase == TouchPhase.Began)
+            {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+
+                if (Physics.Raycast(ray, out hit, raycastDistance))
+                {
+                    if (door)
+                    {
+                        InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
+
+                        if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
+                        {
+                            // Check if the raycast hit the door
+                            if (hit.collider.gameObject == gameObject)
+                            {
+                                ToggleDoor();
+                                Destroy(selectedSlot.GetCurrentItem().gameObject);
+                                selectedSlot.ClearSlot();
+                            }
+                        }
+                    }
+
+                    if (sealDoor)
+                    {
+                        if (Seal.cursePaperDestroyed)
+                        {
+                            ToggleDoor();
+                        }
+                    }
+
+                }
+            }
         }
     }
 

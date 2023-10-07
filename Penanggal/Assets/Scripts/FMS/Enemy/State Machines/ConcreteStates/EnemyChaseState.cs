@@ -19,14 +19,9 @@ public class EnemyChaseState : EnemyState
     {
         base.EnterState();
 
-        enemy.agent = enemy.GetComponent<NavMeshAgent>();
-
-        //enemy.p = enemy.GetComponent<Patrol>();
-
-        //enemy.p.agent.ResetPath();
         enemy.agent.SetDestination(enemy.player.transform.position);
 
-        Debug.Log("chase state");
+        Debug.Log("Chase state");
     }
 
     public override void ExitState()
@@ -39,17 +34,6 @@ public class EnemyChaseState : EnemyState
         base.FrameUpdate();
 
         enemy.agent.SetDestination(enemy.player.transform.position);
-
-        ////calculate direction to the player every frame
-        //Vector2 moveDirection = (playerTransform.position - enemy.transform.position).normalized;
-
-        ////move player
-        ////enemy.MoveEnemy(moveDirection * movementSpeed);
-
-        //if(enemy.IsWithinStrikingDistance)
-        //{
-        //    enemy.StateMachine.ChangeState(enemy.AttackState);
-        //}
     }
 
     public override void PhysicsUpdate()

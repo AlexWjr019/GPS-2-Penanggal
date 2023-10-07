@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.UI;
 
-public class FlameObject : MonoBehaviour, IPointerClickHandler
+public class FlameObject : MonoBehaviour
 {
     public GameObject particleSystemObject;
     public Image fillImage;
     private float fillSpeed = 0.5f;
     private bool isCursePaperClicked = false;
     public Seal seal;
+    public string requiredItemName;
+    private float raycastDistance = 3f;
 
     private void Update()
     {
@@ -28,61 +32,45 @@ public class FlameObject : MonoBehaviour, IPointerClickHandler
                 seal.OnCursePaperDestroyed();
             }
         }
-    }
 
-    private void OnMouseDown()
-    {
-        // Create a ray from the mouse position
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        // Check if the ray hits any GameObject
-        if (Physics.Raycast(ray, out hit))
+        if (Input.touchCount > 0)
         {
-            GameObject clickedObject = hit.collider.gameObject;
+            Touch touch = Input.GetTouch(0);
 
-            // Check if the clicked GameObject is the candle
-            if (clickedObject.CompareTag("Candle"))
+            if (touch.phase == TouchPhase.Began)
             {
-                if (particleSystemObject != null)
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+
+                // Check if the ray hits any GameObject
+                if (Physics.Raycast(ray, out hit, raycastDistance))
                 {
-                    particleSystemObject.SetActive(true);
+                    InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
+
+                    if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
+                    {
+                        GameObject clickedObject = hit.collider.gameObject;
+                        // Check if the clicked GameObject is the candle
+                        if (clickedObject.CompareTag("Candle"))
+                        {
+                            if (particleSystemObject != null)
+                            {
+                                particleSystemObject.SetActive(true);
+                            }
+                        }
+                        // Check if the clicked GameObject is the cursePaper
+                        else if (clickedObject.CompareTag("CursePaper"))
+                        {
+                            Destroy(gameObject);
+                            isCursePaperClicked = true; // Mark that cursePaper has been clicked
+                        }
+                        else
+                        {
+                            Debug.Log("You need a lighter!");
+                        }
+                    }
                 }
-            }
-            // Check if the clicked GameObject is the cursePaper
-            else if (clickedObject.CompareTag("CursePaper"))
-            {
-                isCursePaperClicked = true; // Mark that cursePaper has been clicked
-            }
-        }
-    }
 
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        // Check if the GameObject that was clicked is the candle
-        if (eventData.pointerCurrentRaycast.gameObject.CompareTag("Candle"))
-        {
-            if (particleSystemObject != null)
-            {
-                particleSystemObject.SetActive(true);
-            }
-        }
-        // Check if the GameObject that was clicked is the cursePaper
-        if (eventData.pointerCurrentRaycast.gameObject.CompareTag("CursePaper"))
-        {
-            isCursePaperClicked = true; // Mark that cursePaper has been clicked
-
-            // Prevent decreasing the fill amount of cursePaper when clicking the candle
-            if (fillImage != null && fillImage.fillAmount > 0)
-            {
-                fillImage.fillAmount -= fillSpeed * Time.deltaTime;
-                if (fillImage.fillAmount <= 0)
-                {
-                    Seal seal = FindObjectOfType<Seal>();
-                    seal.OnCursePaperDestroyed();
-                    Destroy(gameObject);
-                }
             }
         }
     }
