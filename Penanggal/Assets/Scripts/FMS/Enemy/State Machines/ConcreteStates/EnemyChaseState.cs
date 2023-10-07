@@ -5,11 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyChaseState : EnemyState
 {
-    private Transform playerTransform;
-
     public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType triggerType)
