@@ -68,10 +68,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (AutoRun)
-        {
-            moveDirection = Vector2.up;
-        }
+        //Incase after poc need use back
+        //if (AutoRun)
+        //{
+        //    moveDirection = Vector2.up;
+        //}
 
         Move(moveDirection);
         JumpAndGravity();
@@ -144,25 +145,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJoystickOutput(Vector2 output)
     {
-        if (output.magnitude > 0.1f)
-        {
-            AutoRun = false;
-        }
+        //if (output.magnitude > 0.1f)
+        //{
+        //    AutoRun = false;
+        //}
 
         moveDirection = output;
 
         float joystickMagnitude = moveDirection.magnitude;
         IsRunning = joyStick.IsRunning && stamina > 1;
 
-        if (IsRunning && joystickMagnitude >= 1f)
-        {
-            AutoRun = true;
-        }
+        //if (IsRunning && joystickMagnitude >= 1f)
+        //{
+        //    AutoRun = true;
+        //}
 
-        if (!AutoRun)
-        {
+        //if (!AutoRun)
+        //{
             targetSpeed = (joystickMagnitude >= 1f && IsRunning) ? SprintSpeed : MoveSpeed;
-        }
+        //}
     }
 
 
