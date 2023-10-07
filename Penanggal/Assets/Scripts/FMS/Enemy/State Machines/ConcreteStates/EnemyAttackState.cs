@@ -10,7 +10,6 @@ public class EnemyAttackState : EnemyState
     private float timeTillExit;
     private float distanceToCountExit = 3f;
 
-
     public EnemyAttackState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
     }
@@ -24,7 +23,7 @@ public class EnemyAttackState : EnemyState
     {
         base.EnterState();
 
-        Debug.Log("attack state");
+        Debug.Log("Attack state");
     }
 
     public override void ExitState()

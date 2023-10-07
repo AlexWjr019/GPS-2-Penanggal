@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyIdleState : EnemyState
+
+public class EnemyPatrolState : EnemyState
 {
-    float timerCount;
-
-    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    public EnemyPatrolState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
-
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType triggerType)
@@ -20,8 +18,10 @@ public class EnemyIdleState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
+                
+        GotoNextPoint();
 
-        Debug.Log("Idle state");
+        Debug.Log("Patrol state");
     }
 
     public override void ExitState()
@@ -33,24 +33,9 @@ public class EnemyIdleState : EnemyState
     {
         base.FrameUpdate();
 
-        if (timerCount < enemy.lookTimer)
+        if (!enemy.agent.pathPending && enemy.agent.remainingDistance < 0.5f)
         {
-            timerCount += Time.deltaTime;
-
-            if (timerCount >= enemy.lookTimer)
-            {
-                timerCount = 0;
-                enemy.StateMachine.ChangeState(enemy.PatrolState);
-            }
-        }
-
-        if (timerCount < enemy.lookTimer / 2)
-        {
-            enemy.transform.Rotate(enemy.x, enemy.y, enemy.z);
-        }
-        else if (timerCount > enemy.lookTimer / 2)
-        {
-            enemy.transform.Rotate(-enemy.x, -enemy.y, -enemy.z);
+            enemy.StateMachine.ChangeState(enemy.IdleState);
         }
     }
 
@@ -69,8 +54,15 @@ public class EnemyIdleState : EnemyState
         }
     }
 
-    //private Vector3 GetRandomPointInCircle()
-    //{
-    //    return enemy.transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * enemy.randomMovementRange;
-    //}
+    private void GotoNextPoint()
+    {
+        if (enemy.points.Count == 0)
+        {
+            return;
+        }
+
+        enemy.agent.destination = enemy.points[enemy.destPoint].position;
+
+        enemy.destPoint = (enemy.destPoint + 1) % enemy.points.Count;
+    }
 }

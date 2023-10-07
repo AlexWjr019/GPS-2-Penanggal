@@ -8,10 +8,15 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
 
+    [HideInInspector]
+    public NavMeshAgent agent;
+    public float lookTimer = 5f;
+
     #region State Machine Variables
 
     public EnemyStateMachine StateMachine { get; set; }
     public EnemyIdleState IdleState { get; set; }
+    public EnemyPatrolState PatrolState { get; set; }
     public EnemyChaseState ChaseState { get; set; }
     public EnemyAttackState AttackState { get; set; }
 
@@ -19,14 +24,10 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
 
     #region Idle Variables
 
-    //public float randomMovementRange = 5f;
-    //public float randomMovementSpeed = 1f;
-
     public List<Transform> points = new List<Transform>();
     [HideInInspector]
     public int destPoint = 0;
-    [HideInInspector]
-    public NavMeshAgent agent;
+    public float x, y, z;
 
     #endregion
 
@@ -46,8 +47,11 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     {
         StateMachine = new EnemyStateMachine();
         IdleState = new EnemyIdleState(this, StateMachine);
+        PatrolState = new EnemyPatrolState(this, StateMachine);
         ChaseState = new EnemyChaseState(this, StateMachine);
         AttackState = new EnemyAttackState(this, StateMachine);
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
@@ -67,8 +71,18 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
         StateMachine.CurrentEnemyState.PhysicsUpdate();
     }
 
+    //public IEnumerator LookArd()
+    //{
+    //    transform.localEulerAngles = new Vector3(transform.rotation.x + 20, 0, 0);
+    //    yield return new WaitForSeconds(lookTimer / 2);
+
+    //    transform.localEulerAngles = new Vector3(transform.rotation.x - 20, 0, 0);
+    //    yield return new WaitForSeconds(lookTimer / 2);
+    //}
+
+
     #region Health / Die Functions
-    
+
     public void Die()
     {
 
