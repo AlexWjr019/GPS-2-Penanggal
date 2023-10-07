@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _input;
     private float _cinemachineTargetPitch;
     private float _rotationVelocity;
-    public float RotationSpeed = 2.0f;
+    public float RotationSpeed = 0.025f;
     public float BottomClamp = -80.0f;
     public float TopClamp = 80.0f;
     public Transform CinemachineCameraTarget;
