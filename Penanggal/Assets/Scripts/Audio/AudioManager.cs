@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         PlayMusic("BGM");
-        PlaySFX("Lullaby");
+        //PlaySFX("Lullaby");
     }
 
     public void PlayMusic(string name)
