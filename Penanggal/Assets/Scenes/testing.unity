@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031320055, g: 0.006169503, b: 0.014189001, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2728,12 +2728,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ba5f9029ec03541b957d787319d5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicMixer: {fileID: 0}
-  sfxMixer: {fileID: 0}
+  musicMixer: {fileID: 4919085905221164691, guid: 2cb9845defaf0c247a5de00fe898e04a,
+    type: 2}
+  sfxMixer: {fileID: 1216934517190648752, guid: 2cb9845defaf0c247a5de00fe898e04a,
+    type: 2}
   music:
   - name: BGM
-    clip: {fileID: 8300000, guid: d4d3a89fc1b011a4f96b3e0bd936ac37, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 5ad882da73bffb64197ea08368ebb246, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -4189,7 +4191,7 @@ PrefabInstance:
     - target: {fileID: 5126527961139664760, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.161304
+      value: 15.144988
       objectReference: {fileID: 0}
     - target: {fileID: 5522494657467114567, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
