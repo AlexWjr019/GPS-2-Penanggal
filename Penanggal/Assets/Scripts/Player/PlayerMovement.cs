@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed = 4.0f;
     public float SprintSpeed = 6.0f;
     public float SpeedChangeRate = 10.0f;
+    float SomeMaximumSpeedValue;
+    float NormalMaximumSpeedValue = 10.0f;
+    float SprintingMaximumSpeedValue = 15.0f;
 
     public float JumpHeight = 1.2f;
     public float Gravity = -15.0f;
@@ -88,22 +91,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundedCheck()
     {
-        Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _controller.bounds.extents.y - 0.1f, transform.position.z);
+        Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _controller.bounds.extents.y - 5f, transform.position.z);
 
         Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
     }
 
     private void Move(Vector2 moveDirection)
     {
-        if (AutoRun && IsRunning && stamina > 0)
+        if (IsRunning)
         {
             targetSpeed = SprintSpeed;
+            SomeMaximumSpeedValue = SprintingMaximumSpeedValue;
+        }
+        else
+        {
+            targetSpeed = MoveSpeed;
+            SomeMaximumSpeedValue = NormalMaximumSpeedValue;
         }
 
         float actualSpeed = Mathf.Lerp(_controller.velocity.magnitude, targetSpeed, SpeedChangeRate * Time.deltaTime);
+        actualSpeed = Mathf.Clamp(actualSpeed, 0, SomeMaximumSpeedValue);
+        Debug.Log("Actual Speed: " + actualSpeed + ", Target Speed: " + targetSpeed);
 
         Vector3 moveDirection3D = (transform.forward * moveDirection.y + transform.right * moveDirection.x).normalized;
-
         _controller.Move(moveDirection3D * actualSpeed * Time.deltaTime + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
     }
 
@@ -188,6 +198,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _jumpTimeoutDelta -= Time.deltaTime;
             }
+            Debug.Log("Vertical Velocity: " + _verticalVelocity + ", Grounded: " + Grounded);
         }
         else
         {
@@ -204,6 +215,7 @@ public class PlayerMovement : MonoBehaviour
             _verticalVelocity += Gravity * Time.deltaTime;
         }
     }
+
 
     private void CameraRotation()
     {
