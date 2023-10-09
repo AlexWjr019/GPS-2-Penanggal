@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private float _fallTimeoutDelta;
 
     private Vector2 rotation = Vector2.zero;
-    public float sensitivity = 2.0f;
+    //public float sensitivity = 2.0f;
     public RectTransform uiAreaRect;
 
     private Transform player;
