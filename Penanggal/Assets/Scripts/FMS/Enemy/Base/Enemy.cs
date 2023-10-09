@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
 
     [HideInInspector]
     public NavMeshAgent agent;
+    [HideInInspector]
+    public FieldOfView fov;
     public float lookTimer = 5f;
 
     #region State Machine Variables
@@ -28,6 +30,10 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     [HideInInspector]
     public int destPoint = 0;
     public float x, y, z;
+
+    #endregion
+
+    #region Patrol Variables
 
     #endregion
 
@@ -52,6 +58,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
         AttackState = new EnemyAttackState(this, StateMachine);
 
         agent = GetComponent<NavMeshAgent>();
+        fov = GetComponent<FieldOfView>();
     }
 
     private void Start()
@@ -62,13 +69,35 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     private void Update()
     {
         StateMachine.CurrentEnemyState.FrameUpdate();
-        fwd = transform.TransformDirection(Vector3.forward) * lookDistance;
-        Debug.DrawRay(transform.position, fwd, Color.green);
+        //fwd = transform.TransformDirection(Vector3.forward) * lookDistance;
+        //Debug.DrawRay(transform.position, fwd, Color.green);
     }
 
     private void FixedUpdate()
     {
         StateMachine.CurrentEnemyState.PhysicsUpdate();
+    }
+
+    public void Observing()
+    {
+        if (fov.canSeePlayer)
+        {
+            StateMachine.ChangeState(ChaseState);
+        }
+        else if (!fov.canSeePlayer)
+        {
+            StateMachine.ChangeState(IdleState);
+        }
+
+        //if (Physics.Raycast(enemy.transform.position, enemy.fwd, out RaycastHit hit, enemy.lookDistance, enemy.layerMask))
+        //{
+        //    if (hit.collider.name == "Player")
+        //    {
+        //        Debug.Log(hit.collider.gameObject.name + " was hit");
+        //        Debug.DrawRay(enemy.transform.position, enemy.fwd, Color.yellow);
+        //        enemy.StateMachine.ChangeState(enemy.ChaseState);
+        //    }
+        //}
     }
 
     //public IEnumerator LookArd()
@@ -79,7 +108,6 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     //    transform.localEulerAngles = new Vector3(transform.rotation.x - 20, 0, 0);
     //    yield return new WaitForSeconds(lookTimer / 2);
     //}
-
 
     #region Health / Die Functions
 

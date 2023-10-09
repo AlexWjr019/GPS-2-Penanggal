@@ -43,15 +43,7 @@ public class EnemyPatrolState : EnemyState
     {
         base.PhysicsUpdate();
 
-        if (Physics.Raycast(enemy.transform.position, enemy.fwd, out RaycastHit hit, enemy.lookDistance, enemy.layerMask))
-        {
-            if (hit.collider.name == "Player")
-            {
-                Debug.Log(hit.collider.gameObject.name + " was hit");
-                Debug.DrawRay(enemy.transform.position, enemy.fwd, Color.yellow);
-                enemy.StateMachine.ChangeState(enemy.ChaseState);
-            }
-        }
+        enemy.Observing();
     }
 
     private void GotoNextPoint()
@@ -65,4 +57,47 @@ public class EnemyPatrolState : EnemyState
 
         enemy.destPoint = (enemy.destPoint + 1) % enemy.points.Count;
     }
+
+    //private void FOVCheck()
+    //{
+    //    Collider[] rangeChecks = Physics.OverlapSphere(enemy.transform.position, enemy.radius, enemy.targetMask);
+
+    //    if (rangeChecks.Length != 0)
+    //    {
+    //        Transform target = rangeChecks[0].transform;
+    //        Vector3 directionToTarget = (target.position - enemy.transform.position).normalized;
+
+    //        if (Vector3.Angle(enemy.transform.forward, directionToTarget) < enemy.angle / 2)
+    //        {
+    //            float distanceToTarget = Vector3.Distance(enemy.transform.position, target.position);
+
+    //            if (!Physics.Raycast(enemy.transform.position, directionToTarget, distanceToTarget, enemy.obstructionMask))
+    //            {
+    //                enemy.canSeePlayer = true;
+    //            }
+    //            else
+    //            {
+    //                enemy.canSeePlayer = false;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            enemy.canSeePlayer = false;
+    //        }
+    //    }
+    //    else if (enemy.canSeePlayer)
+    //    {
+    //        enemy.canSeePlayer = false;
+    //    }
+    //}
+
+    //private IEnumerator FOVRoutine()
+    //{
+    //    Debug.Log("fov");
+    //    while (true)
+    //    {
+    //        yield return new WaitForSeconds(0.5f);
+    //        FOVCheck();
+    //    }
+    //}
 }

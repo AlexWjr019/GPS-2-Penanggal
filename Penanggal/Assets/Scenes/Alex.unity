@@ -972,6 +972,7 @@ GameObject:
   - component: {fileID: 1205829224}
   - component: {fileID: 1205829223}
   - component: {fileID: 1205829222}
+  - component: {fileID: 1205829230}
   m_Layer: 8
   m_Name: Penanggal
   m_TagString: Untagged
@@ -992,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  fov: {fileID: 0}
   lookTimer: 5
   points:
   - {fileID: 1891986939}
@@ -1013,7 +1015,7 @@ MonoBehaviour:
   x: 0
   y: 0.2
   z: 0
-  lookDistance: 8
+  lookDistance: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 255
@@ -1171,6 +1173,28 @@ Transform:
   - {fileID: 1450824495}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205829230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205829221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4f7175f9571414ab6baf4da6e8737f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 6
+  angle: 80
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 127
+  playerRef: {fileID: 345397209}
+  canSeePlayer: 0
 --- !u!1 &1259487290
 GameObject:
   m_ObjectHideFlags: 0

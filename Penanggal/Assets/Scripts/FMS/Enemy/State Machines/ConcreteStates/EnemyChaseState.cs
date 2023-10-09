@@ -7,7 +7,6 @@ public class EnemyChaseState : EnemyState
 {
     public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
-
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType triggerType)
@@ -39,5 +38,7 @@ public class EnemyChaseState : EnemyState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        enemy.Observing();
     }
 }
