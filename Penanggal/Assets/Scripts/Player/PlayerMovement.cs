@@ -4,20 +4,22 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSpeed = 4.0f;
+    public float MoveSpeed = 3.0f;
     public float SprintSpeed = 6.0f;
     public float SpeedChangeRate = 10.0f;
     float SomeMaximumSpeedValue;
     float NormalMaximumSpeedValue = 10.0f;
     float SprintingMaximumSpeedValue = 15.0f;
 
+    //
     public float JumpHeight = 1.2f;
     public float Gravity = -15.0f;
+    //
 
     public float JumpTimeout = 0.1f;
     public float FallTimeout = 0.15f;
 
-    private CharacterController _controller;
+    private CharacterController controller;
 
     public bool Grounded = true;
     public float GroundedRadius = 0.5f;
@@ -62,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        _controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         player = GetComponent<Transform>();
 
         stamina = MaxStamina;
@@ -71,11 +73,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        #region
         //Incase after poc need use back
         //if (AutoRun)
         //{
         //    moveDirection = Vector2.up;
         //}
+        #endregion
 
         Move(moveDirection);
         JumpAndGravity();
@@ -91,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundedCheck()
     {
-        Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _controller.bounds.extents.y - 5f, transform.position.z);
+        Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - controller.bounds.extents.y - 5f, transform.position.z);
 
         Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
     }
@@ -109,12 +113,12 @@ public class PlayerMovement : MonoBehaviour
             SomeMaximumSpeedValue = NormalMaximumSpeedValue;
         }
 
-        float actualSpeed = Mathf.Lerp(_controller.velocity.magnitude, targetSpeed, SpeedChangeRate * Time.deltaTime);
+        float actualSpeed = Mathf.Lerp(controller.velocity.magnitude, targetSpeed, SpeedChangeRate * Time.deltaTime);
         actualSpeed = Mathf.Clamp(actualSpeed, 0, SomeMaximumSpeedValue);
         Debug.Log("Actual Speed: " + actualSpeed + ", Target Speed: " + targetSpeed);
 
         Vector3 moveDirection3D = (transform.forward * moveDirection.y + transform.right * moveDirection.x).normalized;
-        _controller.Move(moveDirection3D * actualSpeed * Time.deltaTime + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+        controller.Move(moveDirection3D * actualSpeed * Time.deltaTime + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
     }
 
 
@@ -155,25 +159,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJoystickOutput(Vector2 output)
     {
+        #region
         //if (output.magnitude > 0.1f)
         //{
         //    AutoRun = false;
         //}
+        #endregion
 
         moveDirection = output;
 
         float joystickMagnitude = moveDirection.magnitude;
         IsRunning = joyStick.IsRunning && stamina > 1;
 
+        #region
         //if (IsRunning && joystickMagnitude >= 1f)
         //{
         //    AutoRun = true;
         //}
+        #endregion
 
         //if (!AutoRun)
         //{
-            targetSpeed = (joystickMagnitude >= 1f && IsRunning) ? SprintSpeed : MoveSpeed;
+        targetSpeed = (joystickMagnitude >= 1f && IsRunning) ? SprintSpeed : MoveSpeed;
         //}
+
     }
 
 
