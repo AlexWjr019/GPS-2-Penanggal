@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         //{
         //    moveDirection = Vector2.up;
         //}
-
+        KeyboardInput();
         Move(moveDirection);
         JumpAndGravity();
         GroundedCheck();
@@ -94,6 +94,31 @@ public class PlayerMovement : MonoBehaviour
         Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _controller.bounds.extents.y - 5f, transform.position.z);
 
         Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+    }
+    private void KeyboardInput()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveDirection = Vector2.up;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            moveDirection = Vector2.left;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            moveDirection = Vector2.down;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            moveDirection = Vector2.right;
+        }
+        else
+        {
+            moveDirection = Vector2.zero;
+        }
+
+        IsRunning = Input.GetKey(KeyCode.LeftShift) && stamina > 1;
     }
 
     private void Move(Vector2 moveDirection)
@@ -238,6 +263,17 @@ public class PlayerMovement : MonoBehaviour
 
                 transform.Rotate(Vector3.up * _rotationVelocity);
             }
+        }
+        if (Input.GetMouseButton(1))
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+
+            transform.Rotate(Vector3.up * mouseX * 7f);
+
+            float desiredPitch = _cinemachineTargetPitch - mouseY * 7f;
+            _cinemachineTargetPitch = Mathf.Clamp(desiredPitch, BottomClamp, TopClamp);
+            CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
         }
     }
 
