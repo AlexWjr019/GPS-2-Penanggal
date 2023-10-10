@@ -44,6 +44,7 @@ public class OpenDoor : MonoBehaviour
                             ToggleDoor();
                         }
                     }
+
                 }
             }
         }
@@ -62,6 +63,4 @@ public class OpenDoor : MonoBehaviour
             doorAnimations.Play("CloseDoor");
         }
     }
-
-
 }

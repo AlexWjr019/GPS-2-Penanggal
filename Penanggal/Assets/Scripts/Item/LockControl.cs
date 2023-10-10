@@ -6,52 +6,33 @@ using UnityEngine.UIElements;
 public class LockControl : MonoBehaviour
 {
     private int[] result, correctCombination;
-    public GameObject wheel;
-    public Animation safeOpen;
-    private Quaternion originalRotation; // Store the original rotation
-
     private void Start()
     {
-        result = new int[] { 0, 0, 0, 0 };
-        correctCombination = new int[] { 1, 2, 3, 4 };
+        result = new int[] { 5, 5, 5 };
+        correctCombination = new int[] { 1, 2, 3 };
         Safecode.Rotated += CheckResults;
-
-        // Store the original rotation when the script starts
-        originalRotation = transform.localRotation;
     }
 
     private void CheckResults(string wheelName, int number)
     {
         switch(wheelName)
         {
-            case "Lock1":
+            case "wheel1":
                 result[0] = number;
                 break;
 
-            case "Lock2":
+            case "wheel2":
                 result[1] = number;
                 break;
 
-            case "Lock3":
+            case "wheel3":
                 result[2] = number;
                 break;
-            case "Lock4":
-                result[3] = number;
-                break;
         }
-        Debug.Log("Current Combination: " + string.Join(", ", result));
-        if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3])
+        if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2])
         {
             Debug.Log("Opened!");
-            wheel.gameObject.SetActive(false);
-            safeOpen.Play();
         }
-    }
-
-    // Add a method to reset the wheel's rotation
-    public void ResetRotation()
-    {
-        transform.localRotation = originalRotation;
     }
 
     private void OnDestroy()

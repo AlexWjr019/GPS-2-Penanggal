@@ -161,7 +161,7 @@ public class Safecode : MonoBehaviour
     private void Start()
     {
         coroutineAllowed = true;
-        numberShown = 0;
+        numberShown = 5;
     }
 
     private void OnMouseDown()

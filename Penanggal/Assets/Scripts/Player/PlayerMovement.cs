@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Security.Authentication.ExtendedProtection;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -65,8 +64,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform CinemachineCameraTarget;
     public Collider2D RunZoneCollider2D;
 
-    public static bool isMove;
-
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -120,7 +117,6 @@ public class PlayerMovement : MonoBehaviour
 
         float actualSpeed = Mathf.Lerp(controller.velocity.magnitude, targetSpeed, SpeedChangeRate * Time.deltaTime);
         actualSpeed = Mathf.Clamp(actualSpeed, 0, SomeMaximumSpeedValue);
-
         //Debug.Log("Actual Speed: " + actualSpeed + ", Target Speed: " + targetSpeed);
 
         Vector3 moveDirection3D = (transform.forward * moveDirection.y + transform.right * moveDirection.x).normalized;
@@ -173,11 +169,6 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         moveDirection = output;
-
-        if(output!= null)
-        {
-            isMove = true;
-        }
 
         float joystickMagnitude = moveDirection.magnitude;
         IsRunning = joyStick.IsRunning && stamina > 1;

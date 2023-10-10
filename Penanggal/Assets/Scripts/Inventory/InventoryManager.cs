@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +11,6 @@ public class InventoryManager : MonoBehaviour
     //int selectedSlot = -1;
     public static InventoryManager Instance { get; private set; }
     public InventorySlot selectedSlot;
-
-    public event Action<string> OnItemSelected;
 
     private void Awake()
     {
@@ -59,7 +56,6 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot != null)
         {
             selectedSlot.Selected();
-            OnItemSelected?.Invoke(selectedSlot.GetCurrentItem().name);
         }
     }
 
