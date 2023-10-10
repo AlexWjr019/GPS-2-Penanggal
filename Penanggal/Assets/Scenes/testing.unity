@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031380178, g: 0.006177963, b: 0.014197959, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031295572, g: 0.006169281, b: 0.014192696, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4883,7 +4883,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 0bc290c69996fcd47a69469f6fb5b2a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1589366421}
   m_SourcePrefab: {fileID: 100100000, guid: 0bc290c69996fcd47a69469f6fb5b2a5, type: 3}
 --- !u!4 &646761230 stripped
 Transform:
@@ -11881,6 +11885,34 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7296449534950766761, guid: 395e2cd2063be094795df78a444e0c11, type: 3}
+--- !u!1 &1589366417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2550463727306718371, guid: 0bc290c69996fcd47a69469f6fb5b2a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 643152780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1589366421
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589366417}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -629719859055844128, guid: 0bc290c69996fcd47a69469f6fb5b2a5, type: 3}
 --- !u!1001 &1593131019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14402,6 +14434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978140556}
+  - component: {fileID: 1978140557}
   m_Layer: 0
   m_Name: HouseLayout_V5
   m_TagString: Untagged
@@ -14427,6 +14460,37 @@ Transform:
   - {fileID: 1215302013}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1978140557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978140555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: ec10ff5a214ed1349b172c3c26a19509, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1984833900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3356905140800689432, guid: 3e02c4b4371ec6741adf31d89f6084eb,
