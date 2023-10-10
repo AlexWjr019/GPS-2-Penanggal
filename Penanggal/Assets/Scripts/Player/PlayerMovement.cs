@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Security.Authentication.ExtendedProtection;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -64,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform CinemachineCameraTarget;
     public Collider2D RunZoneCollider2D;
 
+    public static bool isMove;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -117,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
         float actualSpeed = Mathf.Lerp(controller.velocity.magnitude, targetSpeed, SpeedChangeRate * Time.deltaTime);
         actualSpeed = Mathf.Clamp(actualSpeed, 0, SomeMaximumSpeedValue);
+
         //Debug.Log("Actual Speed: " + actualSpeed + ", Target Speed: " + targetSpeed);
 
         Vector3 moveDirection3D = (transform.forward * moveDirection.y + transform.right * moveDirection.x).normalized;
@@ -169,6 +173,11 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         moveDirection = output;
+
+        if (output != null)
+        {
+            isMove = true;
+        }
 
         float joystickMagnitude = moveDirection.magnitude;
         IsRunning = joyStick.IsRunning && stamina > 1;
@@ -230,28 +239,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void CameraRotation()
     {
-        for (int i = 0; i < Input.touchCount; i++)
+        if (Tutorial.cameraMoving)
         {
-            Touch touch = Input.GetTouch(i);
-
-            if (IsTouchInUIArea(touch.position))
+            for (int i = 0; i < Input.touchCount; i++)
             {
-                Debug.Log("Executing Camera Rotation");
+                Touch touch = Input.GetTouch(i);
 
-                if (touch.phase == TouchPhase.Moved)
+                if (IsTouchInUIArea(touch.position))
                 {
-                    Vector2 deltaPosition = touch.deltaPosition;
+                    Debug.Log("Executing Camera Rotation");
 
-                    float deltaTimeMultiplier = 1.0f;
+                    if (touch.phase == TouchPhase.Moved)
+                    {
+                        Vector2 deltaPosition = touch.deltaPosition;
 
-                    _cinemachineTargetPitch -= deltaPosition.y * RotationSpeed * deltaTimeMultiplier;
-                    _rotationVelocity = deltaPosition.x * RotationSpeed * deltaTimeMultiplier;
+                        float deltaTimeMultiplier = 1.0f;
 
-                    _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+                        _cinemachineTargetPitch -= deltaPosition.y * RotationSpeed * deltaTimeMultiplier;
+                        _rotationVelocity = deltaPosition.x * RotationSpeed * deltaTimeMultiplier;
 
-                    CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+                        _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-                    transform.Rotate(Vector3.up * _rotationVelocity);
+                        CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+
+                        transform.Rotate(Vector3.up * _rotationVelocity);
+                    }
                 }
             }
         }
@@ -280,4 +292,3 @@ public class PlayerMovement : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
 }
-
