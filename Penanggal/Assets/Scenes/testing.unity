@@ -1688,12 +1688,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0015807264, y: -0.29347172, z: -0.14392385}
     m_Extent: {x: 0.08503318, y: 0.27045116, z: 0.08104365}
   m_DirtyAABB: 0
---- !u!1 &262268916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1130725078037024, guid: 11aaea5348574644a9eb4f4504fcce3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1765993601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &262695065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 395e2cd2063be094795df78a444e0c11,
@@ -5491,7 +5485,7 @@ GameObject:
   - component: {fileID: 592144945}
   - component: {fileID: 592144947}
   - component: {fileID: 592144946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12785,7 +12779,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 127
-  playerRef: {fileID: 262268916}
+  playerRef: {fileID: 453084649766969908}
   canSeePlayer: 0
 --- !u!114 &1554440567
 MonoBehaviour:
@@ -12824,7 +12818,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 255
   fwd: {x: 0, y: 0, z: 0}
-  player: {fileID: 262268916}
+  player: {fileID: 453084649766969908}
 --- !u!114 &1554440568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15305,6 +15299,10 @@ PrefabInstance:
     - target: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4207293392497186, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19348,7 +19346,7 @@ GameObject:
   - component: {fileID: 4297520702588084412}
   - component: {fileID: 6159137442486291519}
   - component: {fileID: 4840992839759480347}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Collederrunning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19420,10 +19418,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4695904517321664885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 202.0265, y: -63.427505}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &281833233324834115
 MeshRenderer:
@@ -19487,7 +19485,7 @@ GameObject:
   - component: {fileID: 5996189657747004075}
   - component: {fileID: 7845551604856533661}
   - component: {fileID: 1390898825785148788}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Toolbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19567,7 +19565,7 @@ GameObject:
   - component: {fileID: 469341853550669471}
   - component: {fileID: 6440731554360639657}
   - component: {fileID: 6440731554360639656}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerCapsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -21397,7 +21395,7 @@ GameObject:
   - component: {fileID: 6116018313683616455}
   - component: {fileID: 8967929481139468361}
   - component: {fileID: 5323954189826568200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UI_EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21838,7 +21836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2862278904043679772}
   - component: {fileID: 2862278904043679773}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerFollowCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21882,7 +21880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2862278904623038936}
   - component: {fileID: 2862278904623038937}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22657,7 +22655,7 @@ GameObject:
   - component: {fileID: 1053840101700009772}
   - component: {fileID: 2518154503218961661}
   - component: {fileID: 3709575939717433885}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23428,7 +23426,7 @@ GameObject:
   - component: {fileID: 964049236395487021}
   - component: {fileID: 563592780679761614}
   - component: {fileID: 2004072457110589330}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: InventorySlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23550,7 +23548,7 @@ GameObject:
   - component: {fileID: 4253012992304772654}
   - component: {fileID: 4253012992304772655}
   - component: {fileID: 4253012992304772640}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23703,7 +23701,7 @@ GameObject:
   - component: {fileID: 2525447222706207727}
   - component: {fileID: 8480731878303324635}
   - component: {fileID: 3224965425474034155}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24554,7 +24552,7 @@ GameObject:
   - component: {fileID: 5030918878414903767}
   - component: {fileID: 5030918878414903761}
   - component: {fileID: 5030918878414903766}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image_Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24774,7 +24772,7 @@ GameObject:
   - component: {fileID: 5114589462709937963}
   - component: {fileID: 3167986369221574501}
   - component: {fileID: 559555319363975648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -24970,7 +24968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5242107655119379304}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerCameraRoot
   m_TagString: CinemachineTarget
   m_Icon: {fileID: 0}
@@ -25174,7 +25172,7 @@ GameObject:
   - component: {fileID: 1509358888907246576}
   - component: {fileID: 8141701333314333152}
   - component: {fileID: 6463304553231956599}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UI_Virtual_Joystick_Look
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25354,10 +25352,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4695904517321664885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.026505, y: -63.427505}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5528649098013576599
 MeshRenderer:
@@ -26604,7 +26602,7 @@ GameObject:
   - component: {fileID: 6463304552412970873}
   - component: {fileID: 6463304552412970823}
   - component: {fileID: 6463304552412970822}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26955,7 +26953,7 @@ GameObject:
   - component: {fileID: 770405903836167993}
   - component: {fileID: 7597537656226651514}
   - component: {fileID: 6739077678383093403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CameraImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27468,13 +27466,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6556307556655203676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7133572970174884010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27634,7 +27632,7 @@ GameObject:
   - component: {fileID: 7133572970174884010}
   - component: {fileID: 3357699325964775212}
   - component: {fileID: 4640920324280934885}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UI_Canvas_StarterAssetsInputs_Joysticks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27957,7 +27955,7 @@ GameObject:
   - component: {fileID: 7617534450877568760}
   - component: {fileID: 7617534450877568710}
   - component: {fileID: 7617534450877568711}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27995,7 +27993,7 @@ GameObject:
   - component: {fileID: 11150631846291704}
   - component: {fileID: 7190055429234052178}
   - component: {fileID: 1387946684250735186}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: InventorySlot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29141,7 +29139,7 @@ GameObject:
   - component: {fileID: 8490908275286274134}
   - component: {fileID: 8490908275286274128}
   - component: {fileID: 8490908275286274135}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image_Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29530,7 +29528,7 @@ GameObject:
   - component: {fileID: 2663597634996134513}
   - component: {fileID: 4681927492236247137}
   - component: {fileID: 7617534450123461622}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UI_Virtual_Joystick_Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
