@@ -35,6 +35,18 @@ public class OpenDoor : MonoBehaviour
                                 selectedSlot.ClearSlot();
                             }
                         }
+                        else
+                        {
+                            ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                            if (itemNotice != null)
+                            {
+                                itemNotice.ShowDoorNotice();
+                            }
+                            else
+                            {
+                                Debug.LogError("ItemNotice not found!");
+                            }
+                        }
                     }
 
                     if (sealDoor)
@@ -54,12 +66,12 @@ public class OpenDoor : MonoBehaviour
         if (!doorIsOpen)
         {
             doorIsOpen = true;
-            doorAnimations.Play("OpenDoor");
+            doorAnimations.Play("OpenBedroomDoor");
         }
         else if (doorIsOpen)
         {
             doorIsOpen = false;
-            doorAnimations.Play("CloseDoor");
+            doorAnimations.Play("CloseBedroomDoor");
         }
     }
 

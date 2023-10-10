@@ -12,7 +12,7 @@ public class OpenSafeCode : MonoBehaviour
     private void OnMouseDown()
     {
         // Check if the canvas exists and is not active
-        if (safeCodeWheel && !safeCodeWheel.activeSelf /*&&*/
+        if (safeCodeWheel && !safeCodeWheel.activeSelf  && !LockControl.safeIsOpen/*&&*/
             /*safeCodeScript != null*/ /*&& safeCodeScript.UiText.text != "Successful"*/)
         {
             // Activate the canvas
@@ -28,7 +28,7 @@ public class OpenSafeCode : MonoBehaviour
     public void OnPointerClick(PointerEventData eventData)
     {
         // Check if the canvas exists, is not active, and Safecode's UiText is not "Successful"
-        if (safeCodeWheel && !safeCodeWheel.activeSelf /*&&*/
+        if (safeCodeWheel && !safeCodeWheel.activeSelf && !LockControl.safeIsOpen/*&&*/
             /*safeCodeScript != null*/ /*&& safeCodeScript.UiText.text != "Successful"*/)
         {
             // Activate the canvas

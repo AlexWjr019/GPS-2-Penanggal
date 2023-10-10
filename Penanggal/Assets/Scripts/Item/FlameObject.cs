@@ -15,7 +15,15 @@ public class FlameObject : MonoBehaviour
     public Seal seal;
     public string requiredItemName;
     private float raycastDistance = 3f;
-    public GameObject cursepaper;
+    private List<GameObject> cursepapers = new List<GameObject>();
+    private int currentCursePaperIndex = 0;
+
+    private void Start()
+    {
+        // Find all curse paper objects with the "CursePaper" tag and add them to the list.
+        GameObject[] cursePaperObjects = GameObject.FindGameObjectsWithTag("CursePaper");
+        cursepapers.AddRange(cursePaperObjects);
+    }
 
     private void Update()
     {
@@ -62,8 +70,18 @@ public class FlameObject : MonoBehaviour
                         // Check if the clicked GameObject is the cursePaper
                         else if (clickedObject.CompareTag("CursePaper"))
                         {
-                            Destroy(cursepaper);
-                            //isCursePaperClicked = true; // Mark that cursePaper has been clicked
+                            // Iterate through the list of curse papers
+                            for (int i = 0; i < cursepapers.Count; i++)
+                            {
+                                // Check if the clicked object matches the current curse paper
+                                if (cursepapers[i] == clickedObject)
+                                {
+                                    // Destroy the matching curse paper
+                                    Destroy(cursepapers[i]);
+                                    cursepapers.RemoveAt(i); // Remove it from the list
+                                    break; // Exit the loop
+                                }
+                            }
                         }
 
                     }

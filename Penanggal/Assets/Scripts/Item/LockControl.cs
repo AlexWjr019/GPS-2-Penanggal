@@ -10,10 +10,12 @@ public class LockControl : MonoBehaviour
     public Animation safeOpen;
     private Quaternion originalRotation; // Store the original rotation
 
+    public static bool safeIsOpen;
+
     private void Start()
     {
         result = new int[] { 0, 0, 0, 0 };
-        correctCombination = new int[] { 1, 2, 3, 4 };
+        correctCombination = new int[] { 0, 9, 1, 6 };
         Safecode.Rotated += CheckResults;
 
         // Store the original rotation when the script starts
@@ -45,6 +47,7 @@ public class LockControl : MonoBehaviour
             Debug.Log("Opened!");
             wheel.gameObject.SetActive(false);
             safeOpen.Play();
+            safeIsOpen = true;
         }
     }
 

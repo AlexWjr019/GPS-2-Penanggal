@@ -8,8 +8,10 @@ public class ItemNotice : MonoBehaviour
 {
     public TMP_Text lighterNoticeText;
     public TMP_Text burnNoticeText;
+    public TMP_Text doorNoticeText;
     public string lighterMessage = "Maybe this can be useful for something";
     public string burnMessage = "I need something to burn this";
+    public string doorMessage = "I need somting to open this door";
     public float noticeDisplayTime = 3f;
 
     // Start is called before the first frame update
@@ -18,6 +20,7 @@ public class ItemNotice : MonoBehaviour
         InventoryManager.Instance.OnItemSelected += ShowLighterNotice;
         lighterNoticeText.gameObject.SetActive(false);
         burnNoticeText.gameObject.SetActive(false);
+        doorNoticeText.gameObject.SetActive(false);
     }
 
     public void ShowLighterNotice(string itemName)
@@ -36,6 +39,14 @@ public class ItemNotice : MonoBehaviour
         StartCoroutine(HideMessage());
     }
 
+    public void ShowDoorNotice()
+    {
+        doorNoticeText.text = doorMessage;
+        doorNoticeText.gameObject.SetActive(true);
+
+        StartCoroutine(HideMessage());
+    }
+
     IEnumerator HideMessage()
     {
         yield return new WaitForSeconds(noticeDisplayTime);
@@ -49,6 +60,11 @@ public class ItemNotice : MonoBehaviour
         {
             burnNoticeText.text = "";
             burnNoticeText.gameObject.SetActive(false);
+        }
+        if (doorNoticeText.gameObject.activeSelf)
+        {
+            doorNoticeText.text = "";
+            doorNoticeText.gameObject.SetActive(false);
         }
     }
 }

@@ -39,7 +39,7 @@ public class Tutorial : MonoBehaviour
         }
 
         // Check if the player's camera rotation changes
-        if (player.transform.rotation != Quaternion.Euler(0f, 90f, 0f))
+        if (player.transform.rotation != Quaternion.Euler(0f, 0f, 0f))
         {
             cameraMovementDetected = true;
         }
