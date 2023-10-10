@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rotation = Vector2.zero;
     //public float sensitivity = 2.0f;
     public RectTransform uiAreaRect;
+    private Vector2 touchDeltaPosition;
+    private bool isTouchActive;
 
     private Transform player;
     public UIVirtualJoystick joyStick;
@@ -115,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
         float actualSpeed = Mathf.Lerp(controller.velocity.magnitude, targetSpeed, SpeedChangeRate * Time.deltaTime);
         actualSpeed = Mathf.Clamp(actualSpeed, 0, SomeMaximumSpeedValue);
-        Debug.Log("Actual Speed: " + actualSpeed + ", Target Speed: " + targetSpeed);
+        //Debug.Log("Actual Speed: " + actualSpeed + ", Target Speed: " + targetSpeed);
 
         Vector3 moveDirection3D = (transform.forward * moveDirection.y + transform.right * moveDirection.x).normalized;
         controller.Move(moveDirection3D * actualSpeed * Time.deltaTime + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
@@ -228,27 +230,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void CameraRotation()
     {
-        if (Input.touchCount > 0)
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            Touch touch = Input.GetTouch(0);
+            Touch touch = Input.GetTouch(i);
 
-            if (touch.phase == TouchPhase.Moved && IsTouchInUIArea(touch.position))
+            if (IsTouchInUIArea(touch.position))
             {
-                Vector2 deltaPosition = touch.deltaPosition;
+                Debug.Log("Executing Camera Rotation");
 
-                float deltaTimeMultiplier = 1.0f;
+                if (touch.phase == TouchPhase.Moved)
+                {
+                    Vector2 deltaPosition = touch.deltaPosition;
 
-                _cinemachineTargetPitch -= deltaPosition.y * RotationSpeed * deltaTimeMultiplier;
-                _rotationVelocity = deltaPosition.x * RotationSpeed * deltaTimeMultiplier;
+                    float deltaTimeMultiplier = 1.0f;
 
-                _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+                    _cinemachineTargetPitch -= deltaPosition.y * RotationSpeed * deltaTimeMultiplier;
+                    _rotationVelocity = deltaPosition.x * RotationSpeed * deltaTimeMultiplier;
 
-                CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+                    _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-                transform.Rotate(Vector3.up * _rotationVelocity);
+                    CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+
+                    transform.Rotate(Vector3.up * _rotationVelocity);
+                }
             }
         }
     }
+
 
     private bool IsTouchInUIArea(Vector2 touchPosition)
     {
