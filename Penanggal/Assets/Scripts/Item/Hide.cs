@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    public bool isHide;
+    public static bool isHide;
 
     public GameObject hideCamera;
     public GameObject player;
+    public GameObject playerCapsule;
     public LayerMask interactableLayer;
     private GameObject currentInteractable;
     private float raycastDistance = 3f;
+    public GameObject pointToCupBoard;
+
+    public Animation cupBoardDoorAnima, cupboardDoorAnima2;
+
 
     private void Start()
     {
@@ -26,7 +31,7 @@ public class Hide : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                if(isHide == false)
+                if (isHide == false)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(touch.position);
                     RaycastHit hit;
@@ -37,9 +42,19 @@ public class Hide : MonoBehaviour
                         if (currentInteractable.CompareTag("Hide"))
                         {
                             // Disable Player Camera
-                            hideCamera.SetActive(true);
                             player.SetActive(false);
                             isHide = true;
+
+                            Tutorial tutorial = FindObjectOfType<Tutorial>();
+                            tutorial.hideCupboardText.gameObject.SetActive(false);
+                            Destroy(pointToCupBoard);
+
+                            if (currentInteractable.gameObject.name == "Livingroom_Cupboard")
+                            {
+                                hideCamera.SetActive(true);
+                                cupBoardDoorAnima.Play("CloseCupboardDoor");
+                                cupboardDoorAnima2.Play("CloseCupboardDoor2");
+                            }
                         }
                     }
                 }
@@ -53,17 +68,22 @@ public class Hide : MonoBehaviour
 
                         if (currentInteractable.CompareTag("Hide"))
                         {
-                            // Disable Player Camera
-                            hideCamera.SetActive(false);
+                            //Player Camera
                             player.SetActive(true);
                             isHide = false;
+                            if (currentInteractable.gameObject.name == "Livingroom_Cupboard")
+                            {
+                                hideCamera.SetActive(false);
+                                cupBoardDoorAnima.Play("OpenCupboardDoor");
+                                cupboardDoorAnima2.Play("OpenCupboardDoor2");
+                            }
+
+                            playerCapsule.transform.rotation = Quaternion.Euler(transform.rotation.x, -180f, transform.rotation.z);
                         }
                     }
                 }
             }
         }
     }
-
-
 
 }

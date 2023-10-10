@@ -152,7 +152,7 @@ public class Safecode : MonoBehaviour
     //    UiText.color = resetColor;
     //}
 
-    public static event Action<string, int> Rotated = delegate {  };
+    public static event Action<string, int> Rotated = delegate { };
 
     private bool coroutineAllowed;
 
@@ -161,7 +161,7 @@ public class Safecode : MonoBehaviour
     private void Start()
     {
         coroutineAllowed = true;
-        numberShown = 5;
+        numberShown = 0;
     }
 
     private void OnMouseDown()
@@ -172,7 +172,7 @@ public class Safecode : MonoBehaviour
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData) 
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (coroutineAllowed)
         {
@@ -194,7 +194,7 @@ public class Safecode : MonoBehaviour
 
         numberShown += 1;
 
-        if(numberShown > 9)
+        if (numberShown > 9)
         {
             numberShown = 0;
         }
