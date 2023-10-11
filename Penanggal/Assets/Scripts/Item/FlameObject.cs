@@ -18,10 +18,12 @@ public class FlameObject : MonoBehaviour
     private List<GameObject> cursepapers = new List<GameObject>();
     private int currentCursePaperIndex = 0;
 
+    public GameObject[] cursePaperObjects;
+
     private void Start()
     {
         // Find all curse paper objects with the "CursePaper" tag and add them to the list.
-        GameObject[] cursePaperObjects = GameObject.FindGameObjectsWithTag("CursePaper");
+        /*GameObject[]*/ cursePaperObjects = GameObject.FindGameObjectsWithTag("CursePaper");
         cursepapers.AddRange(cursePaperObjects);
     }
 
