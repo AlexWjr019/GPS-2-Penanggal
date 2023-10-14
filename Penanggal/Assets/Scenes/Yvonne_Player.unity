@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -260,6 +261,21 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575e1d6a005b9aa47b9d8c1c504206af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1252295779}
+  player: {fileID: 1252295778}
+  mouseSensitivity: 1250
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,12 +723,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 330585546}
-  characterController: {fileID: 1252295780}
+  controller: {fileID: 1252295780}
   groundCheck: {fileID: 1224293638}
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
-  cameraSensitivity: 20
+  cameraSensitivity: 25
   moveSpeed: 5
   moveInputDeadZone: 15
   keyboard: 0

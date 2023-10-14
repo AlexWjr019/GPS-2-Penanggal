@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class YFirstPersonController : MonoBehaviour
+public class FirstPersonController : MonoBehaviour
 {
     #region References
     public Transform cameraTransform;
-    public CharacterController characterController;
+    public CharacterController controller;
     public Transform groundCheck;
     public LayerMask groundLayers;
     #endregion
@@ -49,7 +49,6 @@ public class YFirstPersonController : MonoBehaviour
         leftFingerId = -1;
         rightFingerId = -1;
 
-        // only calculate once
         halfScreenWidth = Screen.width / 2;
 
         // calculate the movement input dead zone
@@ -64,8 +63,9 @@ public class YFirstPersonController : MonoBehaviour
         }
         else
         {
-            //keyboard controls;
+            GetKeyboardInput();
         }
+            
         Gravity();
 
         if(rightFingerId != -1)
@@ -171,12 +171,17 @@ public class YFirstPersonController : MonoBehaviour
         Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
 
         // move relatively to the local transform's direction
-        characterController.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
+        controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
     }
 
     void GetKeyboardInput()
     {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * moveSpeed * Time.deltaTime);
     }
 
     void Gravity()
@@ -193,6 +198,10 @@ public class YFirstPersonController : MonoBehaviour
 
         // apply y (vertical) movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
-        characterController.Move(verticalMovement * Time.deltaTime);
+        controller.Move(verticalMovement * Time.deltaTime);
     }
 }
+
+//need to fix lookaround distance / clamp
+//need to fix speed of cameramovement for lookaround in one of the axis
+//need to add sprint to joystick
