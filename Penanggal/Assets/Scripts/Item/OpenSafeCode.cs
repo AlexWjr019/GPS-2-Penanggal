@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 
 public class OpenSafeCode : MonoBehaviour
 {
-    public GameObject safeCodeWheel;
+    public GameObject safeCodeWheel /*oriSafeCodeWheel*/;
+    public GameObject ObjectCamera;
     //public Safecode safeCodeScript;
 
     //For Mouse Testing
@@ -16,7 +17,9 @@ public class OpenSafeCode : MonoBehaviour
             /*safeCodeScript != null*/ /*&& safeCodeScript.UiText.text != "Successful"*/)
         {
             // Activate the canvas
+            //oriSafeCodeWheel.SetActive(false);
             safeCodeWheel.SetActive(true);
+            ObjectCamera.SetActive(true);
         }
         //if (safeCodeScript == null)
         //{

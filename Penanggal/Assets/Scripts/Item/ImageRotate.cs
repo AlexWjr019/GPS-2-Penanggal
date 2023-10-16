@@ -41,7 +41,7 @@ public class ImageRotate : MonoBehaviour
 
     public void ResetImageRotation()
     {
-        transform.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
     }
 
 }
