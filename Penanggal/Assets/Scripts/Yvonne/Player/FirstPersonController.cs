@@ -226,7 +226,6 @@ public class FirstPersonController : MonoBehaviour
         if(item != null)
         {
             inventory.AddItem(item);
-            Debug.Log("added item");
         }
     }
 }
