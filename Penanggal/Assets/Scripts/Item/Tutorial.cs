@@ -61,7 +61,8 @@ public class Tutorial : MonoBehaviour
         // Resume the game when filling is complete
         if (fillingComplete)
         {
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
+            return;
         }
     }
 
@@ -93,7 +94,7 @@ public class Tutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(fillSpeed);
         // Pause the game
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         cameratext.gameObject.SetActive(true);
         fillImage.gameObject.SetActive(true);
 

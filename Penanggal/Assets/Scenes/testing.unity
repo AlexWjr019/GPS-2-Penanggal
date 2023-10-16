@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031298026, g: 0.0061676716, b: 0.014187591, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031300068, g: 0.0061693606, b: 0.014191998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27585,7 +27585,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7400677499096393878}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: PauseGame
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29135,7 +29135,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7400677499096393878}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: PauseGame
+        m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31020,8 +31020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e53fcc957b670e469c3813fd761fe2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 1536047615}
   controller: {fileID: 2064650876}
+  cameraTransform: {fileID: 1536047615}
   groundCheck: {fileID: 534944556}
   groundLayers:
     serializedVersion: 2
@@ -31030,6 +31030,9 @@ MonoBehaviour:
   moveSpeed: 5
   moveInputDeadZone: 15
   keyboard: 1
+  maxClamp: 0
+  minClamp: 0
+  verticalCameraSensitivity: 0
   groundedGravity: 10
   airborneGravity: 10
 --- !u!143 &2064650876
@@ -40053,6 +40056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c9292ee529001468fbd6a67bc6a31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Button: {fileID: 0}
 --- !u!1 &7405408760377568920
 GameObject:
   m_ObjectHideFlags: 0

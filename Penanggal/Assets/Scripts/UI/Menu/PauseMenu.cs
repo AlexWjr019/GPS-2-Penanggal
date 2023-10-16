@@ -1,26 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public Button Button;
 
     //public GameObject PauseMenuUI;
 
-    public void PauseGame()
+    void Start()
     {
-        if(GameIsPaused)
-        {
-            Resume();
-        }
-        else
-        {
-            Pause();
-        }
+        Button.onClick.AddListener(Pause);
     }
+    //public void PauseGame()
+    //{
+    //    if(GameIsPaused)
+    //    {
+    //        Resume();
+    //    }
+    //    else
+    //    {
+    //        Pause();
+    //    }
+    //}
 
-    void Resume()
+    public void Resume()
     {
         //PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -29,7 +35,7 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(GameIsPaused);
     }
 
-    void Pause()
+    public void Pause()
     {
         //PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
