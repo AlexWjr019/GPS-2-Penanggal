@@ -8,11 +8,11 @@ public class FirstPersonController : MonoBehaviour
     public Transform cameraTransform;
     public Transform groundCheck;
     public LayerMask groundLayers;
+    public Inventory inventory;
     #endregion
 
-    #region Player Settings
-    [Header("Player Settings")]
-    public float cameraSensitivity;
+    #region Player and Controller Settings
+    [Header("Player and Controller Settings")]
     public float moveSpeed;
     public float moveInputDeadZone;
     public bool keyboard = false;
@@ -25,9 +25,11 @@ public class FirstPersonController : MonoBehaviour
 
     #region Camera Control
     [Header("Camera Control")]
+    [Range(0f, 50f)]
+    public float cameraSensitivity;
+    public float verticalCameraSensitivity;
     public float maxClamp;
     public float minClamp;
-    public float verticalCameraSensitivity;
     Vector2 lookInput;
     float cameraPitch;
     #endregion
@@ -48,8 +50,10 @@ public class FirstPersonController : MonoBehaviour
     private bool grounded;
     #endregion
 
+    #region Player Audio
     const float timeBetweenFootsteps = 0.8f;
     float lastPlayedFootstepSoundTime = -timeBetweenFootsteps;
+    #endregion
 
     void Start()
     {
@@ -68,7 +72,7 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            //GetKeyboardInput();
+            GetKeyboardInput();
         }
 
         Gravity();
@@ -117,12 +121,12 @@ public class FirstPersonController : MonoBehaviour
 
                         // set the start position for the movement control finger
                         moveTouchStartPosition = t.position;
-                        Debug.Log("Tracking left finger");
+                        //Debug.Log("Tracking left finger");
                     }
                     else if (t.position.x > halfScreenWidth && rightFingerId == -1)
                     {
                         rightFingerId = t.fingerId;
-                        Debug.Log("Tracking right finger");
+                        //Debug.Log("Tracking right finger");
                     }
                     break;
 
@@ -133,13 +137,13 @@ public class FirstPersonController : MonoBehaviour
                     {
                         // stop tracking the left finger
                         leftFingerId = -1;
-                        Debug.Log("Stopped tracking left finger");
+                        //Debug.Log("Stopped tracking left finger");
                     }
                     else if (t.fingerId == rightFingerId)
                     {
                         // stop tracking the right finger
                         rightFingerId = -1;
-                        Debug.Log("Stopped tracking right finger");
+                        //Debug.Log("Stopped tracking right finger");
                     }
                     break;
 
@@ -189,7 +193,7 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
     }
 
-    /*void GetKeyboardInput()
+    void GetKeyboardInput()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -197,7 +201,7 @@ public class FirstPersonController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * moveSpeed * Time.deltaTime);
-    }*/
+    }
 
     void Gravity()
     {
@@ -214,6 +218,15 @@ public class FirstPersonController : MonoBehaviour
         // apply y (vertical) movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
         controller.Move(verticalMovement * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        ItemInventory item = hit.collider.GetComponent<ItemInventory>();
+        if(item != null)
+        {
+            inventory.AddItem(item);
+        }
     }
 }
 
