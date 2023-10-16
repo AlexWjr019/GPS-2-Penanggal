@@ -87,6 +87,5 @@ public class AudioManager : MonoBehaviour
     }
 
     //plug this into where you want the audio to play
-    //FindObjectOfType<AudioManager>().PlayMusic("BGM");
-    //FindObjectOfType<AudioManager>().PlaySFX("SFX");
+    //FindObjectOfType<AudioManager>().Play("BGM");
 }

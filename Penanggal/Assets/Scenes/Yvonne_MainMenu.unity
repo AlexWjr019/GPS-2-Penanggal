@@ -2115,13 +2115,25 @@ MonoBehaviour:
   sfxMixer: {fileID: 1216934517190648752, guid: 2cb9845defaf0c247a5de00fe898e04a, type: 2}
   music:
   - name: BGM
-    clip: {fileID: 8300000, guid: 5afbee1b8942e314b943f3769f09f2a9, type: 3}
+    clip: {fileID: 8300000, guid: 8f8796195cd2dbe43b48b226319fe271, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM2
+    clip: {fileID: 0}
     volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
   sfx:
   - name: Lullaby
+    clip: {fileID: 8300000, guid: 9c0de8139f3838944a32452218776d72, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Walking
     clip: {fileID: 0}
     volume: 0.5
     pitch: 1

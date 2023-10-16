@@ -3,15 +3,13 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
     #region References
-    [Header("References")]
-    public CharacterController controller;
     public Transform cameraTransform;
+    public CharacterController controller;
     public Transform groundCheck;
     public LayerMask groundLayers;
     #endregion
 
     #region Player Settings
-    [Header("Player Settings")]
     public float cameraSensitivity;
     public float moveSpeed;
     public float moveInputDeadZone;
@@ -24,12 +22,9 @@ public class FirstPersonController : MonoBehaviour
     #endregion
 
     #region Camera Control
-    [Header("Camera Control")]
-    public float maxClamp;
-    public float minClamp;
-    public float verticalCameraSensitivity;
     Vector2 lookInput;
     float cameraPitch;
+
     #endregion
 
     #region Player Movement
@@ -48,15 +43,15 @@ public class FirstPersonController : MonoBehaviour
     private bool grounded;
     #endregion
 
-    const float timeBetweenFootsteps = 0.8f;
-    float lastPlayedFootstepSoundTime = -timeBetweenFootsteps;
-
     void Start()
     {
+        // id = -1 means the finger is not being tracked
         leftFingerId = -1;
         rightFingerId = -1;
+
         halfScreenWidth = Screen.width / 2;
 
+        // calculate the movement input dead zone
         moveInputDeadZone = Mathf.Pow(Screen.height / moveInputDeadZone, 2);
     }
 
@@ -68,9 +63,9 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            //GetKeyboardInput();
+            GetKeyboardInput();
         }
-
+            
         Gravity();
 
         if(rightFingerId != -1)
@@ -82,16 +77,6 @@ public class FirstPersonController : MonoBehaviour
         {
             Move();
         }
-
-        if (moveInput.x != 0.0f && leftFingerId != -1)
-        {
-            if (Time.timeSinceLevelLoad - lastPlayedFootstepSoundTime > timeBetweenFootsteps)
-            {
-                FindObjectOfType<AudioManager>().PlaySFX("Footsteps");
-                lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
-            }
-        }
-
     }
 
     void FixedUpdate()
@@ -170,7 +155,7 @@ public class FirstPersonController : MonoBehaviour
     void LookAround()
     {
         // vertical (pitch) rotation
-        cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y * verticalCameraSensitivity, minClamp, maxClamp);
+        cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y, -90f, 90f);
         cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
 
         // horizontal (yaw) rotation
@@ -181,7 +166,7 @@ public class FirstPersonController : MonoBehaviour
     {
         // don't move if the touch delta is shorter than the designated dead zone
         if (moveInput.sqrMagnitude <= moveInputDeadZone) return;
-        
+
         // multiply the normalized direction by the speed
         Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
 
@@ -189,7 +174,7 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
     }
 
-    /*void GetKeyboardInput()
+    void GetKeyboardInput()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -197,7 +182,7 @@ public class FirstPersonController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * moveSpeed * Time.deltaTime);
-    }*/
+    }
 
     void Gravity()
     {
@@ -217,6 +202,6 @@ public class FirstPersonController : MonoBehaviour
     }
 }
 
-
+//need to fix lookaround distance / clamp
+//need to fix speed of cameramovement for lookaround in one of the axis
 //need to add sprint to joystick
-//stamina bar
