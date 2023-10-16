@@ -1,21 +1,23 @@
 using System;
 using UnityEngine;
 
-public interface ItemInventory
+public interface IItems
 {
     string Name { get; }
 
     Sprite Image { get; }
 
     void OnPickup();
+
+    void OnDrop();
 }
 
 public class InventoryEventArgs : EventArgs
 {
-    public InventoryEventArgs(ItemInventory item)
+    public InventoryEventArgs(IItems item)
     {
         Item = item;
     }
 
-    public ItemInventory Item;
+    public IItems Item;
 }

@@ -222,10 +222,11 @@ public class FirstPersonController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        ItemInventory item = hit.collider.GetComponent<ItemInventory>();
+        IItems item = hit.collider.GetComponent<IItems>();
         if(item != null)
         {
             inventory.AddItem(item);
+            Debug.Log("added item");
         }
     }
 }
