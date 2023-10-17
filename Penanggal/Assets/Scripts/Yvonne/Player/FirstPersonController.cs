@@ -63,7 +63,6 @@ public class FirstPersonController : MonoBehaviour
 
         moveInputDeadZone = Mathf.Pow(Screen.height / moveInputDeadZone, 2);
     }
-
     void Update()
     {
         if(!keyboard)
@@ -97,12 +96,10 @@ public class FirstPersonController : MonoBehaviour
         }
 
     }
-
     void FixedUpdate()
     {
         grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
     }
-
     void GetTouchInput()
     {
         // iterate through all the detected touches
@@ -180,7 +177,6 @@ public class FirstPersonController : MonoBehaviour
         // horizontal (yaw) rotation
         transform.Rotate(transform.up, lookInput.x);
     }
-
     void Move()
     {
         // don't move if the touch delta is shorter than the designated dead zone
@@ -192,7 +188,6 @@ public class FirstPersonController : MonoBehaviour
         // move relatively to the local transform's direction
         controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
     }
-
     void GetKeyboardInput()
     {
         float x = Input.GetAxis("Horizontal");
@@ -202,7 +197,6 @@ public class FirstPersonController : MonoBehaviour
 
         controller.Move(move * moveSpeed * Time.deltaTime);
     }
-
     void Gravity()
     {
         // calculate y (vertical) movement
@@ -230,6 +224,6 @@ public class FirstPersonController : MonoBehaviour
     }
 }
 
-
+//it will move forward/backwards after you've already walked when u tap tap - i think needs to reset position when u let go of your finger
 //need to add sprint to joystick
 //stamina bar
