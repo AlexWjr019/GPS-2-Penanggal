@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour
         {
             // border ... image
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-            Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
+            Image image = imageTransform.GetComponent<Image>();
             ItemDrag itemDragHandler = imageTransform.GetComponent<ItemDrag>();
 
             // we found the empty slot

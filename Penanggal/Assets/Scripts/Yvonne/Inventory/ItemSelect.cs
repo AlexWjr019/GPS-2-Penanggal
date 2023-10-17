@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class ItemSelect : MonoBehaviour
 {
+    public Inventory _Inventory;
+
     public void OnItemSelected()
     {
-        ItemSelect itemSelect =
-        gameObject.transform.Find("ItemImage").GetComponent<ItemSelect>();
+        ItemDrag dragHandler =
+        gameObject.transform.Find("ItemImage").GetComponent<ItemDrag>();
 
-        //IItems item = itemSelect.Item;
+        IItems item = dragHandler.Item;
 
-        //Debug.Log(item.Name);
+        Debug.Log(item.Name);
 
-        //item.OnUse();
+        _Inventory.UseItem(item);
+
+        item.OnUse();
     }
 }

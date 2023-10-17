@@ -1,5 +1,26 @@
 using UnityEngine;
 
+public class Candle : ItemBase
+{
+    public override string Name
+    {
+        get
+        {
+            return "Candle";
+        }
+    }
+
+    public override void OnUse()
+    {
+        // TODO : do something with the object ...
+
+        base.OnUse();
+    }
+}
+
+
+/*using UnityEngine;
+
 public class Candle : MonoBehaviour, IItems
 {
     public string Name
@@ -21,12 +42,12 @@ public class Candle : MonoBehaviour, IItems
 
     }
 
-    public void OnPickup()
+    public virtual void OnPickup()
     {
         gameObject.SetActive(false);
     }
 
-    public void OnDrop()
+    public virtual void OnDrop()
     {
         RaycastHit hit = new RaycastHit();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -36,4 +57,10 @@ public class Candle : MonoBehaviour, IItems
             gameObject.transform.position = hit.point;
         }
     }
+
+    public virtual void OnUse()
+    {
+        throw new System.NotImplementedException();
+    }
 }
+*/

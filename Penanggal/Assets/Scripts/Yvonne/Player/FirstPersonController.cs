@@ -9,6 +9,7 @@ public class FirstPersonController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayers;
     public Inventory inventory;
+    private HeadBob headBob;
     #endregion
 
     #region Player and Controller Settings
@@ -62,7 +63,19 @@ public class FirstPersonController : MonoBehaviour
         halfScreenWidth = Screen.width / 2;
 
         moveInputDeadZone = Mathf.Pow(Screen.height / moveInputDeadZone, 2);
+
+        headBob = GetComponent<HeadBob>();
+
+        inventory.ItemUsed += Inventory_ItemUsed;
     }
+
+    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
+    {
+        IItems item = e.Item;
+
+        // do something with the item eg put it to the hand of the player
+    }
+
     void Update()
     {
         if(!keyboard)
@@ -94,7 +107,7 @@ public class FirstPersonController : MonoBehaviour
                 lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
             }
         }
-
+        Debug.Log(moveInput.sqrMagnitude);
     }
     void FixedUpdate()
     {
@@ -126,7 +139,7 @@ public class FirstPersonController : MonoBehaviour
                         //Debug.Log("Tracking right finger");
                     }
                     break;
-
+                     
                 case TouchPhase.Ended:
 
                 case TouchPhase.Canceled:
@@ -134,14 +147,13 @@ public class FirstPersonController : MonoBehaviour
                     {
                         // stop tracking the left finger
                         leftFingerId = -1;
-                        //Debug.Log("Stopped tracking left finger");
                     }
                     else if (t.fingerId == rightFingerId)
                     {
                         // stop tracking the right finger
                         rightFingerId = -1;
-                        //Debug.Log("Stopped tracking right finger");
                     }
+                    moveInput = Vector3.zero;
                     break;
 
                 case TouchPhase.Moved:
@@ -165,6 +177,14 @@ public class FirstPersonController : MonoBehaviour
                     }
                     break;
             }
+            if (moveInput.sqrMagnitude <= 0)
+            {
+                headBob.isWalking = false;
+            }
+            else
+            {
+                headBob.isWalking = true;
+            }
         }
     }
 
@@ -180,8 +200,11 @@ public class FirstPersonController : MonoBehaviour
     void Move()
     {
         // don't move if the touch delta is shorter than the designated dead zone
-        if (moveInput.sqrMagnitude <= moveInputDeadZone) return;
-        
+        if (moveInput.sqrMagnitude <= moveInputDeadZone)
+        {
+            return;
+        }
+
         // multiply the normalized direction by the speed
         Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
 
