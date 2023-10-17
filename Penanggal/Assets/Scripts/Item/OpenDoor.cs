@@ -38,7 +38,7 @@ public class OpenDoor : MonoBehaviour
                         else
                         {
                             ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                            if (itemNotice != null)
+                            if (itemNotice != null && hit.collider.gameObject.CompareTag("Door"))
                             {
                                 itemNotice.ShowDoorNotice();
                             }
