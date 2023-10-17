@@ -52,7 +52,7 @@ public class FirstPersonController : MonoBehaviour
     #endregion
 
     #region Player Audio
-    const float timeBetweenFootsteps = 0.8f;
+    const float timeBetweenFootsteps = 0.7f;
     float lastPlayedFootstepSoundTime = -timeBetweenFootsteps;
     #endregion
 
