@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class FirstPersonController : MonoBehaviour
     #region Player and Controller Settings
     [Header("Player and Controller Settings")]
     public float moveSpeed;
+    public float sprintSpeed = 10f;
+    public float initialMoveSpeed;
     public float moveInputDeadZone;
     public bool keyboard = false;
     #endregion
@@ -33,6 +36,16 @@ public class FirstPersonController : MonoBehaviour
     public float minClamp;
     Vector2 lookInput;
     float cameraPitch;
+    #endregion
+
+    #region Sprint and Stamina
+    public float sprintDuration = 4f;
+    private float sprintTimer = 0f;
+    public float staminaRecoveryDuration = 3f;
+    public float staminaRecoveryThreshold = 1f;
+    private bool isRecoveringStamina = false;
+    public Image leftBlackoutImage;
+    public Image rightBlackoutImage;
     #endregion
 
     #region Player Movement
@@ -61,6 +74,7 @@ public class FirstPersonController : MonoBehaviour
         leftFingerId = -1;
         rightFingerId = -1;
         halfScreenWidth = Screen.width / 2;
+        initialMoveSpeed = moveSpeed;
 
         moveInputDeadZone = Mathf.Pow(Screen.height / moveInputDeadZone, 2);
 
@@ -78,7 +92,8 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        if(!keyboard)
+        HandleSprintTimer();
+        if (!keyboard)
         {
             GetTouchInput();
         }
@@ -147,13 +162,14 @@ public class FirstPersonController : MonoBehaviour
                     {
                         // stop tracking the left finger
                         leftFingerId = -1;
+                        moveSpeed = initialMoveSpeed;
+                        moveInput = Vector3.zero;
                     }
                     else if (t.fingerId == rightFingerId)
                     {
                         // stop tracking the right finger
                         rightFingerId = -1;
                     }
-                    moveInput = Vector3.zero;
                     break;
 
                 case TouchPhase.Moved:
@@ -162,10 +178,19 @@ public class FirstPersonController : MonoBehaviour
                     {
                         lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
                     }
-                    else if(t.fingerId == leftFingerId)
+                    if(t.fingerId == leftFingerId)
                     {
                         // calculating the postion delta from the start position
                         moveInput = t.position - moveTouchStartPosition;
+
+                        if (moveInput.magnitude > 200f)
+                        {
+                            moveSpeed = sprintSpeed; 
+                        }
+                        else
+                        {
+                            moveSpeed = initialMoveSpeed;
+                        }
                     }
                     break;
 
@@ -244,6 +269,39 @@ public class FirstPersonController : MonoBehaviour
         {
             inventory.AddItem(item);
         }
+    }
+
+    public void HandleSprintTimer()
+    {
+        if (moveSpeed == sprintSpeed)
+        {
+            sprintTimer += Time.deltaTime;
+            if (sprintTimer >= sprintDuration && !isRecoveringStamina)
+            {
+                moveSpeed = initialMoveSpeed;
+                isRecoveringStamina = true;
+            }
+        }
+        if (isRecoveringStamina)
+        {
+            sprintTimer -= Time.deltaTime / staminaRecoveryDuration;
+            if (sprintTimer <= 0)
+            {
+                sprintTimer = 0;
+                isRecoveringStamina = false;
+            }
+            if (sprintTimer <= sprintDuration - staminaRecoveryThreshold)
+            {
+                if (moveInput.magnitude > 100f)
+                {
+                    moveSpeed = sprintSpeed;
+                }
+            }
+        }
+        float alpha = sprintTimer / sprintDuration;
+        Color fadeColor = new Color(0, 0, 0, alpha);
+        leftBlackoutImage.color = fadeColor;
+        rightBlackoutImage.color = fadeColor;
     }
 }
 

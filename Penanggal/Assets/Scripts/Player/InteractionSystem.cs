@@ -12,6 +12,7 @@ public class InteractionSystem : MonoBehaviour
     private GameObject currentInteractable;
     private Vector3 lastInteractedItemPosition;
     private float raycastDistance = 3f;
+    private float sphereRadius = 0.5f;
 
     private void Update()
     {
@@ -19,11 +20,11 @@ public class InteractionSystem : MonoBehaviour
         Vector3 cameraForward = Camera.main.transform.forward;
         Ray ray = new Ray(cameraPosition, cameraForward);
 
-        Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.blue, 1f);
+        //Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.blue, 1f);
 
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+        if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, interactableLayer))
         {
             GameObject hitObject = hit.collider.gameObject;
 
@@ -53,7 +54,7 @@ public class InteractionSystem : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+                if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, interactableLayer))
                 {
                     currentInteractable = hit.collider.gameObject;
                     InteractWithCurrentObject();
@@ -126,6 +127,20 @@ public class InteractionSystem : MonoBehaviour
         else
         {
             Debug.LogError("No slot is selected or slot is empty");
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+
+        Vector3 start = Camera.main.transform.position;
+        Vector3 end = start + Camera.main.transform.forward * raycastDistance;
+        Vector3 currentPos = start;
+
+        while (Vector3.Distance(currentPos, start) < raycastDistance)
+        {
+            Gizmos.DrawWireSphere(currentPos, sphereRadius);
+            currentPos += Camera.main.transform.forward * sphereRadius * 2;
         }
     }
 
