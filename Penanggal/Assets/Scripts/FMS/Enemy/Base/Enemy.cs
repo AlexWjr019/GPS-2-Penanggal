@@ -10,9 +10,10 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
 
     [HideInInspector]
     public NavMeshAgent agent;
-    [HideInInspector]
-    public FieldOfView fov;
-    public float lookTimer = 5f;
+    public FieldOfView fovFront, fovBack;
+    public float lookDelay = 5f;
+    [SerializeField]
+    private float changeStateDelay = 5f;
 
     #region State Machine Variables
 
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     public List<Transform> points = new List<Transform>();
     [HideInInspector]
     public int destPoint = 0;
-    public float x, y, z;
+    public float yRotation;
 
     #endregion
 
@@ -39,12 +40,6 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
 
     #region Chase Variables
 
-    [SerializeField]
-    public float lookDistance = 5;
-    [SerializeField]
-    public LayerMask layerMask;
-    [HideInInspector]
-    public Vector3 fwd;
     public GameObject player;
 
     #endregion
@@ -58,7 +53,6 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
         AttackState = new EnemyAttackState(this, StateMachine);
 
         agent = GetComponent<NavMeshAgent>();
-        fov = GetComponent<FieldOfView>();
     }
 
     private void Start()
@@ -80,34 +74,72 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
 
     public void Observing()
     {
-        if (fov.canSeePlayer)
+        if (fovFront.canSeePlayer)
         {
-            StateMachine.ChangeState(ChaseState);
+            if (StateMachine.CurrentEnemyState == ChaseState)
+            {
+                return;
+            }
+            else
+            {
+                Invoke("ChangeStateChase", 0.1f);
+            }
         }
-        else if (!fov.canSeePlayer)
+        else if (!fovFront.canSeePlayer)
         {
-            StateMachine.ChangeState(IdleState);
+            if (StateMachine.CurrentEnemyState == IdleState)
+            {
+                return;
+            }
+            else
+            {
+                Invoke("ChangeStateIdle", changeStateDelay);
+            }
         }
 
-        //if (Physics.Raycast(enemy.transform.position, enemy.fwd, out RaycastHit hit, enemy.lookDistance, enemy.layerMask))
-        //{
-        //    if (hit.collider.name == "Player")
-        //    {
-        //        Debug.Log(hit.collider.gameObject.name + " was hit");
-        //        Debug.DrawRay(enemy.transform.position, enemy.fwd, Color.yellow);
-        //        enemy.StateMachine.ChangeState(enemy.ChaseState);
-        //    }
-        //}
+        if (fovBack.canSeePlayer)
+        {
+            if (StateMachine.CurrentEnemyState == ChaseState)
+            {
+                return;
+            }
+            else
+            {
+                Invoke("ChangeStateChase", Random.Range(0.5f, 1f)); 
+            }
+        }
+        else if (!fovBack.canSeePlayer)
+        {
+            if (StateMachine.CurrentEnemyState == IdleState)
+            {
+                return;
+            }
+            else
+            {
+                Invoke("ChangeStateIdle", changeStateDelay);
+            }
+        }
     }
 
-    //public IEnumerator LookArd()
-    //{
-    //    transform.localEulerAngles = new Vector3(transform.rotation.x + 20, 0, 0);
-    //    yield return new WaitForSeconds(lookTimer / 2);
+    public void ChangeStateIdle()
+    {
+        StateMachine.ChangeState(IdleState);
+    }
 
-    //    transform.localEulerAngles = new Vector3(transform.rotation.x - 20, 0, 0);
-    //    yield return new WaitForSeconds(lookTimer / 2);
-    //}
+    public void ChangeStateChase()
+    {
+        StateMachine.ChangeState(ChaseState);
+    }
+
+    public void ChangeStatePatrol()
+    {
+        StateMachine.ChangeState(PatrolState);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
 
     #region Health / Die Functions
 

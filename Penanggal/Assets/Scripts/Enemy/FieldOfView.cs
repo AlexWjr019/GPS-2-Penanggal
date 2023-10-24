@@ -54,11 +54,9 @@ public class FieldOfView : MonoBehaviour
 
     private IEnumerator FOVRoutine()
     {
-        Debug.Log("fov");
         while (true)
         {
             yield return new WaitForSeconds(0.2f);
-            Debug.Log("work?");
             FOVCheck();
         }
     }

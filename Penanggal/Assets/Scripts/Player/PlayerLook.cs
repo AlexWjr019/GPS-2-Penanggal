@@ -54,7 +54,7 @@ public class PlayerLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);*/
 
-        /*xRotation += -LookAxis.y * cameraSensitivity;
+        /*xRotation += -LookAxis.yRotation * cameraSensitivity;
         xRotation = Mathf.Clamp(xRotation, -lookXLimit, lookXLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.rotation *= Quaternion.Euler(0, LookAxis.x * cameraSensitivity, 0);*/
@@ -65,7 +65,7 @@ public class PlayerLook : MonoBehaviour
         if(Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Moved))
         {
             mouseX = Input.GetTouch(0).deltaPosition.x;
-            mouseY = Input.GetTouch(0).deltaPosition.y;
+            mouseY = Input.GetTouch(0).deltaPosition.yRotation;
         }
 
         mouseX *= cameraSensitivity;

@@ -112,7 +112,7 @@ namespace StarterAssets
             // Get the forward direction of the camera
             Vector3 cameraForward = Camera.main.transform.forward;
 
-            // Ignore the vertical (y) component of the camera's forward vector
+            // Ignore the vertical (yRotation) component of the camera's forward vector
             cameraForward.y = 0.0f;
             cameraForward.Normalize();
 
@@ -184,7 +184,7 @@ namespace StarterAssets
                         // Check if the touch is within the UI area
                         if (IsTouchInUIArea(touch.position))
                         {
-                            // Optionally, you can reset rotation.x and rotation.y here if needed.
+                            // Optionally, you can reset rotation.x and rotation.yRotation here if needed.
                         }
                         break;
 

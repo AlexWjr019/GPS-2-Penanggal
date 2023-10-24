@@ -35,7 +35,14 @@ public class EnemyPatrolState : EnemyState
 
         if (!enemy.agent.pathPending && enemy.agent.remainingDistance < 0.5f)
         {
-            enemy.StateMachine.ChangeState(enemy.IdleState);
+            if (enemy.StateMachine.CurrentEnemyState == enemy.IdleState)
+            {
+                return;
+            }
+            else
+            {
+                enemy.StateMachine.ChangeState(enemy.IdleState);
+            }
         }
     }
 
@@ -93,7 +100,7 @@ public class EnemyPatrolState : EnemyState
 
     //private IEnumerator FOVRoutine()
     //{
-    //    Debug.Log("fov");
+    //    Debug.Log("fovFront");
     //    while (true)
     //    {
     //        yield return new WaitForSeconds(0.5f);

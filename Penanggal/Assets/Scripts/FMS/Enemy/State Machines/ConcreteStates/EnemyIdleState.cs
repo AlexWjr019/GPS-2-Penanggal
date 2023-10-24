@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyIdleState : EnemyState
 {
-    float timerCount;
+    private float lookTimer;
 
     public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
@@ -26,6 +27,8 @@ public class EnemyIdleState : EnemyState
     public override void ExitState()
     {
         base.ExitState();
+
+        lookTimer = 0;
     }
 
     public override void FrameUpdate()
@@ -34,24 +37,24 @@ public class EnemyIdleState : EnemyState
 
         #region Timer & Logic for Searching
 
-        if (timerCount < enemy.lookTimer)
+        if (lookTimer < enemy.lookDelay)
         {
-            timerCount += Time.deltaTime;
+            lookTimer += Time.deltaTime;
 
-            if (timerCount >= enemy.lookTimer)
+            if (lookTimer > enemy.lookDelay)
             {
-                timerCount = 0;
+                lookTimer = 0;
                 enemy.StateMachine.ChangeState(enemy.PatrolState);
             }
         }
 
-        if (timerCount < (enemy.lookTimer / 2) - 0.5)
+        if (lookTimer < (enemy.lookDelay / 2))
         {
-            enemy.transform.Rotate(enemy.x, enemy.y, enemy.z);
+            enemy.transform.Rotate(0, enemy.yRotation, 0);
         }
-        else if (timerCount > enemy.lookTimer / 2 - 0.5)
+        else if (lookTimer > enemy.lookDelay / 2 - 0.5)
         {
-            enemy.transform.Rotate(-enemy.x, -enemy.y, -enemy.z);
+            enemy.transform.Rotate(0, -enemy.yRotation, 0);
         }
 
         #endregion
@@ -63,9 +66,4 @@ public class EnemyIdleState : EnemyState
 
         enemy.Observing();
     }
-
-    //private Vector3 GetRandomPointInCircle()
-    //{
-    //    return enemy.transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * enemy.randomMovementRange;
-    //}
 }

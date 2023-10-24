@@ -247,7 +247,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Gravity()
     {
-        // calculate y (vertical) movement
+        // calculate yRotation (vertical) movement
         if (grounded && verticalVelocity <= 0)
         {
             verticalVelocity = -groundedGravity * Time.deltaTime;
@@ -257,7 +257,7 @@ public class FirstPersonController : MonoBehaviour
             verticalVelocity -= groundedGravity * Time.deltaTime;
         }
 
-        // apply y (vertical) movement
+        // apply yRotation (vertical) movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
         controller.Move(verticalMovement * Time.deltaTime);
     }
