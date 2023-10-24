@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2104,8 +2104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  fov: {fileID: 0}
-  lookTimer: 5
+  fovFront: {fileID: 0}
+  fovBack: {fileID: 0}
+  lookDelay: 5
+  changeStateDelay: 5
   points:
   - {fileID: 1754752971}
   - {fileID: 2018716514}
@@ -2121,14 +2123,7 @@ MonoBehaviour:
   - {fileID: 17598132}
   - {fileID: 1286234320}
   destPoint: 0
-  x: 0
-  y: 0
-  z: 0.2
-  lookDistance: 5
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  fwd: {x: 0, y: 0, z: 0}
+  yRotation: 0
   player: {fileID: 0}
 --- !u!114 &267132871
 MonoBehaviour:
@@ -6556,6 +6551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: house floor tester_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bc290c69996fcd47a69469f6fb5b2a5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2489159159464621496, guid: 0bc290c69996fcd47a69469f6fb5b2a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.98
@@ -7428,8 +7427,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  fov: {fileID: 0}
-  lookTimer: 5
+  fovFront: {fileID: 0}
+  fovBack: {fileID: 0}
+  lookDelay: 5
+  changeStateDelay: 5
   points:
   - {fileID: 0}
   - {fileID: 0}
@@ -7447,14 +7448,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   destPoint: 0
-  x: 0
-  y: 0.2
-  z: 0
-  lookDistance: 0
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 255
-  fwd: {x: 0, y: 0, z: 0}
+  yRotation: 0
   player: {fileID: 0}
 --- !u!114 &780836572
 MonoBehaviour:
@@ -25262,8 +25256,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  fov: {fileID: 0}
-  lookTimer: 5
+  fovFront: {fileID: 0}
+  fovBack: {fileID: 0}
+  lookDelay: 5
+  changeStateDelay: 5
   points:
   - {fileID: 1754752971}
   - {fileID: 2018716514}
@@ -25278,14 +25274,7 @@ MonoBehaviour:
   - {fileID: 17598132}
   - {fileID: 1286234320}
   destPoint: 0
-  x: 0
-  y: 0.2
-  z: 0
-  lookDistance: 0
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 255
-  fwd: {x: 0, y: 0, z: 0}
+  yRotation: 0
   player: {fileID: 453084649766969908}
 --- !u!114 &1554440568
 MonoBehaviour:
@@ -32620,7 +32609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2064650875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32641,12 +32630,19 @@ MonoBehaviour:
     m_Bits: 8
   inventory: {fileID: 0}
   moveSpeed: 5
+  sprintSpeed: 10
+  initialMoveSpeed: 0
   moveInputDeadZone: 15
   keyboard: 1
   cameraSensitivity: 20
   verticalCameraSensitivity: 0
   maxClamp: 0
   minClamp: 0
+  sprintDuration: 4
+  staminaRecoveryDuration: 3
+  staminaRecoveryThreshold: 1
+  leftBlackoutImage: {fileID: 0}
+  rightBlackoutImage: {fileID: 0}
   groundedGravity: 10
   airborneGravity: 10
 --- !u!143 &2064650876
@@ -33437,10 +33433,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4695904517321664885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 202.0265, y: -63.427505}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &281833233324834115
 MeshRenderer:
@@ -37941,6 +37937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901182334643ba1438a25accc6bd0c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
 --- !u!33 &4653646562930364367
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39372,10 +39369,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4695904517321664885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 92.026505, y: -63.427505}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5528649098013576599
 MeshRenderer:
@@ -41516,7 +41513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7094977339247384525
 MonoBehaviour:
   m_ObjectHideFlags: 0
