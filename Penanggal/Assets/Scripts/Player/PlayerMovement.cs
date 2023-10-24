@@ -239,8 +239,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void CameraRotation()
     {
-        if (Tutorial.cameraMoving)
-        {
+        //if (Tutorial.cameraMoving)
+        //{
             for (int i = 0; i < Input.touchCount; i++)
             {
                 Touch touch = Input.GetTouch(i);
@@ -266,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-        }
+        //}
     }
 
 
