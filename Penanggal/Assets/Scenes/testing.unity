@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4480,7 +4480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534944556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24951,7 +24951,7 @@ GameObject:
   - component: {fileID: 1536047617}
   - component: {fileID: 1536047616}
   - component: {fileID: 1536047619}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -25210,17 +25210,19 @@ GameObject:
   - component: {fileID: 1554440573}
   - component: {fileID: 1554440572}
   - component: {fileID: 1554440571}
+  - component: {fileID: 1554440576}
   - component: {fileID: 1554440569}
   - component: {fileID: 1554440568}
   - component: {fileID: 1554440567}
   - component: {fileID: 1554440566}
+  - component: {fileID: 1554440575}
   m_Layer: 8
   m_Name: Penanggal_1
   m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1554440566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25241,7 +25243,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 127
-  playerRef: {fileID: 453084649766969908}
+  playerRef: {fileID: 2064650874}
   canSeePlayer: 0
 --- !u!114 &1554440567
 MonoBehaviour:
@@ -25256,10 +25258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  fovFront: {fileID: 0}
-  fovBack: {fileID: 0}
+  fovFront: {fileID: 1554440566}
+  fovBack: {fileID: 1554440575}
   lookDelay: 5
-  changeStateDelay: 5
+  changeStateDelay: 3
   points:
   - {fileID: 1754752971}
   - {fileID: 2018716514}
@@ -25274,8 +25276,8 @@ MonoBehaviour:
   - {fileID: 17598132}
   - {fileID: 1286234320}
   destPoint: 0
-  yRotation: 0
-  player: {fileID: 453084649766969908}
+  yRotation: 0.2
+  player: {fileID: 2064650874}
 --- !u!114 &1554440568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25393,7 +25395,7 @@ Transform:
   m_GameObject: {fileID: 1554440565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.86, y: 4.2199993, z: -21.88}
+  m_LocalPosition: {x: -5.83, y: 4.2199993, z: -20.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25402,6 +25404,55 @@ Transform:
   - {fileID: 358626795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554440575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554440565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4f7175f9571414ab6baf4da6e8737f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  angle: 360
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 127
+  playerRef: {fileID: 2064650874}
+  canSeePlayer: 0
+--- !u!54 &1554440576
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554440565}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!183 &1556570324
 Cloth:
   m_ObjectHideFlags: 0
@@ -32603,9 +32654,9 @@ GameObject:
   - component: {fileID: 2064650876}
   - component: {fileID: 2064650875}
   - component: {fileID: 2064650881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32753,7 +32804,7 @@ Transform:
   m_GameObject: {fileID: 2064650874}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.82, y: 4.03, z: 6.94}
+  m_LocalPosition: {x: 2.98, y: 4.03, z: -19.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
