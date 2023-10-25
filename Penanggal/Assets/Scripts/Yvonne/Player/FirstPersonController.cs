@@ -51,8 +51,6 @@ public class FirstPersonController : MonoBehaviour
     public float staminaRecoveryDuration = 3f;
     public float staminaRecoveryThreshold = 1f;
     private bool isRecoveringStamina = false;
-    public Image leftBlackoutImage;
-    public Image rightBlackoutImage;
     #endregion
 
     #region Player Movement
