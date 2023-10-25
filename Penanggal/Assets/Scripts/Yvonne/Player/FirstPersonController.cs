@@ -123,7 +123,7 @@ public class FirstPersonController : MonoBehaviour
                 lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
             }
         }
-        Debug.Log(moveInput.sqrMagnitude);
+        //Debug.Log(moveInput.sqrMagnitude);
     }
     void FixedUpdate()
     {
@@ -201,11 +201,11 @@ public class FirstPersonController : MonoBehaviour
             }
             if (moveInput.sqrMagnitude <= 0)
             {
-                headBob.isWalking = false;
+                //headBob.isWalking = false;
             }
             else
             {
-                headBob.isWalking = true;
+                //headBob.isWalking = true;
             }
         }
     }

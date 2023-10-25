@@ -24,7 +24,7 @@ public class InventorySlot : MonoBehaviour /*, IDropHandler*/, IPointerClickHand
         {
             Deselected();
         }
-        Debug.Log(isSelected);
+        //Debug.Log(isSelected);
     }
     public void Selected()
     {
