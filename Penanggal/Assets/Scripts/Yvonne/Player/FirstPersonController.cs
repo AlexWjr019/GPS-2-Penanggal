@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class FirstPersonController : MonoBehaviour
     public LayerMask groundLayers;
     public Inventory inventory;
     private HeadBob headBob;
+    private float touchStartTime;
+    private const float touchDelay = 0.1f;
+    private bool canPickUpItem = true;
+    public Volume volume;
+    Vignette vignette;
     #endregion
 
     #region Player and Controller Settings
@@ -69,6 +76,7 @@ public class FirstPersonController : MonoBehaviour
     float lastPlayedFootstepSoundTime = -timeBetweenFootsteps;
     #endregion
 
+
     void Start()
     {
         leftFingerId = -1;
@@ -79,15 +87,10 @@ public class FirstPersonController : MonoBehaviour
         moveInputDeadZone = Mathf.Pow(Screen.height / moveInputDeadZone, 2);
 
         headBob = GetComponent<HeadBob>();
-
-        inventory.ItemUsed += Inventory_ItemUsed;
-    }
-
-    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
-    {
-        IItems item = e.Item;
-
-        // do something with the item eg put it to the hand of the player
+        if (volume.profile.TryGet(out vignette))
+        {
+            // Vignette effect found in the volume
+        }
     }
 
     void Update()
@@ -130,62 +133,59 @@ public class FirstPersonController : MonoBehaviour
     }
     void GetTouchInput()
     {
-        // iterate through all the detected touches
         for (int touches = 0; touches < Input.touchCount; touches++)
         {
             Touch t = Input.GetTouch(touches);
 
-            // check each touch's phase
             switch (t.phase)
             {
                 case TouchPhase.Began:
+                    touchStartTime = Time.time;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
-                        // start tracking the left finger if it was not previously being tracked
                         leftFingerId = t.fingerId;
-
-                        // set the start position for the movement control finger
                         moveTouchStartPosition = t.position;
-                        //Debug.Log("Tracking left finger");
                     }
                     else if (t.position.x > halfScreenWidth && rightFingerId == -1)
                     {
                         rightFingerId = t.fingerId;
-                        //Debug.Log("Tracking right finger");
                     }
                     break;
-                     
-                case TouchPhase.Ended:
 
-                case TouchPhase.Canceled:
+                case TouchPhase.Ended:
+                    if (Time.time - touchStartTime < touchDelay)
+                    {
+                        canPickUpItem = true;
+                    }
+                    else
+                    {
+                        canPickUpItem = false;
+                    }
+
                     if (t.fingerId == leftFingerId)
                     {
-                        // stop tracking the left finger
                         leftFingerId = -1;
                         moveSpeed = initialMoveSpeed;
                         moveInput = Vector3.zero;
                     }
                     else if (t.fingerId == rightFingerId)
                     {
-                        // stop tracking the right finger
                         rightFingerId = -1;
                     }
                     break;
 
                 case TouchPhase.Moved:
-                    //get input for looking around
-                    if(t.fingerId == rightFingerId)
+                    if (t.fingerId == rightFingerId)
                     {
                         lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
                     }
-                    if(t.fingerId == leftFingerId)
+                    if (t.fingerId == leftFingerId)
                     {
-                        // calculating the postion delta from the start position
                         moveInput = t.position - moveTouchStartPosition;
 
                         if (moveInput.magnitude > 200f)
                         {
-                            moveSpeed = sprintSpeed; 
+                            moveSpeed = sprintSpeed;
                         }
                         else
                         {
@@ -195,8 +195,7 @@ public class FirstPersonController : MonoBehaviour
                     break;
 
                 case TouchPhase.Stationary:
-                    // set the look input to zero if the finger is still
-                    if(t.fingerId == rightFingerId)
+                    if (t.fingerId == rightFingerId)
                     {
                         lookInput = Vector2.zero;
                     }
@@ -262,14 +261,17 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(verticalMovement * Time.deltaTime);
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        IItems item = hit.collider.GetComponent<IItems>();
-        if(item != null)
-        {
-            inventory.AddItem(item);
-        }
-    }
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    if (canPickUpItem)
+    //    {
+    //        IItems item = hit.collider.GetComponent<IItems>();
+    //        if (item != null)
+    //        {
+    //            inventory.AddItem(item);
+    //        }
+    //    }
+    //}
 
     public void HandleSprintTimer()
     {
@@ -298,10 +300,11 @@ public class FirstPersonController : MonoBehaviour
                 }
             }
         }
-        float alpha = sprintTimer / sprintDuration;
-        Color fadeColor = new Color(0, 0, 0, alpha);
-        leftBlackoutImage.color = fadeColor;
-        rightBlackoutImage.color = fadeColor;
+        if (vignette != null)
+        {
+            float alpha = sprintTimer / sprintDuration;
+            vignette.smoothness.Override(alpha);
+        }
     }
 }
 
