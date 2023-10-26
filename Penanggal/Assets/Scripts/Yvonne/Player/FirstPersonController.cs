@@ -204,11 +204,11 @@ public class FirstPersonController : MonoBehaviour
             }
             if (moveInput.sqrMagnitude <= 0)
             {
-                //headBob.isWalking = false;
+                headBob.isWalking = false;
             }
             else
             {
-                //headBob.isWalking = true;
+                headBob.isWalking = true;
             }
         }
     }
