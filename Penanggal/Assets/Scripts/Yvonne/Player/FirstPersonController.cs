@@ -16,6 +16,7 @@ public class FirstPersonController : MonoBehaviour
     private float touchStartTime;
     private const float touchDelay = 0.1f;
     private bool canPickUpItem = true;
+    public static bool canHide = false;
     public Volume volume;
     Vignette vignette;
     #endregion
@@ -154,10 +155,12 @@ public class FirstPersonController : MonoBehaviour
                     if (Time.time - touchStartTime < touchDelay)
                     {
                         canPickUpItem = true;
+                        canHide = true;
                     }
                     else
                     {
                         canPickUpItem = false;
+                        canHide = false;
                     }
 
                     if (t.fingerId == leftFingerId)

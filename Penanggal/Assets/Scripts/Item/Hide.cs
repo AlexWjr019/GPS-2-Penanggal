@@ -26,7 +26,7 @@ public class Hide : MonoBehaviour
 
     private void Update()
     {
-        if (!isTransitioning && (Input.touchCount > 0 || Input.GetMouseButtonDown(0))) // Check for touch or left mouse button click
+        if (!isTransitioning && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) && FirstPersonController.canHide) // Check for touch or left mouse button click
         {
             Vector2 inputPosition;
 
