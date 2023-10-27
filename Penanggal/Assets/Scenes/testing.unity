@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7678,7 +7678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Cabinet
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7714,6 +7714,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1041813921}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041813924}
   m_SourcePrefab: {fileID: 100100000, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
 --- !u!1 &743619055
 GameObject:
@@ -10656,6 +10659,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1041813924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041813920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27141452, y: 0.72245705, z: 2.1415918}
+  m_Center: {x: 0.025632262, y: 0.016035497, z: -0.018683791}
 --- !u!1 &1044814678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d3621061456d234488f31b65a0235a72, type: 3}
@@ -18713,6 +18737,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1340500646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340500642}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.39641047, y: 0.8993305, z: 2.4761078}
+  m_Center: {x: 0.30179477, y: 0.055897057, z: -0.3692242}
 --- !u!1 &1346066007
 GameObject:
   m_ObjectHideFlags: 0
@@ -26160,6 +26205,10 @@ PrefabInstance:
       value: nursery room_cabinet 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
+      propertyPath: m_TagString
+      value: Cabinet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -26193,6 +26242,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1340500643}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1340500646}
   m_SourcePrefab: {fileID: 100100000, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
 --- !u!1 &1554382479 stripped
 GameObject:
@@ -28749,7 +28801,7 @@ Transform:
   - {fileID: 1643708283}
   - {fileID: 128181403}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 151.875, z: 0}
 --- !u!111 &1697928409
 Animation:
   m_ObjectHideFlags: 0

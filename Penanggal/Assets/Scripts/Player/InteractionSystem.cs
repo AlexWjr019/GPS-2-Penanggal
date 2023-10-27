@@ -11,23 +11,47 @@ public class InteractionSystem : MonoBehaviour
 
     private GameObject currentInteractable;
     private Vector3 lastInteractedItemPosition;
+    private Vector2 touchStartPosition;
     private float raycastDistance = 3f;
     private float sphereRadius = 0.5f;
 
+    public void Start()
+    {
+
+    }
     private void Update()
     {
         Vector3 cameraPosition = Camera.main.transform.position;
         Vector3 cameraForward = Camera.main.transform.forward;
         Ray ray = new Ray(cameraPosition, cameraForward);
-
-        //Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.blue, 1f);
-
         RaycastHit hit;
+
+        if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance) && hit.collider.CompareTag("Cabinet"))
+        {
+            Debug.Log("HellpHere");
+            TestingPlayAnimation cabinetAnimator = hit.collider.gameObject.GetComponent<TestingPlayAnimation>();
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        touchStartPosition = touch.position;
+                        break;
+                    case TouchPhase.Ended:
+                        if (Vector2.Distance(touch.position, touchStartPosition) < 30f)
+                        {
+                            InteractWithCabinet(cabinetAnimator);
+                        }
+                        break;
+                }
+            }
+        }
 
         if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, interactableLayer))
         {
+            Debug.Log("hiIsme");
             GameObject hitObject = hit.collider.gameObject;
-
             if (hitObject != currentInteractable)
             {
                 currentInteractable = hitObject;
@@ -42,6 +66,7 @@ public class InteractionSystem : MonoBehaviour
             currentInteractable = null;
         }
     }
+
 
     private void CheckForButtonClick()
     {
@@ -60,6 +85,18 @@ public class InteractionSystem : MonoBehaviour
                     InteractWithCurrentObject();
                 }
             }
+        }
+    }
+
+    public void InteractWithCabinet(TestingPlayAnimation cabinetAnimator)
+    {
+        if (!cabinetAnimator.isOpen)
+        {
+            cabinetAnimator.isOpen = true;
+        }
+        else
+        {
+            cabinetAnimator.isOpen = false;
         }
     }
 

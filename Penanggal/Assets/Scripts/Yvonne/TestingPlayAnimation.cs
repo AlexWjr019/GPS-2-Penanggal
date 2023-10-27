@@ -8,24 +8,24 @@ public class TestingPlayAnimation : MonoBehaviour
 
     void Update()
     {
-        /*if(Input.GetMouseButtonDown(0))
-        {
-            if(gameObject.CompareTag("Interactable"))
-            {
-                if(!isOpen)
-                {
-                    // play open animation
-                    isOpen = true;
-                    cabinetAnimator.SetBool("isOpen", true);
-                }
-                else
-                {
-                    // play close animation
-                    isOpen = false;
-                    cabinetAnimator.SetBool("isOpen", false);
-                }
-            }
-        }*/
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if (gameObject.CompareTag("Interactable"))
+        //    {
+        //        if (!isOpen)
+        //        {
+        //            // play open animation
+        //            isOpen = true;
+        //            cabinetAnimator.SetBool("isOpen", true);
+        //        }
+        //        else
+        //        {
+        //            // play close animation
+        //            isOpen = false;
+        //            cabinetAnimator.SetBool("isOpen", false);
+        //        }
+        //    }
+        //}
 
         if (!isOpen)
         {
