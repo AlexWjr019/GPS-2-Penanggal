@@ -52,7 +52,7 @@ public class Hide : MonoBehaviour
                     {
                         // Disable Player Camera
                         //player.SetActive(false);
-                        isHide = true;
+                        
                         isTransitioning = true;
 
                         //Tutorial tutorial = FindObjectOfType<Tutorial>();
@@ -89,7 +89,7 @@ public class Hide : MonoBehaviour
                                 bedroomCupboard = false;
                                 kitchenCupboard = true;
                             }
-
+                            isHide = true;
                         }
                         StartCoroutine(PlayHideInCupboardThenCloseDoors());
                     }
@@ -151,52 +151,55 @@ public class Hide : MonoBehaviour
 
     IEnumerator PlayHideInCupboardThenCloseDoors()
     {
-        if (livingCupboard)
+        if (isHide)
         {
-            hideInLivingCupboard.Play("HideInLivingCupboard"); // Play the first animation
+            if (livingCupboard)
+            {
+                hideInLivingCupboard.Play("HideInLivingCupboard"); // Play the first animation
 
-            // Wait for 2 seconds
-            yield return new WaitForSeconds(2.0f);
+                // Wait for 2 seconds
+                yield return new WaitForSeconds(2.0f);
 
-            // Now, play the other two animations
-            cupBoardDoorAnima.Play("CloseCupboardDoor");
-            cupboardDoorAnima2.Play("CloseCupboardDoor2");
-        }
+                // Now, play the other two animations
+                cupBoardDoorAnima.Play("CloseCupboardDoor");
+                cupboardDoorAnima2.Play("CloseCupboardDoor2");
+            }
 
-        if(hallwayCupboard)
-        {
-            hideInHallwayCupboard.Play("HideInHallwayCupboard"); // Play the first animation
+            if (hallwayCupboard)
+            {
+                hideInHallwayCupboard.Play("HideInHallwayCupboard"); // Play the first animation
 
-            // Wait for 2 seconds
-            yield return new WaitForSeconds(2.0f);
+                // Wait for 2 seconds
+                yield return new WaitForSeconds(2.0f);
 
-            // Now, play the other two animations
-            hallwayDoorAnima.Play("HallwayCloseDoor1");
-            hallwayDoorAnima2.Play("HallwayCloseDoor2");
-        }
+                // Now, play the other two animations
+                hallwayDoorAnima.Play("HallwayCloseDoor1");
+                hallwayDoorAnima2.Play("HallwayCloseDoor2");
+            }
 
-        if (bedroomCupboard)
-        {
-            hideInBedroomCupboard.Play("HideInBedroomCupboard"); // Play the first animation
+            if (bedroomCupboard)
+            {
+                hideInBedroomCupboard.Play("HideInBedroomCupboard"); // Play the first animation
 
-            // Wait for 2 seconds
-            yield return new WaitForSeconds(2.0f);
+                // Wait for 2 seconds
+                yield return new WaitForSeconds(2.0f);
 
-            // Now, play the other two animations
-            bedroomDoorAnima.Play("BedroomCloseDoor1");
-            bedroomDoorAnima2.Play("BedroomCloseDoor2");
-        }
+                // Now, play the other two animations
+                bedroomDoorAnima.Play("BedroomCloseDoor1");
+                bedroomDoorAnima2.Play("BedroomCloseDoor2");
+            }
 
-        if (kitchenCupboard)
-        {
-            hideInKitchenCupboard.Play("HideInKitchenCupboard"); // Play the first animation
+            if (kitchenCupboard)
+            {
+                hideInKitchenCupboard.Play("HideInKitchenCupboard"); // Play the first animation
 
-            // Wait for 2 seconds
-            yield return new WaitForSeconds(2.0f);
+                // Wait for 2 seconds
+                yield return new WaitForSeconds(2.0f);
 
-            // Now, play the other two animations
-            kitchenDoorAnima.Play("KitchenCloseDoor1");
-            kitchenDoorAnima2.Play("KitchenCloseDoor2");
+                // Now, play the other two animations
+                kitchenDoorAnima.Play("KitchenCloseDoor1");
+                kitchenDoorAnima2.Play("KitchenCloseDoor2");
+            }
         }
 
         isTransitioning = false;
