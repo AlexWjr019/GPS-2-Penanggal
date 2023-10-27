@@ -140,6 +140,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 case TouchPhase.Began:
                     touchStartTime = Time.time;
+                    canHide = false;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
                         leftFingerId = t.fingerId;
@@ -221,6 +222,8 @@ public class FirstPersonController : MonoBehaviour
 
         // horizontal (yaw) rotation
         transform.Rotate(transform.up, lookInput.x);
+
+        canHide = false;
     }
     void Move()
     {
