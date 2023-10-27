@@ -52,6 +52,7 @@ public class FirstPersonController : MonoBehaviour
     public float staminaRecoveryDuration = 3f;
     public float staminaRecoveryThreshold = 1f;
     private bool isRecoveringStamina = false;
+    public GameObject volumeObject;
     #endregion
 
     #region Player Movement
@@ -90,6 +91,8 @@ public class FirstPersonController : MonoBehaviour
         {
             // Vignette effect found in the volume
         }
+
+        volumeObject.SetActive(true);
     }
 
     void Update()
@@ -106,12 +109,12 @@ public class FirstPersonController : MonoBehaviour
 
         Gravity();
 
-        if(rightFingerId != -1)
+        if (rightFingerId != -1)
         {
             LookAround();
         }
 
-        if(leftFingerId != -1)
+        if (leftFingerId != -1)
         {
             Move();
         }
@@ -140,7 +143,6 @@ public class FirstPersonController : MonoBehaviour
             {
                 case TouchPhase.Began:
                     touchStartTime = Time.time;
-                    canHide = false;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
                         leftFingerId = t.fingerId;
@@ -169,6 +171,7 @@ public class FirstPersonController : MonoBehaviour
                         leftFingerId = -1;
                         moveSpeed = initialMoveSpeed;
                         moveInput = Vector3.zero;
+                        isRecoveringStamina = false;
                     }
                     else if (t.fingerId == rightFingerId)
                     {
@@ -185,7 +188,7 @@ public class FirstPersonController : MonoBehaviour
                     {
                         moveInput = t.position - moveTouchStartPosition;
 
-                        if (moveInput.magnitude > 200f)
+                        if (moveInput.magnitude > 200f && !isRecoveringStamina)
                         {
                             moveSpeed = sprintSpeed;
                         }
@@ -222,8 +225,6 @@ public class FirstPersonController : MonoBehaviour
 
         // horizontal (yaw) rotation
         transform.Rotate(transform.up, lookInput.x);
-
-        canHide = false;
     }
     void Move()
     {
@@ -279,7 +280,7 @@ public class FirstPersonController : MonoBehaviour
 
     public void HandleSprintTimer()
     {
-        if (moveSpeed == sprintSpeed)
+        if (moveSpeed == sprintSpeed && vignette.smoothness.value < 1)
         {
             sprintTimer += Time.deltaTime;
             if (sprintTimer >= sprintDuration && !isRecoveringStamina)
@@ -288,7 +289,7 @@ public class FirstPersonController : MonoBehaviour
                 isRecoveringStamina = true;
             }
         }
-        if (isRecoveringStamina)
+        if (isRecoveringStamina || moveSpeed == initialMoveSpeed)
         {
             sprintTimer -= Time.deltaTime / staminaRecoveryDuration;
             if (sprintTimer <= 0)
@@ -296,22 +297,12 @@ public class FirstPersonController : MonoBehaviour
                 sprintTimer = 0;
                 isRecoveringStamina = false;
             }
-            if (sprintTimer <= sprintDuration - staminaRecoveryThreshold)
-            {
-                if (moveInput.magnitude > 100f)
-                {
-                    moveSpeed = sprintSpeed;
-                }
-            }
         }
         if (vignette != null)
         {
-            float alpha = sprintTimer / sprintDuration;
+            float alpha = Mathf.Clamp(sprintTimer / sprintDuration, 0, 1);
             vignette.smoothness.Override(alpha);
         }
     }
-}
 
-//it will move forward/backwards after you've already walked when u tap tap - i think needs to reset position when u let go of your finger
-//need to add sprint to joystick
-//stamina bar
+}
