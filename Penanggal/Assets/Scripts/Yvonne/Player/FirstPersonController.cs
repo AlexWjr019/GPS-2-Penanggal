@@ -272,7 +272,7 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(verticalMovement * Time.deltaTime);
     }
 
-    /*private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Debug.Log("Collided with: " + hit.gameObject.name);
         if (hit.gameObject.CompareTag("Ghost"))
@@ -280,11 +280,10 @@ public class FirstPersonController : MonoBehaviour
             LoseScene loseScene = FindObjectOfType<LoseScene>();
             if (loseScene != null)
             {
-                Debug.Log("Im In");
                 loseScene.PlayerCollidedWithGhost();
             }
         }
-    }*/
+    }
 
 
     public void HandleSprintTimer()
