@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8046728060548145259}
   m_Layer: 0
   m_Name: NurseryCabinet
-  m_TagString: Untagged
+  m_TagString: Cabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,9 +41,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3766639022661649511}
+  - component: {fileID: 5921183457059450959}
+  - component: {fileID: 876862124202070691}
+  - component: {fileID: 8517605440546028356}
   m_Layer: 0
   m_Name: nursery room_cabinet
-  m_TagString: Untagged
+  m_TagString: Cabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +69,65 @@ Transform:
   - {fileID: 8804273074942841574}
   m_Father: {fileID: 8046728060548145259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5921183457059450959
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3c4a62269876c342be51c760bdc62f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &876862124202070691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f058844d0175a844b59260a79a8ab5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cabinetAnimator: {fileID: 5921183457059450959}
+  isOpen: 0
+  cabinets:
+  - {fileID: 2632657814729278854}
+  bools: 00
+--- !u!65 &8517605440546028356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.011672974, y: 0.7785222, z: 0.8079271}
+  m_Center: {x: -0.14440155, y: 0.0006892085, z: -0.56083405}
 --- !u!1 &2830966054440745691
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3766639022661649511}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: -90}
 --- !u!33 &1893267669296495259
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -181,7 +243,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3766639022661649511}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &1417462283357813729
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -89,14 +89,14 @@ public class InteractionSystem : MonoBehaviour
     }
 
     public void InteractWithCabinet(TestingPlayAnimation cabinetAnimator)
-    {
-        if (!cabinetAnimator.isOpen)
+    {        
+        if (!cabinetAnimator.isOpen[0])
         {
-            cabinetAnimator.isOpen = true;
+            cabinetAnimator.isOpen[0] = true;
         }
         else
         {
-            cabinetAnimator.isOpen = false;
+            cabinetAnimator.isOpen[0] = false;
         }
     }
 
