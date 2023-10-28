@@ -15,6 +15,9 @@ public class InteractionSystem : MonoBehaviour
     private float raycastDistance = 3f;
     private float sphereRadius = 0.5f;
 
+    private float touchStartTime;
+    private float clickDurationThreshold = 0.1f;
+
     public void Start()
     {
 
@@ -28,7 +31,6 @@ public class InteractionSystem : MonoBehaviour
 
         if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance) && hit.collider.CompareTag("Cabinet"))
         {
-            Debug.Log("HellpHere");
             TestingPlayAnimation cabinetAnimator = hit.collider.gameObject.GetComponent<TestingPlayAnimation>();
             if (Input.touchCount > 0)
             {
@@ -37,9 +39,11 @@ public class InteractionSystem : MonoBehaviour
                 {
                     case TouchPhase.Began:
                         touchStartPosition = touch.position;
+                        touchStartTime = Time.time;
                         break;
                     case TouchPhase.Ended:
-                        if (Vector2.Distance(touch.position, touchStartPosition) < 30f)
+                        float touchDuration = Time.time - touchStartTime;
+                        if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
                         {
                             InteractWithCabinet(cabinetAnimator);
                         }

@@ -266,17 +266,20 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(verticalMovement * Time.deltaTime);
     }
 
-    //private void OnControllerColliderHit(ControllerColliderHit hit)
-    //{
-    //    if (canPickUpItem)
-    //    {
-    //        IItems item = hit.collider.GetComponent<IItems>();
-    //        if (item != null)
-    //        {
-    //            inventory.AddItem(item);
-    //        }
-    //    }
-    //}
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("Collided with: " + hit.gameObject.name);
+        if (hit.gameObject.CompareTag("Ghost"))
+        {
+            LoseScene loseScene = FindObjectOfType<LoseScene>();
+            if (loseScene != null)
+            {
+                Debug.Log("Im In");
+                loseScene.PlayerCollidedWithGhost();
+            }
+        }
+    }
+
 
     public void HandleSprintTimer()
     {
