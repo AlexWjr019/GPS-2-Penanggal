@@ -3530,6 +3530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet
       objectReference: {fileID: 0}
+    - target: {fileID: 876862124202070691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: isOpen.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.10936415
@@ -8511,6 +8515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_4
       objectReference: {fileID: 0}
+    - target: {fileID: 876862124202070691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: isOpen.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.47
@@ -10761,9 +10769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cabinetAnimator: {fileID: 1041813922}
-  isOpen: 0
   cabinets: []
-  bools: 
+  isOpen: 
 --- !u!95 &1041813922
 Animator:
   serializedVersion: 5
@@ -13117,6 +13124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_5
       objectReference: {fileID: 0}
+    - target: {fileID: 876862124202070691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: isOpen.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.584
@@ -13584,6 +13595,10 @@ PrefabInstance:
     - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_Name
       value: NurseryCabinet_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 876862124202070691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: isOpen.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19040,9 +19055,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cabinetAnimator: {fileID: 1340500644}
-  isOpen: 0
   cabinets: []
-  bools: 
+  isOpen: 
 --- !u!95 &1340500644
 Animator:
   serializedVersion: 5
@@ -29928,6 +29942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_3
       objectReference: {fileID: 0}
+    - target: {fileID: 876862124202070691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: isOpen.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.256
@@ -34010,6 +34028,10 @@ PrefabInstance:
     - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_Name
       value: NurseryCabinet_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 876862124202070691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: isOpen.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
