@@ -180,21 +180,24 @@ public class FirstPersonController : MonoBehaviour
                     break;
 
                 case TouchPhase.Moved:
-                    if (t.fingerId == rightFingerId)
+                    if (!TornPuzzle.isDragging)
                     {
-                        lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
-                    }
-                    if (t.fingerId == leftFingerId)
-                    {
-                        moveInput = t.position - moveTouchStartPosition;
-
-                        if (moveInput.magnitude > 200f && !isRecoveringStamina)
+                        if (t.fingerId == rightFingerId)
                         {
-                            moveSpeed = sprintSpeed;
+                            lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
                         }
-                        else
+                        if (t.fingerId == leftFingerId)
                         {
-                            moveSpeed = initialMoveSpeed;
+                            moveInput = t.position - moveTouchStartPosition;
+
+                            if (moveInput.magnitude > 200f && !isRecoveringStamina)
+                            {
+                                moveSpeed = sprintSpeed;
+                            }
+                            else
+                            {
+                                moveSpeed = initialMoveSpeed;
+                            }
                         }
                     }
                     break;
@@ -228,17 +231,20 @@ public class FirstPersonController : MonoBehaviour
     }
     void Move()
     {
-        // don't move if the touch delta is shorter than the designated dead zone
-        if (moveInput.sqrMagnitude <= moveInputDeadZone)
+        if (!TornPuzzle.isDragging)
         {
-            return;
+            // don't move if the touch delta is shorter than the designated dead zone
+            if (moveInput.sqrMagnitude <= moveInputDeadZone)
+            {
+                return;
+            }
+
+            // multiply the normalized direction by the speed
+            Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
+
+            // move relatively to the local transform's direction
+            controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
         }
-
-        // multiply the normalized direction by the speed
-        Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
-
-        // move relatively to the local transform's direction
-        controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
     }
     void GetKeyboardInput()
     {
