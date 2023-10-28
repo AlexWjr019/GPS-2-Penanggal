@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8046728060548145259}
   m_Layer: 0
   m_Name: NurseryCabinet
-  m_TagString: Cabinet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 5921183457059450959}
   - component: {fileID: 876862124202070691}
   - component: {fileID: 8517605440546028356}
+  - component: {fileID: 2443845018912515018}
+  - component: {fileID: 1870220860111202001}
   m_Layer: 0
   m_Name: nursery room_cabinet
   m_TagString: Cabinet
@@ -105,6 +107,11 @@ MonoBehaviour:
   cabinetAnimator: {fileID: 5921183457059450959}
   cabinets:
   - {fileID: 2632657814729278854}
+  closedColliders:
+  - {fileID: 8517605440546028356}
+  openedColliders:
+  - {fileID: 2443845018912515018}
+  - {fileID: 1870220860111202001}
   isOpen: 00
 --- !u!65 &8517605440546028356
 BoxCollider:
@@ -127,6 +134,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011672974, y: 0.7785222, z: 0.8079271}
   m_Center: {x: -0.14440155, y: 0.0006892085, z: -0.56083405}
+--- !u!65 &2443845018912515018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.36846524, y: 0.014724724, z: 0.83100504}
+  m_Center: {x: -0.32603937, y: -0.36523286, z: -0.5745246}
+--- !u!65 &1870220860111202001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.36846524, y: 0.014724724, z: 0.83100504}
+  m_Center: {x: -0.36, y: 0.35, z: -0.5745246}
 --- !u!1 &2830966054440745691
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +189,7 @@ GameObject:
   - component: {fileID: 1114313489374634780}
   m_Layer: 0
   m_Name: Box118
-  m_TagString: Untagged
+  m_TagString: Cabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +272,7 @@ GameObject:
   - component: {fileID: 3155304138172802850}
   m_Layer: 0
   m_Name: Box040
-  m_TagString: Untagged
+  m_TagString: Cabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,7 +355,7 @@ GameObject:
   - component: {fileID: 536910684449012817}
   m_Layer: 0
   m_Name: Box039
-  m_TagString: Untagged
+  m_TagString: Cabinet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

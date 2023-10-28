@@ -4872,6 +4872,7 @@ GameObject:
   - component: {fileID: 5760445671134936953}
   - component: {fileID: 5081480916981547359}
   - component: {fileID: 6565522044126462830}
+  - component: {fileID: 3929683747678680120}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -4986,14 +4987,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3767234466950710864}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c565b44c6db64479f8b2c05f43a459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flickerIntensity: 0.1
-  flickerPerSecond: 3
+  flickerPerSecond: 10
   speedRandomness: 1
+--- !u!114 &3929683747678680120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767234466950710864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180616e0f23c5344e93bbbc429563144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candles:
+  - {fileID: 4000557758325534031}
+  isOn: 01
+  candleLights:
+  - {fileID: 5760445671134936953}
+  particleSystems:
+  - {fileID: 2020893629940451896}
 --- !u!1001 &4271030671178207262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5089,6 +5109,11 @@ PrefabInstance:
       addedObject: {fileID: 5948496524659432414}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+--- !u!1 &4000557758325534031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+  m_PrefabInstance: {fileID: 4271030671178207262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4381728355215308789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259c1221b7c06304183fa060d7106a62, type: 3}

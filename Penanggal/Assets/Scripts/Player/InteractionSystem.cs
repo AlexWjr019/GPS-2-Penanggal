@@ -97,10 +97,24 @@ public class InteractionSystem : MonoBehaviour
         if (!cabinetAnimator.isOpen[0])
         {
             cabinetAnimator.isOpen[0] = true;
+            Debug.Log("cabinet is open");
         }
         else
         {
+            Debug.Log("cabinet is not open");
             cabinetAnimator.isOpen[0] = false;
+        }
+    }
+
+    public void InteractWithCandle(InteractCandle candleInteraction)
+    {
+        if (!candleInteraction.isOn[0])
+        {
+            candleInteraction.isOn[0] = true;
+        }
+        else
+        {
+            candleInteraction.isOn[0] = false;
         }
     }
 
