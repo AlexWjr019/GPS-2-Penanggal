@@ -272,7 +272,7 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(verticalMovement * Time.deltaTime);
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    /*private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Debug.Log("Collided with: " + hit.gameObject.name);
         if (hit.gameObject.CompareTag("Ghost"))
@@ -284,7 +284,7 @@ public class FirstPersonController : MonoBehaviour
                 loseScene.PlayerCollidedWithGhost();
             }
         }
-    }
+    }*/
 
 
     public void HandleSprintTimer()
