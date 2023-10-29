@@ -63,8 +63,6 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     private void Update()
     {
         StateMachine.CurrentEnemyState.FrameUpdate();
-        //fwd = transform.TransformDirection(Vector3.forward) * lookDistance;
-        //Debug.DrawRay(transform.position, fwd, Color.green);
     }
 
     private void FixedUpdate()
