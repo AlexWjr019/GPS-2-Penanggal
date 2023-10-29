@@ -2053,6 +2053,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -349.109
       objectReference: {fileID: 0}
+    - target: {fileID: -2872989436496186278, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_Name
       value: Candle__6
@@ -2060,6 +2064,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745071319094153269, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2193,6 +2201,14 @@ PrefabInstance:
     - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_Name
       value: NurseryCabinet_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2725,6 +2741,10 @@ PrefabInstance:
       value: nursery room_cabinet 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3167,6 +3187,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathroom
       objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
@@ -3178,6 +3206,10 @@ PrefabInstance:
     - target: {fileID: 4381728355215308789, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 5081480916981547359, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
@@ -3194,6 +3226,10 @@ PrefabInstance:
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5938,7 +5974,7 @@ GameObject:
   - component: {fileID: 542319280}
   m_Layer: 0
   m_Name: FlameParticle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12050,9 +12086,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LivingRoom_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1885128815763361471, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12061,6 +12105,10 @@ PrefabInstance:
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12071,8 +12119,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 342998443}
     - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
-      value: Cabinet
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 5081480916981547359, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
@@ -12080,15 +12136,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Lightmapping
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Resolution
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13131,7 +13195,7 @@ GameObject:
   - component: {fileID: 782820243}
   m_Layer: 0
   m_Name: FlameParticle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18323,6 +18387,10 @@ PrefabInstance:
       value: nursery room_cabinet 2_1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ff3094ddc2fb54290d3d0a5b9d76ff, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -18527,6 +18595,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18673,6 +18761,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -120.815
       objectReference: {fileID: 0}
+    - target: {fileID: -2872989436496186278, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_Name
       value: Candle__4
@@ -18680,6 +18772,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745071319094153269, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19077,6 +19173,26 @@ PrefabInstance:
     - target: {fileID: 1885128815763361471, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19773,7 +19889,7 @@ GameObject:
   - component: {fileID: 997205408}
   m_Layer: 0
   m_Name: FlameParticle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25947,7 +26063,7 @@ GameObject:
   - component: {fileID: 1076524503}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26381,6 +26497,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -370.03
       objectReference: {fileID: 0}
+    - target: {fileID: -2872989436496186278, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_Name
       value: Candle__8
@@ -26388,6 +26508,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745071319094153269, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31936,7 +32060,7 @@ GameObject:
   - component: {fileID: 1152600106}
   m_Layer: 0
   m_Name: FlameParticle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40821,7 +40945,7 @@ GameObject:
   - component: {fileID: 1500889280}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40955,7 +41079,7 @@ GameObject:
   - component: {fileID: 1504683724}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41740,8 +41864,16 @@ PrefabInstance:
       value: NurseryCabinet_5
       objectReference: {fileID: 0}
     - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -41864,6 +41996,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -370.03
       objectReference: {fileID: 0}
+    - target: {fileID: -2872989436496186278, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_Name
       value: Candle__5
@@ -41871,6 +42007,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745071319094153269, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43013,6 +43153,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_3
       objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.372
@@ -43139,7 +43287,7 @@ GameObject:
   - component: {fileID: 1670599389}
   m_Layer: 0
   m_Name: FlameParticle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48010,6 +48158,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -408.18
       objectReference: {fileID: 0}
+    - target: {fileID: -2872989436496186278, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_Name
       value: Candle__7
@@ -48017,6 +48169,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745071319094153269, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49200,10 +49356,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway
       objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
       objectReference: {fileID: 1296705677}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 5081480916981547359, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 2
@@ -49215,6 +49387,10 @@ PrefabInstance:
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49920,7 +50096,7 @@ GameObject:
   - component: {fileID: 1882882060}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50054,7 +50230,7 @@ GameObject:
   - component: {fileID: 1887700899}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50234,10 +50410,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
       objectReference: {fileID: 649280195}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 5081480916981547359, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 2
@@ -50253,6 +50445,10 @@ PrefabInstance:
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50393,10 +50589,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen
       objectReference: {fileID: 0}
+    - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
       objectReference: {fileID: 839431092}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 4381728355215308789, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.013
@@ -50404,6 +50612,10 @@ PrefabInstance:
     - target: {fileID: 4381728355215308789, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 5081480916981547359, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
@@ -50421,6 +50633,10 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50437,6 +50653,14 @@ PrefabInstance:
     - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_Name
       value: NurseryCabinet_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52033,6 +52257,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_2
       objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.569
@@ -53331,17 +53563,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bedroom
       objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
       objectReference: {fileID: 1399410667}
+    - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 5081480916981547359, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5221319993696677534, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
+      objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Range
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Intensity
@@ -53350,6 +53606,14 @@ PrefabInstance:
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59300,6 +59564,14 @@ PrefabInstance:
     - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_Name
       value: NurseryCabinet_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x

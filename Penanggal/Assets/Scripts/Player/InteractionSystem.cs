@@ -29,32 +29,65 @@ public class InteractionSystem : MonoBehaviour
         Ray ray = new Ray(cameraPosition, cameraForward);
         RaycastHit hit;
 
-        if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance) && hit.collider.CompareTag("Cabinet"))
+        if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance))
         {
-            TestingPlayAnimation cabinetAnimator = hit.collider.gameObject.GetComponent<TestingPlayAnimation>();
-            if (Input.touchCount > 0)
+            if (hit.collider.CompareTag("Interactable"))
             {
-                Touch touch = Input.GetTouch(0);
-                switch (touch.phase)
+                Debug.Log("Helloworld");
+                TestingPlayAnimation cabinetAnimator = hit.collider.gameObject.GetComponent<TestingPlayAnimation>();
+                if (Input.touchCount > 0)
                 {
-                    case TouchPhase.Began:
-                        touchStartPosition = touch.position;
-                        touchStartTime = Time.time;
-                        break;
-                    case TouchPhase.Ended:
-                        float touchDuration = Time.time - touchStartTime;
-                        if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
+                    Touch touch = Input.GetTouch(0);
+                    switch (touch.phase)
+                    {
+                        case TouchPhase.Began:
+                            touchStartPosition = touch.position;
+                            touchStartTime = Time.time;
+                            break;
+                        case TouchPhase.Ended:
+                            float touchDuration = Time.time - touchStartTime;
+                            if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
+                            {
+                                Debug.Log("OpenAndClose");
+                                InteractWithCabinet(cabinetAnimator);
+                            }
+                            break;
+                    }
+                }
+            }
+            else if (hit.collider.CompareTag("Candle"))
+            {
+                InteractCandle candleInteraction = hit.collider.gameObject.GetComponentInChildren<InteractCandle>();
+                if (candleInteraction != null)
+                {
+                    if (Input.touchCount > 0)
+                    {
+                        Touch touch = Input.GetTouch(0);
+                        switch (touch.phase)
                         {
-                            InteractWithCabinet(cabinetAnimator);
+                            case TouchPhase.Began:
+                                touchStartPosition = touch.position;
+                                touchStartTime = Time.time;
+                                break;
+                            case TouchPhase.Ended:
+                                float touchDuration = Time.time - touchStartTime;
+                                if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
+                                {
+                                    InteractWithCandle(candleInteraction);
+                                }
+                                break;
                         }
-                        break;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Candle object doesn't have InteractCandle component attached.");
                 }
             }
         }
 
         if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, interactableLayer))
         {
-            Debug.Log("hiIsme");
             GameObject hitObject = hit.collider.gameObject;
             if (hitObject != currentInteractable)
             {
@@ -93,16 +126,23 @@ public class InteractionSystem : MonoBehaviour
     }
 
     public void InteractWithCabinet(TestingPlayAnimation cabinetAnimator)
-    {        
-        if (!cabinetAnimator.isOpen[0])
+    {
+        if (cabinetAnimator.isOpen.Length > 0)
         {
-            cabinetAnimator.isOpen[0] = true;
-            Debug.Log("cabinet is open");
+            if (!cabinetAnimator.isOpen[0])
+            {
+                cabinetAnimator.isOpen[0] = true;
+                Debug.Log("cabinet is open");
+            }
+            else
+            {
+                Debug.Log("cabinet is not open");
+                cabinetAnimator.isOpen[0] = false;
+            }
         }
         else
         {
-            Debug.Log("cabinet is not open");
-            cabinetAnimator.isOpen[0] = false;
+            Debug.LogError("isOpen array is empty or not initialized!");
         }
     }
 
