@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 199758049461865387}
   m_Layer: 0
   m_Name: Candle
-  m_TagString: Untagged
+  m_TagString: Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -5089,6 +5089,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
+      propertyPath: m_TagString
+      value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 259c1221b7c06304183fa060d7106a62, type: 3}
       propertyPath: m_StaticEditorFlags

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8046728060548145259}
   m_Layer: 0
   m_Name: NurseryCabinet
-  m_TagString: Cabinet
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8046728060548145259
 Transform:
@@ -44,12 +44,14 @@ GameObject:
   - component: {fileID: 5921183457059450959}
   - component: {fileID: 876862124202070691}
   - component: {fileID: 8517605440546028356}
+  - component: {fileID: 822761749987500905}
+  - component: {fileID: 1930950325476054708}
   m_Layer: 0
   m_Name: nursery room_cabinet
-  m_TagString: Cabinet
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3766639022661649511
 Transform:
@@ -105,7 +107,12 @@ MonoBehaviour:
   cabinetAnimator: {fileID: 5921183457059450959}
   cabinets:
   - {fileID: 2632657814729278854}
-  isOpen: 
+  closedColliders:
+  - {fileID: 8517605440546028356}
+  openedColliders:
+  - {fileID: 822761749987500905}
+  - {fileID: 1930950325476054708}
+  isOpen: 00
 --- !u!65 &8517605440546028356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -127,6 +134,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.011672974, y: 0.7785222, z: 0.8079271}
   m_Center: {x: -0.14440155, y: 0.0006892085, z: -0.56083405}
+--- !u!65 &822761749987500905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.3733251, y: 0.014678948, z: 0.80731016}
+  m_Center: {x: -0.33066282, y: -0.36064762, z: -0.56146216}
+--- !u!65 &1930950325476054708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632657814729278854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.3733251, y: 0.014678948, z: 0.80731016}
+  m_Center: {x: -0.36, y: 0.36, z: -0.56146216}
 --- !u!1 &2830966054440745691
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +192,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8804273074942841574
 Transform:
@@ -226,7 +275,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7629389027006948092
 Transform:
@@ -309,7 +358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4352347776821899945
 Transform:
