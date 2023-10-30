@@ -7,7 +7,7 @@ public class Hide : MonoBehaviour
     public bool isHide;
     private bool isTransitioning;
 
-    public LayerMask interactableLayer;
+    public LayerMask interacLayer;
     private GameObject currentInteractable;
     private float raycastDistance = 3f;
 
@@ -44,7 +44,7 @@ public class Hide : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(inputPosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+                if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
                 {
                     currentInteractable = hit.collider.gameObject;
 
@@ -99,7 +99,7 @@ public class Hide : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(inputPosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+                if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
                 {
                     currentInteractable = hit.collider.gameObject;
 

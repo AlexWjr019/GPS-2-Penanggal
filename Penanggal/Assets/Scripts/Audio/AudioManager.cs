@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] music;
     public Sound[] sfx;
+    public Sound[] stopSfx;
 
     //public AudioSource audiosource;
 
@@ -84,6 +85,17 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+
+    public void StopSFX(string name)
+    {
+        Sound s = Array.Find(sfx, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.Stop();
     }
 
     //plug this into where you want the audio to play
