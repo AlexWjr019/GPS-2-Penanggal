@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5764830763500031519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9002195165014356205}
+  - component: {fileID: 5144721879802203791}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9002195165014356205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764830763500031519}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5144721879802203791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764830763500031519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ba5f9029ec03541b957d787319d5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixer: {fileID: 4919085905221164691, guid: 2cb9845defaf0c247a5de00fe898e04a, type: 2}
+  sfxMixer: {fileID: 1216934517190648752, guid: 2cb9845defaf0c247a5de00fe898e04a, type: 2}
+  music:
+  - name: BGM
+    clip: {fileID: 8300000, guid: 5ad882da73bffb64197ea08368ebb246, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: RasaSayang
+    clip: {fileID: 8300000, guid: a9c1957e6cec42748a3dd1cdc88f9050, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: WindSoundEffect
+    clip: {fileID: 8300000, guid: 5afbee1b8942e314b943f3769f09f2a9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  sfx:
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: 35b4a773332125e4ba6c9f3ffd6b91a4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Crying
+    clip: {fileID: 8300000, guid: 33a98a33828d5044eb45ad41e9977f12, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PenanggalLaught
+    clip: {fileID: 8300000, guid: 2d42e3aa8d7d56b43bd85becb7ee81d5, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WindowShatter
+    clip: {fileID: 8300000, guid: cc56693425e59ff4b902af9f24a15dea, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PenanggalChasing
+    clip: {fileID: 8300000, guid: 84267ef46441eac4d9046e23ec93f599, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PenanggalHumming
+    clip: {fileID: 8300000, guid: 9d5a82b1db030d245a95fd5a69fa211b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ItemPickUp
+    clip: {fileID: 8300000, guid: cc1b2657d0bcbff4a9e3c97c62124b4f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: KeyPickUp
+    clip: {fileID: 8300000, guid: 00e074d48b8d86949b6e80c4ec4db241, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PicturePickUpSound
+    clip: {fileID: 8300000, guid: 1fb0b7ac6dfe98f4889283dde3e62cf0, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: NotePickUpSound
+    clip: {fileID: 8300000, guid: 4c48c15fe501b1f4089495621d8961b2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LightingUpCandle
+    clip: {fileID: 8300000, guid: f428aec78a5eaf6498e93c815800470d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LockClick1
+    clip: {fileID: 8300000, guid: 29a266ad3fa26c84a819ea768811a408, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LockClick2
+    clip: {fileID: 8300000, guid: 336513cf55191354091a20fab2e5abb4, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LockClick3
+    clip: {fileID: 8300000, guid: efea71bb30a86f24699604302c5e8262, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LockUnlock
+    clip: {fileID: 8300000, guid: 65cfcf16574b00d41836398a2fec0220, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WrongCombinationLock
+    clip: {fileID: 8300000, guid: f3c764722126489478fe6f062e1520f9, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BurningPaperSound
+    clip: {fileID: 8300000, guid: 66720609a486f7141a3df9b93f8cba70, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorOpen2
+    clip: {fileID: 8300000, guid: b7d88e297a44b3c4b90156f51a0850a1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorLock
+    clip: {fileID: 8300000, guid: d32a3ce473cb07147834c71d7bd15408, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WardrobeOpening
+    clip: {fileID: 8300000, guid: cb4d69d754308a84fa913bffa1023f0c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WardrobeClosing
+    clip: {fileID: 8300000, guid: f2b6fdcc9979e524793eafb670d2287a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DrawingPieceSwapSound
+    clip: {fileID: 8300000, guid: 733c8fb66a8ca22409d16a01a5a6e6b2, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ObjectSwap
+    clip: {fileID: 8300000, guid: e436c7813194b2547823fc51c44f683a, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BabyPenCrying3
+    clip: {fileID: 8300000, guid: 6162fa1b7aba4de49b02496a2f6f75c1, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BabyPenLaughing
+    clip: {fileID: 8300000, guid: a15eeb3ac3d381a4c87b7a023e671619, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BabyPenSpeak1
+    clip: {fileID: 8300000, guid: 5a1fb7c6386412a40b3eddf096a76603, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorBanging1Time
+    clip: {fileID: 8300000, guid: 0dee4493ecd71be4892e69a1e7a8825e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorBanging3Time
+    clip: {fileID: 8300000, guid: 4d16c3c910ac49e4e88c41d091a74fa2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LoudThump
+    clip: {fileID: 8300000, guid: 45f3292f952dc1f4997c1e78cc77612a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HeartBeat
+    clip: {fileID: 8300000, guid: 5ca226307c228924d8c480c0428f9508, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
