@@ -126,9 +126,9 @@ public class TornPuzzle : MonoBehaviour
 
     private void CheckOrder()
     {
-        if (pic0.transform.position.x < pic1.transform.position.x && pic1.transform.position.x < pic2.transform.position.x &&
-        pic3.transform.position.x < pic4.transform.position.x && pic4.transform.position.x < pic5.transform.position.x &&
-        pic6.transform.position.x < pic7.transform.position.x && pic7.transform.position.x < pic8.transform.position.x &&
+        if (pic0.transform.position.x > pic1.transform.position.x && pic1.transform.position.x > pic2.transform.position.x &&
+        pic3.transform.position.x > pic4.transform.position.x && pic4.transform.position.x > pic5.transform.position.x &&
+        pic6.transform.position.x > pic7.transform.position.x && pic7.transform.position.x > pic8.transform.position.x &&
         pic0.transform.position.y > pic3.transform.position.y && pic3.transform.position.y > pic6.transform.position.y &&
         pic1.transform.position.y > pic4.transform.position.y && pic4.transform.position.y > pic7.transform.position.y &&
         pic2.transform.position.y > pic5.transform.position.y && pic5.transform.position.y > pic8.transform.position.y)

@@ -15,6 +15,7 @@ public class Swap : MonoBehaviour
     public GameObject cup;
     public GameObject box;
     private List<GameObject> collidingObjects = new List<GameObject>();
+    public static bool weddingPuzzle = false;
 
     private void Start()
     {
@@ -38,12 +39,14 @@ public class Swap : MonoBehaviour
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
             transform.position = curPosition;
+            weddingPuzzle = true;
         }
     }
 
     private void OnMouseUp()
     {
         isDragging = false;
+        weddingPuzzle = false;
 
         if (isColliding && collidingObject != null && gameObject.CompareTag("Swap") && collidingObject.CompareTag("Swap"))
         {
