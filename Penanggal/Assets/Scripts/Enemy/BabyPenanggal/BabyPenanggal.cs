@@ -42,4 +42,9 @@ public class BabyPenanggal : MonoBehaviour
     {
         transform.rotation.SetLookRotation(playerPosition);
     }
+
+    public void OnDestroy()
+    {
+        BabySpawner.Instance.babies.Remove(gameObject);
+    }
 }

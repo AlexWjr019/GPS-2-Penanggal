@@ -23,18 +23,15 @@ public class TornPuzzle : MonoBehaviour
     private List<GameObject> collidingObjects = new List<GameObject>();
 
     public GameObject wholePicture, picPuzzle; // The whole picture object
-    public bool callBaby = false;
+    private bool callBaby = false;
+    private bool isCalled = false;
 
-
-    [SerializeField]
-    private BabySpawner babySpawner;
-
-    
+    //[SerializeField]
+    //private BabySpawner babySpawner;
 
     private void Start()
     {
         originalPosition = transform.position;
-        callBaby = false;
     }
 
     private void Update()
@@ -78,7 +75,11 @@ public class TornPuzzle : MonoBehaviour
     {
         if (callBaby) 
         {
-            babySpawner.StartCoroutine(babySpawner.SpawnBaby());
+            if (!isCalled)
+            {
+                BabySpawner.Instance.StartCoroutine(BabySpawner.Instance.SpawnBaby());
+                isCalled = true;
+            }
         }
     }
 
@@ -157,6 +158,7 @@ public class TornPuzzle : MonoBehaviour
             isDragging = false;
             isRotating = false;
             callBaby = false;
+            BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
             CreateWholePicture(); // Call the method to create the whole picture
         }
     }

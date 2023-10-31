@@ -30,7 +30,6 @@ public class Pinboard : MonoBehaviour
                         if (hit.collider.gameObject == gameObject)
                         {
                             pinPaper.SetActive(true);
-                            //babySpawner.StopCoroutine(babySpawner.SpawnBaby());
                             Destroy(selectedSlot.GetCurrentItem().gameObject);
                             selectedSlot.ClearSlot();
                         }
