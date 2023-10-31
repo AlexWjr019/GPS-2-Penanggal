@@ -15,14 +15,10 @@ public class BabyPenanggal : MonoBehaviour
     [HideInInspector]
     public Vector3 spawnPoint;
 
-    private void Awake()
-    {
-        
-    }
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.autoBraking = false;
         agent.SetDestination(playerPosition);
     }
 
@@ -36,7 +32,7 @@ public class BabyPenanggal : MonoBehaviour
         {
             agent.SetDestination(spawnPoint);
             
-            if (agent.remainingDistance == 0)
+            if (agent.remainingDistance < 0.2)
             {
                 Destroy(gameObject);
             }
@@ -45,11 +41,14 @@ public class BabyPenanggal : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.rotation.SetLookRotation(playerPosition);
+        transform.LookAt(playerPosition);
     }
 
-    public void OnDestroy()
+    private void OnTriggerEnter(Collider other)
     {
-        BabySpawner.Instance.babies.Remove(gameObject);
-    }
+        if (other.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
+        }
+    }    
 }

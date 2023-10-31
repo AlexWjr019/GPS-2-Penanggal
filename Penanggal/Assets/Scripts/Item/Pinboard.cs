@@ -6,9 +6,6 @@ public class Pinboard : MonoBehaviour
     private float raycastDistance = 5f;
     public GameObject pinPaper;
 
-    [SerializeField]
-    private BabySpawner babySpawner;
-
     private void Update()
     {
         if (Input.touchCount > 0)
