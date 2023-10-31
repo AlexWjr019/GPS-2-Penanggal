@@ -80,15 +80,15 @@ public class InteractionSystem : MonoBehaviour
                         }
                     }
                 }
-                else if (hit.collider.CompareTag("BabyPenanggal"))
-                {
-                    // Here you can add code specific to the forEnemy tag
-                    Debug.Log("Detected an object with forEnemy tag!");
-                }
                 else
                 {
                     Debug.LogWarning("Candle object doesn't have InteractCandle component attached.");
                 }
+            }
+            else if (hit.collider.CompareTag("BabyPenanggal"))
+            {
+                // Here you can add code specific to the forEnemy tag
+                Debug.Log("Detected an object with forEnemy tag!");
             }
         }
 
