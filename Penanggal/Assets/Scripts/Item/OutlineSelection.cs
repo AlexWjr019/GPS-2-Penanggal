@@ -5,24 +5,75 @@ using UnityEngine.EventSystems;
 
 public class OutlineSelection : MonoBehaviour
 {
+    public Camera playerCamera; // Reference to the main player camera
+    public float sphereCastRadius = 0.5f; // Radius of the SphereCast
+    public float maxDistance = 100f; // Maximum distance of the SphereCast
     private ItemOutline outlineScript;
+    private bool isOutlined = false;
+    //public float offsetDistance = -5f;
 
     private void Start()
     {
         outlineScript = GetComponent<ItemOutline>();
-        // Disable the ItemOutline script at the start.
         outlineScript.enabled = false;
     }
 
-    private void OnMouseEnter()
+    private void Update()
     {
-        // When the mouse pointer enters the object, enable the ItemOutline script.
+        CheckItemHighlight();
+    }
+
+    private void CheckItemHighlight()
+    {
+        RaycastHit hit;
+
+        // Calculate the SphereCast origin based on the player's view position
+        //Vector3 sphereCastOrigin = playerCamera.transform.position + playerCamera.transform.forward * offsetDistance;
+
+        // Perform the SphereCast
+        if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, LayerMask.GetMask("Items")))
+        {
+            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * maxDistance, Color.blue);
+
+            if (hit.collider.gameObject == this.gameObject)
+            {
+                // If the SphereCast hit this item and it's not already outlined
+                if (!isOutlined)
+                {
+                    Debug.Log("Activating Outline");
+                    ActivateOutline();
+                }
+            }
+            else
+            {
+                // If the SphereCast hit another item and this item is outlined
+                if (isOutlined)
+                {
+                    Debug.Log("Deactivating Outline");
+                    DeactivateOutline();
+                }
+            }
+        }
+        else if (isOutlined)
+        {
+            Debug.Log("Deactivating Outline (no hit)");
+            DeactivateOutline();
+        }
+    }
+
+
+
+
+    private void ActivateOutline()
+    {
         outlineScript.enabled = true;
+        isOutlined = true;
     }
 
-    private void OnMouseExit()
+    private void DeactivateOutline()
     {
-        // When the mouse pointer exits the object, disable the ItemOutline script.
         outlineScript.enabled = false;
+        isOutlined = false;
     }
 }
+

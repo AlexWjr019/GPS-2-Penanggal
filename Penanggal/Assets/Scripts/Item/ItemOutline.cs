@@ -28,39 +28,14 @@ public class ItemOutline : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Items")))
             {
-                Renderer rend = hit.transform.GetComponent<Renderer>();
+                Transform hitTransform = hit.transform;
 
-                if (rend != null && !outlinedRenderers.Contains(rend))
-                {
-                    // Store the original materials.
-                    originalMaterials[rend] = rend.materials;
-
-                    // Create a new materials array to include the outline material.
-                    Material[] materials = new Material[rend.materials.Length + 1];
-
-                    // Copy the original materials.
-                    for (int i = 0; i < rend.materials.Length; i++)
-                    {
-                        materials[i] = rend.materials[i];
-                    }
-
-                    // Assign the outline material to the last element.
-                    materials[materials.Length - 1] = outlineMaterial;
-
-                    // Assign the new materials array to the renderer.
-                    rend.materials = materials;
-
-                    // Set the outline material properties.
-                    outlineMaterial.SetColor("_OutlineColor", outlineColor);
-                    outlineMaterial.SetFloat("_OutlineWidth", outlineWidth);
-
-                    // Add the renderer to the list of outlined renderers.
-                    outlinedRenderers.Add(rend);
-                }
+                // Apply the outline to the hierarchy of the hit object.
+                ApplyOutlineToHierarchy(hitTransform);
             }
             else
             {
-                if(enabled == false)
+                if (enabled == false)
                 {
                     // Remove the renderer from the list and restore its original materials.
                     foreach (Renderer rend in outlinedRenderers)
@@ -74,7 +49,6 @@ public class ItemOutline : MonoBehaviour
                     }
                     outlinedRenderers.Clear(); // Clear the list of outlined renderers.
                 }
-
             }
         }
     }
@@ -92,5 +66,45 @@ public class ItemOutline : MonoBehaviour
             }
         }
         outlinedRenderers.Clear(); // Clear the list of outlined renderers.
+    }
+
+    // Recursive function to apply outline to the entire hierarchy.
+    void ApplyOutlineToHierarchy(Transform transform)
+    {
+        Renderer rend = transform.GetComponent<Renderer>();
+
+        if (rend != null && !outlinedRenderers.Contains(rend))
+        {
+            // Store the original materials.
+            originalMaterials[rend] = rend.materials;
+
+            // Create a new materials array to include the outline material.
+            Material[] materials = new Material[rend.materials.Length + 1];
+
+            // Copy the original materials.
+            for (int i = 0; i < rend.materials.Length; i++)
+            {
+                materials[i] = rend.materials[i];
+            }
+
+            // Assign the outline material to the last element.
+            materials[materials.Length - 1] = outlineMaterial;
+
+            // Assign the new materials array to the renderer.
+            rend.materials = materials;
+
+            // Set the outline material properties.
+            outlineMaterial.SetColor("_OutlineColor", outlineColor);
+            outlineMaterial.SetFloat("_OutlineWidth", outlineWidth);
+
+            // Add the renderer to the list of outlined renderers.
+            outlinedRenderers.Add(rend);
+        }
+
+        // Recursively apply outline to children.
+        foreach (Transform child in transform)
+        {
+            ApplyOutlineToHierarchy(child);
+        }
     }
 }
