@@ -3,7 +3,7 @@ using UnityEngine;
 public class Pinboard : MonoBehaviour
 {
     public string requiredItemName;
-    private float raycastDistance = 3f;
+    private float raycastDistance = 5f;
     public GameObject pinPaper;
 
     [SerializeField]

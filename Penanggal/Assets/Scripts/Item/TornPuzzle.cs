@@ -43,6 +43,8 @@ public class TornPuzzle : MonoBehaviour
             isRotating = false;
         }
         Debug.Log(isInteraction);
+
+        CallBabyPenanggal();
     }
 
     private void OnMouseDown()
@@ -77,6 +79,8 @@ public class TornPuzzle : MonoBehaviour
         {
             if (!isCalled)
             {
+                Debug.Log("call baby" + callBaby);
+                BabySpawner.Instance.spawnBaby = true;
                 BabySpawner.Instance.StartCoroutine(BabySpawner.Instance.SpawnBaby());
                 isCalled = true;
             }
