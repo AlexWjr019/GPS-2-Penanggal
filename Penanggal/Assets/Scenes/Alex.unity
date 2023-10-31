@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 345397209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.83, y: 1, z: 11.66}
+  m_LocalPosition: {x: 29.83, y: 0.93, z: 11.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpawnDelay: 20
   minSpawnDelay: 10
+  spawnBaby: 0
   prefab: {fileID: 3591265508106958276, guid: f269d31ca58107149b65d8a8232c0603, type: 3}
   player: {fileID: 345397209}
   spawnPoints:

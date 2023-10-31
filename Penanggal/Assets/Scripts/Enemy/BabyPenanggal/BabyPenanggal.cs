@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class BabyPenanggal : MonoBehaviour
 {
     [SerializeField]
     public Vector3 playerPosition;
+    [SerializeField]
+    private float returnSpeed;
 
     [HideInInspector]
     public bool isSeen;
+
+    [SerializeField] 
+    private int sceneInt;
 
     private NavMeshAgent agent;
     [HideInInspector]
@@ -31,6 +37,7 @@ public class BabyPenanggal : MonoBehaviour
         else if (isSeen)
         {
             agent.SetDestination(spawnPoint);
+            agent.speed = returnSpeed;
             
             if (agent.remainingDistance < 0.2)
             {
@@ -48,6 +55,7 @@ public class BabyPenanggal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            SceneManager.LoadScene(sceneInt);
             Destroy(other.gameObject);
         }
     }    
