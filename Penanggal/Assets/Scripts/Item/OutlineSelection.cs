@@ -7,9 +7,10 @@ public class OutlineSelection : MonoBehaviour
 {
     public Camera playerCamera; // Reference to the main player camera
     public float sphereCastRadius = 0.5f; // Radius of the SphereCast
-    public float maxDistance = 100f; // Maximum distance of the SphereCast
+    public float maxDistance = 3f; // Maximum distance of the SphereCast
     private ItemOutline outlineScript;
     private bool isOutlined = false;
+    private bool outline = true;
     //public float offsetDistance = -5f;
 
     private void Start()

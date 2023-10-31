@@ -12,6 +12,10 @@ public class ItemOutline : MonoBehaviour
     private List<Renderer> outlinedRenderers = new List<Renderer>();
     private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
 
+    public Camera playerCamera; // Reference to the main player camera
+    public float sphereCastRadius = 0.5f; // Radius of the SphereCast
+    public float maxDistance = 3f; // Maximum distance of the SphereCast
+
     private void Start()
     {
         outlineMaterial = new Material(outlineShader);
@@ -23,11 +27,11 @@ public class ItemOutline : MonoBehaviour
         // Check if the script is enabled before proceeding.
         if (enabled)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Items")))
+            if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, LayerMask.GetMask("Items")))
             {
+                Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * maxDistance, Color.red);
                 Transform hitTransform = hit.transform;
 
                 // Apply the outline to the hierarchy of the hit object.

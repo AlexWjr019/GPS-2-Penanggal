@@ -1020,6 +1020,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.05
+  playerCamera: {fileID: 28591911}
+  sphereCastRadius: 0.5
+  maxDistance: 3
 --- !u!114 &39926267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,7 +1037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!4 &39926270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 880d4e839501dda4e8d5d5239c6c13d4, type: 3}
@@ -3087,6 +3090,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.03
+  playerCamera: {fileID: 28591911}
+  sphereCastRadius: 0.5
+  maxDistance: 3
 --- !u!114 &252321836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,7 +3107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!1 &257677748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,7 +4055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!114 &321905164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4065,6 +4071,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.03
+  playerCamera: {fileID: 28591911}
+  sphereCastRadius: 0.5
+  maxDistance: 3
 --- !u!64 &321905165
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4487,6 +4496,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.03
+  playerCamera: {fileID: 0}
+  sphereCastRadius: 0.5
+  maxDistance: 100
 --- !u!114 &351082604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7351,6 +7363,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.03
+  playerCamera: {fileID: 0}
+  sphereCastRadius: 0.5
+  maxDistance: 100
 --- !u!114 &630557747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9242,6 +9257,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.03
+  playerCamera: {fileID: 0}
+  sphereCastRadius: 0.5
+  maxDistance: 100
 --- !u!114 &966808167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11263,6 +11281,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.1
+  playerCamera: {fileID: 28591911}
+  sphereCastRadius: 0.5
+  maxDistance: 3
 --- !u!114 &1166966115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11277,7 +11298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!136 &1166966116
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26061,6 +26082,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.15
+  playerCamera: {fileID: 28591911}
+  sphereCastRadius: 0.5
+  maxDistance: 3
 --- !u!114 &1689451130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26075,7 +26099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!1 &1701449753
 GameObject:
   m_ObjectHideFlags: 0
@@ -26234,7 +26258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!114 &1730903039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26250,6 +26274,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.08
+  playerCamera: {fileID: 28591911}
+  sphereCastRadius: 0.5
+  maxDistance: 3
 --- !u!1 &1746422757
 GameObject:
   m_ObjectHideFlags: 0
@@ -26419,7 +26446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.03
+      value: -2.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalRotation.w
