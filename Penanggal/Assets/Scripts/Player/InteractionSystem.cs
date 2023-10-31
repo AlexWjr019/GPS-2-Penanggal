@@ -74,14 +74,18 @@ public class InteractionSystem : MonoBehaviour
                                 float touchDuration = Time.time - touchStartTime;
                                 if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
                                 {
-                                    InteractWithCandle(candleInteraction);
+                                    if (!candleInteraction.isOn[0] && InventoryManager.Instance.GetSelectedInventoryItemName() != "Lighter")
+                                    {
+                                        break;
+                                    }
+                                    candleInteraction.ToggleCandle(0); 
                                 }
                                 break;
                         }
                     }
                 }
-                else
-                {
+            else
+            {
                     Debug.LogWarning("Candle object doesn't have InteractCandle component attached.");
                 }
             }
@@ -181,6 +185,11 @@ public class InteractionSystem : MonoBehaviour
                 Sprite itemSprite = interactableItem.GetSprite();
                 GameObject itemPrefab3D = interactableItem.GetPrefab3D();
 
+                if (itemName == "Key")
+                {
+                    HandleKeyPickUp();
+                }
+
                 if (InventoryManager.Instance.IsInventoryFull())
                 {
                     InventorySlot slotToReplace = InventoryManager.Instance.GetSlotToReplace();
@@ -231,6 +240,14 @@ public class InteractionSystem : MonoBehaviour
             Debug.LogError("No slot is selected or slot is empty");
         }
     }
+
+    private void HandleKeyPickUp()
+    {
+        ScriptedEvent_4 scriptedEvent = FindObjectOfType<ScriptedEvent_4>();
+        scriptedEvent.PlayRasaSayang();
+        Debug.Log("Key has been picked up!");
+    }
+
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying) return;

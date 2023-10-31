@@ -42,38 +42,31 @@ public class InteractCandle : MonoBehaviour
         }
 
         brightLightmap = blightmap.ToArray();
+        isOn[0] = true;
     }
 
-    void Update()
-    {
-        /*if (candles[0] && !isOn[0])
-        {
-            candleLights[0].enabled = false;
-            particleSystems[0].Stop();
-            //cabinetAnimator.SetBool("isOpen", false);
-        }
-        else
-        {
-            candleLights[0].enabled = true;
-            particleSystems[0].Play();
-            //cabinetAnimator.SetBool("isOpen", true);
-        }*/
+    // Removed Update method since touch handling is moved to another script
 
-        if (candles[0] && !isOn[0])
+    public void ToggleCandle(int candleIndex)
+    {
+        if (!isOn[candleIndex])
         {
-            candleLights[0].enabled = false;
-            //particleSystems[0].Stop();
-            LightmapSettings.lightmaps = darkLightmap;
-            //isOn[0] = true;
-            Debug.Log("dark");
+            string selectedItemName = InventoryManager.Instance.GetSelectedInventoryItemName();
+
+            if (selectedItemName == "Lighter")
+            {
+                candleLights[candleIndex].enabled = true;
+                LightmapSettings.lightmaps = brightLightmap;
+                isOn[candleIndex] = true;
+                Debug.Log("bright");
+            }
         }
         else
         {
-            candleLights[0].enabled = true;
-            //particleSystems[0].Play();
-            LightmapSettings.lightmaps = brightLightmap;
-            //isOn[0] = false;
-            Debug.Log("bright");
+            candleLights[candleIndex].enabled = false;
+            LightmapSettings.lightmaps = darkLightmap;
+            isOn[candleIndex] = false;
+            Debug.Log("dark");
         }
     }
 }

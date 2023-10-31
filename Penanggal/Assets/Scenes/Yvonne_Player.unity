@@ -12538,7 +12538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -19077,7 +19077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -19735,7 +19735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -51239,7 +51239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -52662,7 +52662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -52887,7 +52887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -55314,7 +55314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca547b805705f2498a8df497cc2272f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
 --- !u!65 &2103916580
 BoxCollider:
   m_ObjectHideFlags: 0
