@@ -12537,6 +12537,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
       objectReference: {fileID: 1885128816339941818}
@@ -19064,8 +19068,16 @@ PrefabInstance:
       value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -19714,8 +19726,16 @@ PrefabInstance:
       value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -39966,9 +39986,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHide: 0
-  interactableLayer:
+  interacLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   cupBoardDoorAnima: {fileID: 1868377585}
   cupboardDoorAnima2: {fileID: 1750549427}
   hideInLivingCupboard: {fileID: 0}
@@ -40426,9 +40446,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHide: 0
-  interactableLayer:
+  interacLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   cupBoardDoorAnima: {fileID: 1868377585}
   cupboardDoorAnima2: {fileID: 1750549427}
   hideInLivingCupboard: {fileID: 0}
@@ -41981,9 +42001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHide: 0
-  interactableLayer:
+  interacLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   cupBoardDoorAnima: {fileID: 1868377585}
   cupboardDoorAnima2: {fileID: 1750549427}
   hideInLivingCupboard: {fileID: 0}
@@ -42169,6 +42189,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  stopSfx: []
 --- !u!4 &1494987301
 Transform:
   m_ObjectHideFlags: 0
@@ -44971,9 +44992,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHide: 0
-  interactableLayer:
+  interacLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   cupBoardDoorAnima: {fileID: 1868377585}
   cupboardDoorAnima2: {fileID: 1750549427}
   hideInLivingCupboard: {fileID: 0}
@@ -51209,8 +51230,16 @@ PrefabInstance:
       value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -52624,8 +52653,16 @@ PrefabInstance:
       value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -52841,8 +52878,16 @@ PrefabInstance:
       value: Candle
       objectReference: {fileID: 0}
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -56281,6 +56326,10 @@ PrefabInstance:
     - target: {fileID: 3767234466950710864, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
