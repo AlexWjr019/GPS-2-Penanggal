@@ -158,6 +158,7 @@ public class TornPuzzle : MonoBehaviour
             isDragging = false;
             isRotating = false;
             callBaby = false;
+            BabySpawner.Instance.spawnBaby = false;
             BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
             CreateWholePicture(); // Call the method to create the whole picture
         }

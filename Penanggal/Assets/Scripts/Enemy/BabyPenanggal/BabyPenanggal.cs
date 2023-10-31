@@ -35,6 +35,11 @@ public class BabyPenanggal : MonoBehaviour
         else if (isSeen)
         {
             agent.SetDestination(spawnPoint);
+            
+            if (agent.remainingDistance == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -10,6 +10,8 @@ public class BabySpawner : MonoBehaviour
     private float maxSpawnDelay = 20f;
     [SerializeField]
     private float minSpawnDelay = 10f;
+    [HideInInspector]
+    public bool spawnBaby;
 
     [SerializeField]
     private GameObject prefab;
@@ -36,7 +38,7 @@ public class BabySpawner : MonoBehaviour
 
     public IEnumerator SpawnBaby()
     {
-        while (true)
+        while (spawnBaby)
         {
             int ran = Random.Range(0, spawnPoints.Count);
 
