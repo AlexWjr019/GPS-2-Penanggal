@@ -1182,6 +1182,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &100675709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3157,6 +3159,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &330315322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3362,6 +3366,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &345222482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5307,6 +5313,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 819165977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &488966445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488966447}
+  - component: {fileID: 488966446}
+  m_Layer: 0
+  m_Name: Baby spawnpoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &488966446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488966445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d608415453be13c45b900e846a48984e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawnDelay: 20
+  minSpawnDelay: 10
+  prefab: {fileID: 3591265508106958276, guid: f269d31ca58107149b65d8a8232c0603, type: 3}
+  player: {fileID: 1598644538}
+  spawnPoints:
+  - {fileID: 974150813}
+  - {fileID: 1404119322}
+  - {fileID: 1259609353}
+  babies: []
+--- !u!4 &488966447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488966445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.386, y: 3.3, z: -6.681}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 974150814}
+  - {fileID: 1404119323}
+  - {fileID: 1259609354}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497908626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1390831048735495114, guid: 8012cd6f1990fe94ca4625ce9396b768, type: 3}
@@ -5890,6 +5952,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &523975669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8734,6 +8798,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &702411041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11280,6 +11346,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5395582760244232606, guid: a285eda0475d5fa44bcc0b894314a0e5, type: 3}
+--- !u!1 &974150813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974150814}
+  m_Layer: 0
+  m_Name: Spawnpoint_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974150814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974150813}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.862, y: 0, z: 0.957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488966447}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981677223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8204880374533385131, guid: a285eda0475d5fa44bcc0b894314a0e5, type: 3}
@@ -15608,6 +15705,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 14f851636beb9454ab996f49dc326c8f, type: 3}
   m_PrefabInstance: {fileID: 1394193633}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1259609353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259609354}
+  m_Layer: 0
+  m_Name: Spawnpoint_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259609354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259609353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.963, y: 0, z: 0.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488966447}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1259930537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21284,6 +21412,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &1344872803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21486,6 +21616,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &1347988300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22095,6 +22227,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f851636beb9454ab996f49dc326c8f, type: 3}
+--- !u!1 &1404119322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404119323}
+  m_Layer: 0
+  m_Name: Spawnpoint_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404119323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404119322}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.523, y: 0, z: 1.508}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488966447}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414803469
 GameObject:
   m_ObjectHideFlags: 0
@@ -23031,6 +23194,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &1474091732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28548,6 +28713,8 @@ MonoBehaviour:
   doubleClickTimeThreshold: 0.3
   wholePicture: {fileID: 388324062}
   picPuzzle: {fileID: 301893497}
+  callBaby: 0
+  babySpawner: {fileID: 0}
 --- !u!65 &1504207876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34138,6 +34305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredItemName: WholePic
   pinPaper: {fileID: 1474985826}
+  babySpawner: {fileID: 0}
 --- !u!65 &1852159986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49809,3 +49977,4 @@ SceneRoots:
   - {fileID: 1028450989}
   - {fileID: 1278087621}
   - {fileID: 152619229}
+  - {fileID: 488966447}

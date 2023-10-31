@@ -3,11 +3,8 @@ using UnityEngine;
 public class Pinboard : MonoBehaviour
 {
     public string requiredItemName;
-    private float raycastDistance = 3f;
+    private float raycastDistance = 5f;
     public GameObject pinPaper;
-
-    [SerializeField]
-    private BabySpawner babySpawner;
 
     private void Update()
     {
@@ -30,7 +27,6 @@ public class Pinboard : MonoBehaviour
                         if (hit.collider.gameObject == gameObject)
                         {
                             pinPaper.SetActive(true);
-                            //babySpawner.StopCoroutine(babySpawner.SpawnBaby());
                             Destroy(selectedSlot.GetCurrentItem().gameObject);
                             selectedSlot.ClearSlot();
                         }

@@ -91,7 +91,8 @@ public class InteractionSystem : MonoBehaviour
             }
             else if (hit.collider.CompareTag("BabyPenanggal"))
             {
-                // Here you can add code specific to the forEnemy tag
+                hit.collider.gameObject.GetComponent<BabyPenanggal>().isSeen = true;
+
                 Debug.Log("Detected an object with forEnemy tag!");
             }
         }

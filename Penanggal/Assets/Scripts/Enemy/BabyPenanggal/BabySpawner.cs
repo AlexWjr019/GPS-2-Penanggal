@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class BabySpawner : MonoBehaviour
 {
+    public static BabySpawner Instance;
+
     [SerializeField]
     private float maxSpawnDelay = 20f;
     [SerializeField]
     private float minSpawnDelay = 10f;
+    [HideInInspector]
+    public bool spawnBaby;
 
     [SerializeField]
     private GameObject prefab;
@@ -17,23 +21,23 @@ public class BabySpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> spawnPoints = new List<GameObject>();
 
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public IEnumerator SpawnBaby()
     {
-        while (true)
+        while (spawnBaby)
         {
             int ran = Random.Range(0, spawnPoints.Count);
-
-            //Vector3 position = new Vector3(spawnPoints[ran].transform.position.x, spawnPoints[ran].transform.position.y, spawnPoints[ran].transform.position.z);
 
             GameObject newSpawn = Instantiate(prefab, spawnPoints[ran].transform.position, Quaternion.identity);
             newSpawn.GetComponent<BabyPenanggal>().spawnPoint = spawnPoints[ran].transform.position;
