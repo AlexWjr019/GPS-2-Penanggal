@@ -23,6 +23,11 @@ public class TornPuzzle : MonoBehaviour
 
     public GameObject wholePicture, picPuzzle; // The whole picture object
 
+    [SerializeField]
+    private BabySpawner babySpawner;
+
+    //babySpawner.StartCoroutine(babySpawner.SpawnBaby());
+
     private void Start()
     {
         originalPosition = transform.position;

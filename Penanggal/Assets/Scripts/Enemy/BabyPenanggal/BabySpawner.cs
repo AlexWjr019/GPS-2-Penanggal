@@ -19,7 +19,7 @@ public class BabySpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnBaby());
+        
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class BabySpawner : MonoBehaviour
         
     }
 
-    private IEnumerator SpawnBaby()
+    public IEnumerator SpawnBaby()
     {
         while (true)
         {

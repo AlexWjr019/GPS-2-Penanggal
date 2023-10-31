@@ -6,6 +6,9 @@ public class Pinboard : MonoBehaviour
     private float raycastDistance = 3f;
     public GameObject pinPaper;
 
+    [SerializeField]
+    private BabySpawner babySpawner;
+
     private void Update()
     {
         if (Input.touchCount > 0)
@@ -27,6 +30,7 @@ public class Pinboard : MonoBehaviour
                         if (hit.collider.gameObject == gameObject)
                         {
                             pinPaper.SetActive(true);
+                            babySpawner.StopCoroutine(babySpawner.SpawnBaby());
                             Destroy(selectedSlot.GetCurrentItem().gameObject);
                             selectedSlot.ClearSlot();
                         }
