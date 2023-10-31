@@ -18,6 +18,7 @@ public class TornPuzzle : MonoBehaviour
     private float lastClickTime;
     public float doubleClickTimeThreshold = 0.3f;
     public static bool getPinPaper = false;
+    public static bool isInteraction = false;
 
     private List<GameObject> collidingObjects = new List<GameObject>();
 
@@ -41,11 +42,12 @@ public class TornPuzzle : MonoBehaviour
             transform.Rotate(Vector3.forward * 90f);
             isRotating = false;
         }
+        Debug.Log(isInteraction);
     }
 
     private void OnMouseDown()
     {
-        if (gameObject.CompareTag("Swap"))
+        if (/*isInteraction &&*/ gameObject.CompareTag("Swap"))
         {
             float timeSinceLastClick = Time.time - lastClickTime;
 

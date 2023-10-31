@@ -57,6 +57,7 @@ public class InteractionSystem : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Candle"))
             {
+                //call function
                 InteractCandle candleInteraction = hit.collider.gameObject.GetComponentInChildren<InteractCandle>();
                 if (candleInteraction != null)
                 {
@@ -78,6 +79,11 @@ public class InteractionSystem : MonoBehaviour
                                 break;
                         }
                     }
+                }
+                else if (hit.collider.CompareTag("BabyPenanggal"))
+                {
+                    // Here you can add code specific to the forEnemy tag
+                    Debug.Log("Detected an object with forEnemy tag!");
                 }
                 else
                 {
