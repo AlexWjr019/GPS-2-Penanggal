@@ -180,7 +180,7 @@ public class FirstPersonController : MonoBehaviour
                     break;
 
                 case TouchPhase.Moved:
-                    if (!TornPuzzle.isDragging && !Swap.weddingPuzzle)
+                    if (!Swap.weddingPuzzle)
                     {
                         if (t.fingerId == rightFingerId)
                         {
@@ -222,7 +222,7 @@ public class FirstPersonController : MonoBehaviour
 
     void LookAround()
     {
-        if(!Swap.weddingPuzzle)
+        if(!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
         {
             // vertical (pitch) rotation
             cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y * verticalCameraSensitivity, minClamp, maxClamp);
@@ -234,7 +234,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Move()
     {
-        if (!TornPuzzle.isDragging && !Swap.weddingPuzzle)
+        if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
         {
             // don't move if the touch delta is shorter than the designated dead zone
             if (moveInput.sqrMagnitude <= moveInputDeadZone)

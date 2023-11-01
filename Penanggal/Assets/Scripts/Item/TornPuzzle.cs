@@ -26,6 +26,8 @@ public class TornPuzzle : MonoBehaviour
     private bool callBaby = false;
     private bool isCalled = false;
 
+    public float moveSpeed = 3.0f;
+
     //[SerializeField]
     //private BabySpawner babySpawner;
 
@@ -49,28 +51,30 @@ public class TornPuzzle : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (/*isInteraction &&*/ gameObject.CompareTag("Swap"))
+        if(TornPuzzleControl.tornPuzzleActivated)
         {
-            float timeSinceLastClick = Time.time - lastClickTime;
-
-            if (timeSinceLastClick <= doubleClickTimeThreshold)
+            if (gameObject.CompareTag("Swap"))
             {
-                // Double click detected, trigger rotation
-                isRotating = true;
-            }
-            else
-            {
-                // Single click, start dragging
-                initialMousePosition = Input.mousePosition;
-                screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-                offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(initialMousePosition.x, initialMousePosition.y, screenPoint.z));
-                isDragging = true;
-            }
+                float timeSinceLastClick = Time.time - lastClickTime;
 
-            lastClickTime = Time.time;
-            callBaby = true;
+                if (timeSinceLastClick <= doubleClickTimeThreshold)
+                {
+                    // Double click detected, trigger rotation
+                    isRotating = true;
+                }
+                else
+                {
+                    // Single click, start dragging
+                    initialMousePosition = Input.mousePosition;
+                    screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                    offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(initialMousePosition.x, initialMousePosition.y, screenPoint.z));
+                    isDragging = true;
+                }
+
+                lastClickTime = Time.time;
+                callBaby = true;
+            }
         }
-        
     }
 
     public void CallBabyPenanggal()
@@ -89,11 +93,14 @@ public class TornPuzzle : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (isDragging)
+        if(TornPuzzleControl.tornPuzzleActivated)
         {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-            transform.position = curPosition;
+            if (isDragging)
+            {
+                Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+                Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+                transform.position = curPosition;
+            }
         }
     }
 
@@ -104,21 +111,24 @@ public class TornPuzzle : MonoBehaviour
             // Rotate the object 90 degrees clockwise when clicked
             transform.Rotate(Vector3.forward * 90f);
         }
-        else if (isDragging)
+        else if (isColliding && collidingObject != null && gameObject.CompareTag("Swap") && collidingObject.CompareTag("Swap"))
         {
-            // Handle dragging actions here
-            if (isColliding && collidingObject != null && gameObject.CompareTag("Swap") && collidingObject.CompareTag("Swap"))
+            if (collidingObject != null)
             {
-                SwapPositions(collidingObject);
+                StartCoroutine(SmoothlyMoveToPosition(collidingObject, originalPosition));
             }
-            else
-            {
-                // Snap the object back to its original position
-                transform.position = originalPosition;
-            }
-            CheckOrder();
-        }
 
+            if (this.gameObject != null)
+            {
+                StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
+            }
+        }
+        else
+        {
+            // Snap the object back to its original position
+            StartCoroutine(SmoothlyMoveToPosition(this.gameObject, originalPosition));
+        }
+        CheckOrder();
         isDragging = false;
         isRotating = false;
     }
@@ -135,25 +145,83 @@ public class TornPuzzle : MonoBehaviour
         collidingObject = null;
     }
 
-    private void SwapPositions(GameObject otherObject)
+    //private void SwapPositions(GameObject otherObject)
+    //{
+    //    // Store the original positions of both objects
+    //    Vector3 otherOriginalPosition = otherObject.GetComponent<TornPuzzle>().originalPosition;
+
+    //    // Swap the objects' positions
+    //    otherObject.transform.position = originalPosition;
+    //    transform.position = otherOriginalPosition;
+
+    //    // Update the original positions
+    //    originalPosition = transform.position;
+    //    otherObject.GetComponent<TornPuzzle>().originalPosition = otherObject.transform.position;
+    //}
+
+    private IEnumerator SmoothlyMoveToPosition(GameObject obj, Vector3 target)
     {
-        // Store the original positions of both objects
-        Vector3 otherOriginalPosition = otherObject.GetComponent<TornPuzzle>().originalPosition;
+        if (obj == null)
+        {
+            Debug.LogError("Object is null. Aborting SmoothlyMoveToPosition coroutine.");
+            yield break;
+        }
 
-        // Swap the objects' positions
-        otherObject.transform.position = originalPosition;
-        transform.position = otherOriginalPosition;
+        Transform objTransform = obj.transform;
 
-        // Update the original positions
-        originalPosition = transform.position;
-        otherObject.GetComponent<TornPuzzle>().originalPosition = otherObject.transform.position;
+        if (objTransform == null)
+        {
+            Debug.LogError("Object's transform component is null. Aborting SmoothlyMoveToPosition coroutine.");
+            yield break;
+        }
+
+        float elapsedTime = 0f;
+        Vector3 initialPosition = objTransform.position;
+        TornPuzzle tornComponent = obj.GetComponent<TornPuzzle>();
+
+        if (tornComponent != null)
+        {
+            Vector3 originalPosition = tornComponent.originalPosition;
+
+            while (elapsedTime < 1f)
+            {
+                elapsedTime += Time.deltaTime * moveSpeed;
+                objTransform.position = Vector3.Lerp(initialPosition, target, elapsedTime);
+                yield return null;
+            }
+
+            objTransform.position = target;
+
+            // Update the original position of both objects after the swap
+            tornComponent.originalPosition = target;
+
+            // Update the original position of the colliding object if it has a Swap component
+            if (collidingObject != null)
+            {
+                TornPuzzle collidingTornComponent = collidingObject.GetComponent<TornPuzzle>();
+                if (collidingTornComponent != null)
+                {
+                    collidingTornComponent.originalPosition = initialPosition;
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("Swap component not found on the object: " + obj.name);
+        }
     }
 
     private void CheckOrder()
     {
-        if (pic0.transform.position.x > pic1.transform.position.x && pic1.transform.position.x > pic2.transform.position.x &&
-        pic3.transform.position.x > pic4.transform.position.x && pic4.transform.position.x > pic5.transform.position.x &&
-        pic6.transform.position.x > pic7.transform.position.x && pic7.transform.position.x > pic8.transform.position.x &&
+        //if (pic0.transform.position.x > pic1.transform.position.x && pic1.transform.position.x > pic2.transform.position.x &&
+        //pic3.transform.position.x > pic4.transform.position.x && pic4.transform.position.x > pic5.transform.position.x &&
+        //pic6.transform.position.x > pic7.transform.position.x && pic7.transform.position.x > pic8.transform.position.x &&
+        //pic0.transform.position.y > pic3.transform.position.y && pic3.transform.position.y > pic6.transform.position.y &&
+        //pic1.transform.position.y > pic4.transform.position.y && pic4.transform.position.y > pic7.transform.position.y &&
+        //pic2.transform.position.y > pic5.transform.position.y && pic5.transform.position.y > pic8.transform.position.y)
+        if (pic0.transform.position.x < pic1.transform.position.x && pic1.transform.position.x < pic2.transform.position.x &&
+        pic3.transform.position.x < pic4.transform.position.x && pic4.transform.position.x < pic5.transform.position.x &&
+        pic6.transform.position.x < pic7.transform.position.x && pic7.transform.position.x < pic8.transform.position.x &&
         pic0.transform.position.y > pic3.transform.position.y && pic3.transform.position.y > pic6.transform.position.y &&
         pic1.transform.position.y > pic4.transform.position.y && pic4.transform.position.y > pic7.transform.position.y &&
         pic2.transform.position.y > pic5.transform.position.y && pic5.transform.position.y > pic8.transform.position.y)
@@ -162,8 +230,9 @@ public class TornPuzzle : MonoBehaviour
             isDragging = false;
             isRotating = false;
             callBaby = false;
-            BabySpawner.Instance.spawnBaby = false;
-            BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
+            //BabySpawner.Instance.spawnBaby = false;
+            //BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
+            TornPuzzleControl.isTorn = true;
             CreateWholePicture(); // Call the method to create the whole picture
         }
     }

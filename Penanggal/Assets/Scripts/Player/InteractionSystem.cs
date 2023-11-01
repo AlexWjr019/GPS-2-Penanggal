@@ -178,7 +178,7 @@ public class InteractionSystem : MonoBehaviour
     {
         if (currentInteractable != null)
         {
-            FindObjectOfType<AudioManager>().PlaySFX("ItemPickUp");
+            //FindObjectOfType<AudioManager>().PlaySFX("ItemPickUp");
             IInteractableItem interactableItem = currentInteractable.GetComponent<IInteractableItem>();
             if (interactableItem != null)
             {
