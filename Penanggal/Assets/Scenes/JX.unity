@@ -489,6 +489,7 @@ MonoBehaviour:
   bowl: {fileID: 901880628}
   cup: {fileID: 3556868}
   box: {fileID: 523181626}
+  moveSpeed: 5
 --- !u!54 &3556874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3578,7 +3579,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4496,9 +4497,9 @@ MonoBehaviour:
   outlineShader: {fileID: -6465566751694194690, guid: e0a0dc466d31f954fa551b328857586f, type: 3}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 1.03
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!114 &351082604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4511,9 +4512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34071d10106ec04ebfeb3f80d7bb3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 28591911}
   sphereCastRadius: 0.5
-  maxDistance: 100
+  maxDistance: 3
 --- !u!1 &375345426
 GameObject:
   m_ObjectHideFlags: 0
@@ -6307,6 +6308,7 @@ MonoBehaviour:
   bowl: {fileID: 901880628}
   cup: {fileID: 3556868}
   box: {fileID: 523181626}
+  moveSpeed: 5
 --- !u!54 &523181632
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7852,7 +7854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &710784580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9097,6 +9099,7 @@ MonoBehaviour:
   bowl: {fileID: 901880628}
   cup: {fileID: 3556868}
   box: {fileID: 523181626}
+  moveSpeed: 5
 --- !u!54 &901880634
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25546,7 +25549,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.54
+      value: 7.812
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25594,7 +25597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
       propertyPath: m_TagString
@@ -26183,7 +26186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1715971552
 Transform:
   m_ObjectHideFlags: 0
@@ -29706,7 +29709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2076244646
 Transform:
   m_ObjectHideFlags: 0

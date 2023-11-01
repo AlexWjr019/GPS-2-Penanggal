@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Swap : MonoBehaviour
@@ -16,6 +17,9 @@ public class Swap : MonoBehaviour
     public GameObject box;
     private List<GameObject> collidingObjects = new List<GameObject>();
     public static bool weddingPuzzle = false;
+    public float moveSpeed = 3.0f;
+    private Vector3 targetPosition;
+    private bool puzzleCompleted = false;
 
     private void Start()
     {
@@ -24,7 +28,7 @@ public class Swap : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameObject.CompareTag("Swap"))
+        if (!puzzleCompleted && gameObject.CompareTag("Swap"))
         {
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -34,12 +38,16 @@ public class Swap : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (isDragging)
+        if (isDragging && !puzzleCompleted)
         {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-            transform.position = curPosition;
-            weddingPuzzle = true;
+            if (gameObject.CompareTag("Swap"))
+            {
+                Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+                Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+                transform.position = curPosition;
+                weddingPuzzle = true;
+            }
+
         }
     }
 
@@ -50,12 +58,20 @@ public class Swap : MonoBehaviour
 
         if (isColliding && collidingObject != null && gameObject.CompareTag("Swap") && collidingObject.CompareTag("Swap"))
         {
-            SwapPositions(collidingObject);
+            if (collidingObject != null)
+            {
+                StartCoroutine(SmoothlyMoveToPosition(collidingObject, originalPosition));
+            }
+
+            if (this.gameObject != null)
+            {
+                StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
+            }
         }
         else
         {
             // Snap the object back to its original position
-            transform.position = originalPosition;
+            StartCoroutine(SmoothlyMoveToPosition(this.gameObject, originalPosition));
         }
         CheckOrder();
     }
@@ -73,26 +89,68 @@ public class Swap : MonoBehaviour
         collidingObject = null;
     }
 
-    private void SwapPositions(GameObject otherObject)
+    private IEnumerator SmoothlyMoveToPosition(GameObject obj, Vector3 target)
     {
-        // Store the original positions of both objects
-        Vector3 tempOriginalPosition = originalPosition;
-        Vector3 otherOriginalPosition = otherObject.GetComponent<Swap>().originalPosition;
+        if (obj == null)
+        {
+            Debug.LogError("Object is null. Aborting SmoothlyMoveToPosition coroutine.");
+            yield break;
+        }
 
-        // Swap the objects' positions
-        otherObject.transform.position = tempOriginalPosition;
-        transform.position = otherOriginalPosition;
+        Transform objTransform = obj.transform;
 
-        // Update the original positions
-        originalPosition = transform.position;
-        otherObject.GetComponent<Swap>().originalPosition = otherObject.transform.position;
+        if (objTransform == null)
+        {
+            Debug.LogError("Object's transform component is null. Aborting SmoothlyMoveToPosition coroutine.");
+            yield break;
+        }
+
+        float elapsedTime = 0f;
+        Vector3 initialPosition = objTransform.position;
+        Swap swapComponent = obj.GetComponent<Swap>();
+
+        if (swapComponent != null)
+        {
+            Vector3 originalPosition = swapComponent.originalPosition;
+
+            while (elapsedTime < 1f)
+            {
+                elapsedTime += Time.deltaTime * moveSpeed;
+                objTransform.position = Vector3.Lerp(initialPosition, target, elapsedTime);
+                yield return null;
+            }
+
+            objTransform.position = target;
+
+            // Update the original position of both objects after the swap
+            swapComponent.originalPosition = target;
+
+            // Update the original position of the colliding object if it has a Swap component
+            if (collidingObject != null)
+            {
+                Swap collidingSwapComponent = collidingObject.GetComponent<Swap>();
+                if (collidingSwapComponent != null)
+                {
+                    collidingSwapComponent.originalPosition = initialPosition;
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("Swap component not found on the object: " + obj.name);
+        }
     }
+
 
     private void CheckOrder()
     {
         if (box.transform.position.y > bowl.transform.position.y && bowl.transform.position.y > cup.transform.position.y)
         {
             Debug.Log("Correct Order");
+            puzzleCompleted = true;
+            bowl.tag = "Unmovable";
+            cup.tag = "Unmovable";
+            box.tag = "Unmovable";
         }
     }
 }
