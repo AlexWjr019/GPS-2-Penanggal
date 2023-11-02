@@ -116,6 +116,7 @@ public class Swap : MonoBehaviour
             while (elapsedTime < 1f)
             {
                 elapsedTime += Time.deltaTime * moveSpeed;
+                FindObjectOfType<AudioManager>().PlaySFX("ObjectSwap");
                 objTransform.position = Vector3.Lerp(initialPosition, target, elapsedTime);
                 yield return null;
             }

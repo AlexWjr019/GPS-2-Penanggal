@@ -79,6 +79,7 @@ public class FlameObject : MonoBehaviour
                                 if (cursepapers[i] == clickedObject)
                                 {
                                     // Destroy the matching curse paper
+                                    FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
                                     Destroy(cursepapers[i]);
                                     cursepapers.RemoveAt(i); // Remove it from the list
                                     break; // Exit the loop

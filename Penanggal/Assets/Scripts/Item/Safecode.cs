@@ -176,6 +176,7 @@ public class Safecode : MonoBehaviour
     {
         if (coroutineAllowed)
         {
+            FindObjectOfType<AudioManager>().PlaySFX("LockClick1");
             StartCoroutine("RotateWheel");
         }
     }

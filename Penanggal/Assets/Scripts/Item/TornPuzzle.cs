@@ -186,6 +186,7 @@ public class TornPuzzle : MonoBehaviour
             while (elapsedTime < 1f)
             {
                 elapsedTime += Time.deltaTime * moveSpeed;
+                FindObjectOfType<AudioManager>().PlaySFX("DrawingPieceSwapSound");
                 objTransform.position = Vector3.Lerp(initialPosition, target, elapsedTime);
                 yield return null;
             }

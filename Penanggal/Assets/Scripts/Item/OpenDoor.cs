@@ -40,6 +40,7 @@ public class OpenDoor : MonoBehaviour
                             ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
                             if (itemNotice != null && hit.collider.gameObject.CompareTag("Door"))
                             {
+                                FindObjectOfType<AudioManager>().PlaySFX("DoorLocked");
                                 itemNotice.ShowDoorNotice();
                             }
                             else
@@ -67,6 +68,7 @@ public class OpenDoor : MonoBehaviour
         {
             doorIsOpen = true;
             doorAnimations.Play("OpenBedroomDoor");
+            FindObjectOfType<AudioManager>().PlaySFX("DoorOpen2");
         }
         else if (doorIsOpen)
         {

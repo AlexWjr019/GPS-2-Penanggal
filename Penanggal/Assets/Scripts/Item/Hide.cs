@@ -201,7 +201,7 @@ public class Hide : MonoBehaviour
                 kitchenDoorAnima2.Play("KitchenCloseDoor2");
             }
         }
-
+        FindObjectOfType<AudioManager>().PlaySFX("WardrobeOpening");
         isTransitioning = false;
     }
 
@@ -246,7 +246,7 @@ public class Hide : MonoBehaviour
 
             moveOutKitchenCupboard.Play("MoveOutKitchenCupboard");
         }
-
+        FindObjectOfType<AudioManager>().PlaySFX("WardrobeClosing");
         isTransitioning = false;
 
     }
