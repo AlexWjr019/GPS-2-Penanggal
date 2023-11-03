@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: fbbc2b733a4f46d4fab634cfad663d2a, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 62b85820d46ae98419bd7acf826f6322, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8b6b7da3a7a3ba34ca81c2c40ce46d4b, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 171213f4ba0017c4e980a5187d3753e2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -675,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &39091513
 Transform:
   m_ObjectHideFlags: 0
@@ -2078,124 +2078,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b48073e646e5be542aa5fdb64c64bcb8, type: 3}
   m_PrefabInstance: {fileID: 255246831}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &259848686
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 259848687}
-  - component: {fileID: 259848689}
-  - component: {fileID: 259848688}
-  m_Layer: 0
-  m_Name: Livingroom_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &259848687
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259848686}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.5, y: 4.45, z: 19.74}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &259848688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259848686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &259848689
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259848686}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 6.608859, y: 6.129652}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &273952472 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6987488735638428266, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
@@ -2246,11 +2128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d70dfa186855c44a8079421a2f94afb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.122
+      value: -11.147
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d70dfa186855c44a8079421a2f94afb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.884
+      value: 4.881
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d70dfa186855c44a8079421a2f94afb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2944,7 +2826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885128815763361471, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1885128815763361471, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
@@ -2968,88 +2850,104 @@ PrefabInstance:
       objectReference: {fileID: 1791676466}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: e9f933c679968164890c2e8c55cc2580, type: 3}
+      objectReference: {fileID: 2800000, guid: 2168d246b6202e843898408f56eb972c, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 51f2901e2b0195f48a5acd33cde617a9, type: 3}
+      objectReference: {fileID: 2800000, guid: 484713bce1800c2419a3a58f5815b3ad, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 3768acbed4275ae4493c19a6dc27ebd4, type: 3}
+      objectReference: {fileID: 2800000, guid: 0deb0ce993ff62e4e9ae52c6163c87f2, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: d1af35b033ffafa4aaa7224553ac94e7, type: 3}
+      objectReference: {fileID: 2800000, guid: 19951faf70cd93842be38667f26eff7d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 90bf6b0e774e3ca4f871748bbf0e12d7, type: 3}
+      objectReference: {fileID: 2800000, guid: 6497a4bf2dbd97b4a938524139646ae6, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9f3bb2f1ce2703e4c8639a93833467bd, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 7cc4ed0f9495a34489f7dcbc60b28d3d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: c20f47a4c497b48429b7834c4d422cb8, type: 3}
+      objectReference: {fileID: 2800000, guid: 55abca257f5d5964d94037b31554e58c, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: e9d0b9c53b031c843af254d05d471e23, type: 3}
+      objectReference: {fileID: 2800000, guid: 6300739ee3d05db41a5372ca09689dcd, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 8376678876337ad44a2e099c89fa374c, type: 3}
+      objectReference: {fileID: 2800000, guid: da6e1143f5bd61d4b88ce01912cc68d7, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 388b84878b8dfb347905538c5a59578f, type: 3}
+      objectReference: {fileID: 2800000, guid: d89a5af905aa01f4f846c2c6cc733f91, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 9451e95f31026974baf8432c5cb740a1, type: 3}
+      objectReference: {fileID: 2800000, guid: a164530b857a8644d9daaf5d3538d43a, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: d95652a08170abb41ade598936e51e08, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 5dca26a07bc61ad4d91b4fe19a24c061, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 02d40765043733d48bf22047ba3f777d, type: 3}
+      objectReference: {fileID: 2800000, guid: db71b9993552efc4e9e28ef96e4160ab, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 68d41cb2f67474248aabab754a1adada, type: 3}
+      objectReference: {fileID: 2800000, guid: 1d2f9aa5e496e3c49bb6a484068a9107, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 98ca050f53a9d7746a0297df114e7da0, type: 3}
+      objectReference: {fileID: 2800000, guid: 266d90d98bb3d24439b42172635fb0a4, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: cbc1b7428770d56438d585ad7dfa37f1, type: 3}
+      objectReference: {fileID: 2800000, guid: 3500e7f832adbb2409f601e3dcee9f32, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: dcda32738c5b6ea4bb47baea67ae11a3, type: 3}
+      objectReference: {fileID: 2800000, guid: fa26559a108bd864283a8dbd8837173e, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[5]
       value: 
-      objectReference: {fileID: 2800000, guid: 02d40765043733d48bf22047ba3f777d, type: 3}
+      objectReference: {fileID: 2800000, guid: 1566f0bbd31c89d4ebc1ed1cc52928f6, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[6]
       value: 
-      objectReference: {fileID: 2800000, guid: 68d41cb2f67474248aabab754a1adada, type: 3}
+      objectReference: {fileID: 2800000, guid: 343593f35136d344d814b481f3e683f6, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[7]
       value: 
@@ -3065,23 +2963,31 @@ PrefabInstance:
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: e2411cf68cda45843838c76dd872ed4a, type: 3}
+      objectReference: {fileID: 2800000, guid: ed8d9df307c55634094f63529564a4cf, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: d9fcc22f1865844409120ea8b609cabd, type: 3}
+      objectReference: {fileID: 2800000, guid: 6ca65b52bd0b8e248a57ef2ffd39cec4, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 792ce7734ce247a4f82c7c59806e6077, type: 3}
+      objectReference: {fileID: 2800000, guid: 07a852914d2afe54aac2e9f12de4f546, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 8485f86f575485549a2946f7a2d952af, type: 3}
+      objectReference: {fileID: 2800000, guid: 9a9d059fb17400b45b645428df435e2e, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 7065700f926677e429f976662cc90651, type: 3}
+      objectReference: {fileID: 2800000, guid: 228b792109112c142ae8565aa31b0241, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 6b4dcf4f725277b4fa243b680d7e74b7, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 24eb01806c85bcd4d9b045de8ddab2b2, type: 3}
     - target: {fileID: 4381728355215308789, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.004
@@ -3109,6 +3015,14 @@ PrefabInstance:
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
@@ -4374,6 +4288,242 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1221325610}
   m_SourcePrefab: {fileID: 100100000, guid: cd5d956a9a3f28641973e440f457c4b3, type: 3}
+--- !u!1 &475588785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475588786}
+  - component: {fileID: 475588788}
+  - component: {fileID: 475588787}
+  m_Layer: 0
+  m_Name: Livingroom_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &475588786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475588785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.05, y: 3.606, z: 21.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &475588787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475588785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &475588788
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475588785}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 7.4
+  m_Range: 19.1
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 4059
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &482903841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482903842}
+  - component: {fileID: 482903844}
+  - component: {fileID: 482903843}
+  m_Layer: 0
+  m_Name: Hallway
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482903842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482903841}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.398, y: 3.452, z: 9.271}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &482903843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482903841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &482903844
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482903841}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 5
+  m_Range: 19.1
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 4059
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &484089795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10518,7 +10668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &619263656
 Transform:
   m_ObjectHideFlags: 0
@@ -10658,7 +10808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &630903401
 Transform:
   m_ObjectHideFlags: 0
@@ -10679,12 +10829,12 @@ Transform:
   - {fileID: 2009677689}
   - {fileID: 718616678}
   - {fileID: 575344067}
-  - {fileID: 1853493048}
   - {fileID: 893715420}
   - {fileID: 1574648001}
   - {fileID: 1087860436}
   - {fileID: 190888807}
   - {fileID: 1673623271}
+  - {fileID: 1853493048}
   m_Father: {fileID: 846952184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &632679688 stripped
@@ -10783,7 +10933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -10791,100 +10941,132 @@ PrefabInstance:
       objectReference: {fileID: 1885128816339941818}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 27ad8b053febc154782eccf7a2627e76, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 79056c448e36cf647bbc3e457d82ff0d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 4a66f06f34010cf4794038f596d92178, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 7ae29e05fd127ff4bb92dddc1046d2fb, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: c17e7634e88346a478980e27d44c540b, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 5e0a38c6de3c62c4ab527d2e470991d1, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9564b567607a0d548954caaaee9b81ad, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 450e215f4d7ef124d954a6005c07eb4f, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 788383c759250c042840d51b167ff1b2, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 1cc761214178b164abac1e277d976c29, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: d598b83370f027e48becebdffc5479e3, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 96631939ec11e624b844d915a870275a, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: f4bbd8bd4fc48b4468559d9b43389682, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3734b02e3cabf6140a2cabddf7ae36c7, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 1311ac097fcf5fb42a757194f5631958, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 4b97026d33c5fb1439a7345cb929e1f6, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: d14c6b0bed4fdcf4fb76d5c9dd9cc7eb, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 0ce2cb43fe9892a448ac002fcb797a43, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: d1f896e6befe5f34a8b7c8610776faa8, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2048658f1ebcac34da19f3f234215454, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: a7e93f91561348a42a95e6a053d502bc, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 125c3d8a403b69f4cb6e7e7bb32f1955, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: c481b0a927b450e4781d74c0a701338d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 26bd2dd7d78af1a44ac14f1a58c354b9, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 2de290294d2e6814c93e62995dd5f6b1, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: be41348a939a9d2429b271812d471f88, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 7b370ca005c2ac743a81aef37ec8511d, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 5fcaa813e12e8034096e180bc1c5ce86, type: 3}
     - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10911,7 +11093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -10920,6 +11102,10 @@ PrefabInstance:
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Resolution
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
@@ -11224,6 +11410,124 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80bc831a7324c8949a6d6f60f55ecc6a, type: 3}
+--- !u!1 &707280259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707280260}
+  - component: {fileID: 707280262}
+  - component: {fileID: 707280261}
+  m_Layer: 0
+  m_Name: Kitchen_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707280260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707280259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.494, y: 3.606, z: -5.398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &707280261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707280259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &707280262
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707280259}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 5.3
+  m_Range: 11.18
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 4059
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &713042454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11490,124 +11794,6 @@ Light:
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 5.1200337, y: 3.0262725}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!1 &734016223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 734016224}
-  - component: {fileID: 734016226}
-  - component: {fileID: 734016225}
-  m_Layer: 0
-  m_Name: Bedroom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &734016224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734016223}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -8.105, y: 4.45, z: 9.91}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &734016225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734016223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &734016226
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734016223}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 8.306215, y: 13.086647}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
@@ -17984,7 +18170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885128815763361471, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1987104455513632941, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
@@ -18438,7 +18624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -18446,36 +18632,152 @@ PrefabInstance:
       objectReference: {fileID: 288898165}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 2946f913293ee974680de8494395031a, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3cd77bcec69ada84da9354840d75f9bc, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: 6e600900ffe05d44e8f4a2a8a1f56704, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[3]
+      value: 
+      objectReference: {fileID: 2800000, guid: 91b9a2aaf20793a4eb0c57532889e2ee, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[4]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3f69717fd5f1fd74f849b30f44b14b68, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 332184a47d7b09d4382cbdf1c79b7f16, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2a717c8195af4bb468e4b946e8e6334a, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[7]
+      value: 
+      objectReference: {fileID: 2800000, guid: 6e600900ffe05d44e8f4a2a8a1f56704, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[8]
+      value: 
+      objectReference: {fileID: 2800000, guid: 91b9a2aaf20793a4eb0c57532889e2ee, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[9]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3f69717fd5f1fd74f849b30f44b14b68, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[10]
+      value: 
+      objectReference: {fileID: 2800000, guid: 332184a47d7b09d4382cbdf1c79b7f16, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[11]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2a717c8195af4bb468e4b946e8e6334a, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 761680c7513c2424a8e5acef0b0cc230, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 0eda432541dbefc4a9ebb600a6699567, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: 4eafdfc9dd2076f4fb5fb1eb2eaa769f, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[3]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3ca34394fc08cc548a37e81e0c9afb0e, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[4]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3dc9b662282528e43b110fbed4b511b6, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 55986f8bfacb8f1438905344b0ce6e02, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 5bab081a70ce6b443b518ba5436c1edd, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 9f2a1f3e55259a242b6953e969befa3c, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 41dc3c6d7a45b53449a19e2f37f657d0, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: d25d1fa7acb3cf6459749040c9a80763, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[3]
+      value: 
+      objectReference: {fileID: 2800000, guid: 0a4e94f1b8c9e224880938ec34ccdf78, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[4]
+      value: 
+      objectReference: {fileID: 2800000, guid: 248c69d0551ee3d468f40ed2c324e9d7, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: f4f4b7f48d0a7234f9356092c638fe1e, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 107bcfaa792b00e4c8eb540512556f81, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 513dbd60e613786418aeb7676dbba501, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: b03d6e5138ed5344aa1c3990fa7153cd, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: 162233691de00794f94834acc108793f, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[3]
+      value: 
+      objectReference: {fileID: 2800000, guid: 34691cf0a4fe3c140b4f97c11cc9825c, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[4]
+      value: 
+      objectReference: {fileID: 2800000, guid: f465788b4710d0f4695b9672c704f8d1, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: ef9db3b3881eb6345b217da556499f87, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: bfc38b7d61698d046bb35693b872b035, type: 3}
     - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
@@ -18490,6 +18792,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
@@ -18638,124 +18944,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910566358}
   m_CullTransparentMesh: 1
---- !u!1 &916046540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 916046541}
-  - component: {fileID: 916046543}
-  - component: {fileID: 916046542}
-  m_Layer: 0
-  m_Name: Toilet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &916046541
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916046540}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7039069, y: -0.067194775, z: -0.067194775, w: 0.7039069}
-  m_LocalPosition: {x: 7.224, y: 2.674, z: -7.818}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 79.094, y: -90, z: -90}
---- !u!114 &916046542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916046540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &916046543
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916046540}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 5.0592856, y: 2.9742785}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &917811460
 GameObject:
   m_ObjectHideFlags: 0
@@ -19109,36 +19297,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e10fc0b0b9bf134faa966caad958b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candleLight1: {fileID: 1708618441}
-  candleFlame1: {fileID: 6464037884393907578}
   darkLightmapDir:
-  - {fileID: 2800000, guid: 8983b3c3b8e1e2f4e8a2cc0d46c3b5b0, type: 3}
-  - {fileID: 2800000, guid: c298803ec55daf845b476661d2cd6c61, type: 3}
-  - {fileID: 2800000, guid: 270f92a19215ba943895550c0fc64bdb, type: 3}
-  - {fileID: 2800000, guid: 15765179b887d574fb8e9cb02a421c64, type: 3}
-  - {fileID: 2800000, guid: bc5103e5bc94ec545990981b413c191c, type: 3}
-  - {fileID: 2800000, guid: 81175c53ed82d2a44ad3faad4a2d4c2a, type: 3}
+  - {fileID: 2800000, guid: e88274af4e464f747829bb1eca1a83ae, type: 3}
+  - {fileID: 2800000, guid: 309006c2c8a83624588ce7539d2f7ad0, type: 3}
+  - {fileID: 2800000, guid: 1867c482682ea1b4190029eba9f3837f, type: 3}
+  - {fileID: 2800000, guid: 60d397366ac89b445b9f558ab1be329f, type: 3}
+  - {fileID: 2800000, guid: 811f40ebf79052c4188411e262cecb19, type: 3}
+  - {fileID: 2800000, guid: a1ef843a7eb9fb2429fe0f508835d1e2, type: 3}
+  - {fileID: 2800000, guid: 68a53cd6dbabf154d8b4be157b7823ab, type: 3}
   darkLightmapColor:
-  - {fileID: 2800000, guid: c8bc5a4a7bd4adb41bbd83550059cada, type: 3}
-  - {fileID: 2800000, guid: ae34946b28c3dc54f90a355e7c5b2faa, type: 3}
-  - {fileID: 2800000, guid: b4c7aabc52be9164ea51b822f101efcb, type: 3}
-  - {fileID: 2800000, guid: ff85ad1d864bed14bb7b41bb5d667e01, type: 3}
-  - {fileID: 2800000, guid: cc83573bcd42a7c4aa9141849fdb7d0d, type: 3}
-  - {fileID: 2800000, guid: f8a7d94803bb36b4dbe35c7538e8af81, type: 3}
+  - {fileID: 2800000, guid: 31aa6f9bb08c26c418fa093c8420a7d5, type: 3}
+  - {fileID: 2800000, guid: bfa25c60911bfd24e94f4233997ecc42, type: 3}
+  - {fileID: 2800000, guid: 41e53ec1df32a7d44b67edc739f43a50, type: 3}
+  - {fileID: 2800000, guid: ad64229b42f68c74f9172803dca7ac2f, type: 3}
+  - {fileID: 2800000, guid: 782b4eebeee02bb4eb41d72ebf415d0c, type: 3}
+  - {fileID: 2800000, guid: 1a2b1583e7a0f1d43a0f89dc659aa47b, type: 3}
+  - {fileID: 2800000, guid: 80099698adf0f254087f284fb2c15ba8, type: 3}
   brightLightmapDir:
-  - {fileID: 2800000, guid: b5db4e656819d734f8edbd54eb7e6cb7, type: 3}
-  - {fileID: 2800000, guid: 1867d6f549045b145aa68ce651a03609, type: 3}
-  - {fileID: 2800000, guid: b1c91636c5fcf5c469b5fb38503c0354, type: 3}
-  - {fileID: 2800000, guid: d48af5355d16a724bbc01d3cdfd4dbaa, type: 3}
-  - {fileID: 2800000, guid: 806841831fb665747b6e45db0d12bb13, type: 3}
-  - {fileID: 2800000, guid: d399d311df67b3a4f8011f780afe5de7, type: 3}
+  - {fileID: 2800000, guid: e75d4f274a157d440b057ddd7419d54b, type: 3}
+  - {fileID: 2800000, guid: b3a613e8595105e4b9f2aecbaa7a02c1, type: 3}
+  - {fileID: 2800000, guid: fc38273c1f7a3a846a2d3a61a10a0aa3, type: 3}
+  - {fileID: 2800000, guid: 8e54e04f300484440bb632645f4d0d66, type: 3}
+  - {fileID: 2800000, guid: ca9f28c653f1c2047a051552e5adc7c7, type: 3}
+  - {fileID: 2800000, guid: b3a628b2d0c7f904dbb9fb16f26eb0a8, type: 3}
+  - {fileID: 2800000, guid: 1de1475e0e7933048b9155512691d19c, type: 3}
   brightLightmapColor:
-  - {fileID: 2800000, guid: 78825a7071d34264e903557ed0c4cd83, type: 3}
-  - {fileID: 2800000, guid: a0b0240efd25fc448a0d213428927a2a, type: 3}
-  - {fileID: 2800000, guid: 943a301278a48ba4880c64a3bb8c7ce2, type: 3}
-  - {fileID: 2800000, guid: 9c07b6d33a57fc14f977b69bebb3ebd2, type: 3}
-  - {fileID: 2800000, guid: fdbab1c0388d9424d95f504fba8d0278, type: 3}
-  - {fileID: 2800000, guid: c5226efd4c3e6de42a19e53f2c537a5e, type: 3}
+  - {fileID: 2800000, guid: 661ef75f06cc6044084a84595ce5f13c, type: 3}
+  - {fileID: 2800000, guid: 0a9772ff94965574f9216fd166cd4bc5, type: 3}
+  - {fileID: 2800000, guid: 32d18df08fb869f4fb31185e0234ac01, type: 3}
+  - {fileID: 2800000, guid: fea4d0f8961f870418c5fbd467c43eb4, type: 3}
+  - {fileID: 2800000, guid: c090b115f2aa5d54ba539717df6270d0, type: 3}
+  - {fileID: 2800000, guid: bd48596a8521aa34aa6a9a91c5402583, type: 3}
+  - {fileID: 2800000, guid: 309af83776f3dfc4d977584b498668ff, type: 3}
+  testing: 0
 --- !u!4 &988742904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6934222540740249171, guid: 35d132c7007697b45a1efcb12f6ad5b6, type: 3}
@@ -24316,124 +24507,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 22238905}
   m_SourcePrefab: {fileID: 100100000, guid: 282e47c8dc5c87f4a86235f9aff92422, type: 3}
---- !u!1 &1030947325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1030947326}
-  - component: {fileID: 1030947328}
-  - component: {fileID: 1030947327}
-  m_Layer: 0
-  m_Name: Nursery
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1030947326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030947325}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 4.45, z: 7.56}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1030947327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030947325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &1030947328
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030947325}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 7.7349515, y: 8.459084}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &1035940391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30688,124 +30761,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 735652658}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!1 &1125850560
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1125850561}
-  - component: {fileID: 1125850563}
-  - component: {fileID: 1125850562}
-  m_Layer: 0
-  m_Name: Kitchen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1125850561
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125850560}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4.3911133, y: 4.45, z: -5.3279166}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1125850562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125850560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &1125850563
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125850560}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 15.808824, y: 7.8261147}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &1128036667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38104,7 +38059,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5023585, g: 0.5603229, b: 0.6698113, a: 1}
-  m_Intensity: 5.2
+  m_Intensity: 7
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -38163,7 +38118,7 @@ Transform:
   m_GameObject: {fileID: 1319436867}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.45, y: 0.39, z: -23.36}
+  m_LocalPosition: {x: 11.24, y: 0.39, z: -22.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38694,6 +38649,124 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1885128815763361471, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
   m_PrefabInstance: {fileID: 711595274830396026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402124931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402124932}
+  - component: {fileID: 1402124934}
+  - component: {fileID: 1402124933}
+  m_Layer: 0
+  m_Name: Bedroom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1402124932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.165, y: 3.606, z: 9.968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1402124933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1402124934
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124931}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 7.4
+  m_Range: 19.1
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 4059
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1414494623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39749,6 +39822,124 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1518514930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518514931}
+  - component: {fileID: 1518514933}
+  - component: {fileID: 1518514932}
+  m_Layer: 0
+  m_Name: Toilet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518514931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518514930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.3, y: 2.215, z: -7.777}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518514932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518514930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1518514933
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518514930}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
+  m_Range: 5
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 3835
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1521312500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39988,124 +40179,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3580548602445927649, guid: 5a221b165f68f264196ae8bc4c3659aa, type: 3}
   m_PrefabInstance: {fileID: 2912821205695523044}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1538400267
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1538400268}
-  - component: {fileID: 1538400270}
-  - component: {fileID: 1538400269}
-  m_Layer: 0
-  m_Name: Hallway_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1538400268
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538400267}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.397, y: 4.45, z: 7.62}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1538400269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538400267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &1538400270
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538400267}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 4.6571407, y: 17.655182}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &1538469055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41077,6 +41150,124 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &1609462735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609462736}
+  - component: {fileID: 1609462738}
+  - component: {fileID: 1609462737}
+  m_Layer: 0
+  m_Name: Kitchen_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1609462736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609462735}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.901, y: 3.606, z: -5.398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1609462737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609462735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1609462738
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609462735}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 5.3
+  m_Range: 11.18
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 4059
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -46941,11 +47132,6 @@ Transform:
   - {fileID: 1048517682}
   m_Father: {fileID: 2096284559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &1708618441 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
-  m_PrefabInstance: {fileID: 711595274830396026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1709562399 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1525314839405695114, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
@@ -47251,7 +47437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1779603570
 Transform:
   m_ObjectHideFlags: 0
@@ -47265,14 +47451,13 @@ Transform:
   m_LocalScale: {x: 1, y: 0.6851521, z: 0.63155514}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 734016224}
-  - {fileID: 1125850561}
-  - {fileID: 1030947326}
-  - {fileID: 1997260144}
-  - {fileID: 259848687}
-  - {fileID: 2045634830}
-  - {fileID: 1538400268}
-  - {fileID: 916046541}
+  - {fileID: 475588786}
+  - {fileID: 1894441326}
+  - {fileID: 482903842}
+  - {fileID: 1402124932}
+  - {fileID: 707280260}
+  - {fileID: 1609462736}
+  - {fileID: 1518514931}
   m_Father: {fileID: 846952184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791676466 stripped
@@ -47973,7 +48158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -47981,100 +48166,132 @@ PrefabInstance:
       objectReference: {fileID: 1296705677}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: e2012a5e77d724e4eabdc463db4f5692, type: 3}
+      objectReference: {fileID: 2800000, guid: 7018147fe16aa5e47a4e406d466e100f, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 9319266ad7472f844ba0354999284c61, type: 3}
+      objectReference: {fileID: 2800000, guid: 95ff3517843e78f488bcc354beb6592b, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 10d2c6fede37a1e4ba271145be06f3e1, type: 3}
+      objectReference: {fileID: 2800000, guid: 61a732a1321629c4b805c4c18c18760f, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 46d24916d2285414988a97f105679df6, type: 3}
+      objectReference: {fileID: 2800000, guid: dc9d511e66985954b8316b34225408ca, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 910a6484255fe9842865c8e0ae2ceb92, type: 3}
+      objectReference: {fileID: 2800000, guid: ac96b805759b4f645a448a181a3b45fd, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3f3a9615ff694b5439b7a6b5ef50ad5e, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 4f867ebc625d08140933af8aa8acf6aa, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: e9aa03a20b5f3f043b22e566819d88f8, type: 3}
+      objectReference: {fileID: 2800000, guid: e10758a953614d8429c414e52103f4de, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: ac93103ce5c63464382c621fdc261488, type: 3}
+      objectReference: {fileID: 2800000, guid: 5a66fbc780130d3498bf313a3caa9ffe, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: e710bd645e80f254eb78bc01248eb882, type: 3}
+      objectReference: {fileID: 2800000, guid: 6bf6a6d23e287e2468a16e7d02fcca5d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 0a8137ca74f2eb544b09616673dccc96, type: 3}
+      objectReference: {fileID: 2800000, guid: af152784bdb184a40a921cd75b0d865f, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 923939f98d663554db482f5e4d114594, type: 3}
+      objectReference: {fileID: 2800000, guid: 021cc93df4473894e8c25ce8f65f0241, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 4b9c34e291bff334299b49bbc099abc6, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: d65e5f601410aaa4d8fcc5332deebf10, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: ebc1724a7fc9a614c895eaf5c67547fd, type: 3}
+      objectReference: {fileID: 2800000, guid: 9b26392169326404b838398d69cf62ff, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 1d22e205f1d02534e9f8692866199272, type: 3}
+      objectReference: {fileID: 2800000, guid: 9e6f1dd5af8b6dd48a428d5c033eb268, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 06ca5b1efdb1cfd4193da4cdf68607e0, type: 3}
+      objectReference: {fileID: 2800000, guid: 12bc4265437dfb142a6d9d349ac7397e, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 7fe0ddf82234d3f439f39f9304b3548e, type: 3}
+      objectReference: {fileID: 2800000, guid: 20eced65ed49b8948b4e84fd547fed67, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: a4c33ca18076f254592a3d9b1337b9ef, type: 3}
+      objectReference: {fileID: 2800000, guid: d2549b65fc530bf40a0d6995e0a88cc4, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: e93653c5360dedc4cad8b99cfeeb863c, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 0175c41f0b364704e9756f679c1a2ac7, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 4d31254c95f9d2d48913849a6fcb3083, type: 3}
+      objectReference: {fileID: 2800000, guid: 76655b95e42c1c34f98ceb1596e19a30, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 20bc850b1ea2b9f4ba5a86e2774c319c, type: 3}
+      objectReference: {fileID: 2800000, guid: 0ed0bbb6c9034414b9173c85b73224d5, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 632c1dab87591754ca2c9ffed83cf5db, type: 3}
+      objectReference: {fileID: 2800000, guid: 38fa31687f011b84b965efd2c2b21d86, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 390396e1f81b9b04b9b51732c4288ce2, type: 3}
+      objectReference: {fileID: 2800000, guid: 6e90718bcd208284b94e10ac01ab0605, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 851cb17f4e8bf8b48ae285dc91b2756b, type: 3}
+      objectReference: {fileID: 2800000, guid: 2170d811825e209429911d3e7783c555, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: c0ad60b08a4319a49930ca1c098b6692, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 649ad1044124d9540a07bf66fdd296f1, type: 3}
     - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
@@ -48093,6 +48310,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
@@ -49080,6 +49301,124 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1894441325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894441326}
+  - component: {fileID: 1894441328}
+  - component: {fileID: 1894441327}
+  m_Layer: 0
+  m_Name: Livingroom_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894441326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894441325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.897, y: 3.606, z: 19.873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1779603570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894441327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894441325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1894441328
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894441325}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 7.4
+  m_Range: 19.1
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 4059
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1907651026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49166,7 +49505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -49174,100 +49513,132 @@ PrefabInstance:
       objectReference: {fileID: 649280195}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: f5965b31c388b2743abdbf94991c77df, type: 3}
+      objectReference: {fileID: 2800000, guid: 37bcaab762c79cb45bc20f146235db61, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 00c25fe1bc2fa7940a9865f37a91b202, type: 3}
+      objectReference: {fileID: 2800000, guid: 9635b0e8f4c84214097ba6fd77c0a829, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 7aa562b7fd7d1524494fe0e78f6ee2d6, type: 3}
+      objectReference: {fileID: 2800000, guid: cb9e0a46134ae05428b5b426eee33e98, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 63087df554c44bc46b67e8e9f7e6d30c, type: 3}
+      objectReference: {fileID: 2800000, guid: 9caf6fbc5565213419d3944d318c4ba7, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: cfb79a380a08d154490c76a2028d1853, type: 3}
+      objectReference: {fileID: 2800000, guid: 3a6021225ddc0114ba87ea0d839ec907, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3969e81774ed4d740a37a2240b44445e, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 365855d231c0bd74fb28a0d84fb8cdaf, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: bdb34a5f94ae9d94b96aeef0ba1edeac, type: 3}
+      objectReference: {fileID: 2800000, guid: 99b13aca1bd1ea040a62003c19fa8964, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 8997717c8cc4c1347899a9d42eed8cd7, type: 3}
+      objectReference: {fileID: 2800000, guid: 82bd04bfa9d326f458c84e9d1d645f3b, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 738c8a167f7b2d945acc2d81e4c8b3c4, type: 3}
+      objectReference: {fileID: 2800000, guid: 53e8dad47b404464cbb38a8353aff1a8, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 0027f3a094c6a9b49b749d004a449b9f, type: 3}
+      objectReference: {fileID: 2800000, guid: fe1fd641f234b6a4b85bc8ab8d79cff8, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 67540b05bbf1730419b95b56cfdd3978, type: 3}
+      objectReference: {fileID: 2800000, guid: 8fe0c48300cd5004ea17cfa871c5e11c, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 159ed31ae962a8549b41c0f5079d01b3, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 608cec111e6affb45a9942d1220b3c5f, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: e4c673d755b02b84299575f1cc438d04, type: 3}
+      objectReference: {fileID: 2800000, guid: e70b79d14e841a743840d0fd115a8ae3, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 8d31c9cb2604fdd4cbf23b1d1459bfea, type: 3}
+      objectReference: {fileID: 2800000, guid: bdc1245069095f8419977d68e4eeb801, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 7b84715e6caf8d944beaa28b51e6f3f8, type: 3}
+      objectReference: {fileID: 2800000, guid: 72ed0cf9339e1d74491b49aa96d6a682, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 64669b198bf585945a42b445e65aa3f1, type: 3}
+      objectReference: {fileID: 2800000, guid: 6c01a652c4c3c7146aa01caafc4ade8a, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: e77f4af0652624740add51b7e25a7416, type: 3}
+      objectReference: {fileID: 2800000, guid: c688d5f1038ab9346ab867ded792a188, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: b42450295ca5e4146ad21fcd01f6d5e4, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: d8cf6770586ae7a4e9c4cf69d3f3c228, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 5c2b8f7a3f90a734ea312ed254f2a46a, type: 3}
+      objectReference: {fileID: 2800000, guid: 1a4d3c13332e0714387d56f272dd4933, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: d55837d7168d0644cb15f8263dde36c2, type: 3}
+      objectReference: {fileID: 2800000, guid: 40ee3f5ccfd3ca346824c25a072cfbb4, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 056bdded350411e4ab88d436431482f0, type: 3}
+      objectReference: {fileID: 2800000, guid: 9f18eefb25ea3514aaf5c51fd9e46bae, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 03d985e43cbf21d418d04731b0954fa7, type: 3}
+      objectReference: {fileID: 2800000, guid: 2a1ecb336ba8df94b807d6cfc4d16291, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: ce407197d9be40544b1c8a0a64a787df, type: 3}
+      objectReference: {fileID: 2800000, guid: f4d761d5411a86d4bb09a7d796c5271b, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: eb3275e661b0874478e3dbe742a2fb69, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 1d273b8a2957117438d2212f81db94fc, type: 3}
     - target: {fileID: 4762842256609656875, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
@@ -49294,6 +49665,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
@@ -49395,7 +49770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -49403,100 +49778,152 @@ PrefabInstance:
       objectReference: {fileID: 839431092}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: acb3ec1a11c121248bdfa291c5bcfeef, type: 3}
+      objectReference: {fileID: 2800000, guid: 9c675ac03fa29e340a22e524db43d7a9, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 98ceedb7a6fa6704684e6d037138f347, type: 3}
+      objectReference: {fileID: 2800000, guid: afd17e711fd4c8c44971c109fe9ea7ce, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: c949b584691db594ea7738653cd81df7, type: 3}
+      objectReference: {fileID: 2800000, guid: e8a624933946712498fa7d70f1ab8b41, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: abbe4d54eb8fd9c4082604f08ad798ba, type: 3}
+      objectReference: {fileID: 2800000, guid: 6265da0e7978f304184588e52e6cc741, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: f24cb18253b6fb34393cc54f78acf6e5, type: 3}
+      objectReference: {fileID: 2800000, guid: 71fdb481b0edc6845b9cd9124edb4e0b, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: bb6e31ff679877248a3d7c65ab8dddfb, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9d9b543c7933aa646a1383b794f2cedb, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[7]
+      value: 
+      objectReference: {fileID: 2800000, guid: e8a624933946712498fa7d70f1ab8b41, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[8]
+      value: 
+      objectReference: {fileID: 2800000, guid: 6265da0e7978f304184588e52e6cc741, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[9]
+      value: 
+      objectReference: {fileID: 2800000, guid: 71fdb481b0edc6845b9cd9124edb4e0b, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[10]
+      value: 
+      objectReference: {fileID: 2800000, guid: bb6e31ff679877248a3d7c65ab8dddfb, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[11]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9d9b543c7933aa646a1383b794f2cedb, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 79ca43d49eb62084280e8f93c9079ebf, type: 3}
+      objectReference: {fileID: 2800000, guid: b028fc00cb9ddce4f99eca9e625542c9, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 787af13b1745f7944bed43b6f6cd349a, type: 3}
+      objectReference: {fileID: 2800000, guid: 827f12eb284ebed4d87b4e7a90aece8b, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 2f8e5765c60b06540b3ade4ba5bd4673, type: 3}
+      objectReference: {fileID: 2800000, guid: 11141295ec857944a866eef719dc28c4, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: d4b091b512046554eae7b0b6c3b4667d, type: 3}
+      objectReference: {fileID: 2800000, guid: 5dc7751f00d34cd49a8ffca772c25044, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: e901c5b9e1011c74690f343ce3fb22f4, type: 3}
+      objectReference: {fileID: 2800000, guid: 9ae9a91e050de33459b0e45cb237bc44, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 1ae3ed3d72069cb4385f1b077472ff19, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: f0ab5ee61d565684785a07bc1ce4fc4d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 732c1387bcbb01f4b8e297bd8f4ed335, type: 3}
+      objectReference: {fileID: 2800000, guid: 70ed21f3f4a3a0a41a0faffe0fbc61e0, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 4d766fd9af91d284c97df35f19ca27d6, type: 3}
+      objectReference: {fileID: 2800000, guid: 6ea47728643fdc047967eb554d5c511d, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: a99906f970c7b6b408bf8ea9b2a76303, type: 3}
+      objectReference: {fileID: 2800000, guid: a88dac345a4095c4e85b74accfed0b83, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 3cdf1ebce1c7361478cd3ce40089003e, type: 3}
+      objectReference: {fileID: 2800000, guid: 07bb11c827378a14eac19a2644caac17, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: f127753900475124fa43a97122de783b, type: 3}
+      objectReference: {fileID: 2800000, guid: baa232d9d4eaac74a9b9005e7db2f564, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: a354c23263623504983e674c9e580691, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 332e42d2d2dff584d85af52531ecacaf, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 9db155f8eb769e54ba2b66f68960d004, type: 3}
+      objectReference: {fileID: 2800000, guid: 632a571a5c205f44d85a862c9ff53f17, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: f1b33314390f1c34aaa5440c12ad8c63, type: 3}
+      objectReference: {fileID: 2800000, guid: c88a049517263a547b318e429b28523b, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: f3fd6c5fde639d848a311afc5ae2db31, type: 3}
+      objectReference: {fileID: 2800000, guid: ce813f91d4e6e134ab1fe49d95b5e0ce, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: baad0c6dc33c8034d85aa39b1958fe89, type: 3}
+      objectReference: {fileID: 2800000, guid: 5203150ce15fecd42818f58d7254e9cd, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: b17a6503c5809a94a9d5963f661b82f3, type: 3}
+      objectReference: {fileID: 2800000, guid: 454d9fdcba02a43469dd128c92cb0fc4, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 1746bb43a1030bd47845864e2e7aed9f, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: e972395e87c93494cb338953743f3074, type: 3}
     - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
@@ -49531,6 +49958,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
@@ -50322,124 +50753,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1997260143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1997260144}
-  - component: {fileID: 1997260146}
-  - component: {fileID: 1997260145}
-  m_Layer: 0
-  m_Name: Livingroom_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1997260144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997260143}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.05, y: 4.45, z: 21.73}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1997260145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997260143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &1997260146
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997260143}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 14.410997, y: 10.124962}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &1998725758
 GameObject:
   m_ObjectHideFlags: 0
@@ -50861,124 +51174,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b629f465cc78a6f4280d785c2a404af2, type: 3}
   m_PrefabInstance: {fileID: 2035630687}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2045634829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2045634830}
-  - component: {fileID: 2045634832}
-  - component: {fileID: 2045634831}
-  m_Layer: 0
-  m_Name: Hallway_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2045634830
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045634829}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.87, y: 4.45, z: 14.24}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1779603570}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &2045634831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045634829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &2045634832
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045634829}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 3
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7254902, b: 0.31764707, a: 1}
-  m_Intensity: 0.15
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 7.8863325, y: 4.423233}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &2053685980
 GameObject:
   m_ObjectHideFlags: 0
@@ -52128,7 +52323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
@@ -52136,7 +52331,7 @@ PrefabInstance:
       objectReference: {fileID: 1399410667}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: particleSystems.Array.size
@@ -52144,100 +52339,160 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 8aafba2e6c3eca841ad999bec17f0ca3, type: 3}
+      objectReference: {fileID: 2800000, guid: d6bbd4db1722d5442988db7a721d9f64, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 57d24b551685b8c479b7a8e61b83657a, type: 3}
+      objectReference: {fileID: 2800000, guid: 6c0836b5b349d1b48928344b30db53cb, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 0396a1c442037f34dba66b2cf3cf473f, type: 3}
+      objectReference: {fileID: 2800000, guid: 310965029a5b70849957d9f8a067392f, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 06d617a26a5d73b43bd09a5f98498cbd, type: 3}
+      objectReference: {fileID: 2800000, guid: 0b7b6bce129fc33408c0ac85ac549552, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 2d436c5c5457c3e4a94e4b1e0af2e4c4, type: 3}
+      objectReference: {fileID: 2800000, guid: abe99351b0502574ab8c3ed2342ee111, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 858d88f848afe8e48b9ff52d142d6099, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9acf255f218200d40bf2a90f12caeb8b, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: particleSystems.Array.data[0]
       value: 
       objectReference: {fileID: 6464037884393907578}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 6d8dac5e4c1c27c42b037af33fba5926, type: 3}
+      objectReference: {fileID: 2800000, guid: ef6c5b5fe176018408f340c8dace2379, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 92b89c7b38d45ee46bb8918f2a890a2c, type: 3}
+      objectReference: {fileID: 2800000, guid: 6c4fc38cdc168a245acc569c67bd02f4, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 0ea8ab78f1cab274b85f3b4d07349f35, type: 3}
+      objectReference: {fileID: 2800000, guid: f3cd973df5659ba40a0e8dc18fc2dfa1, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 3e26a7ab68163db439a4e1126a159559, type: 3}
+      objectReference: {fileID: 2800000, guid: 72b29c201344d1c4f8d7ce7fc88057f5, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapDir.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: c395cfa84c4503d45913aa0011e1152e, type: 3}
+      objectReference: {fileID: 2800000, guid: 905aa39d38139e24481ac534d7e7629c, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: fbd3a573b571cc54794fff85b3ecd626, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapDir.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8a613f9f728fcee49b0c822171bcdac7, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: a030df7a06c9a3b43a997bd9058511d6, type: 3}
+      objectReference: {fileID: 2800000, guid: 773b3d2ea225a724a9b703c5afd4a131, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 2d4736b0f98cd2840be2e13a723e6b71, type: 3}
+      objectReference: {fileID: 2800000, guid: f96e55d6c80c767429918d990b43b398, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: 99930691c2466e14b99e410a4f009f1e, type: 3}
+      objectReference: {fileID: 2800000, guid: 8e0f10dcf1597494884af37d1b07d8f8, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 6560e17dca36a4d48a3d5679b3afc269, type: 3}
+      objectReference: {fileID: 2800000, guid: 2951b30c05379fe46b92f4614cdef882, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: darkLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 5d5b442a570fd614a833f0027a9de8cb, type: 3}
+      objectReference: {fileID: 2800000, guid: 5797116af6a0a3e4188c4ede582d74d1, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2e202454fcd826f4b9dc52b2d87fe3b5, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: ab4ead7ea665f4343a2ce587f223cd59, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[7]
+      value: 
+      objectReference: {fileID: 2800000, guid: 17d7f9eca810fae46a6db3566d42a690, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[8]
+      value: 
+      objectReference: {fileID: 2800000, guid: a7ac15f94240e574eb330ef51e452729, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[9]
+      value: 
+      objectReference: {fileID: 2800000, guid: 61e79f3fa16189e42b352adb8b26b60b, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[10]
+      value: 
+      objectReference: {fileID: 2800000, guid: 43ca9f4ece590974799614e289c80f4a, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[11]
+      value: 
+      objectReference: {fileID: 2800000, guid: f999ef4f3683ea648983be28869c0cb3, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[12]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2864fab0bc10e0e49bc27bc97d5c5303, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: darkLightmapColor.Array.data[13]
+      value: 
+      objectReference: {fileID: 2800000, guid: ef983b7fc5cb08e46838b39463166ed6, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 56dbbad97ffe99646be282128120c01f, type: 3}
+      objectReference: {fileID: 2800000, guid: b72512adeef88df4192625f9c84c9137, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[1]
       value: 
-      objectReference: {fileID: 2800000, guid: 64d9af8ec35e2cd41b26b4eeddb082f8, type: 3}
+      objectReference: {fileID: 2800000, guid: b669054f21eb5ad4fb52a710b4a69770, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[2]
       value: 
-      objectReference: {fileID: 2800000, guid: c1e5b995e7ae0604583b5091a6927c7c, type: 3}
+      objectReference: {fileID: 2800000, guid: 79ce5ca27f74300438fc5ded813d75eb, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: fa8d641492c955645b3589104ff0682d, type: 3}
+      objectReference: {fileID: 2800000, guid: cf2f258e3e2e4c849a1cdf07b9cf26cc, type: 3}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: brightLightmapColor.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 9b7a309d4ac91c14a86eda7ce301da7c, type: 3}
+      objectReference: {fileID: 2800000, guid: be107b6cf31b62b46a5e453b03441561, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[5]
+      value: 
+      objectReference: {fileID: 2800000, guid: a234f32da9a8df947a463db30cebda3c, type: 3}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: brightLightmapColor.Array.data[6]
+      value: 
+      objectReference: {fileID: 2800000, guid: 9b42d19c92f2b7d4ca0a9e89f872d845, type: 3}
     - target: {fileID: 4000557758325534031, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_TagString
       value: Candle
@@ -52272,6 +52527,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760445671134936953, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565522044126462830, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7162034645839766596, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
