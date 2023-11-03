@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -280,11 +281,7 @@ public class FirstPersonController : MonoBehaviour
         Debug.Log("Collided with: " + hit.gameObject.name);
         if (hit.gameObject.CompareTag("Ghost"))
         {
-            LoseScene loseScene = FindObjectOfType<LoseScene>();
-            if (loseScene != null)
-            {
-                loseScene.PlayerCollidedWithGhost();
-            }
+            SceneManager.LoadScene("LoseScreen");
         }
     }
 

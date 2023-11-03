@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52326,6 +52326,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
+      propertyPath: isOn.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929683747678680120, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
       propertyPath: candles.Array.data[0]
       value: 
       objectReference: {fileID: 1399410667}
@@ -54083,6 +54087,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2099854350}
     m_Modifications:
+    - target: {fileID: 122859584891821295, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 477167264072659162, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
       value: 0.8
@@ -54111,6 +54119,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2161387544085518153, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691333862592217884, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783588830615016232, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362190929953009003, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 3387891245137951623, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
       value: 0.8
@@ -54123,6 +54147,14 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 309619368}
+    - target: {fileID: 3413784715211281782, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728936415801968253, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 4260590418755694838, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
       value: 0.8
@@ -54135,6 +54167,22 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 309619368}
+    - target: {fileID: 4424881855779523464, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103392142177976911, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211622513799993502, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390645242547587646, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 6177787030576176019, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
       value: 0.8
@@ -54159,6 +54207,14 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 309619368}
+    - target: {fileID: 6892856645021947018, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041491377917697178, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 7372558222629619346, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
       value: 0.8
@@ -54187,6 +54243,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Penanggal
       objectReference: {fileID: 0}
+    - target: {fileID: 7490765546190082327, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596013023937261148, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 7745273870082207151, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
       value: 0.8
@@ -54211,6 +54275,10 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 309619368}
+    - target: {fileID: 8766635846641896667, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     - target: {fileID: 8946551508775413006, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
