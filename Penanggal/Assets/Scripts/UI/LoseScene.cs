@@ -12,7 +12,7 @@ public class LoseScene : MonoBehaviour
 
     private void Awake()
     {
-        loseUI.SetActive(false);
+        //loseUI.SetActive(false);
     }
     void Start()
     {
@@ -27,14 +27,15 @@ public class LoseScene : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("_MainLevel");
         Time.timeScale = 1.0f;
     }
 
     public void GoToMainMenu()
     {
         Debug.Log("Trying to load main menu");
-        SceneManager.LoadScene("Yvonne_MainMenu");
+        SceneManager.LoadScene("_MainMenu");
         Time.timeScale = 1.0f;
     }
 

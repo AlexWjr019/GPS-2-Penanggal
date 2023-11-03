@@ -57,31 +57,35 @@ public class InteractionSystem : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Candle"))
             {
-                //call function
-                InteractCandle candleInteraction = hit.collider.gameObject.GetComponentInChildren<InteractCandle>();
-                if (candleInteraction != null)
+                if (Input.touchCount > 0)
                 {
-                    if (Input.touchCount > 0)
+                    Touch touch = Input.GetTouch(0);
+                    if (touch.phase == TouchPhase.Ended)
                     {
-                        Touch touch = Input.GetTouch(0);
-                        switch (touch.phase)
+                        InteractCandle candleInteraction = hit.collider.gameObject.GetComponentInChildren<InteractCandle>();
+
+                        if (candleInteraction != null)
                         {
-                            case TouchPhase.Began:
-                                touchStartPosition = touch.position;
-                                touchStartTime = Time.time;
-                                break;
-                            case TouchPhase.Ended:
-                                float touchDuration = Time.time - touchStartTime;
-                                if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
+                            if (Vector2.Distance(touch.position, touchStartPosition) < 30f && Time.time - touchStartTime <= clickDurationThreshold)
+                            {
+                                if (!candleInteraction.isOn[0])
                                 {
-                                    if (!candleInteraction.isOn[0] && InventoryManager.Instance.GetSelectedInventoryItemName() != "Lighter")
+                                    if (InventoryManager.Instance.GetSelectedInventoryItemName() == "Lighter")
                                     {
-                                        break;
+                                        candleInteraction.ToggleCandle(0);
                                     }
-                                    candleInteraction.ToggleCandle(0); 
                                 }
-                                break;
+                                else
+                                {
+                                    candleInteraction.ToggleCandle(0);
+                                }
+                            }
                         }
+                    }
+                    else if (touch.phase == TouchPhase.Began)
+                    {
+                        touchStartPosition = touch.position;
+                        touchStartTime = Time.time;
                     }
                 }
             else
