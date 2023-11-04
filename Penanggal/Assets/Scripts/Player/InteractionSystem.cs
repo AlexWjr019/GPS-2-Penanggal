@@ -194,7 +194,10 @@ public class InteractionSystem : MonoBehaviour
                 {
                     HandleKeyPickUp();
                 }
-
+                else if (itemName == "Lighter")
+                {
+                    HandleLighterPickUp();
+                }
                 if (InventoryManager.Instance.IsInventoryFull())
                 {
                     InventorySlot slotToReplace = InventoryManager.Instance.GetSlotToReplace();
@@ -251,6 +254,13 @@ public class InteractionSystem : MonoBehaviour
         ScriptedEvent_4 scriptedEvent = FindObjectOfType<ScriptedEvent_4>();
         scriptedEvent.PlayRasaSayang();
         Debug.Log("Key has been picked up!");
+    }
+
+    private void HandleLighterPickUp()
+    {
+        ScriptedEvent_1 scriptedEvent = FindObjectOfType<ScriptedEvent_1>();
+        scriptedEvent.event1();
+        Debug.Log("Lighter has been picked up!");
     }
 
     private void OnDrawGizmos()

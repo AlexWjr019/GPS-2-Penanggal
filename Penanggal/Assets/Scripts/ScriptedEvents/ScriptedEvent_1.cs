@@ -20,7 +20,9 @@ public class ScriptedEvent_1 : MonoBehaviour
 
     public bool isTriggered = false;
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    public void event1()
     {
         if (!isTriggered)
         {
@@ -30,7 +32,7 @@ public class ScriptedEvent_1 : MonoBehaviour
             }
 
             FindObjectOfType<AudioManager>().PlaySFX("LightBulbBreaking");
-            isTriggered = true;
         }
-    }
+    }   
+    //}
 }
