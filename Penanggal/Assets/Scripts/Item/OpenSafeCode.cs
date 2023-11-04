@@ -7,7 +7,6 @@ public class OpenSafeCode : MonoBehaviour
 {
     public GameObject safeCodeWheel /*oriSafeCodeWheel*/;
     public GameObject ObjectCamera;
-    //public Safecode safeCodeScript;
 
     //For Mouse Testing
     private void OnMouseDown()

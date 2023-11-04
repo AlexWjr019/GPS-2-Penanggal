@@ -9,7 +9,6 @@ public class LockControl : MonoBehaviour
     public GameObject wheel;
     public Animation safeOpen;
     private Quaternion originalRotation; // Store the original rotation
-
     public static bool safeIsOpen;
 
     private void Start()
@@ -46,8 +45,8 @@ public class LockControl : MonoBehaviour
         {
             Debug.Log("Opened!");
             FindObjectOfType<AudioManager>().PlaySFX("LockUnlock");
+            safeOpen.Play("OpenSafe");
             wheel.gameObject.SetActive(false);
-            safeOpen.Play();
             safeIsOpen = true;
         }
         else

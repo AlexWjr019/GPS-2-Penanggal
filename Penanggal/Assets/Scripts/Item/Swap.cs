@@ -21,10 +21,25 @@ public class Swap : MonoBehaviour
     private Vector3 targetPosition;
     private bool puzzleCompleted = false;
 
+    //public GameObject weddingSpawn;
+    //public GameObject cursePaper;
+    //public GameObject player;
+    private bool canTp = true;
+
     private void Start()
     {
         originalPosition = transform.position;
+        canTp = true;
     }
+
+    //private void Update()
+    //{
+    //    if (cursePaper != null && canTp)
+    //    {
+    //        player.transform.position = new Vector3(-9.67962f, -2.085497f, -1.609497f);
+    //        canTp = false;
+    //    }
+    //}
 
     private void OnMouseDown()
     {

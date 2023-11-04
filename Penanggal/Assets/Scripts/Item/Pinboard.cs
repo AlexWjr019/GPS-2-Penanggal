@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Pinboard : MonoBehaviour
@@ -5,6 +6,7 @@ public class Pinboard : MonoBehaviour
     public string requiredItemName;
     private float raycastDistance = 5f;
     public GameObject pinPaper;
+    public GameObject cursePaper;
 
     private void Update()
     {
@@ -29,6 +31,7 @@ public class Pinboard : MonoBehaviour
                             pinPaper.SetActive(true);
                             Destroy(selectedSlot.GetCurrentItem().gameObject);
                             selectedSlot.ClearSlot();
+                            StartCoroutine(SpawnCursepaper());
                         }
                     }
                     else
@@ -46,5 +49,12 @@ public class Pinboard : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator SpawnCursepaper()
+    {
+        yield return new WaitForSeconds(1.0f);
+        cursePaper.SetActive(true);
+        pinPaper.SetActive(false);
     }
 }

@@ -296,7 +296,7 @@ public class FirstPersonController : MonoBehaviour
                 moveSpeed = initialMoveSpeed;
                 isRecoveringStamina = true;
             }
-            FindObjectOfType<AudioManager>().PlaySFX("HeartBeat");
+            //FindObjectOfType<AudioManager>().PlaySFX("HeartBeat");
         }
         if (isRecoveringStamina || moveSpeed == initialMoveSpeed)
         {
@@ -305,7 +305,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 sprintTimer = 0;
                 isRecoveringStamina = false;
-                FindObjectOfType<AudioManager>().StopSFX("HeartBeat");
+                //FindObjectOfType<AudioManager>().StopSFX("HeartBeat");
             }
         }
         if (vignette != null)

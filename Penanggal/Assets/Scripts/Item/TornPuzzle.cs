@@ -220,9 +220,9 @@ public class TornPuzzle : MonoBehaviour
         //pic0.transform.position.y > pic3.transform.position.y && pic3.transform.position.y > pic6.transform.position.y &&
         //pic1.transform.position.y > pic4.transform.position.y && pic4.transform.position.y > pic7.transform.position.y &&
         //pic2.transform.position.y > pic5.transform.position.y && pic5.transform.position.y > pic8.transform.position.y)
-        if (pic0.transform.position.x < pic1.transform.position.x && pic1.transform.position.x < pic2.transform.position.x &&
-        pic3.transform.position.x < pic4.transform.position.x && pic4.transform.position.x < pic5.transform.position.x &&
-        pic6.transform.position.x < pic7.transform.position.x && pic7.transform.position.x < pic8.transform.position.x &&
+        if (pic0.transform.position.x > pic1.transform.position.x && pic1.transform.position.x > pic2.transform.position.x &&
+        pic3.transform.position.x > pic4.transform.position.x && pic4.transform.position.x > pic5.transform.position.x &&
+        pic6.transform.position.x > pic7.transform.position.x && pic7.transform.position.x > pic8.transform.position.x &&
         pic0.transform.position.y > pic3.transform.position.y && pic3.transform.position.y > pic6.transform.position.y &&
         pic1.transform.position.y > pic4.transform.position.y && pic4.transform.position.y > pic7.transform.position.y &&
         pic2.transform.position.y > pic5.transform.position.y && pic5.transform.position.y > pic8.transform.position.y)
@@ -236,6 +236,27 @@ public class TornPuzzle : MonoBehaviour
             TornPuzzleControl.isTorn = true;
             CreateWholePicture(); // Call the method to create the whole picture
         }
+
+        Debug.Log("pic 0 " +pic0.transform.position.x);
+        Debug.Log("pic 1 " + pic1.transform.position.x);
+        Debug.Log("pic 2 " + pic2.transform.position.x);
+        Debug.Log("pic 3 " + pic3.transform.position.x);
+        Debug.Log("pic 4 " + pic4.transform.position.x);
+        Debug.Log("pic 5 " + pic5.transform.position.x);
+        Debug.Log("pic 6 " + pic6.transform.position.x);
+        Debug.Log("pic 7 " + pic7.transform.position.x);
+        Debug.Log("pic 8 " + pic8.transform.position.x);
+
+        Debug.Log("pic 0 " + pic0.transform.position.y);
+        Debug.Log("pic 1 " + pic1.transform.position.y);
+        Debug.Log("pic 2 " + pic2.transform.position.y);
+        Debug.Log("pic 3 " + pic3.transform.position.y);
+        Debug.Log("pic 4 " + pic4.transform.position.y);
+        Debug.Log("pic 5 " + pic5.transform.position.y);
+        Debug.Log("pic 6 " + pic6.transform.position.y);
+        Debug.Log("pic 7 " + pic7.transform.position.y);
+        Debug.Log("pic 8 " + pic8.transform.position.y);
+
     }
 
     private void CreateWholePicture()
