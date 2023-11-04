@@ -24,15 +24,15 @@ public class ScriptedEvent_1 : MonoBehaviour
     //{
     public void event1()
     {
-        if (!isTriggered)
-        {
+        //if (!isTriggered)
+        //{
             for (int i = 0; i <= lights.Length - 1; i++)
             {
                 lights[i].enabled = false;
             }
 
             FindObjectOfType<AudioManager>().PlaySFX("LightBulbBreaking");
-        }
+        //}
     }   
     //}
 }
