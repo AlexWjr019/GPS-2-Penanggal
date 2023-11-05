@@ -12,7 +12,7 @@ public class LoseScene : MonoBehaviour
 
     private void Awake()
     {
-        //loseUI.SetActive(false);
+        loseUI.SetActive(false);
     }
     void Start()
     {
@@ -27,8 +27,8 @@ public class LoseScene : MonoBehaviour
 
     public void RestartGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene("_MainLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene("_MainLevel");
         Time.timeScale = 1.0f;
     }
 

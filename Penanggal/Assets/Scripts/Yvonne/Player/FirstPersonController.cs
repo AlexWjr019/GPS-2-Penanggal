@@ -279,9 +279,12 @@ public class FirstPersonController : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Debug.Log("Collided with: " + hit.gameObject.name);
+
         if (hit.gameObject.CompareTag("Ghost"))
         {
-            SceneManager.LoadScene("LoseScreen");
+            LoseScene loseScene = FindObjectOfType<LoseScene>();
+            loseScene.PlayerCollidedWithGhost();
+            //SceneManager.LoadScene("LoseScreen");
         }
     }
 
