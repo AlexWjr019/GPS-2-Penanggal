@@ -14,9 +14,6 @@ public class BabyPenanggal : MonoBehaviour
     [HideInInspector]
     public bool isSeen;
 
-    [SerializeField] 
-    private int sceneInt;
-
     private NavMeshAgent agent;
     [HideInInspector]
     public Vector3 spawnPoint;
@@ -26,6 +23,7 @@ public class BabyPenanggal : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         agent.SetDestination(playerPosition);
+
     }
 
     void Update()
@@ -55,8 +53,7 @@ public class BabyPenanggal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(sceneInt);
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }    
 }
