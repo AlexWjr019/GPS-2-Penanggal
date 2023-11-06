@@ -15,8 +15,9 @@ public class Hide : MonoBehaviour
     public Animation cupBoardDoorAnima, cupboardDoorAnima2, hideInLivingCupboard, moveOutLivingCupboard, 
         hideInHallwayCupboard, moveOutHallwayCupboard, hallwayDoorAnima, hallwayDoorAnima2, 
         bedroomDoorAnima, bedroomDoorAnima2, hideInBedroomCupboard, moveOutBedroomCupboard,
-        kitchenDoorAnima, kitchenDoorAnima2, hideInKitchenCupboard, moveOutKitchenCupboard;
-    public bool livingCupboard, hallwayCupboard, bedroomCupboard, kitchenCupboard;
+        kitchenDoorAnima, kitchenDoorAnima2, hideInKitchenCupboard, moveOutKitchenCupboard,
+        living2DoorAnima, living2DoorAnima2, hideInLivingCupboard2, moveOutLivingCupboard2;
+    public bool livingCupboard, hallwayCupboard, bedroomCupboard, kitchenCupboard, livingCupboard2;
 
     private void Start()
     {
@@ -59,7 +60,7 @@ public class Hide : MonoBehaviour
                         //tutorial.hideCupboardText.gameObject.SetActive(false);
                         //Destroy(pointToCupBoard);
 
-                        if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || currentInteractable.gameObject.name == "Bedroom_Cupboard" || currentInteractable.gameObject.name == "Kitchen_Cupboard")
+                        if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || currentInteractable.gameObject.name == "Bedroom_Cupboard" || currentInteractable.gameObject.name == "Kitchen_Cupboard" || currentInteractable.gameObject.name == "Livingroom_Cupboard2")
                         {
                             if(currentInteractable.gameObject.name == "Livingroom_Cupboard")
                             {
@@ -67,6 +68,7 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = false;
                                 bedroomCupboard = false;
                                 kitchenCupboard = false;
+                                livingCupboard2 = false;
                             }
                             else if (currentInteractable.gameObject.name == "Hallway_Cupboard")
                             {
@@ -74,6 +76,7 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = true;
                                 bedroomCupboard = false;
                                 kitchenCupboard = false;
+                                livingCupboard2 = false;
                             }
                             else if (currentInteractable.gameObject.name == "Bedroom_Cupboard")
                             {
@@ -81,6 +84,7 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = false;
                                 bedroomCupboard = true;
                                 kitchenCupboard = false;
+                                livingCupboard2 = false;
                             }
                             else if (currentInteractable.gameObject.name == "Kitchen_Cupboard")
                             {
@@ -88,6 +92,15 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = false;
                                 bedroomCupboard = false;
                                 kitchenCupboard = true;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "Livingroom_Cupboard2")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = true;
                             }
                             isHide = true;
                         }
@@ -109,7 +122,7 @@ public class Hide : MonoBehaviour
                         isHide = false;
                         isTransitioning = true;
 
-                        if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2" || currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2" || currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2" || currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2")
+                        if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2" || currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2" || currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2" || currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2" || currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
                         {
                             if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2")
                             {
@@ -117,6 +130,7 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = false;
                                 bedroomCupboard = false;
                                 kitchenCupboard = false;
+                                livingCupboard2 = false;
                             }
                             else if (currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2")
                             {
@@ -124,6 +138,7 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = true;
                                 bedroomCupboard = false;
                                 kitchenCupboard = false;
+                                livingCupboard2 = false;
                             }
                             else if (currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2")
                             {
@@ -131,6 +146,7 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = false;
                                 bedroomCupboard = true;
                                 kitchenCupboard = false;
+                                livingCupboard2 = false;
                             }
                             else if (currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2")
                             {
@@ -138,6 +154,15 @@ public class Hide : MonoBehaviour
                                 hallwayCupboard = false;
                                 bedroomCupboard = false;
                                 kitchenCupboard = true;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = true;
                             }
                             StartCoroutine(PlayMoveOutCupboard());
                         }
@@ -173,8 +198,11 @@ public class Hide : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
 
                 // Now, play the other two animations
-                hallwayDoorAnima.Play("HallwayCloseDoor1");
-                hallwayDoorAnima2.Play("HallwayCloseDoor2");
+                //hallwayDoorAnima.Play("HallwayCloseDoor1");
+                //hallwayDoorAnima2.Play("HallwayCloseDoor2");
+
+                hallwayDoorAnima.Play("CloseCupboardDoor");
+                hallwayDoorAnima2.Play("CloseCupboardDoor2");
             }
 
             if (bedroomCupboard)
@@ -185,8 +213,11 @@ public class Hide : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
 
                 // Now, play the other two animations
-                bedroomDoorAnima.Play("BedroomCloseDoor1");
-                bedroomDoorAnima2.Play("BedroomCloseDoor2");
+                //bedroomDoorAnima.Play("BedroomCloseDoor1");
+                //bedroomDoorAnima2.Play("BedroomCloseDoor2");
+
+                bedroomDoorAnima.Play("CloseCupboardDoor");
+                bedroomDoorAnima2.Play("CloseCupboardDoor2");
             }
 
             if (kitchenCupboard)
@@ -197,11 +228,26 @@ public class Hide : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
 
                 // Now, play the other two animations
-                kitchenDoorAnima.Play("KitchenCloseDoor1");
-                kitchenDoorAnima2.Play("KitchenCloseDoor2");
+                //kitchenDoorAnima.Play("KitchenCloseDoor1");
+                //kitchenDoorAnima2.Play("KitchenCloseDoor2");
+
+                kitchenDoorAnima.Play("CloseCupboardDoor");
+                kitchenDoorAnima2.Play("CloseCupboardDoor2");
             }
+
+            if (livingCupboard2)
+            {
+                hideInLivingCupboard.Play("HideInLivingCupboard2"); // Play the first animation
+
+                // Wait for 2 seconds
+                yield return new WaitForSeconds(2.0f);
+
+                // Now, play the other two animations
+                living2DoorAnima.Play("CloseCupboardDoor");
+                living2DoorAnima2.Play("CloseCupboardDoor2");
+            }
+            FindObjectOfType<AudioManager>().PlaySFX("WardrobeOpening");
         }
-        FindObjectOfType<AudioManager>().PlaySFX("WardrobeOpening");
         isTransitioning = false;
     }
 
@@ -219,8 +265,11 @@ public class Hide : MonoBehaviour
 
         if(hallwayCupboard)
         {
-            hallwayDoorAnima.Play("HallwayOpenDoor1");
-            hallwayDoorAnima2.Play("HallwayOpenDoor2");
+            //hallwayDoorAnima.Play("HallwayOpenDoor1");
+            //hallwayDoorAnima2.Play("HallwayOpenDoor2");
+
+            hallwayDoorAnima.Play("OpenCupboardDoor");
+            hallwayDoorAnima2.Play("OpenCupboardDoor2");
 
             yield return new WaitForSeconds(1.0f);
 
@@ -229,8 +278,11 @@ public class Hide : MonoBehaviour
 
         if (bedroomCupboard)
         {
-            bedroomDoorAnima.Play("BedroomOpenDoor1");
-            bedroomDoorAnima2.Play("BedroomOpenDoor2");
+            //bedroomDoorAnima.Play("BedroomOpenDoor1");
+            //bedroomDoorAnima2.Play("BedroomOpenDoor2");
+
+            bedroomDoorAnima.Play("OpenCupboardDoor");
+            bedroomDoorAnima2.Play("OpenCupboardDoor2");
 
             yield return new WaitForSeconds(1.0f);
 
@@ -239,12 +291,25 @@ public class Hide : MonoBehaviour
 
         if (kitchenCupboard)
         {
-            kitchenDoorAnima.Play("KitchenOpenDoor1");
-            kitchenDoorAnima2.Play("KitchenOpenDoor2");
+            //kitchenDoorAnima.Play("KitchenOpenDoor1");
+            //kitchenDoorAnima2.Play("KitchenOpenDoor2");
+
+            kitchenDoorAnima.Play("OpenCupboardDoor");
+            kitchenDoorAnima2.Play("OpenCupboardDoor2");
 
             yield return new WaitForSeconds(1.0f);
 
             moveOutKitchenCupboard.Play("MoveOutKitchenCupboard");
+        }
+
+        if (livingCupboard2)
+        {
+            living2DoorAnima.Play("OpenCupboardDoor");
+            living2DoorAnima2.Play("OpenCupboardDoor2");
+
+            yield return new WaitForSeconds(1.0f);
+
+            moveOutLivingCupboard.Play("MoveOutLivingCupboard2");
         }
         FindObjectOfType<AudioManager>().PlaySFX("WardrobeClosing");
         isTransitioning = false;

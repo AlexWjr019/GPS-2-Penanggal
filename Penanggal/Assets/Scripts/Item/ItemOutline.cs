@@ -14,7 +14,7 @@ public class ItemOutline : MonoBehaviour
 
     public Camera playerCamera; // Reference to the main player camera
     public float sphereCastRadius = 0.5f; // Radius of the SphereCast
-    public float maxDistance = 3f; // Maximum distance of the SphereCast
+    public float maxDistance = 5f; // Maximum distance of the SphereCast
 
     private void Start()
     {
@@ -28,8 +28,8 @@ public class ItemOutline : MonoBehaviour
         if (enabled)
         {
             RaycastHit hit;
-
-            if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, LayerMask.GetMask("Items")))
+            int combinedLayerMask = LayerMask.GetMask("Items") | LayerMask.GetMask("Hide") | LayerMask.GetMask("Door");
+            if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, combinedLayerMask))
             {
                 Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * maxDistance, Color.red);
                 Transform hitTransform = hit.transform;

@@ -42,7 +42,7 @@ public class FlameObject : MonoBehaviour
                     {
                         GameObject clickedObject = hit.collider.gameObject;
                         // Check if the clicked GameObject is the cursePaper
-                        if (clickedObject.CompareTag("CursePaper"))
+                        if (clickedObject.CompareTag("CursePaper") && LockControl.safeIsOpen)
                         {
                             // Iterate through the list of curse papers
                             for (int i = 0; i < cursepapers.Count; i++)

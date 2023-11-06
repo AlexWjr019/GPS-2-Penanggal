@@ -7,7 +7,7 @@ public class OutlineSelection : MonoBehaviour
 {
     public Camera playerCamera; // Reference to the main player camera
     public float sphereCastRadius = 0.5f; // Radius of the SphereCast
-    public float maxDistance = 3f; // Maximum distance of the SphereCast
+    public float maxDistance = 5f; // Maximum distance of the SphereCast
     private ItemOutline outlineScript;
     private bool isOutlined = false;
     private bool outline = true;
@@ -27,12 +27,12 @@ public class OutlineSelection : MonoBehaviour
     private void CheckItemHighlight()
     {
         RaycastHit hit;
-
+        int combinedLayerMask = LayerMask.GetMask("Items") | LayerMask.GetMask("Hide") | LayerMask.GetMask("Door");
         // Calculate the SphereCast origin based on the player's view position
         //Vector3 sphereCastOrigin = playerCamera.transform.position + playerCamera.transform.forward * offsetDistance;
 
         // Perform the SphereCast
-        if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, LayerMask.GetMask("Items")))
+        if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, combinedLayerMask))
         {
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * maxDistance, Color.blue);
 

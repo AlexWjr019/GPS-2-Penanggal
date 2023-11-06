@@ -237,25 +237,25 @@ public class TornPuzzle : MonoBehaviour
             CreateWholePicture(); // Call the method to create the whole picture
         }
 
-        Debug.Log("pic 0 " +pic0.transform.position.x);
-        Debug.Log("pic 1 " + pic1.transform.position.x);
-        Debug.Log("pic 2 " + pic2.transform.position.x);
-        Debug.Log("pic 3 " + pic3.transform.position.x);
-        Debug.Log("pic 4 " + pic4.transform.position.x);
-        Debug.Log("pic 5 " + pic5.transform.position.x);
-        Debug.Log("pic 6 " + pic6.transform.position.x);
-        Debug.Log("pic 7 " + pic7.transform.position.x);
-        Debug.Log("pic 8 " + pic8.transform.position.x);
+        Debug.Log("pic 0 x " +pic0.transform.position.x);
+        Debug.Log("pic 1 x " + pic1.transform.position.x);
+        Debug.Log("pic 2 x " + pic2.transform.position.x);
+        Debug.Log("pic 3 x " + pic3.transform.position.x);
+        Debug.Log("pic 4 x " + pic4.transform.position.x);
+        Debug.Log("pic 5 x " + pic5.transform.position.x);
+        Debug.Log("pic 6 x " + pic6.transform.position.x);
+        Debug.Log("pic 7 x " + pic7.transform.position.x);
+        Debug.Log("pic 8 x " + pic8.transform.position.x);
 
-        Debug.Log("pic 0 " + pic0.transform.position.y);
-        Debug.Log("pic 1 " + pic1.transform.position.y);
-        Debug.Log("pic 2 " + pic2.transform.position.y);
-        Debug.Log("pic 3 " + pic3.transform.position.y);
-        Debug.Log("pic 4 " + pic4.transform.position.y);
-        Debug.Log("pic 5 " + pic5.transform.position.y);
-        Debug.Log("pic 6 " + pic6.transform.position.y);
-        Debug.Log("pic 7 " + pic7.transform.position.y);
-        Debug.Log("pic 8 " + pic8.transform.position.y);
+        Debug.Log("pic 0 y " + pic0.transform.position.y);
+        Debug.Log("pic 1 y " + pic1.transform.position.y);
+        Debug.Log("pic 2 y " + pic2.transform.position.y);
+        Debug.Log("pic 3 y " + pic3.transform.position.y);
+        Debug.Log("pic 4 y " + pic4.transform.position.y);
+        Debug.Log("pic 5 y " + pic5.transform.position.y);
+        Debug.Log("pic 6 y " + pic6.transform.position.y);
+        Debug.Log("pic 7 y " + pic7.transform.position.y);
+        Debug.Log("pic 8 y " + pic8.transform.position.y);
 
     }
 

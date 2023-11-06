@@ -3289,10 +3289,15 @@ MonoBehaviour:
   kitchenDoorAnima2: {fileID: 0}
   hideInKitchenCupboard: {fileID: 0}
   moveOutKitchenCupboard: {fileID: 0}
+  living2DoorAnima: {fileID: 0}
+  living2DoorAnima2: {fileID: 0}
+  hideInLivingCupboard2: {fileID: 0}
+  moveOutLivingCupboard2: {fileID: 0}
   livingCupboard: 0
   hallwayCupboard: 0
   bedroomCupboard: 0
   kitchenCupboard: 0
+  livingCupboard2: 0
 --- !u!64 &252321831
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28353,7 +28358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1715971552
 Transform:
   m_ObjectHideFlags: 0
@@ -29845,10 +29850,15 @@ MonoBehaviour:
   kitchenDoorAnima2: {fileID: 0}
   hideInKitchenCupboard: {fileID: 0}
   moveOutKitchenCupboard: {fileID: 0}
+  living2DoorAnima: {fileID: 0}
+  living2DoorAnima2: {fileID: 0}
+  hideInLivingCupboard2: {fileID: 0}
+  moveOutLivingCupboard2: {fileID: 0}
   livingCupboard: 0
   hallwayCupboard: 0
   bedroomCupboard: 0
   kitchenCupboard: 0
+  livingCupboard2: 0
 --- !u!64 &1840967557
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32199,7 +32209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2076244646
 Transform:
   m_ObjectHideFlags: 0

@@ -186,6 +186,7 @@ public class FirstPersonController : MonoBehaviour
                         if (t.fingerId == rightFingerId)
                         {
                             lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
+                            canHide = false;
                         }
                         if (t.fingerId == leftFingerId)
                         {
@@ -231,6 +232,8 @@ public class FirstPersonController : MonoBehaviour
 
             // horizontal (yaw) rotation
             transform.Rotate(transform.up, lookInput.x);
+
+            canHide = false;
         }
     }
     void Move()
