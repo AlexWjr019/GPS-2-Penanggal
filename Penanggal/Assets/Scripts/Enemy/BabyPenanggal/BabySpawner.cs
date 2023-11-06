@@ -43,7 +43,9 @@ public class BabySpawner : MonoBehaviour
             newSpawn.GetComponent<BabyPenanggal>().spawnPoint = spawnPoints[ran].transform.position;
             newSpawn.GetComponent<BabyPenanggal>().playerPosition = player.transform.position;
 
-            yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
+            float ranTime = Random.Range(minSpawnDelay, maxSpawnDelay);
+
+            yield return new WaitForSeconds(ranTime);
         }
     }
 }

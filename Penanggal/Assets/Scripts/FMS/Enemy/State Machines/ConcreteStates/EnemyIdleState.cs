@@ -21,6 +21,8 @@ public class EnemyIdleState : EnemyState
     {
         base.EnterState();
 
+        enemy.PlayHumming();
+
         Debug.Log("Idle state");
     }
 

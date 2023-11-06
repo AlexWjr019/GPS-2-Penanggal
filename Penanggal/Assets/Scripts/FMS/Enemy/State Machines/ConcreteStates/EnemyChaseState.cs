@@ -19,6 +19,10 @@ public class EnemyChaseState : EnemyState
         base.EnterState();
 
         enemy.agent.SetDestination(enemy.player.transform.position);
+        enemy.agent.speed *= enemy.chaseMultiplyer;
+
+        enemy.StopHumming();
+        enemy.PlayHumming();
 
         Debug.Log("Chase state");
     }
@@ -26,6 +30,8 @@ public class EnemyChaseState : EnemyState
     public override void ExitState()
     {
         base.ExitState();
+
+        enemy.agent.speed = enemy.defaultSpeed;
     }
 
     public override void FrameUpdate()
@@ -40,5 +46,10 @@ public class EnemyChaseState : EnemyState
         base.PhysicsUpdate();
 
         enemy.Observing();
+    }
+
+    public void ChangeSpeed()
+    {
+        enemy.agent.speed = enemy.defaultSpeed;
     }
 }

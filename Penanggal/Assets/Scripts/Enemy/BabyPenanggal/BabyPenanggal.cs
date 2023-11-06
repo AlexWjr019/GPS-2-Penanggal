@@ -12,7 +12,7 @@ public class BabyPenanggal : MonoBehaviour
     private float returnSpeed;
 
     [HideInInspector]
-    public bool isSeen;
+    public bool isSeen, isCalled;
 
     private NavMeshAgent agent;
     [HideInInspector]
@@ -24,6 +24,7 @@ public class BabyPenanggal : MonoBehaviour
         agent.autoBraking = false;
         agent.SetDestination(playerPosition);
 
+        FindObjectOfType<AudioManager>().PlaySFX("BabyPenSpeak1");
     }
 
     void Update()
@@ -37,6 +38,12 @@ public class BabyPenanggal : MonoBehaviour
             agent.SetDestination(spawnPoint);
             agent.speed = returnSpeed;
             
+            if (!isCalled)
+            {
+                isCalled = true;
+                FindObjectOfType<AudioManager>().PlaySFX("BabyPenCrying3");
+            }
+
             if (agent.remainingDistance < 0.2)
             {
                 Destroy(gameObject);

@@ -28,9 +28,6 @@ public class TornPuzzle : MonoBehaviour
 
     public float moveSpeed = 3.0f;
 
-    //[SerializeField]
-    //private BabySpawner babySpawner;
-
     private void Start()
     {
         originalPosition = transform.position;
@@ -235,8 +232,8 @@ public class TornPuzzle : MonoBehaviour
             isDragging = false;
             isRotating = false;
             callBaby = false;
-            //BabySpawner.Instance.spawnBaby = false;
-            //BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
+            BabySpawner.Instance.spawnBaby = false;
+            BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
             TornPuzzleControl.isTorn = true;
             CreateWholePicture(); // Call the method to create the whole picture
         }

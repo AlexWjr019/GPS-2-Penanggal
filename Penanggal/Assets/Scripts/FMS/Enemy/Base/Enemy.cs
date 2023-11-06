@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckable
+public class Enemy : MonoBehaviour
 {
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     public float lookDelay = 5f;
     [SerializeField]
     private float changeStateDelay = 5f;
+
+    [HideInInspector]
+    public float defaultSpeed;
 
     #region State Machine Variables
 
@@ -41,6 +44,7 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
     #region Chase Variables
 
     public GameObject player;
+    public float chaseMultiplyer = 1.2f;
 
     #endregion
 
@@ -57,6 +61,8 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
 
     private void Start()
     {
+        defaultSpeed = agent.speed;
+
         StateMachine.Initialize(IdleState);
     }
 
@@ -134,33 +140,25 @@ public class Enemy : MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckab
         StateMachine.ChangeState(PatrolState);
     }
 
+    public void PlayHumming()
+    {
+        FindObjectOfType<AudioManager>().PlaySFX("PenanggalHumming");
+    }
+
+    public void StopHumming()
+    {
+        FindObjectOfType<AudioManager>().StopSFX("PenanggalHumming");
+    }
+
+    public void PlayChasing()
+    {
+        FindObjectOfType<AudioManager>().PlayMusic("PenanggalChasing");
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
     }
-
-    #region Health / Die Functions
-
-    public void Die()
-    {
-
-    }
-
-    #endregion
-
-    #region Distance Checks
-
-    public void SetAggroStatus(bool isAggroed)
-    {
-        IsAggroed = isAggroed;
-    }
-
-    public void SetStrikingDistanceBool(bool isWithinStrikingDistance)
-    {
-        IsWithinStrikingDistance = isWithinStrikingDistance;
-    }
-
-    #endregion
 
     #region Animation Triggers
 
