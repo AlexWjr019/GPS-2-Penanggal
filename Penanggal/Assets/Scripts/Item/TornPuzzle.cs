@@ -115,13 +115,17 @@ public class TornPuzzle : MonoBehaviour
         {
             if (collidingObject != null)
             {
+                //StartCoroutine(SmoothlyMoveToPosition(collidingObject, originalPosition));
+                // Snap the dragged piece to the colliding piece's exact position
+                StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
+                // Snap the colliding piece to the original position of the dragged piece
                 StartCoroutine(SmoothlyMoveToPosition(collidingObject, originalPosition));
             }
 
-            if (this.gameObject != null)
-            {
-                StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
-            }
+            //if (this.gameObject != null)
+            //{
+            //    //StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
+            //}
         }
         else
         {
@@ -135,29 +139,21 @@ public class TornPuzzle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isColliding = true;
-        collidingObject = other.gameObject;
+        if (other.gameObject.CompareTag("Swap"))
+        {
+            isColliding = true;
+            collidingObject = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isColliding = false;
-        collidingObject = null;
+        if (other.gameObject.CompareTag("Swap"))
+        {
+            isColliding = false;
+            collidingObject = null;
+        }
     }
-
-    //private void SwapPositions(GameObject otherObject)
-    //{
-    //    // Store the original positions of both objects
-    //    Vector3 otherOriginalPosition = otherObject.GetComponent<TornPuzzle>().originalPosition;
-
-    //    // Swap the objects' positions
-    //    otherObject.transform.position = originalPosition;
-    //    transform.position = otherOriginalPosition;
-
-    //    // Update the original positions
-    //    originalPosition = transform.position;
-    //    otherObject.GetComponent<TornPuzzle>().originalPosition = otherObject.transform.position;
-    //}
 
     private IEnumerator SmoothlyMoveToPosition(GameObject obj, Vector3 target)
     {
@@ -175,9 +171,17 @@ public class TornPuzzle : MonoBehaviour
             yield break;
         }
 
+        TornPuzzle tornComponent = obj.GetComponent<TornPuzzle>();
+
+        if (tornComponent == null)
+        {
+            Debug.LogError("TornPuzzle component not found on the object: " + obj.name);
+            yield break;
+        }
+
         float elapsedTime = 0f;
         Vector3 initialPosition = objTransform.position;
-        TornPuzzle tornComponent = obj.GetComponent<TornPuzzle>();
+        //TornPuzzle tornComponent = obj.GetComponent<TornPuzzle>();
 
         if (tornComponent != null)
         {
@@ -186,7 +190,7 @@ public class TornPuzzle : MonoBehaviour
             while (elapsedTime < 1f)
             {
                 elapsedTime += Time.deltaTime * moveSpeed;
-                FindObjectOfType<AudioManager>().PlaySFX("DrawingPieceSwapSound");
+                //FindObjectOfType<AudioManager>().PlaySFX("DrawingPieceSwapSound");
                 objTransform.position = Vector3.Lerp(initialPosition, target, elapsedTime);
                 yield return null;
             }
@@ -255,7 +259,7 @@ public class TornPuzzle : MonoBehaviour
         Debug.Log("pic 5 y " + pic5.transform.position.y);
         Debug.Log("pic 6 y " + pic6.transform.position.y);
         Debug.Log("pic 7 y " + pic7.transform.position.y);
-        Debug.Log("pic 8 y " + pic8.transform.position.y);
+        Debug.Log("pic 8 y" + pic8.transform.position.y);
 
     }
 
