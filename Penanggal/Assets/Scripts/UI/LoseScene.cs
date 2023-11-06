@@ -9,6 +9,7 @@ public class LoseScene : MonoBehaviour
     public Button Restart;
     public Button mainMenu;
     public GameObject loseUI;
+    public GameObject Player;
 
     private void Awake()
     {
@@ -27,10 +28,11 @@ public class LoseScene : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //SceneManager.LoadScene("_MainLevel");
+        PositionManager.Instance.ResetPlayerToStartPosition(Player);
         Time.timeScale = 1.0f;
+        loseUI.SetActive(false);
     }
+
 
     public void GoToMainMenu()
     {

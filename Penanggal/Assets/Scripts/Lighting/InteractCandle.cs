@@ -42,7 +42,7 @@ public class InteractCandle : MonoBehaviour
         }
 
         brightLightmap = blightmap.ToArray();
-        isOn[0] = true;
+        isOn[0] = false;
     }
 
     // Removed Update method since touch handling is moved to another script

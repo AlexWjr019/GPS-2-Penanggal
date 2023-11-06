@@ -78,6 +78,10 @@ public class FirstPersonController : MonoBehaviour
     #endregion
 
 
+    private void Awake()
+    {
+        //PositionManager.Instance.SetPlayerStartPosition(transform.position);
+    }
     void Start()
     {
         leftFingerId = -1;
@@ -92,7 +96,6 @@ public class FirstPersonController : MonoBehaviour
         {
             // Vignette effect found in the volume
         }
-
         volumeObject.SetActive(true);
     }
 
