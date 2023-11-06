@@ -155,6 +155,12 @@ public class Enemy : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayMusic("PenanggalChasing");
     }
 
+    public void StopChasing()
+    {
+        FindObjectOfType<AudioManager>().StopMusic("PenanggalChasing");
+        FindObjectOfType<AudioManager>().PlayMusic("BGM");
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);

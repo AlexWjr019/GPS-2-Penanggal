@@ -22,7 +22,7 @@ public class EnemyChaseState : EnemyState
         enemy.agent.speed *= enemy.chaseMultiplyer;
 
         enemy.StopHumming();
-        enemy.PlayHumming();
+        enemy.PlayChasing();
 
         Debug.Log("Chase state");
     }

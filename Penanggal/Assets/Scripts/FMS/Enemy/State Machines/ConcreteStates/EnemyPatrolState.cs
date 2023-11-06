@@ -21,8 +21,6 @@ public class EnemyPatrolState : EnemyState
                 
         GotoNextPoint();
 
-        //enemy.PlayHumming();
-
         Debug.Log("Patrol state");
     }
 

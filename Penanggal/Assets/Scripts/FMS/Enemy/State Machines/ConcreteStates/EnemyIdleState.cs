@@ -22,6 +22,7 @@ public class EnemyIdleState : EnemyState
         base.EnterState();
 
         enemy.PlayHumming();
+        enemy.StopChasing();
 
         Debug.Log("Idle state");
     }
