@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ScriptedEvent_6 : MonoBehaviour
 {
+    public AudioSource windowShatter;
     public bool isTriggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,7 +14,7 @@ public class ScriptedEvent_6 : MonoBehaviour
     {
         if (!isTriggered)
         {
-            FindObjectOfType<AudioManager>().PlaySFX("WindowShatter");
+            windowShatter.Play();
             isTriggered = true;
         }
     }

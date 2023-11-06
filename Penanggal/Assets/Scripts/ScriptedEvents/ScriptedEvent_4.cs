@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class ScriptedEvent_4 : MonoBehaviour
 {
+    public GameObject tvScreen;
+    public GameObject tvStatic;
+
     public void PlayRasaSayang()
     {
-        Debug.Log("its work");
-        FindObjectOfType<AudioManager>().PlayMusic("RasaSayang");
+        tvScreen.SetActive(false);
+        tvStatic.SetActive(true);
     }
 }

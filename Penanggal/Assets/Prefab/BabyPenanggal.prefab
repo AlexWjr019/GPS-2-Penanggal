@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2097609828454209453}
   m_Layer: 0
   m_Name: BabyPenanggal
-  m_TagString: Untagged
+  m_TagString: BabyPenanggal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,6 +242,7 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0, z: 0}
   returnSpeed: 1.5
   isSeen: 0
+  isCalled: 0
   spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4292906405579896881
 PrefabInstance:

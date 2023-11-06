@@ -4,35 +4,21 @@ public class ScriptedEvent_1 : MonoBehaviour
 {
     public Light[] lights;
 
-    /*public bool testingBool = false;
+    public AudioSource lightbulbBreaking;
 
-    void Update()
+    public bool isTriggered = false;
+
+    public void event1()
     {
-        if(testingBool)
+        if (!isTriggered)
         {
             for (int i = 0; i <= lights.Length - 1; i++)
             {
                 lights[i].enabled = false;
             }
 
+            lightbulbBreaking.Play();
+            isTriggered = true;
         }
-    }*/
-
-    public bool isTriggered = false;
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    public void event1()
-    {
-        //if (!isTriggered)
-        //{
-            for (int i = 0; i <= lights.Length - 1; i++)
-            {
-                lights[i].enabled = false;
-            }
-
-            FindObjectOfType<AudioManager>().PlaySFX("LightBulbBreaking");
-        //}
-    }   
-    //}
+     }   
 }
