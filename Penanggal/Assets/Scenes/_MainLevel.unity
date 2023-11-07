@@ -18875,7 +18875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f6cb90323499443aa44287e9f767c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  chaseDelay: 2
+  speed: 2
   startPos: {fileID: 1806681596}
   endPos: {fileID: 1233907148}
   penanggal: {fileID: 2099854341}
@@ -50582,7 +50583,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 6
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

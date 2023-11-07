@@ -7,6 +7,8 @@ public class SpawnPenanggal : MonoBehaviour
 {
     private bool isSpawned;
 
+    public float chaseDelay = 2f;
+
     public float speed = 1.0F;
     private float startTime;
     private float journeyLength;
@@ -48,7 +50,7 @@ public class SpawnPenanggal : MonoBehaviour
                 Debug.Log("Penanggal is Spawned");
                 FindObjectOfType<AudioManager>().PlaySFX("PenanggalLaugh");
                 isSpawned = true;
-                Invoke("OnAI", 5f);
+                Invoke("OnAI", chaseDelay);
             }
         }
     }
