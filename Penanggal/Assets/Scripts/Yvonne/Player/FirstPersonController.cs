@@ -29,6 +29,7 @@ public class FirstPersonController : MonoBehaviour
     public float initialMoveSpeed;
     public float moveInputDeadZone;
     public bool keyboard = false;
+    public static bool hasCollidedWithGhost = false;
     #endregion
 
     #region Touch Detection Variables
@@ -300,8 +301,14 @@ public class FirstPersonController : MonoBehaviour
     {
         Debug.Log("Collided with: " + hit.gameObject.name);
 
-        if (hit.gameObject.CompareTag("Ghost") || hit.gameObject.CompareTag("BabyPenanggal"))
+        //if (hit.gameObject.CompareTag("Ghost") /*|| hit.gameObject.CompareTag("BabyPenanggal")*/)
+        //{
+        //    LookAtGhost(hit.transform);
+        //    StartCoroutine(ShowLoseUIAfterDelay());
+        //}
+        if (hit.gameObject.CompareTag("Ghost") && !hasCollidedWithGhost || hit.gameObject.CompareTag("BabyPenanggal") && !hasCollidedWithGhost)
         {
+            hasCollidedWithGhost = true; // Set the flag so this block won't run again
             LookAtGhost(hit.transform);
             StartCoroutine(ShowLoseUIAfterDelay());
         }
@@ -318,9 +325,12 @@ public class FirstPersonController : MonoBehaviour
     private System.Collections.IEnumerator ShowLoseUIAfterDelay()
     {
         yield return new WaitForSeconds(1f);
-        LoseScene loseScene = FindObjectOfType<LoseScene>();
-        loseScene.PlayerCollidedWithGhost();
-        //SceneManager.LoadScene("LoseScreen");
+        if (hasCollidedWithGhost)
+        {
+            LoseScene loseScene = FindObjectOfType<LoseScene>();
+            loseScene.PlayerCollidedWithGhost();
+            // SceneManager.LoadScene("LoseScreen");
+        }
     }
 
     public void HandleSprintTimer()

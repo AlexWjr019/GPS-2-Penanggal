@@ -18,6 +18,8 @@ public class LoseScene : MonoBehaviour
     }
     void Start()
     {
+        //FirstPersonController
+        //fps = FindObjectOfType<FirstPersonController>();
         Restart.onClick.AddListener(RestartGame);
         mainMenu.onClick.AddListener(GoToMainMenu);
     }
@@ -35,10 +37,11 @@ public class LoseScene : MonoBehaviour
         {
             PositionManager.Instance.ResetPlayerToStartPosition(player);
             Time.timeScale = 1.0f;
+            FirstPersonController.hasCollidedWithGhost = false;
             loseUI.SetActive(false);
 
-            //penanggal.animator.SetBool("isAttacking", false);
-            //penanggal.blood.Stop();
+            penanggal.animator.SetBool("isAttacking", false);
+            penanggal.blood.Stop();
         }
         else
         {
