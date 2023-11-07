@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
-    public bool isHide;
+    public static bool isHide;
     private bool isTransitioning;
 
     public LayerMask interacLayer;
     private GameObject currentInteractable;
     private float raycastDistance = 3f;
-
+    private int playerMask, playerMask2;
+    public GameObject player;
 
     public Animation cupBoardDoorAnima, cupboardDoorAnima2, hideInLivingCupboard, moveOutLivingCupboard, 
         hideInHallwayCupboard, moveOutHallwayCupboard, hallwayDoorAnima, hallwayDoorAnima2, 
@@ -18,6 +19,12 @@ public class Hide : MonoBehaviour
         kitchenDoorAnima, kitchenDoorAnima2, hideInKitchenCupboard, moveOutKitchenCupboard,
         living2DoorAnima, living2DoorAnima2, hideInLivingCupboard2, moveOutLivingCupboard2;
     public bool livingCupboard, hallwayCupboard, bedroomCupboard, kitchenCupboard, livingCupboard2;
+
+    private void Awake()
+    {
+        playerMask = LayerMask.NameToLayer("Default");
+        playerMask2 = LayerMask.NameToLayer("Player");
+    }
 
     private void Start()
     {
@@ -103,6 +110,7 @@ public class Hide : MonoBehaviour
                                 livingCupboard2 = true;
                             }
                             isHide = true;
+                            player.layer = playerMask;
                         }
                         StartCoroutine(PlayHideInCupboardThenCloseDoors());
                     }
@@ -121,6 +129,7 @@ public class Hide : MonoBehaviour
 
                         isHide = false;
                         isTransitioning = true;
+                        player.layer = playerMask2;
 
                         if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2" || currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2" || currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2" || currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2" || currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
                         {

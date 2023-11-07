@@ -130,6 +130,7 @@ public class FirstPersonController : MonoBehaviour
                 FindObjectOfType<AudioManager>().PlaySFX("Footsteps");
                 lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
             }
+            canHide = false;
         }
         //Debug.Log(moveInput.sqrMagnitude);
     }
@@ -147,6 +148,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 case TouchPhase.Began:
                     touchStartTime = Time.time;
+                    canHide = false;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
                         leftFingerId = t.fingerId;
@@ -203,6 +205,7 @@ public class FirstPersonController : MonoBehaviour
                             {
                                 moveSpeed = initialMoveSpeed;
                             }
+                            canHide = false;
                         }
                     }
                     break;
@@ -220,40 +223,49 @@ public class FirstPersonController : MonoBehaviour
             }
             else
             {
-                headBob.isWalking = true;
+                if (!Hide.isHide && !Note.noteIsSeen)
+                {
+                    headBob.isWalking = true;
+                }
             }
         }
     }
 
     void LookAround()
     {
-        if(!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
+        if (!Hide.isHide && !Note.noteIsSeen)
         {
-            // vertical (pitch) rotation
-            cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y * verticalCameraSensitivity, minClamp, maxClamp);
-            cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
+            if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
+            {
+                // vertical (pitch) rotation
+                cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y * verticalCameraSensitivity, minClamp, maxClamp);
+                cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
 
-            // horizontal (yaw) rotation
-            transform.Rotate(transform.up, lookInput.x);
+                // horizontal (yaw) rotation
+                transform.Rotate(transform.up, lookInput.x);
 
-            canHide = false;
+                canHide = false;
+            }
         }
     }
     void Move()
     {
-        if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
+        if(!Hide.isHide && !Note.noteIsSeen)
         {
-            // don't move if the touch delta is shorter than the designated dead zone
-            if (moveInput.sqrMagnitude <= moveInputDeadZone)
+            if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
             {
-                return;
+                // don't move if the touch delta is shorter than the designated dead zone
+                if (moveInput.sqrMagnitude <= moveInputDeadZone)
+                {
+                    return;
+                }
+
+                // multiply the normalized direction by the speed
+                Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
+
+                // move relatively to the local transform's direction
+                controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
             }
-
-            // multiply the normalized direction by the speed
-            Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
-
-            // move relatively to the local transform's direction
-            controller.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
         }
     }
     void GetKeyboardInput()
@@ -280,6 +292,7 @@ public class FirstPersonController : MonoBehaviour
         // apply yRotation (vertical) movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
         controller.Move(verticalMovement * Time.deltaTime);
+
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

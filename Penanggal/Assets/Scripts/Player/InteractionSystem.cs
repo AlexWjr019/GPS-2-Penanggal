@@ -204,6 +204,10 @@ public class InteractionSystem : MonoBehaviour
                 Debug.LogWarning("Candle object doesn't have InteractCandle component attached.");
             }
         }
+        else if (hit.collider.CompareTag("Note"))
+        {
+            Note.noteSeen = true;
+        }
         //else if (hit.collider.CompareTag("BabyPenanggal"))
         //{
         //    hit.collider.gameObject.GetComponent<BabyPenanggal>().isSeen = true;
@@ -372,6 +376,7 @@ public class InteractionSystem : MonoBehaviour
         ScriptedEvent_1 scriptedEvent = FindObjectOfType<ScriptedEvent_1>();
         scriptedEvent.event1();
         Debug.Log("Lighter has been picked up!");
+        ItemNotice.ligterPickup = true;
     }
 
     private void OnDrawGizmos()

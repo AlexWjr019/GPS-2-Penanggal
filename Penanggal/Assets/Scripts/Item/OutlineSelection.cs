@@ -22,6 +22,11 @@ public class OutlineSelection : MonoBehaviour
     private void Update()
     {
         CheckItemHighlight();
+
+        if (Hide.isHide)
+        {
+            DeactivateOutline();
+        }
     }
 
     private void CheckItemHighlight()

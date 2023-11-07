@@ -59,7 +59,7 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot != null)
         {
             selectedSlot.Selected();
-            OnItemSelected?.Invoke(selectedSlot.GetCurrentItem().name);
+            //OnItemSelected?.Invoke(selectedSlot.GetCurrentItem().name);
         }
     }
 

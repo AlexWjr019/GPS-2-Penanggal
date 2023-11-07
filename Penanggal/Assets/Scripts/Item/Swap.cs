@@ -82,26 +82,33 @@ public class Swap : MonoBehaviour
             {
                 StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
             }
+            CheckOrder();
         }
         else
         {
             // Snap the object back to its original position
             StartCoroutine(SmoothlyMoveToPosition(this.gameObject, originalPosition));
         }
-        CheckOrder();
+        
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        isColliding = true;
-        collidingObject = other.gameObject;
+        if (other.gameObject.CompareTag("Swap"))
+        {
+            isColliding = true;
+            collidingObject = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isColliding = false;
-        collidingObject = null;
+        if (other.gameObject.CompareTag("Swap"))
+        {
+            isColliding = false;
+            collidingObject = null;
+        }
     }
 
     private IEnumerator SmoothlyMoveToPosition(GameObject obj, Vector3 target)
@@ -131,7 +138,7 @@ public class Swap : MonoBehaviour
             while (elapsedTime < 1f)
             {
                 elapsedTime += Time.deltaTime * moveSpeed;
-                FindObjectOfType<AudioManager>().PlaySFX("ObjectSwap");
+                //FindObjectOfType<AudioManager>().PlaySFX("ObjectSwap");
                 objTransform.position = Vector3.Lerp(initialPosition, target, elapsedTime);
                 yield return null;
             }
@@ -160,7 +167,10 @@ public class Swap : MonoBehaviour
 
     private void CheckOrder()
     {
-        if (box.transform.position.y > bowl.transform.position.y && bowl.transform.position.y > cup.transform.position.y)
+        Debug.Log("box " + box.transform.position);
+        Debug.Log("bowl " + bowl.transform.position);
+        Debug.Log("cup " + cup.transform.position);
+        if (box.transform.position.y < bowl.transform.position.y && bowl.transform.position.y < cup.transform.position.x)
         {
             Debug.Log("Correct Order");
             puzzleCompleted = true;
