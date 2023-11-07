@@ -317,7 +317,7 @@ public class FirstPersonController : MonoBehaviour
 
     private System.Collections.IEnumerator ShowLoseUIAfterDelay()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1f);
         LoseScene loseScene = FindObjectOfType<LoseScene>();
         loseScene.PlayerCollidedWithGhost();
         //SceneManager.LoadScene("LoseScreen");

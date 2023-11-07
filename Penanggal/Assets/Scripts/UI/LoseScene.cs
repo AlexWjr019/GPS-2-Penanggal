@@ -30,17 +30,19 @@ public class LoseScene : MonoBehaviour
     public void RestartGame()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
+        GameObject Ghost = GameObject.FindWithTag("Ghost");
+        if (player != null && Ghost != null)
         {
             PositionManager.Instance.ResetPlayerToStartPosition(player);
             Time.timeScale = 1.0f;
             loseUI.SetActive(false);
 
-            penanggal.animator.SetBool("isAttacking", false);
-            penanggal.blood.Stop();
+            //penanggal.animator.SetBool("isAttacking", false);
+            //penanggal.blood.Stop();
         }
         else
         {
+            Debug.LogError("Ghost Missing");
             Debug.LogError("Player object not found!");
         }
     }
