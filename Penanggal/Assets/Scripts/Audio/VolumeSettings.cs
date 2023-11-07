@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
+    [SerializeField] private Toggle postProcessingToggle;
+    [SerializeField] private Volume PostProcessing;
 
     private void Start()
     {
@@ -34,5 +37,19 @@ public class VolumeSettings : MonoBehaviour
 
         SetMusicVolume();
         SetSFXVolume();
+    }
+
+    public void Update()
+    {
+        if(!postProcessingToggle.isOn)
+        {
+            postProcessingToggle.isOn = false;
+            PostProcessing.enabled = false;
+        }
+        else
+        {
+            postProcessingToggle.isOn = true;
+            PostProcessing.enabled = true;
+        }
     }
 }
