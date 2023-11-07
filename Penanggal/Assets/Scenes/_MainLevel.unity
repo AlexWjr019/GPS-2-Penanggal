@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1942,6 +1942,7 @@ MonoBehaviour:
   - {fileID: 1984442811}
   - {fileID: 1225843994}
   inventoryItemPrefab: {fileID: 8366123158450727716, guid: 2efa36f1aea3831458980710ba53d978, type: 3}
+  playerPointLight: {fileID: 2000277717}
   selectedSlot: {fileID: 0}
 --- !u!114 &88731665
 MonoBehaviour:
@@ -49131,7 +49132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2000277714
 Transform:
   m_ObjectHideFlags: 0
@@ -49192,7 +49193,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000277713}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0

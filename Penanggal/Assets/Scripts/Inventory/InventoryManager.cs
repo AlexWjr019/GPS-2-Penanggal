@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject interactButton;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+    public Light playerPointLight;
 
     //int selectedSlot = -1;
     public static InventoryManager Instance { get; private set; }
@@ -45,6 +46,7 @@ public class InventoryManager : MonoBehaviour
                 slot.Deselected();
             }
         }
+        TogglePlayerPointLight();
     }
 
     public void UpdateSelectedSlot(InventorySlot newSelectedSlot)
@@ -137,6 +139,28 @@ public class InventoryManager : MonoBehaviour
         newItem.transform.SetParent(slot.transform);
         newItem.transform.localPosition = Vector3.zero;
         newItem.transform.localScale = Vector3.one;
+    }
+
+    private void TogglePlayerPointLight()
+    {
+        string selectedItemName = GetSelectedInventoryItemName();
+
+        if (selectedItemName == "Lighter")
+        {
+            if (playerPointLight != null)
+            {
+                playerPointLight.enabled = true;
+                Debug.Log("PointLight");
+            }
+        }
+        else
+        {
+            if (playerPointLight != null)
+            {
+                playerPointLight.enabled = false;
+                Debug.Log("noPointLight");
+            }
+        }
     }
 
 }

@@ -302,12 +302,29 @@ public class FirstPersonController : MonoBehaviour
 
         if (hit.gameObject.CompareTag("Ghost"))
         {
-            LoseScene loseScene = FindObjectOfType<LoseScene>();
-            loseScene.PlayerCollidedWithGhost();
-            //SceneManager.LoadScene("LoseScreen");
+            if (hit.gameObject.CompareTag("Ghost"))
+            {
+                LookAtGhost(hit.transform);
+                StartCoroutine(ShowLoseUIAfterDelay());
+            }
         }
     }
 
+    private void LookAtGhost(Transform ghostTransform)
+    {
+        Vector3 directionToGhost = (ghostTransform.position - cameraTransform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToGhost);
+        cameraTransform.rotation = lookRotation;
+        cameraPitch = cameraTransform.localEulerAngles.x;
+    }
+
+    private System.Collections.IEnumerator ShowLoseUIAfterDelay()
+    {
+        yield return new WaitForSeconds(2.0f);
+        LoseScene loseScene = FindObjectOfType<LoseScene>();
+        loseScene.PlayerCollidedWithGhost();
+        //SceneManager.LoadScene("LoseScreen");
+    }
 
     public void HandleSprintTimer()
     {
