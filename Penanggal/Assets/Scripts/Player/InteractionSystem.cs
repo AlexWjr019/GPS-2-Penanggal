@@ -235,7 +235,7 @@ public class InteractionSystem : MonoBehaviour
         RaycastHit hit;
 
         // SphereCast syntax: (Ray ray, float radius, out RaycastHit hit, float maxDistance, LayerMask layerMask)
-        if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, interactableLayer))
+        if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, LayerMask.GetMask("Default")))
         {
             if (hit.collider.CompareTag("BabyPenanggal"))
             {

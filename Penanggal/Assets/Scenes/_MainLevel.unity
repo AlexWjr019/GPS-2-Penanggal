@@ -2677,6 +2677,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 127879244}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 127879247}
   m_SourcePrefab: {fileID: 100100000, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
 --- !u!4 &127879240 stripped
 Transform:
@@ -2740,6 +2743,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customRespawnPosition: {x: 195.28, y: 0.68, z: 13.23}
+--- !u!114 &127879247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127879241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc381f73afc8564ab4700dc52b5891f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windowShatter: {fileID: 1226794324}
 --- !u!1 &129690243
 GameObject:
   m_ObjectHideFlags: 0
@@ -50187,7 +50203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2099854342
 MonoBehaviour:
   m_ObjectHideFlags: 0
