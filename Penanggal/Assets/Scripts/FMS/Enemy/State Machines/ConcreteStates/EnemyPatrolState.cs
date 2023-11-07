@@ -64,47 +64,4 @@ public class EnemyPatrolState : EnemyState
 
         enemy.destPoint = (enemy.destPoint + 1) % enemy.points.Count;
     }
-
-    //private void FOVCheck()
-    //{
-    //    Collider[] rangeChecks = Physics.OverlapSphere(enemy.transform.position, enemy.radius, enemy.targetMask);
-
-    //    if (rangeChecks.Length != 0)
-    //    {
-    //        Transform target = rangeChecks[0].transform;
-    //        Vector3 directionToTarget = (target.position - enemy.transform.position).normalized;
-
-    //        if (Vector3.Angle(enemy.transform.forward, directionToTarget) < enemy.angle / 2)
-    //        {
-    //            float distanceToTarget = Vector3.Distance(enemy.transform.position, target.position);
-
-    //            if (!Physics.Raycast(enemy.transform.position, directionToTarget, distanceToTarget, enemy.obstructionMask))
-    //            {
-    //                enemy.canSeePlayer = true;
-    //            }
-    //            else
-    //            {
-    //                enemy.canSeePlayer = false;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            enemy.canSeePlayer = false;
-    //        }
-    //    }
-    //    else if (enemy.canSeePlayer)
-    //    {
-    //        enemy.canSeePlayer = false;
-    //    }
-    //}
-
-    //private IEnumerator FOVRoutine()
-    //{
-    //    Debug.Log("fovFront");
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(0.5f);
-    //        FOVCheck();
-    //    }
-    //}
 }
