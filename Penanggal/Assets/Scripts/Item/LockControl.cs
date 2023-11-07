@@ -56,6 +56,7 @@ public class LockControl : MonoBehaviour
             safeOpen.Play("OpenSafe");
             wheel.gameObject.SetActive(false);
             safeIsOpen = true;
+            OpenSafeCode.openSafe = false;
         }
         else
         {
@@ -67,6 +68,7 @@ public class LockControl : MonoBehaviour
     public void ResetRotation()
     {
         transform.localRotation = originalRotation;
+        OpenSafeCode.openSafe = false;
     }
 
     private void OnDestroy()

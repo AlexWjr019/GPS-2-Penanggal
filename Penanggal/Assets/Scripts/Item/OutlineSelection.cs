@@ -23,7 +23,7 @@ public class OutlineSelection : MonoBehaviour
     {
         CheckItemHighlight();
 
-        if (Hide.isHide)
+        if (Hide.isHide || OpenSafeCode.openSafe)
         {
             DeactivateOutline();
         }
