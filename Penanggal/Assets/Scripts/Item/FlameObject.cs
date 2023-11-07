@@ -97,6 +97,16 @@ public class FlameObject : MonoBehaviour
                                 itemNotice.ShowFlameNotice();
                             }
                         }
+
+                        if (clickedObject2.CompareTag("Candle") && selectedSlot == null)
+                        {
+                            // Player does not have the required item, show the notice
+                            ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                            if (itemNotice != null)
+                            {
+                                itemNotice.ShowFlameNotice();
+                            }
+                        }
                     }
                 }
 

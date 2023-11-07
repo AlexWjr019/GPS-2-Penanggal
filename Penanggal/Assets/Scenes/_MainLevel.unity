@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -863,7 +863,7 @@ Canvas:
   m_GameObject: {fileID: 22725191}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -12247,7 +12247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485472765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 
@@ -12351,7 +12351,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491500993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 
@@ -12410,7 +12410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492887666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 
@@ -12469,7 +12469,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494279224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 
@@ -12531,11 +12531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 880d4e839501dda4e8d5d5239c6c13d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19476862
+      value: -0.203
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 880d4e839501dda4e8d5d5239c6c13d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.503
+      value: 0.629
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 880d4e839501dda4e8d5d5239c6c13d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14405,6 +14405,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1286764268}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &625402148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15922,7 +15934,7 @@ Transform:
   m_GameObject: {fileID: 711428534}
   serializedVersion: 2
   m_LocalRotation: {x: 0.05998606, y: -0.6880794, z: 0.72244203, w: 0.032029886}
-  m_LocalPosition: {x: 486.821, y: 1.03, z: 501.986}
+  m_LocalPosition: {x: 486.821, y: 1.28, z: 501.986}
   m_LocalScale: {x: 0.4319808, y: 0.42436793, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16537,6 +16549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   safeCodeWheel: {fileID: 1637055986}
+  playerHead: {fileID: 1286764268}
 --- !u!64 &745404848
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21522,14 +21535,14 @@ RectTransform:
   m_GameObject: {fileID: 1070448674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19, y: 1, z: 1}
+  m_LocalScale: {x: 0.22, y: 0.87, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1760597040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234.11, y: 128.93}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -48.3, y: -53.71}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070448676
@@ -21762,7 +21775,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101242203}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 
@@ -29142,7 +29155,7 @@ MonoBehaviour:
   doorNoticeText: {fileID: 311645567}
   teachingNoticeText: {fileID: 2072074178}
   NoteText: {fileID: 1067686870}
-  lighterMessage: Select the candle and use on the candle
+  lighterMessage: Select the lighter and use on the candle
   burnMessage: I need to find something to burn this
   doorMessage: Perhaps I could find a key to unlock it
   teachingMessage: Tap to interact with highlighted objects
@@ -30117,7 +30130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338589668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 
@@ -31764,7 +31777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28, y: -29.8}
+  m_AnchoredPosition: {x: -91.3, y: -69.7}
   m_SizeDelta: {x: 266.3502, y: 15.1548}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504980206
@@ -38737,7 +38750,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657725706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fde57fc5904d784d91c694da4ef3caa, type: 3}
   m_Name: 

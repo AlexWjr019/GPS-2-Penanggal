@@ -56,7 +56,7 @@ public class Hide : MonoBehaviour
                 {
                     currentInteractable = hit.collider.gameObject;
 
-                    if (currentInteractable.CompareTag("Hide"))
+                    if (currentInteractable.CompareTag("Hide") && hit.collider.gameObject.name != "InnerWalls")
                     {
                         // Disable Player Camera
                         //player.SetActive(false);

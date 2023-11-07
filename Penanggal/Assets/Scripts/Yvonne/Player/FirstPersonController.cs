@@ -234,7 +234,7 @@ public class FirstPersonController : MonoBehaviour
 
     void LookAround()
     {
-        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate)
+        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
             {
@@ -251,7 +251,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Move()
     {
-        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate)
+        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
             {

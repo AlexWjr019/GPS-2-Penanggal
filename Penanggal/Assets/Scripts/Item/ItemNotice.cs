@@ -11,7 +11,7 @@ public class ItemNotice : MonoBehaviour
     public TMP_Text doorNoticeText;
     public TMP_Text teachingNoticeText;
     public TMP_Text NoteText;
-    public string lighterMessage = "Select the candle and use on the candle";
+    public string lighterMessage = "Select the lighter and use on the candle";
     public string burnMessage = "I need to find something to burn this";
     public string doorMessage = "Perhaps I could find a key to unlock it";
     public string teachingMessage = "Tap to interact with highlighted objects";
