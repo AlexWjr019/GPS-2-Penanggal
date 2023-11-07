@@ -33,6 +33,12 @@ public class BabySpawner : MonoBehaviour
         }
     }
 
+/*    private void Start()
+    {
+        spawnBaby = true;
+        StartCoroutine(SpawnBaby());
+    }
+*/
     public IEnumerator SpawnBaby()
     {
         while (spawnBaby)

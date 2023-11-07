@@ -35,6 +35,7 @@ public class BabyPenanggal : MonoBehaviour
         }
         else if (isSeen)
         {
+            Debug.Log("Baby is seen");
             agent.SetDestination(spawnPoint);
             agent.speed = returnSpeed;
             

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9144,7 +9144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6754674874353905211, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6754674874353905211, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9180,7 +9180,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b7082354d3139ce4598c74100f83d4ec, type: 2}
     - target: {fileID: -1760714182489039777, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1760714182489039777, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -39204,7 +39204,6 @@ MonoBehaviour:
   Restart: {fileID: 2017168349}
   mainMenu: {fileID: 58893714}
   loseUI: {fileID: 2140282836}
-  Player: {fileID: 88731660}
 --- !u!114 &1717701973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50181,6 +50180,7 @@ GameObject:
   - component: {fileID: 2099854344}
   - component: {fileID: 2099854343}
   - component: {fileID: 2099854342}
+  - component: {fileID: 2099854351}
   m_Layer: 8
   m_Name: Penanggal
   m_TagString: Ghost
@@ -50404,6 +50404,102 @@ Transform:
   - {fileID: 1546097025}
   m_Father: {fileID: 619263656}
   m_LocalEulerAnglesHint: {x: 0, y: 128.341, z: 0}
+--- !u!82 &2099854351
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099854341}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 6
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2103916577
 GameObject:
   m_ObjectHideFlags: 0
@@ -50556,7 +50652,6 @@ MonoBehaviour:
   Restart: {fileID: 2017168349}
   mainMenu: {fileID: 58893714}
   loseUI: {fileID: 0}
-  Player: {fileID: 0}
 --- !u!114 &2140282838
 MonoBehaviour:
   m_ObjectHideFlags: 0

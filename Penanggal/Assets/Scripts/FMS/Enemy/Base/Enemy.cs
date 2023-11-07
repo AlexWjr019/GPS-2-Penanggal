@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public float defaultSpeed;
 
+    AudioSource audioSource;
+
     #region State Machine Variables
 
     public EnemyStateMachine StateMachine { get; set; }
@@ -57,6 +59,7 @@ public class Enemy : MonoBehaviour
         AttackState = new EnemyAttackState(this, StateMachine);
 
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -142,23 +145,23 @@ public class Enemy : MonoBehaviour
 
     public void PlayHumming()
     {
-        FindObjectOfType<AudioManager>().PlaySFX("PenanggalHumming");
+        audioSource.Play();
     }
 
     public void StopHumming()
     {
-        FindObjectOfType<AudioManager>().StopSFX("PenanggalHumming");
+        audioSource.Stop();
     }
 
     public void PlayChasing()
     {
-        FindObjectOfType<AudioManager>().PlayMusic("PenanggalChasing");
+        FindObjectOfType<AudioManager>().PlaySFX("PenanggalChasing");
     }
 
     public void StopChasing()
     {
-        FindObjectOfType<AudioManager>().StopMusic("PenanggalChasing");
-        FindObjectOfType<AudioManager>().PlayMusic("BGM");
+        FindObjectOfType<AudioManager>().StopSFX("PenanggalChasing");
+        FindObjectOfType<AudioManager>().PlaySFX("BGM");
     }
 
     private void OnCollisionEnter(Collision collision)
