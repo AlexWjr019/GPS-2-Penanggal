@@ -18,9 +18,13 @@ public class BabyPenanggal : MonoBehaviour
     [HideInInspector]
     public Vector3 spawnPoint;
 
+    private Animator animator;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
+
         agent.autoBraking = false;
         agent.SetDestination(playerPosition);
 
@@ -61,7 +65,8 @@ public class BabyPenanggal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Debug.Log("Playing Attack Anim - Baby");
+            animator.SetBool("isAttacking", true);
         }
     }    
 }

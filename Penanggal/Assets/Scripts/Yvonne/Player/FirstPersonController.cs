@@ -300,13 +300,10 @@ public class FirstPersonController : MonoBehaviour
     {
         Debug.Log("Collided with: " + hit.gameObject.name);
 
-        if (hit.gameObject.CompareTag("Ghost"))
+        if (hit.gameObject.CompareTag("Ghost") || hit.gameObject.CompareTag("BabyPenanggal"))
         {
-            if (hit.gameObject.CompareTag("Ghost"))
-            {
-                LookAtGhost(hit.transform);
-                StartCoroutine(ShowLoseUIAfterDelay());
-            }
+            LookAtGhost(hit.transform);
+            StartCoroutine(ShowLoseUIAfterDelay());
         }
     }
 
@@ -320,7 +317,7 @@ public class FirstPersonController : MonoBehaviour
 
     private System.Collections.IEnumerator ShowLoseUIAfterDelay()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.5f);
         LoseScene loseScene = FindObjectOfType<LoseScene>();
         loseScene.PlayerCollidedWithGhost();
         //SceneManager.LoadScene("LoseScreen");

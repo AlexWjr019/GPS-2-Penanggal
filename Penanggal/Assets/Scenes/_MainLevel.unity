@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 72
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18435,7 +18435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144721879802203791, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
       propertyPath: sfx.Array.data[23].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144721879802203791, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
       propertyPath: sfx.Array.data[30].clip
@@ -50394,6 +50394,8 @@ MonoBehaviour:
   lookDelay: 5
   changeStateDelay: 3
   defaultSpeed: 0
+  animator: {fileID: 0}
+  blood: {fileID: 0}
   points:
   - {fileID: 1861426676}
   - {fileID: 1720721328}
@@ -50866,8 +50868,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140282836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.694889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50879,7 +50881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -7.920471, y: 6.807309}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1001 &2145727750
@@ -53506,15 +53508,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308628294898665874, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 16.974615
+      value: 4.531765
       objectReference: {fileID: 0}
     - target: {fileID: 3308628294898665874, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -3.3987024
+      value: -7.4556932
       objectReference: {fileID: 0}
     - target: {fileID: 3308628294898665874, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 3.7815778
+      value: 3.573687
       objectReference: {fileID: 0}
     - target: {fileID: 3362190929953009003, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_TagString

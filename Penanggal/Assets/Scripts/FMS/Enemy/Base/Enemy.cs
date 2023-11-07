@@ -18,7 +18,12 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public float defaultSpeed;
 
-    AudioSource audioSource;
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private ParticleSystem blood;
 
     #region State Machine Variables
 
@@ -59,6 +64,8 @@ public class Enemy : MonoBehaviour
         AttackState = new EnemyAttackState(this, StateMachine);
 
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
+        blood = GetComponentInChildren<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -161,12 +168,16 @@ public class Enemy : MonoBehaviour
     public void StopChasing()
     {
         FindObjectOfType<AudioManager>().StopSFX("PenanggalChasing");
-        //FindObjectOfType<AudioManager>().PlayMusic("BGM");
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        if (collision.collider.CompareTag("Player"))
+        {
+            Debug.Log("Playing Attack Anim - Penanggal");
+            animator.SetBool("isAttacking", true);
+            blood.Play();
+        }
     }
 
     #region Animation Triggers
