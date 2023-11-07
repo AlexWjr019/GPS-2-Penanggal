@@ -97,6 +97,7 @@ public class FirstPersonController : MonoBehaviour
             // Vignette effect found in the volume
         }
         volumeObject.SetActive(true);
+        PositionManager.Instance.SetPlayerStartPosition(transform.position);
     }
 
     void Update()
@@ -197,7 +198,7 @@ public class FirstPersonController : MonoBehaviour
                         {
                             moveInput = t.position - moveTouchStartPosition;
 
-                            if (moveInput.magnitude > 200f && !isRecoveringStamina)
+                            if (moveInput.magnitude > 100f && !isRecoveringStamina)
                             {
                                 moveSpeed = sprintSpeed;
                             }

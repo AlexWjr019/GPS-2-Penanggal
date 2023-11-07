@@ -21,12 +21,18 @@ public class PositionManager : MonoBehaviour
     public void SetPlayerStartPosition(Vector3 position)
     {
         playerStartPosition = position;
-        Debug.Log("Player start position set to: " + position);
+        Debug.Log("Player start position set to: " + playerStartPosition);
     }
 
     public void ResetPlayerToStartPosition(GameObject player)
     {
-        player.transform.position = playerStartPosition;
-        Debug.Log("Player position reset to start position: " + playerStartPosition);
+        CharacterController controller = player.GetComponent<CharacterController>();
+        if (controller != null)
+        {
+            controller.enabled = false;
+            player.transform.position = playerStartPosition;
+            controller.enabled = true;
+            Debug.Log("Player position set to: " + player.transform.position);
+        }
     }
 }

@@ -9,7 +9,6 @@ public class LoseScene : MonoBehaviour
     public Button Restart;
     public Button mainMenu;
     public GameObject loseUI;
-    public GameObject Player;
 
     private void Awake()
     {
@@ -28,9 +27,17 @@ public class LoseScene : MonoBehaviour
 
     public void RestartGame()
     {
-        PositionManager.Instance.ResetPlayerToStartPosition(Player);
-        Time.timeScale = 1.0f;
-        loseUI.SetActive(false);
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            PositionManager.Instance.ResetPlayerToStartPosition(player);
+            Time.timeScale = 1.0f;
+            loseUI.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Player object not found!");
+        }
     }
 
 
