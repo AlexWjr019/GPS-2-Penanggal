@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2757,6 +2757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windowShatter: {fileID: 1226794324}
+  bedroomKey: {fileID: 0}
 --- !u!1 &129690243
 GameObject:
   m_ObjectHideFlags: 0
@@ -21205,31 +21206,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.6063
+      value: -2.157
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.898
+      value: -1.1979
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.54
+      value: 28.318
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.30556595
+      value: 0.42879653
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.30556595
+      value: 0.42879653
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6376751
+      value: 0.5622576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6376751
+      value: -0.5622576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21241,7 +21242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -128.794
+      value: -105.339
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_Name
@@ -21250,6 +21251,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4c5deca895d563040b45a2a551023aae, type: 3}
       propertyPath: m_TagString
@@ -21305,8 +21310,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.05220058, y: 0.1203525, z: 0.014678175}
-  m_Center: {x: -0.0054662116, y: -0.055639632, z: 0.0015818222}
+  m_Size: {x: 0.083175145, y: 0.1203525, z: 0.014678175}
+  m_Center: {x: -0.0027266552, y: -0.055639617, z: 0.0015818222}
 --- !u!114 &1064611567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28346,7 +28351,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1226794321}
-  - component: {fileID: 1226794323}
   - component: {fileID: 1226794322}
   - component: {fileID: 1226794324}
   m_Layer: 0
@@ -28365,7 +28369,7 @@ Transform:
   m_GameObject: {fileID: 1226794320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.82, y: 13.241, z: 14.42}
+  m_LocalPosition: {x: -13.21, y: 15.712, z: 20.226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28384,27 +28388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windowShatter: {fileID: 1226794324}
---- !u!65 &1226794323
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226794320}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7757263, y: 1.0703149, z: 1}
-  m_Center: {x: 12.7, y: -0.61, z: -9.07}
+  bedroomKey: {fileID: 1064611565}
 --- !u!82 &1226794324
 AudioSource:
   m_ObjectHideFlags: 0
