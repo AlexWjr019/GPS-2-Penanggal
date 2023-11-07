@@ -17,9 +17,10 @@ public class SpawnPenanggal : MonoBehaviour
     [SerializeField]
     private GameObject penanggal;
 
-    private void Awake()
+    private void OnEnable()
     {
         startTime = Time.time;
+        penanggal.GetComponent<NavMeshAgent>().enabled = true;
     }
 
     private void Start()
@@ -55,6 +56,5 @@ public class SpawnPenanggal : MonoBehaviour
     private void OnAI()
     {
         penanggal.GetComponent<Penanggal>().enabled = true;
-        penanggal.GetComponent<NavMeshAgent>().enabled = true;
     }
 }
