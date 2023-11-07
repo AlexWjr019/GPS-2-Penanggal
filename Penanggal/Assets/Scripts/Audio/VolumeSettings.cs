@@ -5,23 +5,12 @@ using UnityEngine.Audio;
 public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private Slider masterVolumeSlider;
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("masterVolume"))
-        {
-            LoadVolume();
-        }
-    }
-
-    public void SetMasterVolume()
-    {
-        float volume = masterVolumeSlider.value;
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("masterVolume", volume);
+        LoadVolume();
     }
 
     public void SetMusicVolume()
@@ -40,11 +29,9 @@ public class VolumeSettings : MonoBehaviour
 
     private void LoadVolume()
     {
-        masterVolumeSlider.value = PlayerPrefs.GetFloat("masterVolume");
         musicVolumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolume");
 
-        SetMasterVolume();
         SetMusicVolume();
         SetSFXVolume();
     }
