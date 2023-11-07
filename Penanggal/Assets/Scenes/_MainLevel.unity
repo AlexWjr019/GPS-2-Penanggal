@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
+  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18434,9 +18434,17 @@ PrefabInstance:
       value: PenanggalLaugh
       objectReference: {fileID: 0}
     - target: {fileID: 5144721879802203791, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
+      propertyPath: sfx.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cc4ae654bc1f93419edb22487a6043f, type: 3}
+    - target: {fileID: 5144721879802203791, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
       propertyPath: sfx.Array.data[23].loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144721879802203791, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
+      propertyPath: sfx.Array.data[25].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f636a120327b9a44aa6bb9629055fc1, type: 3}
     - target: {fileID: 5144721879802203791, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
       propertyPath: sfx.Array.data[30].clip
       value: 
