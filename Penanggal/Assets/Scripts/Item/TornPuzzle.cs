@@ -232,17 +232,23 @@ public class TornPuzzle : MonoBehaviour
             CreateWholePicture(); // Call the method to create the whole picture
             BabySpawner.Instance.spawnBaby = false;
             BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
+
+            LevelChanger levelChange = FindObjectOfType<LevelChanger>();
+            if (levelChange != null)
+            {
+                levelChange.FadeToNextLevel();
+            }
         }
 
-        Debug.Log("pic 0 x " + pic0.transform.position.x);
-        Debug.Log("pic 1 x " + pic1.transform.position.x);
-        Debug.Log("pic 2 x " + pic2.transform.position.x);
-        Debug.Log("pic 3 x " + pic3.transform.position.x);
-        Debug.Log("pic 4 x " + pic4.transform.position.x);
-        Debug.Log("pic 5 x " + pic5.transform.position.x);
-        Debug.Log("pic 6 x " + pic6.transform.position.x);
-        Debug.Log("pic 7 x " + pic7.transform.position.x);
-        Debug.Log("pic 8 x " + pic8.transform.position.x);
+        //Debug.Log("pic 0 x " + pic0.transform.position.x);
+        //Debug.Log("pic 1 x " + pic1.transform.position.x);
+        //Debug.Log("pic 2 x " + pic2.transform.position.x);
+        //Debug.Log("pic 3 x " + pic3.transform.position.x);
+        //Debug.Log("pic 4 x " + pic4.transform.position.x);
+        //Debug.Log("pic 5 x " + pic5.transform.position.x);
+        //Debug.Log("pic 6 x " + pic6.transform.position.x);
+        //Debug.Log("pic 7 x " + pic7.transform.position.x);
+        //Debug.Log("pic 8 x " + pic8.transform.position.x);
 
         Debug.Log("pic 0 y " + pic0.transform.position.y);
         Debug.Log("pic 1 y " + pic1.transform.position.y);
