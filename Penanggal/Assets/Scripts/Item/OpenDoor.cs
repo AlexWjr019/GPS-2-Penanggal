@@ -206,6 +206,7 @@
 //    }
 //}
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
@@ -221,6 +222,12 @@ public class OpenDoor : MonoBehaviour
     public bool isDoor, isNurseryDoor; // Separate flags for each door
     public static bool touchNurseryDoor, touchDoor;
 
+    private SpawnPenanggal spawnPenanggal;
+
+    private void Start()
+    {
+        spawnPenanggal = GetComponent<SpawnPenanggal>();
+    }
 
     private void Update()
     {
@@ -237,6 +244,8 @@ public class OpenDoor : MonoBehaviour
                     Destroy(selectedSlot.GetCurrentItem().gameObject);
                     selectedSlot.ClearSlot();
                     ToggleDoor();
+
+                    spawnPenanggal.enabled = true;
                 }
             }
             else if (bedroomDoorUnlocked)

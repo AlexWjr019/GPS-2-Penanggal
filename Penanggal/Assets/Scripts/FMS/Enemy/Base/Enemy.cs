@@ -161,7 +161,7 @@ public class Enemy : MonoBehaviour
     public void StopChasing()
     {
         FindObjectOfType<AudioManager>().StopSFX("PenanggalChasing");
-        FindObjectOfType<AudioManager>().PlaySFX("BGM");
+        //FindObjectOfType<AudioManager>().PlayMusic("BGM");
     }
 
     private void OnCollisionEnter(Collision collision)
