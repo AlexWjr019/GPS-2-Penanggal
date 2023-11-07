@@ -13,10 +13,13 @@ public class ImageRotate : MonoBehaviour
 
     private bool rotateAllowed;
 
+    private Quaternion originalRotation;
+
     private void Awake()
     {
         pressed.Enable();
         axis.Enable();
+        originalRotation = transform.rotation;
     }
 
     private void Update()
@@ -41,7 +44,7 @@ public class ImageRotate : MonoBehaviour
 
     public void ResetImageRotation()
     {
-        transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+        transform.rotation = originalRotation;
     }
 
 }

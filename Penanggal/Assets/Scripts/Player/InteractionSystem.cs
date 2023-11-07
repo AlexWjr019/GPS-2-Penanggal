@@ -208,6 +208,16 @@ public class InteractionSystem : MonoBehaviour
         {
             Note.noteSeen = true;
         }
+        else if (hit.collider.CompareTag("Door") && hit.collider.gameObject.name == "NurseryDoor")
+        {
+            OpenDoor.touchNurseryDoor = true;
+            OpenDoor.touchDoor = false;
+        }
+        else if (hit.collider.CompareTag("Door") && hit.collider.gameObject.name == "BedroomDoor")
+        {
+            OpenDoor.touchDoor = true;
+            OpenDoor.touchNurseryDoor = false;
+        }
         //else if (hit.collider.CompareTag("BabyPenanggal"))
         //{
         //    hit.collider.gameObject.GetComponent<BabyPenanggal>().isSeen = true;

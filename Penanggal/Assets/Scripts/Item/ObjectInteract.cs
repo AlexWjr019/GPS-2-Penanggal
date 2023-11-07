@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class ObjectInteract : MonoBehaviour
 {
-    public GameObject objectCamera;
-    public GameObject standFrame, oriStandFrame;
-    public bool frame;
+    public GameObject standFrame;
+    public GameObject playerCamera;
+    public static bool picIsRotate;
 
     private void OnMouseDown()
     {
-        if (frame)
-        {
-            objectCamera.SetActive(true);
-            standFrame.SetActive(true);
-            oriStandFrame.SetActive(false);
-        }
+        standFrame.SetActive(true);
+        playerCamera.SetActive(false);
+        picIsRotate = true;
+    }
 
+    public void Return()
+    {
+        playerCamera.SetActive(true);
+        picIsRotate = false;
     }
 }
