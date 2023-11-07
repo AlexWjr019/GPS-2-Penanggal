@@ -20,10 +20,10 @@ public class Enemy : MonoBehaviour
 
     private AudioSource audioSource;
 
-    [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private ParticleSystem blood;
+    [HideInInspector]
+    public Animator animator;
+    [HideInInspector]
+    public ParticleSystem blood;
 
     #region State Machine Variables
 

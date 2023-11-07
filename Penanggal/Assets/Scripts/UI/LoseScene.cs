@@ -10,6 +10,8 @@ public class LoseScene : MonoBehaviour
     public Button mainMenu;
     public GameObject loseUI;
 
+    public Penanggal penanggal;
+
     private void Awake()
     {
         loseUI.SetActive(false);
@@ -33,6 +35,9 @@ public class LoseScene : MonoBehaviour
             PositionManager.Instance.ResetPlayerToStartPosition(player);
             Time.timeScale = 1.0f;
             loseUI.SetActive(false);
+
+            penanggal.animator.SetBool("isAttacking", false);
+            penanggal.blood.Stop();
         }
         else
         {
