@@ -67,6 +67,8 @@ public class Enemy : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         blood = GetComponentInChildren<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
+
+        blood.Stop();
     }
 
     private void Start()
