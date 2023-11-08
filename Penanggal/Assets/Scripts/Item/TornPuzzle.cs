@@ -232,12 +232,6 @@ public class TornPuzzle : MonoBehaviour
             CreateWholePicture(); // Call the method to create the whole picture
             BabySpawner.Instance.spawnBaby = false;
             BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
-
-            LevelChanger levelChange = FindObjectOfType<LevelChanger>();
-            if (levelChange != null)
-            {
-                levelChange.FadeToNextLevel();
-            }
         }
 
         //Debug.Log("pic 0 x " + pic0.transform.position.x);

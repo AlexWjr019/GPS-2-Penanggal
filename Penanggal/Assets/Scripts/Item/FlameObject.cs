@@ -60,6 +60,10 @@ public class FlameObject : MonoBehaviour
                                     FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
                                     Destroy(cursepapers[i]);
                                     cursepapers.RemoveAt(i); // Remove it from the list
+                                    if(clickedObject.name == "TornCursePaper")
+                                    {
+                                        Pinboard.cursePaperburn = true;
+                                    }
                                     if(clickedObject.name == "Curse Paper_1")
                                     {
                                         toiletCursepaper = true;
