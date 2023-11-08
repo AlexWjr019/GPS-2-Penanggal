@@ -12,9 +12,9 @@ public class Swap : MonoBehaviour
     private bool isColliding = false;
     private GameObject collidingObject;
 
+    public GameObject bottle;
     public GameObject bowl;
-    public GameObject cup;
-    public GameObject box;
+    public GameObject flower;
     private List<GameObject> collidingObjects = new List<GameObject>();
     public static bool weddingPuzzle = false;
     public float moveSpeed = 3.0f;
@@ -24,12 +24,12 @@ public class Swap : MonoBehaviour
     //public GameObject weddingSpawn;
     //public GameObject cursePaper;
     //public GameObject player;
-    private bool canTp = true;
+
+    public GameObject cursePaper;
 
     private void Start()
     {
         originalPosition = transform.position;
-        canTp = true;
     }
 
     //private void Update()
@@ -167,16 +167,25 @@ public class Swap : MonoBehaviour
 
     private void CheckOrder()
     {
-        Debug.Log("box " + box.transform.position);
+        Debug.Log("bottle " + bottle.transform.position);
         Debug.Log("bowl " + bowl.transform.position);
-        Debug.Log("cup " + cup.transform.position);
-        if (box.transform.position.y < bowl.transform.position.y && bowl.transform.position.y < cup.transform.position.x)
+        Debug.Log("flower " + flower.transform.position);
+        if (bottle.transform.position.z < bowl.transform.position.z && bowl.transform.position.z < flower.transform.position.z)
         {
             Debug.Log("Correct Order");
             puzzleCompleted = true;
             bowl.tag = "Unmovable";
-            cup.tag = "Unmovable";
-            box.tag = "Unmovable";
+            bottle.tag = "Unmovable";
+            flower.tag = "Unmovable";
+            StartCoroutine(SpawnCursepaper());
         }
     }
+
+    IEnumerator SpawnCursepaper()
+    {
+        yield return new WaitForSeconds(1.0f);
+        cursePaper.SetActive(true);
+    }
+
+
 }
