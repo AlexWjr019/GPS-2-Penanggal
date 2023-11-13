@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FlameObject : MonoBehaviour
@@ -60,6 +58,10 @@ public class FlameObject : MonoBehaviour
                                     FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
                                     Destroy(cursepapers[i]);
                                     cursepapers.RemoveAt(i); // Remove it from the list
+                                    if(clickedObject.name == "TornCursePaper")
+                                    {
+                                        Pinboard.cursePaperburn = true;
+                                    }
                                     if(clickedObject.name == "Curse Paper_1")
                                     {
                                         toiletCursepaper = true;
@@ -80,6 +82,10 @@ public class FlameObject : MonoBehaviour
                                         number3.SetActive(false);
                                         number2.SetActive(true);
 
+                                    }
+                                    if(clickedObject.name == "LastCursePaper")
+                                    {
+                                        SceneManager.LoadScene("WinScreen");
                                     }
                                     return; // Exit the loop
                                 }

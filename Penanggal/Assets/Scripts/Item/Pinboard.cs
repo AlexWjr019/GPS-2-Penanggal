@@ -7,6 +7,7 @@ public class Pinboard : MonoBehaviour
     private float raycastDistance = 5f;
     public GameObject pinPaper;
     public GameObject cursePaper;
+    public static bool cursePaperburn;
 
     private void Update()
     {
@@ -49,6 +50,18 @@ public class Pinboard : MonoBehaviour
                 }
             }
         }
+
+        if (cursePaperburn)
+        {
+            cursePaperburn = false;
+            LevelChanger levelChange = FindObjectOfType<LevelChanger>();
+            if (levelChange != null)
+            {
+                levelChange.FadeToNextLevel();
+            }
+        }
+
+        
     }
 
     IEnumerator SpawnCursepaper()
