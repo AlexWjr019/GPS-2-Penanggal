@@ -121,7 +121,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Invoke("ChangeStateChase", Random.Range(0.5f, 1f)); 
+                Invoke("ChangeStateChase", Random.Range(0.1f, 0.5f)); 
             }
         }
         else if (!fovBack.canSeePlayer)
