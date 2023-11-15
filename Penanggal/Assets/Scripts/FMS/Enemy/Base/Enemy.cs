@@ -64,9 +64,9 @@ public class Enemy : MonoBehaviour
         AttackState = new EnemyAttackState(this, StateMachine);
 
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponentInChildren<Animator>();
         blood = GetComponentInChildren<ParticleSystem>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator Start()
@@ -76,8 +76,6 @@ public class Enemy : MonoBehaviour
         yield return new WaitForEndOfFrame();
         agent.enabled = true;
         agent.enabled = false;
-        //yield return new WaitForEndOfFrame();
-        
     }
 
     private void Update()
@@ -184,12 +182,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        Debug.Log("Stopping Attack Anim - Penanggal");
-        animator.SetBool("isAttacking", false);
-        blood.Stop();
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    Debug.Log("Stopping Attack Anim - Penanggal");
+    //    animator.SetBool("isAttacking", false);
+    //    blood.Stop();
+    //}
 
     #region Animation Triggers
 
