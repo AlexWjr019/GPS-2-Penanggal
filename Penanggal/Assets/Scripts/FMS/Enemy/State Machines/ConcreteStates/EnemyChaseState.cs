@@ -29,7 +29,9 @@ public class EnemyChaseState : EnemyState
 
     public override void ExitState()
     {
-        base.ExitState();
+        base.ExitState(); 
+
+        enemy.StopChasing();
 
         enemy.agent.speed = enemy.defaultSpeed;
     }

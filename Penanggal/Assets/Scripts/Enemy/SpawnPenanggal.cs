@@ -22,7 +22,6 @@ public class SpawnPenanggal : MonoBehaviour
     private void OnEnable()
     {
         startTime = Time.time;
-        penanggal.GetComponent<NavMeshAgent>().enabled = true;
     }
 
     private void Start()
@@ -50,13 +49,19 @@ public class SpawnPenanggal : MonoBehaviour
                 Debug.Log("Penanggal is Spawned");
                 FindObjectOfType<AudioManager>().PlaySFX("PenanggalLaugh");
                 isSpawned = true;
-                Invoke("OnAI", chaseDelay);
+                Invoke("OnAI_1", chaseDelay);
+                //Invoke("OnAI_2", chaseDelay);
             }
         }
     }
 
-    private void OnAI()
+    private void OnAI_1()
     {
         penanggal.GetComponent<Penanggal>().enabled = true;
+        Invoke("OnAI_2", 1f);
+    }
+    private void OnAI_2()
+    {
+        penanggal.GetComponent<NavMeshAgent>().enabled = true;
     }
 }

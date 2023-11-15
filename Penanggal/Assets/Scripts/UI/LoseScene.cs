@@ -41,6 +41,8 @@ public class LoseScene : MonoBehaviour
             loseUI.SetActive(false);
 
             penanggal.animator.SetBool("isAttacking", false);
+            penanggal.StopChasing();
+            penanggal.PlayHumming();
             penanggal.blood.Stop();
         }
         else

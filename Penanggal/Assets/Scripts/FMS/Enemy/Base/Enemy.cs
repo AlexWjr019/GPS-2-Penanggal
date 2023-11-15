@@ -67,15 +67,17 @@ public class Enemy : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         blood = GetComponentInChildren<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
-
-        blood.Stop();
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         defaultSpeed = agent.speed;
-
         StateMachine.Initialize(IdleState);
+        yield return new WaitForEndOfFrame();
+        agent.enabled = true;
+        agent.enabled = false;
+        //yield return new WaitForEndOfFrame();
+        
     }
 
     private void Update()
@@ -180,6 +182,13 @@ public class Enemy : MonoBehaviour
             animator.SetBool("isAttacking", true);
             blood.Play();
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("Stopping Attack Anim - Penanggal");
+        animator.SetBool("isAttacking", false);
+        blood.Stop();
     }
 
     #region Animation Triggers
