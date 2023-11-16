@@ -9,13 +9,15 @@ public class ItemNotice : MonoBehaviour
     public TMP_Text lighterNoticeText;
     public TMP_Text burnNoticeText;
     public TMP_Text doorNoticeText;
+    public TMP_Text pinboardNoticeText;
     public TMP_Text teachingNoticeText;
     public TMP_Text NoteText;
     public string lighterMessage = "Select the lighter and use on the candle";
     public string burnMessage = "I need to find something to burn this";
     public string doorMessage = "Perhaps I could find a key to unlock it";
+    public string pinboardMessage = "I need to place something here";
     public string teachingMessage = "Tap to interact with highlighted objects";
-    public string noteMessage = "Please put up the drawing once" +
+    public string noteMessage = "Please put up the drawing once\n" +
                                 "you are done with it";
 
     public float noticeDisplayTime = 3f;
@@ -30,6 +32,7 @@ public class ItemNotice : MonoBehaviour
         burnNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
         ShowTeachingNotice();
     }
 
@@ -50,6 +53,7 @@ public class ItemNotice : MonoBehaviour
         burnNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideTeachingMessage());
     }
@@ -62,6 +66,7 @@ public class ItemNotice : MonoBehaviour
         teachingNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
     }
@@ -74,6 +79,7 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         teachingNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
     }
@@ -86,6 +92,7 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideTeachingMessage());
     }
@@ -98,6 +105,21 @@ public class ItemNotice : MonoBehaviour
         burnNoticeText.gameObject.SetActive(false);
         lighterNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
+    }
+
+    public void ShowPinboardNotice()
+    {
+        pinboardNoticeText.text = pinboardMessage;
+        pinboardNoticeText.gameObject.SetActive(true);
+        doorNoticeText.gameObject.SetActive(false);
+        burnNoticeText.gameObject.SetActive(false);
+        lighterNoticeText.gameObject.SetActive(false);
+        teachingNoticeText.gameObject.SetActive(false);
+        NoteText.gameObject.SetActive(false);
+        
+
+        StartCoroutine(HideMessage());
     }
 
     IEnumerator HideMessage()
@@ -113,6 +135,11 @@ public class ItemNotice : MonoBehaviour
         {
             doorNoticeText.text = "";
             doorNoticeText.gameObject.SetActive(false);
+        }
+        if (pinboardNoticeText.gameObject.activeSelf)
+        {
+            pinboardNoticeText.text = "";
+            pinboardNoticeText.gameObject.SetActive(false);
         }
     }
 

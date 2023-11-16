@@ -26,7 +26,7 @@ public class Pinboard : MonoBehaviour
 
                     if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
                     {
-                        // Check if the raycast hit the door
+                        // Check if the raycast hit the pinboard
                         if (hit.collider.gameObject == gameObject)
                         {
                             pinPaper.SetActive(true);
@@ -40,7 +40,7 @@ public class Pinboard : MonoBehaviour
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
                         if (itemNotice != null && hit.collider.gameObject.CompareTag("Pinboard"))
                         {
-                            //itemNotice.ShowDoorNotice();
+                            itemNotice.ShowPinboardNotice();
                         }
                         else
                         {

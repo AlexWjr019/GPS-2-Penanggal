@@ -28,7 +28,7 @@ public class ItemOutline : MonoBehaviour
         if (enabled)
         {
             RaycastHit hit;
-            int combinedLayerMask = LayerMask.GetMask("Items") | LayerMask.GetMask("Hide") | LayerMask.GetMask("Door");
+            int combinedLayerMask = LayerMask.GetMask("Items") | LayerMask.GetMask("Hide") | LayerMask.GetMask("Door") | LayerMask.GetMask("Puzzle");
             if (Physics.SphereCast(playerCamera.transform.position, sphereCastRadius, playerCamera.transform.forward, out hit, maxDistance, combinedLayerMask))
             {
                 Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * maxDistance, Color.red);

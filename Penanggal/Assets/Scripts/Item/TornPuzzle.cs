@@ -40,8 +40,9 @@ public class TornPuzzle : MonoBehaviour
             // Rotate the object 90 degrees clockwise
             transform.Rotate(Vector3.forward * 90f);
             isRotating = false;
+            CheckOrder();
         }
-        Debug.Log(isInteraction);
+        //Debug.Log(isInteraction);
 
         CallBabyPenanggal();
     }
@@ -217,22 +218,35 @@ public class TornPuzzle : MonoBehaviour
 
     private void CheckOrder()
     {
-        if (pic0.transform.position.x > pic1.transform.position.x && pic1.transform.position.x > pic2.transform.position.x &&
-        pic3.transform.position.x > pic4.transform.position.x && pic4.transform.position.x > pic5.transform.position.x &&
-        pic6.transform.position.x > pic7.transform.position.x && pic7.transform.position.x > pic8.transform.position.x &&
-        pic0.transform.position.y < pic3.transform.position.y && pic3.transform.position.y < pic6.transform.position.y &&
-        pic1.transform.position.y < pic4.transform.position.y && pic4.transform.position.y < pic7.transform.position.y &&
-        pic2.transform.position.y < pic5.transform.position.y && pic5.transform.position.y < pic8.transform.position.y)
+        const float epsilon = 0.0001f;
+        if ((Mathf.Abs((float)pic0.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic0.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic1.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic1.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic2.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic2.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic3.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic3.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic4.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic4.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic5.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic5.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic6.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic6.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic7.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic7.transform.rotation.z + 0.7207516f) < epsilon) &&
+            (Mathf.Abs((float)pic8.transform.rotation.z - 0.7207516f) < epsilon || Mathf.Abs((float)pic8.transform.rotation.z + 0.7207516f) < epsilon))
         {
-            Debug.Log("Correct Order");
-            isDragging = false;
-            isRotating = false;
-            callBaby = false;
-            TornPuzzleControl.isTorn = true;
-            CreateWholePicture(); // Call the method to create the whole picture
-            BabySpawner.Instance.spawnBaby = false;
-            BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
+            if (pic0.transform.position.x > pic1.transform.position.x && pic1.transform.position.x > pic2.transform.position.x &&
+                pic3.transform.position.x > pic4.transform.position.x && pic4.transform.position.x > pic5.transform.position.x &&
+                pic6.transform.position.x > pic7.transform.position.x && pic7.transform.position.x > pic8.transform.position.x &&
+                pic0.transform.position.y < pic3.transform.position.y && pic3.transform.position.y < pic6.transform.position.y &&
+                pic1.transform.position.y < pic4.transform.position.y && pic4.transform.position.y < pic7.transform.position.y &&
+                pic2.transform.position.y < pic5.transform.position.y && pic5.transform.position.y < pic8.transform.position.y)
+            {
+                Debug.Log("Correct Order");
+                isDragging = false;
+                isRotating = false;
+                callBaby = false;
+                TornPuzzleControl.isTorn = true;
+                CreateWholePicture(); // Call the method to create the whole picture
+                BabySpawner.Instance.spawnBaby = false;
+                BabySpawner.Instance.StopCoroutine(BabySpawner.Instance.SpawnBaby());
+            }
         }
+            
 
         //Debug.Log("pic 0 x " + pic0.transform.position.x);
         //Debug.Log("pic 1 x " + pic1.transform.position.x);
@@ -244,15 +258,25 @@ public class TornPuzzle : MonoBehaviour
         //Debug.Log("pic 7 x " + pic7.transform.position.x);
         //Debug.Log("pic 8 x " + pic8.transform.position.x);
 
-        Debug.Log("pic 0 y " + pic0.transform.position.y);
-        Debug.Log("pic 1 y " + pic1.transform.position.y);
-        Debug.Log("pic 2 y " + pic2.transform.position.y);
-        Debug.Log("pic 3 y " + pic3.transform.position.y);
-        Debug.Log("pic 4 y " + pic4.transform.position.y);
-        Debug.Log("pic 5 y " + pic5.transform.position.y);
-        Debug.Log("pic 6 y " + pic6.transform.position.y);
-        Debug.Log("pic 7 y " + pic7.transform.position.y);
-        Debug.Log("pic 8 y" + pic8.transform.position.y);
+        //Debug.Log("pic 0 y " + pic0.transform.position.y);
+        //Debug.Log("pic 1 y " + pic1.transform.position.y);
+        //Debug.Log("pic 2 y " + pic2.transform.position.y);
+        //Debug.Log("pic 3 y " + pic3.transform.position.y);
+        //Debug.Log("pic 4 y " + pic4.transform.position.y);
+        //Debug.Log("pic 5 y " + pic5.transform.position.y);
+        //Debug.Log("pic 6 y " + pic6.transform.position.y);
+        //Debug.Log("pic 7 y " + pic7.transform.position.y);
+        //Debug.Log("pic 8 y" + pic8.transform.position.y);
+
+        //Debug.Log("pic 0 z " + pic0.transform.rotation.z);
+        //Debug.Log("pic 1 z " + pic1.transform.rotation.z);
+        //Debug.Log("pic 2 z " + pic2.transform.rotation.z);
+        //Debug.Log("pic 3 z " + pic3.transform.rotation.z);
+        //Debug.Log("pic 4 z " + pic4.transform.rotation.z);
+        //Debug.Log("pic 5 z " + pic5.transform.rotation.z);
+        //Debug.Log("pic 6 z " + pic6.transform.rotation.z);
+        //Debug.Log("pic 7 z " + pic7.transform.rotation.z);
+        //Debug.Log("pic 8 z " + pic8.transform.rotation.z);
 
     }
 

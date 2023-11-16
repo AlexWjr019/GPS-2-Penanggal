@@ -32,7 +32,7 @@ public class OutlineSelection : MonoBehaviour
     private void CheckItemHighlight()
     {
         RaycastHit hit;
-        int combinedLayerMask = LayerMask.GetMask("Items") | LayerMask.GetMask("Hide") | LayerMask.GetMask("Door");
+        int combinedLayerMask = LayerMask.GetMask("Items") | LayerMask.GetMask("Hide") | LayerMask.GetMask("Door") | LayerMask.GetMask("Puzzle");
         // Calculate the SphereCast origin based on the player's view position
         //Vector3 sphereCastOrigin = playerCamera.transform.position + playerCamera.transform.forward * offsetDistance;
 
