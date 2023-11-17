@@ -38,7 +38,7 @@ public class Pinboard : MonoBehaviour
                     else
                     {
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                        if (itemNotice != null && hit.collider.gameObject.CompareTag("Pinboard"))
+                        if ((itemNotice != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
                         {
                             itemNotice.ShowPinboardNotice();
                         }

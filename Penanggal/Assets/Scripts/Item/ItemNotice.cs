@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.ProBuilder.Shapes;
 
 public class ItemNotice : MonoBehaviour
 {
@@ -69,6 +68,37 @@ public class ItemNotice : MonoBehaviour
         pinboardNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
+    }
+
+    public void ShowFlameNotice2(string message)
+    {
+        burnNoticeText.text = message;
+        burnNoticeText.gameObject.SetActive(true);
+        lighterNoticeText.gameObject.SetActive(false);
+        teachingNoticeText.gameObject.SetActive(false);
+        doorNoticeText.gameObject.SetActive(false);
+        NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
+
+        StartCoroutine(HideMessage());
+    }
+
+    public void ShowBurnedCursePaperNotice(int remainingCursePapers)
+    {
+        switch (remainingCursePapers)
+        {
+            case 3:
+                ShowFlameNotice2("The number in the door change to 3");
+                break;
+            case 2:
+                ShowFlameNotice2("The number in the door change to 2");
+                break;
+            case 1:
+                ShowFlameNotice2("The number in the door change to 1");
+                break;
+            default:
+                break;
+        }
     }
 
     public void ShowDoorNotice()

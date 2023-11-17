@@ -43,7 +43,7 @@ public class OpenDoor : MonoBehaviour
             {
                 ToggleDoor();
             }
-            else if (!bedroomDoorUnlocked)
+            else if (!bedroomDoorUnlocked || (!bedroomDoorUnlocked && selectedSlot.GetCurrentItem().itemName != "Key"))
             {
                 ShowDoorNotice("BedroomDoor");
             }
@@ -68,7 +68,7 @@ public class OpenDoor : MonoBehaviour
             {
                 ToggleNurseryDoor();
             }
-            else if (!nurseryDoorUnlocked)
+            else if (!nurseryDoorUnlocked || (!nurseryDoorUnlocked && selectedSlot.GetCurrentItem().itemName != "NurseryKey"))
             {
                 ShowDoorNotice("NurseryDoor");
             }
@@ -114,17 +114,6 @@ public class OpenDoor : MonoBehaviour
         }
         else if (nurseryDoorIsOpen)
         {
-            nurseryDoorIsOpen = false;
-            nurseryDoorAnima.Play("CloseNurseryDoor");
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && nurseryDoorIsOpen)
-        {
-            Debug.Log("Player enter");
-            // Close the door
             nurseryDoorIsOpen = false;
             nurseryDoorAnima.Play("CloseNurseryDoor");
         }

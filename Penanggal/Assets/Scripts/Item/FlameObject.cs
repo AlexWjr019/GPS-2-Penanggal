@@ -11,6 +11,7 @@ public class FlameObject : MonoBehaviour
     private float raycastDistance = 10f;
     private List<GameObject> cursepapers = new List<GameObject>();
     private int currentCursePaperIndex = 0;
+    private int cursePapernum = 4;
 
     public GameObject[] cursePaperObjects;
 
@@ -58,7 +59,13 @@ public class FlameObject : MonoBehaviour
                                     FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
                                     Destroy(cursepapers[i]);
                                     cursepapers.RemoveAt(i); // Remove it from the list
-                                    if(clickedObject.name == "TornCursePaper")
+                                    cursePapernum--;
+                                    ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                                    if (itemNotice != null)
+                                    {
+                                        itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
+                                    }
+                                    if (clickedObject.name == "TornCursePaper")
                                     {
                                         Pinboard.cursePaperburn = true;
                                     }
@@ -94,7 +101,7 @@ public class FlameObject : MonoBehaviour
                     }
                     else
                     {
-                        if (clickedObject2.CompareTag("CursePaper") && selectedSlot == null)
+                        if ((clickedObject2.CompareTag("CursePaper") && selectedSlot == null) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
                         {
                             // Player does not have the required item, show the notice
                             ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
@@ -104,7 +111,7 @@ public class FlameObject : MonoBehaviour
                             }
                         }
 
-                        if (clickedObject2.CompareTag("Candle") && selectedSlot == null)
+                        if ((clickedObject2.CompareTag("Candle") && selectedSlot == null) || (clickedObject2.CompareTag("Candle") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("Candle") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
                         {
                             // Player does not have the required item, show the notice
                             ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
