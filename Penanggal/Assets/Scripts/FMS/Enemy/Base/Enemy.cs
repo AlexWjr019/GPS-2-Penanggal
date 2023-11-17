@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
 
+    public GameObject penanggal;
+
     [HideInInspector]
     public NavMeshAgent agent;
     public FieldOfView fovFront, fovBack;
@@ -45,6 +47,13 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Patrol Variables
+
+    [HideInInspector]
+    public bool isRouteComplete = false;
+    [HideInInspector]
+    public int pointsPatroled = 0;
+
+    public List<Transform> TPpoints = new List<Transform>();
 
     #endregion
 
@@ -172,22 +181,28 @@ public class Enemy : MonoBehaviour
         FindObjectOfType<AudioManager>().StopSFX("PenanggalChasing");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void StartAnim()
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            Debug.Log("Playing Attack Anim - Penanggal");
-            animator.SetBool("isAttacking", true);
-            blood.Play();
-        }
+        Debug.Log("Playing Attack Anim - Penanggal");
+        animator.SetBool("isAttacking", true);
+        blood.Play();
     }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    Debug.Log("Stopping Attack Anim - Penanggal");
-    //    animator.SetBool("isAttacking", false);
-    //    blood.Stop();
-    //}
+    public void StopAnim()
+    {
+        Debug.Log("Stopping Attack Anim - Penanggal");
+        animator.SetBool("isAttacking", false);
+        blood.Stop();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Playing Attack Anim - Penanggal");
+            StartAnim();
+        }
+    }
 
     #region Animation Triggers
 

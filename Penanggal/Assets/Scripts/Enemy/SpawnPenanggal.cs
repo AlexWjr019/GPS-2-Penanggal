@@ -50,7 +50,6 @@ public class SpawnPenanggal : MonoBehaviour
                 FindObjectOfType<AudioManager>().PlaySFX("PenanggalLaugh");
                 isSpawned = true;
                 Invoke("OnAI_1", chaseDelay);
-                //Invoke("OnAI_2", chaseDelay);
             }
         }
     }
@@ -63,5 +62,10 @@ public class SpawnPenanggal : MonoBehaviour
     private void OnAI_2()
     {
         penanggal.GetComponent<NavMeshAgent>().enabled = true;
+    }
+
+    public void OnPenanggal()
+    {
+        penanggal.SetActive(true);
     }
 }

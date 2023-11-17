@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -60,8 +61,45 @@ public class EnemyPatrolState : EnemyState
             return;
         }
 
-        enemy.agent.destination = enemy.points[enemy.destPoint].position;
+        if (!enemy.isRouteComplete)
+        {
+            enemy.agent.destination = enemy.points[enemy.destPoint].position;
+            enemy.destPoint = (enemy.destPoint + 1) % enemy.points.Count;
+            enemy.pointsPatroled++;
 
-        enemy.destPoint = (enemy.destPoint + 1) % enemy.points.Count;
+            if (enemy.pointsPatroled > enemy.points.Count)
+            {
+                enemy.pointsPatroled = 0;
+                enemy.isRouteComplete = true;
+            }
+        }
+        else if (enemy.isRouteComplete && !(enemy.StateMachine.CurrentEnemyState == enemy.ChaseState))
+        {
+            int pos = Random.Range(0, 3);
+
+            switch (pos)
+            {
+                case 0:
+                    Debug.Log("TP penanggal to Kitchen");
+                    enemy.penanggal.transform.position = enemy.TPpoints[pos].position;
+                    enemy.isRouteComplete = false;
+                    break;
+                case 1:
+                    Debug.Log("TP penanggal to Bedroom");
+                    enemy.penanggal.transform.position = enemy.TPpoints[pos].position;
+                    enemy.isRouteComplete = false;
+                    break;
+                case 2:
+                    Debug.Log("TP penanggal to Bathroom");
+                    enemy.penanggal.transform.position = enemy.TPpoints[pos].position;
+                    enemy.isRouteComplete = false;
+                    break;
+                case 3:
+                    Debug.Log("TP penanggal to Living Room");
+                    enemy.penanggal.transform.position = enemy.TPpoints[pos].position;
+                    enemy.isRouteComplete = false;
+                    break;
+            }
+        }  
     }
 }

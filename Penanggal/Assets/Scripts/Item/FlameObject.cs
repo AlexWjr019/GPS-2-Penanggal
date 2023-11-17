@@ -18,6 +18,11 @@ public class FlameObject : MonoBehaviour
     private bool toiletCursepaper;
     public GameObject number4, number3, number2, number1;
 
+    [SerializeField]
+    private GameObject penanggal;
+    [SerializeField]
+    private SpawnPenanggal spawn;
+
     private void Start()
     {
         // Find all curse paper objects with the "CursePaper" tag and add them to the list.
@@ -92,7 +97,9 @@ public class FlameObject : MonoBehaviour
                                     }
                                     if(clickedObject.name == "LastCursePaper")
                                     {
-                                        SceneManager.LoadScene("WinScreen");
+                                        spawn.Invoke("OnPenanggal", 3f);
+
+                                        //SceneManager.LoadScene("WinScreen");
                                     }
                                     return; // Exit the loop
                                 }

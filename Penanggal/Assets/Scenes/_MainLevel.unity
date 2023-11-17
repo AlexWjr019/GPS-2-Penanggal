@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8075,6 +8075,8 @@ MonoBehaviour:
   number3: {fileID: 1214972148}
   number2: {fileID: 1769696149}
   number1: {fileID: 1203290838}
+  penanggal: {fileID: 0}
+  spawn: {fileID: 0}
 --- !u!65 &127879243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17737,6 +17739,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 127879240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412109664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412109665}
+  m_Layer: 0
+  m_Name: TP Living Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412109665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412109664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.59, y: 1.16, z: 12.084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662578264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412402565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7104659675343790069, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
@@ -17943,6 +17976,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5044447339683786092, guid: dddfbb4f41be68c4c985fe5881732931, type: 3}
+--- !u!1 &448420164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448420165}
+  m_Layer: 0
+  m_Name: TP Bedroom
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &448420165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448420164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.12, y: 1.16, z: -1.245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662578264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450891538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1669049260268621411, guid: 80bc831a7324c8949a6d6f60f55ecc6a, type: 3}
@@ -19391,6 +19455,8 @@ MonoBehaviour:
   number3: {fileID: 1214972148}
   number2: {fileID: 1769696149}
   number1: {fileID: 1203290838}
+  penanggal: {fileID: 0}
+  spawn: {fileID: 0}
 --- !u!65 &503001158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21378,6 +21444,7 @@ Transform:
   - {fileID: 2053685981}
   - {fileID: 1835899471}
   - {fileID: 296938916}
+  - {fileID: 1662578264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625402144
@@ -29110,6 +29177,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046386709}
   m_CullTransparentMesh: 1
+--- !u!1 &1047819794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047819795}
+  m_Layer: 0
+  m_Name: TP Kitchen
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1047819795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047819794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.21, y: 1.16, z: -16.07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662578264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048482004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b3d42a411401804b8a23ed7ff4343c2, type: 3}
@@ -30238,6 +30336,8 @@ MonoBehaviour:
   number3: {fileID: 0}
   number2: {fileID: 0}
   number1: {fileID: 0}
+  penanggal: {fileID: 0}
+  spawn: {fileID: 0}
 --- !u!1 &1089021784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7104659675343790069, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
@@ -37262,6 +37362,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1250813338}
   m_SourcePrefab: {fileID: 100100000, guid: 282e47c8dc5c87f4a86235f9aff92422, type: 3}
+--- !u!1 &1244498648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244498649}
+  m_Layer: 0
+  m_Name: TP Bathroom
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244498649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244498648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3, y: -0.75, z: -12.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662578264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &1245835172 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2020893629940451896, guid: 3e67fb619e4ada84fabf334b42e72d28, type: 3}
@@ -53218,6 +53349,41 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 709135527313906163, guid: 01bcc4f42f43dc7498d8753ddbda50cb, type: 3}
+--- !u!1 &1662578263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662578264}
+  m_Layer: 0
+  m_Name: TP Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662578264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662578263}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1047819795}
+  - {fileID: 448420165}
+  - {fileID: 1244498649}
+  - {fileID: 412109665}
+  m_Father: {fileID: 619263656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1664410079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62744,6 +62910,8 @@ MonoBehaviour:
   number3: {fileID: 0}
   number2: {fileID: 0}
   number1: {fileID: 0}
+  penanggal: {fileID: 0}
+  spawn: {fileID: 0}
 --- !u!65 &1938919625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70429,6 +70597,7 @@ GameObject:
   - component: {fileID: 2099854348}
   - component: {fileID: 2099854346}
   - component: {fileID: 2099854347}
+  - component: {fileID: 2099854352}
   - component: {fileID: 2099854345}
   - component: {fileID: 2099854344}
   - component: {fileID: 2099854343}
@@ -70497,6 +70666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548b4b3717e368a4ea67574767cac2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penanggal: {fileID: 2099854341}
   agent: {fileID: 0}
   fovFront: {fileID: 2099854343}
   fovBack: {fileID: 2099854342}
@@ -70519,6 +70689,13 @@ MonoBehaviour:
   - {fileID: 1424402057}
   destPoint: 0
   yRotation: 0.2
+  isRouteComplete: 0
+  pointsPatroled: 0
+  TPpoints:
+  - {fileID: 1047819795}
+  - {fileID: 448420165}
+  - {fileID: 1244498649}
+  - {fileID: 412109665}
   player: {fileID: 1020203036}
   chaseMultiplyer: 2
 --- !u!195 &2099854345
@@ -70585,11 +70762,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -70755,6 +70932,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2099854352
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099854341}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.00000011920929, y: 0, z: -0.0000038146973}
 --- !u!1 &2103916577
 GameObject:
   m_ObjectHideFlags: 0

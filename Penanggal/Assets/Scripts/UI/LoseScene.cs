@@ -40,10 +40,7 @@ public class LoseScene : MonoBehaviour
             FirstPersonController.hasCollidedWithGhost = false;
             loseUI.SetActive(false);
 
-            penanggal.animator.SetBool("isAttacking", false);
-            penanggal.StopChasing();
-            penanggal.PlayHumming();
-            penanggal.blood.Stop();
+            penanggal.StopAnim();
         }
         else
         {
