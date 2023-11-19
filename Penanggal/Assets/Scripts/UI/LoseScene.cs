@@ -32,22 +32,36 @@ public class LoseScene : MonoBehaviour
     public void RestartGame()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        GameObject Ghost = GameObject.FindWithTag("Ghost");
-        if (player != null && Ghost != null)
+        GameObject ghost = GameObject.FindWithTag("Ghost");
+
+        if (player != null && ghost != null)
         {
             PositionManager.Instance.ResetPlayerToStartPosition(player);
+
             Time.timeScale = 1.0f;
-            FirstPersonController.hasCollidedWithGhost = false;
             loseUI.SetActive(false);
 
             penanggal.StopAnim();
+
+            FirstPersonController playerController = player.GetComponent<FirstPersonController>();
+            if (playerController != null)
+            {
+                playerController.ResetPlayerState();
+            }
         }
         else
         {
-            Debug.LogError("Ghost Missing");
-            Debug.LogError("Player object not found!");
+            if (player == null)
+            {
+                Debug.LogError("Player object not found!");
+            }
+            if (ghost == null)
+            {
+                Debug.LogError("Ghost Missing");
+            }
         }
     }
+
 
 
     public void GoToMainMenu()

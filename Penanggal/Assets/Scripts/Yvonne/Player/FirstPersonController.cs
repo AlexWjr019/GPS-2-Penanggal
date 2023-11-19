@@ -78,6 +78,11 @@ public class FirstPersonController : MonoBehaviour
     float lastPlayedFootstepSoundTime = -timeBetweenFootsteps;
     #endregion
 
+    public Camera playerCamera;
+    public Camera ghostCamera;
+    private bool canMove = true;
+    private bool canLookAround = true;
+
 
     private void Awake()
     {
@@ -103,19 +108,21 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        HandleSprintTimer();
-        if (!keyboard)
+        if (canMove)
         {
-            GetTouchInput();
-        }
-        else
-        {
-            GetKeyboardInput();
+            HandleSprintTimer();
+            if (!keyboard)
+            {
+                GetTouchInput();
+            }
+            else
+            {
+                GetKeyboardInput();
+            }
+            Gravity();
         }
 
-        Gravity();
-
-        if (rightFingerId != -1)
+        if (canLookAround && rightFingerId != -1)
         {
             LookAround();
         }
@@ -299,16 +306,16 @@ public class FirstPersonController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("Collided with: " + hit.gameObject.name);
-
-        //if (hit.gameObject.CompareTag("Ghost") /*|| hit.gameObject.CompareTag("BabyPenanggal")*/)
-        //{
-        //    LookAtGhost(hit.transform);
-        //    StartCoroutine(ShowLoseUIAfterDelay());
-        //}
-        if (hit.gameObject.CompareTag("Ghost") && !hasCollidedWithGhost || hit.gameObject.CompareTag("BabyPenanggal") && !hasCollidedWithGhost)
+        if ((hit.gameObject.CompareTag("Ghost") || hit.gameObject.CompareTag("BabyPenanggal")) && !hasCollidedWithGhost)
         {
-            hasCollidedWithGhost = true; // Set the flag so this block won't run again
+            hasCollidedWithGhost = true;
+
+            canMove = false;
+            canLookAround = false;
+
+            playerCamera.enabled = false;
+            ghostCamera.enabled = true;
+
             LookAtGhost(hit.transform);
             StartCoroutine(ShowLoseUIAfterDelay());
         }
@@ -359,6 +366,24 @@ public class FirstPersonController : MonoBehaviour
         {
             float alpha = Mathf.Clamp(sprintTimer / sprintDuration, 0, 1);
             vignette.smoothness.Override(alpha);
+        }
+    }
+
+    public void ResetPlayerState()
+    {
+        hasCollidedWithGhost = false;
+
+        canMove = true;
+        canLookAround = true;
+
+        if (playerCamera != null)
+        {
+            playerCamera.enabled = true;
+        }
+
+        if (ghostCamera != null)
+        {
+            ghostCamera.enabled = false;
         }
     }
 

@@ -7358,6 +7358,8 @@ MonoBehaviour:
   volumeObject: {fileID: 1213634863}
   groundedGravity: 10
   airborneGravity: 10
+  playerCamera: {fileID: 161513708}
+  ghostCamera: {fileID: 1982055073}
 --- !u!143 &88731667
 CharacterController:
   m_ObjectHideFlags: 0
@@ -68697,7 +68699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1982055070
 Transform:
   m_ObjectHideFlags: 0
@@ -68772,7 +68774,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982055069}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -71111,7 +71113,6 @@ GameObject:
   - component: {fileID: 2140282840}
   - component: {fileID: 2140282839}
   - component: {fileID: 2140282838}
-  - component: {fileID: 2140282837}
   m_Layer: 5
   m_Name: LoseSceneCanvas
   m_TagString: Untagged
@@ -71119,22 +71120,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &2140282837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140282836}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84cc73bbefdcfe34296aabe48db5b7fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Restart: {fileID: 2017168349}
-  mainMenu: {fileID: 58893714}
-  loseUI: {fileID: 0}
-  penanggal: {fileID: 2099854344}
 --- !u!114 &2140282838
 MonoBehaviour:
   m_ObjectHideFlags: 0
