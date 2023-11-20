@@ -7349,7 +7349,7 @@ MonoBehaviour:
   initialMoveSpeed: 0
   moveInputDeadZone: 50
   keyboard: 0
-  cameraSensitivity: 15
+  cameraSensitivity: 8
   verticalCameraSensitivity: 0.5
   maxClamp: 60
   minClamp: -40
@@ -39185,10 +39185,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 29787036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 36, y: 106}
+  m_SizeDelta: {x: 426.407, y: 207.14697}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1330266685
 MonoBehaviour:
@@ -39286,7 +39286,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 176.32199, w: 131.91653}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -54259,7 +54259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f39ab032a020fb4383e302353d58432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skySpeed: 0.5
+  target: 60
 --- !u!4 &1717701974
 Transform:
   m_ObjectHideFlags: 0
