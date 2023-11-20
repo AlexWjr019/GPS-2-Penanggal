@@ -17,6 +17,7 @@ public class FlameObject : MonoBehaviour
 
     private bool toiletCursepaper;
     public GameObject number4, number3, number2, number1;
+    public GameObject nurseryKey;
 
     [SerializeField]
     private GameObject penanggal;
@@ -86,6 +87,8 @@ public class FlameObject : MonoBehaviour
                                         toiletCursepaper = true;
                                         number3.SetActive(false);
                                         number2.SetActive(true);
+                                        nurseryKey.SetActive(true);
+                                        ObjectiveManager.objective = true;
 
                                     }
                                     if (clickedObject.name == "TornCursePaper")

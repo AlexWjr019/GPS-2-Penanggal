@@ -35,7 +35,7 @@ public class ItemNotice : MonoBehaviour
         ShowTeachingNotice();
     }
 
-    private void Update()
+    void Update()
     {
         if (ligterPickup)
         {

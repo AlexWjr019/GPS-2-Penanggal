@@ -9,19 +9,19 @@ public class ObjectiveManager : MonoBehaviour
     {
         public string description;
         public bool isCompleted;
-        public GameObject associatedObject; // You can use this to reference the specific object related to the objective
     }
 
     public Objective[] objectives;
     private int currentObjectiveIndex = 0;
 
     public TextMeshProUGUI objectiveText;
-    public CanvasGroup textCanvasGroup;
 
-    // Add any other necessary variables or methods
+    public static bool objective;
+    public Animation objectiveFade;
 
     void Start()
     {
+        objective = false;
         // Initialize objectives
         InitializeObjectives();
         UpdateObjectiveText();
@@ -51,64 +51,35 @@ public class ObjectiveManager : MonoBehaviour
 
         // Set the first objective as active
         objectives[currentObjectiveIndex].isCompleted = false;
-        // You can also set the associatedObject here if needed
+
     }
-
-    //void Update()
-    //{
-    //    // Check if the current objective is completed
-    //    if (objectives[currentObjectiveIndex].isCompleted)
-    //    {
-    //        // Trigger fade out animation or any other transition effect here
-
-    //        // Move to the next objective
-    //        currentObjectiveIndex++;
-
-    //        // Check if there are more objectives
-    //        if (currentObjectiveIndex < objectives.Length)
-    //        {
-    //            // Set the new objective as active
-    //            objectives[currentObjectiveIndex].isCompleted = false;
-    //            // You can also set the associatedObject here if needed
-
-    //            // Trigger fade in animation or any other transition effect here
-    //        }
-    //        else
-    //        {
-    //            // All objectives completed, you can implement the end game logic here
-    //        }
-    //    }
-    //}
 
     void Update()
     {
+        CheckObjective();
+
+        // Check if the current objective is completed
         if (objectives[currentObjectiveIndex].isCompleted)
         {
-            StartCoroutine(TransitionToNextObjective());
-        }
-    }
+            // Trigger fade out animation or any other transition effect here
+            objectiveFade.Play("ObjectiveFadeOut");
+            // Move to the next objective
+            currentObjectiveIndex++;
 
-    IEnumerator TransitionToNextObjective()
-    {
-        yield return new WaitForSeconds(5f); // Wait for 5 seconds
+            // Check if there are more objectives
+            if (currentObjectiveIndex < objectives.Length)
+            {
+                // Set the new objective as active
+                objectives[currentObjectiveIndex].isCompleted = false;
+                UpdateObjectiveText();
 
-        // Trigger fade out animation or any other transition effect here
-        StartCoroutine(FadeCanvasGroup(textCanvasGroup, 0f, 1f, 1.0f));
-
-        currentObjectiveIndex++;
-
-        if (currentObjectiveIndex < objectives.Length)
-        {
-            // Set the new objective as active
-            objectives[currentObjectiveIndex].isCompleted = false;
-            UpdateObjectiveText();
-
-            // Trigger fade in animation or any other transition effect here
-            StartCoroutine(FadeCanvasGroup(textCanvasGroup, 1f, 0f, 5.0f));
-        }
-        else
-        {
-            // All objectives completed, you can implement the end game logic here
+                // Trigger fade in animation or any other transition effect here
+                objectiveFade.Play("ObjectiveFadeIn");
+            }
+            else
+            {
+                
+            }
         }
     }
 
@@ -120,20 +91,14 @@ public class ObjectiveManager : MonoBehaviour
         }
     }
 
-    IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float targetAlpha, float duration)
+    public void CheckObjective()
     {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
+        if (objective)
         {
-            float alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
-            canvasGroup.alpha = alpha;
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            objectives[currentObjectiveIndex].isCompleted = true;
+            Debug.Log("objective 1 complete");
+            objective = false;
         }
 
-        // Set the final alpha
-        canvasGroup.alpha = targetAlpha;
     }
 }

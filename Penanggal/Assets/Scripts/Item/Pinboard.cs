@@ -32,13 +32,14 @@ public class Pinboard : MonoBehaviour
                             pinPaper.SetActive(true);
                             Destroy(selectedSlot.GetCurrentItem().gameObject);
                             selectedSlot.ClearSlot();
+                            ObjectiveManager.objective = true;
                             StartCoroutine(SpawnCursepaper());
                         }
                     }
                     else
                     {
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                        if ((itemNotice != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
+                        if ((selectedSlot != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
                         {
                             itemNotice.ShowPinboardNotice();
                         }
@@ -53,6 +54,7 @@ public class Pinboard : MonoBehaviour
 
         if (cursePaperburn)
         {
+            ObjectiveManager.objective = true;
             cursePaperburn = false;
             LevelChanger levelChange = FindObjectOfType<LevelChanger>();
             if (levelChange != null)

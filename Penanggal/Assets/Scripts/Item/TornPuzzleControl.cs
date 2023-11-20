@@ -13,6 +13,7 @@ public class TornPuzzleControl : MonoBehaviour
     //public InteracionItem interacionItem;
     public GameObject wholePic;
     private int itemsMask;
+    private bool puzzleCompleted;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class TornPuzzleControl : MonoBehaviour
         isTornPuzzle = false;
         tornPuzzleActivated = false;
         isTorn = false;
+        puzzleCompleted = false;
         //interacionItem = GetComponent<InteracionItem>();
         //interacionItem.enabled = false;
     }
@@ -32,7 +34,7 @@ public class TornPuzzleControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isTornPuzzle)
+        if (!isTornPuzzle && !puzzleCompleted)
         {
             CheckPuzzleActivated();
             isTornPuzzle = false;
@@ -41,6 +43,7 @@ public class TornPuzzleControl : MonoBehaviour
         if (isTorn)
         {
             TornPuzzleCompleted();
+            isTorn = false;
         }
     }
 
@@ -63,6 +66,7 @@ public class TornPuzzleControl : MonoBehaviour
                         isTornPuzzle = true;
                         playerCamera.SetActive(false);
                         tornPuzzleActivated = true;
+                        ObjectiveManager.objective = true;
                     }
                 }
             }
@@ -71,12 +75,14 @@ public class TornPuzzleControl : MonoBehaviour
 
     public void TornPuzzleCompleted()
     {
+        puzzleCompleted = true;
         tornPuzzle.SetActive(false);
         isTornPuzzle = false;
         playerCamera.SetActive(true);
         tornPuzzleActivated = false;
         //interacionItem.enabled = true;
         wholePic.layer = itemsMask;
+        ObjectiveManager.objective = true;
     }
 
     public void TornPuzzleReturn()

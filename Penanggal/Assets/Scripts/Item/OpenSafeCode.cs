@@ -22,6 +22,7 @@ public class OpenSafeCode : MonoBehaviour
             safeCodeWheel.SetActive(true);
             playerHead.SetActive(false);
             openSafe = true;
+            ObjectiveManager.objective = true;
             //ObjectCamera.SetActive(true);
         }
         //if (safeCodeScript == null)

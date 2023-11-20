@@ -323,6 +323,10 @@ public class InteractionSystem : MonoBehaviour
                 {
                     HandleLighterPickUp();
                 }
+                else if(itemName == "NurseryKey")
+                {
+                    HandleNurseryKeyPickUp();
+                }
                 if (InventoryManager.Instance.IsInventoryFull())
                 {
                     InventorySlot slotToReplace = InventoryManager.Instance.GetSlotToReplace();
@@ -379,6 +383,7 @@ public class InteractionSystem : MonoBehaviour
         ScriptedEvent_4 scriptedEvent = FindObjectOfType<ScriptedEvent_4>();
         scriptedEvent.PlayRasaSayang();
         Debug.Log("Key has been picked up!");
+        ObjectiveManager.objective = true;
     }
 
     private void HandleLighterPickUp()
@@ -387,6 +392,13 @@ public class InteractionSystem : MonoBehaviour
         scriptedEvent.event1();
         Debug.Log("Lighter has been picked up!");
         ItemNotice.ligterPickup = true;
+        ObjectiveManager.objective = true;
+    }
+
+    private void HandleNurseryKeyPickUp()
+    {
+        Debug.Log("Nursery Key has been picked up!");
+        ObjectiveManager.objective = true;
     }
 
     private void OnDrawGizmos()

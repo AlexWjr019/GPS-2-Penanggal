@@ -57,6 +57,7 @@ public class LockControl : MonoBehaviour
             wheel.gameObject.SetActive(false);
             safeIsOpen = true;
             OpenSafeCode.openSafe = false;
+            ObjectiveManager.objective = true;
         }
         else
         {
