@@ -24,6 +24,8 @@ public class FlameObject : MonoBehaviour
     [SerializeField]
     private SpawnPenanggal spawn;
 
+    public ScriptedEvent_7 scriptedEvent7;
+
     private void Start()
     {
         // Find all curse paper objects with the "CursePaper" tag and add them to the list.
@@ -101,6 +103,7 @@ public class FlameObject : MonoBehaviour
                                     if(clickedObject.name == "LastCursePaper")
                                     {
                                         ObjectiveManager2.objective = true;
+                                        scriptedEvent7.PlayScriptedEvent7();
                                         spawn.Invoke("OnPenanggal", 3f);
                                         //SceneManager.LoadScene("WinScreen");
                                     }

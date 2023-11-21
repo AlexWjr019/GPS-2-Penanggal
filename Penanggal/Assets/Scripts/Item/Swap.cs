@@ -29,6 +29,7 @@ public class Swap : MonoBehaviour
     //public GameObject player;
 
     public GameObject cursePaper;
+    public Animator curtainAnimator;
 
     private void Start()
     {
@@ -192,13 +193,14 @@ public class Swap : MonoBehaviour
             bowl.tag = "Unmovable";
             bottle.tag = "Unmovable";
             flower.tag = "Unmovable";
+            curtainAnimator.SetBool("OpenCurtain", true);
             StartCoroutine(SpawnCursepaper());
         }
     }
 
     IEnumerator SpawnCursepaper()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         cursePaper.SetActive(true);
         ObjectiveManager2.objective = true;
     }
