@@ -200,6 +200,9 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Playing Attack Anim - Penanggal");
+
+            agent.speed = 0;
+            FindObjectOfType<AudioManager>().PlaySFX("PenaggalDeath");
             StartAnim();
         }
     }

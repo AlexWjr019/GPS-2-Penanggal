@@ -8584,7 +8584,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 127
-  playerRef: {fileID: 0}
+  playerRef: {fileID: 1747119291}
   canSeePlayer: 0
 --- !u!114 &487017980
 MonoBehaviour:
@@ -8606,7 +8606,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 127
-  playerRef: {fileID: 0}
+  playerRef: {fileID: 1747119291}
   canSeePlayer: 0
 --- !u!114 &487017981
 MonoBehaviour:
@@ -8620,7 +8620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548b4b3717e368a4ea67574767cac2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penanggal: {fileID: 0}
+  penanggal: {fileID: 487017977}
   agent: {fileID: 0}
   fovFront: {fileID: 487017980}
   fovBack: {fileID: 487017979}
@@ -8636,7 +8636,7 @@ MonoBehaviour:
   isRouteComplete: 0
   pointsPatroled: 0
   TPpoints: []
-  player: {fileID: 0}
+  player: {fileID: 1747119291}
   chaseMultiplyer: 2
 --- !u!195 &487017982
 NavMeshAgent:
@@ -14780,11 +14780,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f6cb90323499443aa44287e9f767c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyObjSpawn: 1
   chaseDelay: 2
   speed: 1
   startPos: {fileID: 0}
   endPos: {fileID: 0}
   penanggal: {fileID: 487017977}
+  cursePaper: {fileID: 952680381}
 --- !u!1001 &663280527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21762,8 +21764,6 @@ MonoBehaviour:
   number2: {fileID: 0}
   number1: {fileID: 0}
   nurseryKey: {fileID: 0}
-  penanggal: {fileID: 487017977}
-  spawn: {fileID: 0}
   scriptedEvent7: {fileID: 1553724698}
 --- !u!65 &952680384
 BoxCollider:

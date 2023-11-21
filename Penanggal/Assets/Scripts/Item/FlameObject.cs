@@ -19,11 +19,6 @@ public class FlameObject : MonoBehaviour
     public GameObject number4, number3, number2, number1;
     public GameObject nurseryKey;
 
-    [SerializeField]
-    private GameObject penanggal;
-    [SerializeField]
-    private SpawnPenanggal spawn;
-
     public ScriptedEvent_7 scriptedEvent7;
 
     private void Start()
@@ -104,7 +99,6 @@ public class FlameObject : MonoBehaviour
                                     {
                                         ObjectiveManager2.objective = true;
                                         scriptedEvent7.PlayScriptedEvent7();
-                                        spawn.Invoke("OnPenanggal", 3f);
                                         //SceneManager.LoadScene("WinScreen");
                                     }
                                     return; // Exit the loop

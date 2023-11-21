@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class SpawnPenanggal : MonoBehaviour
 {
     private bool isSpawned;
+
+    [SerializeField]
+    private bool destroyObjSpawn = false;
 
     public float chaseDelay = 2f;
 
@@ -17,7 +22,7 @@ public class SpawnPenanggal : MonoBehaviour
     private Transform startPos, endPos;
 
     [SerializeField]
-    private GameObject penanggal;
+    private GameObject penanggal, cursePaper;
 
     private void OnEnable()
     {
@@ -31,26 +36,40 @@ public class SpawnPenanggal : MonoBehaviour
 
     private void Update()
     {
-        SpawnGhost();
+        if (destroyObjSpawn)
+        {
+            if (cursePaper == null)
+            {
+                if (!isSpawned)
+                {
+                    Invoke("OnPenanggal", 3f);
+                    isSpawned = true;
+                }
+            }
+        }
+        else
+        {
+            if (!isSpawned)
+            {
+                SpawnGhost();
+            }
+        }
     }
 
     public void SpawnGhost()
     {
-        if (!isSpawned)
+        float distCovered = (Time.time - startTime) * speed;
+    
+        float fractionOfJourney = distCovered / journeyLength;
+    
+        penanggal.transform.position = Vector3.Lerp(startPos.position, endPos.position, fractionOfJourney);
+    
+        if (penanggal.transform.position == endPos.position)
         {
-            float distCovered = (Time.time - startTime) * speed;
-
-            float fractionOfJourney = distCovered / journeyLength;
-
-            penanggal.transform.position = Vector3.Lerp(startPos.position, endPos.position, fractionOfJourney);
-
-            if (penanggal.transform.position == endPos.position)
-            {
-                Debug.Log("Penanggal is Spawned");
-                FindObjectOfType<AudioManager>().PlaySFX("PenanggalLaugh");
-                isSpawned = true;
-                Invoke("OnAI_1", chaseDelay);
-            }
+            Debug.Log("Penanggal is Spawned");
+            FindObjectOfType<AudioManager>().PlaySFX("PenanggalLaugh");
+            isSpawned = true;
+            Invoke("OnAI_1", chaseDelay);
         }
     }
 
@@ -66,6 +85,7 @@ public class SpawnPenanggal : MonoBehaviour
 
     public void OnPenanggal()
     {
+        Debug.Log("work");
         penanggal.SetActive(true);
     }
 }

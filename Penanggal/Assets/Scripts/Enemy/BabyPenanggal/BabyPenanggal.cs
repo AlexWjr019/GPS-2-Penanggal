@@ -66,6 +66,8 @@ public class BabyPenanggal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Playing Attack Anim - Baby");
+
+            FindObjectOfType<AudioManager>().PlaySFX("BabyPenSpeak1");
             animator.SetBool("isAttacking", true);
         }
     }    
