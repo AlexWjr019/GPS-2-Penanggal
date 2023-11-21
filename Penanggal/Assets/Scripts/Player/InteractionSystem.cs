@@ -76,34 +76,15 @@ public class InteractionSystem : MonoBehaviour
                 ProcessHit(hit); // This function needs to handle hits on non-interactable objects
             }
         }
-        DetectBabyPenanggal();
-        }
-        else if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("mosue click");
-            ProcessMouseClick();
-        }
+       DetectBabyPenanggal();
+    }
+
     }
 
         private bool IsTouchAClick(Vector2 touchEndPosition, float startTime)
     {
         float touchDuration = Time.time - startTime;
         return Vector2.Distance(touchEndPosition, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold;
-    }
-
-    private void ProcessMouseClick()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
-        {
-            ProcessHit(hit);
-        }
-        else
-        {
-            currentInteractable = null;
-        }
     }
 
     private void ProcessHit(RaycastHit hit)
@@ -144,6 +125,11 @@ public class InteractionSystem : MonoBehaviour
             OpenDoor.touchDoor = true;
             OpenDoor.touchNurseryDoor = false;
         }
+        //else if (hit.collider.CompareTag("BabyPenanggal"))
+        //{
+        //    hit.collider.gameObject.GetComponent<BabyPenanggal>().isSeen = true;
+        //    Debug.Log("Detected an object with forEnemy tag!");
+        //}
         else
         {
             currentInteractable = null;
