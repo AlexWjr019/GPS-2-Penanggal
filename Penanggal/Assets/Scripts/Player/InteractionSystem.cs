@@ -76,108 +76,34 @@ public class InteractionSystem : MonoBehaviour
                 ProcessHit(hit); // This function needs to handle hits on non-interactable objects
             }
         }
-       DetectBabyPenanggal();
-    }
-
-        //    Vector3 cameraPosition = Camera.main.transform.position;
-        //    Vector3 cameraForward = Camera.main.transform.forward;
-        //    Ray ray = new Ray(cameraPosition, cameraForward);
-        //    RaycastHit hit;
-
-        //    if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance))
-        //    {
-        //        if (hit.collider.CompareTag("Interactable"))
-        //        {
-        //            Debug.Log("Helloworld");
-        //            TestingPlayAnimation cabinetAnimator = hit.collider.gameObject.GetComponent<TestingPlayAnimation>();
-        //            if (Input.touchCount > 0)
-        //            {
-        //                Touch touch = Input.GetTouch(0);
-        //                switch (touch.phase)
-        //                {
-        //                    case TouchPhase.Began:
-        //                        touchStartPosition = touch.position;
-        //                        touchStartTime = Time.time;
-        //                        break;
-        //                    case TouchPhase.Ended:
-        //                        float touchDuration = Time.time - touchStartTime;
-        //                        if (Vector2.Distance(touch.position, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold)
-        //                        {
-        //                            Debug.Log("OpenAndClose");
-        //                            InteractWithCabinet(cabinetAnimator);
-        //                        }
-        //                        break;
-        //                }
-        //            }
-        //        }
-        //        else if (hit.collider.CompareTag("Candle"))
-        //        {
-        //            if (Input.touchCount > 0)
-        //            {
-        //                Touch touch = Input.GetTouch(0);
-        //                if (touch.phase == TouchPhase.Ended)
-        //                {
-        //                    InteractCandle candleInteraction = hit.collider.gameObject.GetComponentInChildren<InteractCandle>();
-
-        //                    if (candleInteraction != null)
-        //                    {
-        //                        if (Vector2.Distance(touch.position, touchStartPosition) < 30f && Time.time - touchStartTime <= clickDurationThreshold)
-        //                        {
-        //                            if (!candleInteraction.isOn[0])
-        //                            {
-        //                                if (InventoryManager.Instance.GetSelectedInventoryItemName() == "Lighter")
-        //                                {
-        //                                    candleInteraction.ToggleCandle(0);
-        //                                }
-        //                            }
-        //                            else
-        //                            {
-        //                                candleInteraction.ToggleCandle(0);
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //                else if (touch.phase == TouchPhase.Began)
-        //                {
-        //                    touchStartPosition = touch.position;
-        //                    touchStartTime = Time.time;
-        //                }
-        //            }
-        //        else
-        //        {
-        //                Debug.LogWarning("Candle object doesn't have InteractCandle component attached.");
-        //            }
-        //        }
-        //        else if (hit.collider.CompareTag("BabyPenanggal"))
-        //        {
-        //            hit.collider.gameObject.GetComponent<BabyPenanggal>().isSeen = true;
-
-        //            Debug.Log("Detected an object with forEnemy tag!");
-        //        }
-        //    }
-
-    //    if (Physics.SphereCast(ray, sphereRadius, out hit, raycastDistance, interactableLayer))
-    //    {
-    //        GameObject hitObject = hit.collider.gameObject;
-    //        if (hitObject != currentInteractable)
-    //        {
-    //            currentInteractable = hitObject;
-    //        }
-    //        else
-    //        {
-    //            CheckForButtonClick();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        currentInteractable = null;
-    //    }
+        DetectBabyPenanggal();
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("mosue click");
+            ProcessMouseClick();
+        }
     }
 
         private bool IsTouchAClick(Vector2 touchEndPosition, float startTime)
     {
         float touchDuration = Time.time - startTime;
         return Vector2.Distance(touchEndPosition, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold;
+    }
+
+    private void ProcessMouseClick()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+        {
+            ProcessHit(hit);
+        }
+        else
+        {
+            currentInteractable = null;
+        }
     }
 
     private void ProcessHit(RaycastHit hit)
@@ -218,11 +144,6 @@ public class InteractionSystem : MonoBehaviour
             OpenDoor.touchDoor = true;
             OpenDoor.touchNurseryDoor = false;
         }
-        //else if (hit.collider.CompareTag("BabyPenanggal"))
-        //{
-        //    hit.collider.gameObject.GetComponent<BabyPenanggal>().isSeen = true;
-        //    Debug.Log("Detected an object with forEnemy tag!");
-        //}
         else
         {
             currentInteractable = null;

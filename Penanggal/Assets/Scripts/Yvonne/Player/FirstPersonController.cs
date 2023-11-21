@@ -20,6 +20,7 @@ public class FirstPersonController : MonoBehaviour
     public static bool canHide = false;
     public Volume volume;
     Vignette vignette;
+    private bool isMobile;
     #endregion
 
     #region Player and Controller Settings
@@ -87,6 +88,12 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         //PositionManager.Instance.SetPlayerStartPosition(transform.position);
+        isMobile = Application.isMobilePlatform;
+        if (!isMobile)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
     void Start()
     {
@@ -111,14 +118,12 @@ public class FirstPersonController : MonoBehaviour
         if (canMove)
         {
             HandleSprintTimer();
-            if (!keyboard)
-            {
-                GetTouchInput();
-            }
-            else
-            {
-                GetKeyboardInput();
-            }
+
+            GetKeyboardInput();
+            CameraMovement();
+
+            GetTouchInput();
+
             Gravity();
         }
 
@@ -282,9 +287,33 @@ public class FirstPersonController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            moveSpeed = sprintSpeed;
+        }
+        else
+        {
+            moveSpeed = initialMoveSpeed;
+        }
 
+        Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * moveSpeed * Time.deltaTime);
+    }
+
+
+    void CameraMovement()
+    {
+        if (!isMobile)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * verticalCameraSensitivity * Time.deltaTime;
+
+            cameraPitch -= mouseY;
+            cameraPitch = Mathf.Clamp(cameraPitch, minClamp, maxClamp);
+
+            cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
+            transform.Rotate(Vector3.up * mouseX);
+        }
     }
     void Gravity()
     {
@@ -317,6 +346,22 @@ public class FirstPersonController : MonoBehaviour
             ghostCamera.enabled = true;
 
             LookAtGhost(hit.transform);
+            StartCoroutine(ShowLoseUIAfterDelay());
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if ((collision.gameObject.CompareTag("Ghost") || collision.gameObject.CompareTag("BabyPenanggal")) && !hasCollidedWithGhost)
+        {
+            hasCollidedWithGhost = true;
+
+            canMove = false;
+            canLookAround = false;
+
+            playerCamera.enabled = false;
+            ghostCamera.enabled = true;
+
+            LookAtGhost(collision.transform);
             StartCoroutine(ShowLoseUIAfterDelay());
         }
     }
