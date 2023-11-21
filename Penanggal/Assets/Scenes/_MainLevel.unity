@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8258,8 +8258,6 @@ MonoBehaviour:
   number2: {fileID: 1769696149}
   number1: {fileID: 1203290838}
   nurseryKey: {fileID: 2002763636}
-  penanggal: {fileID: 0}
-  spawn: {fileID: 0}
   scriptedEvent7: {fileID: 0}
 --- !u!65 &127879243
 BoxCollider:
@@ -19660,8 +19658,6 @@ MonoBehaviour:
   number2: {fileID: 1769696149}
   number1: {fileID: 1203290838}
   nurseryKey: {fileID: 2002763636}
-  penanggal: {fileID: 0}
-  spawn: {fileID: 0}
   scriptedEvent7: {fileID: 0}
 --- !u!65 &503001158
 BoxCollider:
@@ -27421,11 +27417,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f6cb90323499443aa44287e9f767c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyObjSpawn: 0
   chaseDelay: 2
   speed: 2
   startPos: {fileID: 1806681596}
   endPos: {fileID: 1233907148}
   penanggal: {fileID: 2099854341}
+  cursePaper: {fileID: 0}
 --- !u!1 &898836514 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -658121591644829653, guid: 225b0508b112c6c47b63c052bc2c52cd, type: 3}
@@ -30542,8 +30540,6 @@ MonoBehaviour:
   number2: {fileID: 0}
   number1: {fileID: 0}
   nurseryKey: {fileID: 0}
-  penanggal: {fileID: 0}
-  spawn: {fileID: 0}
   scriptedEvent7: {fileID: 0}
 --- !u!1 &1089021784 stripped
 GameObject:
@@ -63125,8 +63121,6 @@ MonoBehaviour:
   number2: {fileID: 0}
   number1: {fileID: 0}
   nurseryKey: {fileID: 0}
-  penanggal: {fileID: 0}
-  spawn: {fileID: 0}
   scriptedEvent7: {fileID: 0}
 --- !u!65 &1938919625
 BoxCollider:
@@ -74370,7 +74364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141265127446371783, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8410874757884783206, guid: 55e4525dbc8bb664295826b9c3d4f89c, type: 3}
       propertyPath: m_Damping
