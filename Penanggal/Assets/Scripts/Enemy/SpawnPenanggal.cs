@@ -85,7 +85,7 @@ public class SpawnPenanggal : MonoBehaviour
 
     public void OnPenanggal()
     {
-        Debug.Log("work");
         penanggal.SetActive(true);
+        Invoke("OnAI_1", 0.1f);
     }
 }

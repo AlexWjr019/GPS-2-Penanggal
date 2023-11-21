@@ -8584,7 +8584,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 127
-  playerRef: {fileID: 1747119291}
+  playerRef: {fileID: 958621112}
   canSeePlayer: 0
 --- !u!114 &487017980
 MonoBehaviour:
@@ -8606,7 +8606,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 127
-  playerRef: {fileID: 1747119291}
+  playerRef: {fileID: 958621112}
   canSeePlayer: 0
 --- !u!114 &487017981
 MonoBehaviour:
@@ -8615,7 +8615,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487017977}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 548b4b3717e368a4ea67574767cac2a3, type: 3}
   m_Name: 
@@ -8636,7 +8636,7 @@ MonoBehaviour:
   isRouteComplete: 0
   pointsPatroled: 0
   TPpoints: []
-  player: {fileID: 1747119291}
+  player: {fileID: 958621112}
   chaseMultiplyer: 2
 --- !u!195 &487017982
 NavMeshAgent:
@@ -8645,7 +8645,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487017977}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 2.5
@@ -22215,7 +22215,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031161753}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
