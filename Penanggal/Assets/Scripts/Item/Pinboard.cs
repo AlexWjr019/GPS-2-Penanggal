@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -39,13 +40,16 @@ public class Pinboard : MonoBehaviour
                     else
                     {
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                        if ((selectedSlot != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
+                        if (selectedSlot != null)
                         {
-                            itemNotice.ShowPinboardNotice();
-                        }
-                        else
-                        {
-                            Debug.LogError("ItemNotice not found!");
+                            if ((selectedSlot != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
+                            {
+                                itemNotice.ShowPinboardNotice();
+                            }
+                            else
+                            {
+                                Debug.LogError("ItemNotice not found!");
+                            }
                         }
                     }
                 }

@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -8260,6 +8260,7 @@ MonoBehaviour:
   nurseryKey: {fileID: 2002763636}
   penanggal: {fileID: 0}
   spawn: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
 --- !u!65 &127879243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16319,6 +16320,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_2
       objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830966054440745691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819622824111084328, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104659675343790069, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.314
@@ -19641,6 +19662,7 @@ MonoBehaviour:
   nurseryKey: {fileID: 2002763636}
   penanggal: {fileID: 0}
   spawn: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
 --- !u!65 &503001158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26997,6 +27019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5764830763500031519, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9002195165014356205, guid: dd999aa87494e8c4ebdcd08c69c135e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -30518,6 +30544,7 @@ MonoBehaviour:
   nurseryKey: {fileID: 0}
   penanggal: {fileID: 0}
   spawn: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
 --- !u!1 &1089021784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7104659675343790069, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
@@ -39202,6 +39229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0306bae9ed6647960fad6446ecbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: 60
   fpsTitle: {fileID: 1330266686}
 --- !u!114 &1330266686
 MonoBehaviour:
@@ -54221,7 +54249,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717701974}
-  - component: {fileID: 1717701973}
   - component: {fileID: 1717701972}
   - component: {fileID: 1717701975}
   m_Layer: 0
@@ -54247,19 +54274,6 @@ MonoBehaviour:
   mainMenu: {fileID: 58893714}
   loseUI: {fileID: 2140282836}
   penanggal: {fileID: 2099854344}
---- !u!114 &1717701973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717701971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f39ab032a020fb4383e302353d58432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: 60
 --- !u!4 &1717701974
 Transform:
   m_ObjectHideFlags: 0
@@ -62907,6 +62921,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: NurseryCabinet_1
       objectReference: {fileID: 0}
+    - target: {fileID: 806499826400380452, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632657814729278854, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830966054440745691, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819622824111084328, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104659675343790069, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8046728060548145259, guid: e0f8eff61a9fa7c4d91c5cc29f468686, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.629
@@ -63093,6 +63127,7 @@ MonoBehaviour:
   nurseryKey: {fileID: 0}
   penanggal: {fileID: 0}
   spawn: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
 --- !u!65 &1938919625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68945,7 +68980,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982055069}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1982055073
 Camera:
   m_ObjectHideFlags: 0
@@ -72895,7 +72930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2061074288584986112
 Transform:
   m_ObjectHideFlags: 0

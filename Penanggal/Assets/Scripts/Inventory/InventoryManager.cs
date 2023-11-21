@@ -150,7 +150,7 @@ public class InventoryManager : MonoBehaviour
             if (playerPointLight != null)
             {
                 playerPointLight.enabled = true;
-                Debug.Log("PointLight");
+                //Debug.Log("PointLight");
             }
         }
         else
@@ -158,7 +158,7 @@ public class InventoryManager : MonoBehaviour
             if (playerPointLight != null)
             {
                 playerPointLight.enabled = false;
-                Debug.Log("noPointLight");
+                //Debug.Log("noPointLight");
             }
         }
     }

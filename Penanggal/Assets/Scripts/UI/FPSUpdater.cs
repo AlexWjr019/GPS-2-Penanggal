@@ -5,7 +5,15 @@ public class FPSUpdater : MonoBehaviour
     float fps;
     float updateTimer = 0.2f;
 
+    public int target = 60;
+
     [SerializeField] TextMeshProUGUI fpsTitle;
+
+    void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = target;
+    }
 
     private void UpdateFpsDisplay()
     {
