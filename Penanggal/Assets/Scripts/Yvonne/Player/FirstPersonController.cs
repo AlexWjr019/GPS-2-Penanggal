@@ -349,22 +349,6 @@ public class FirstPersonController : MonoBehaviour
             StartCoroutine(ShowLoseUIAfterDelay());
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if ((collision.gameObject.CompareTag("Ghost") || collision.gameObject.CompareTag("BabyPenanggal")) && !hasCollidedWithGhost)
-        {
-            hasCollidedWithGhost = true;
-
-            canMove = false;
-            canLookAround = false;
-
-            playerCamera.enabled = false;
-            ghostCamera.enabled = true;
-
-            LookAtGhost(collision.transform);
-            StartCoroutine(ShowLoseUIAfterDelay());
-        }
-    }
 
     private void LookAtGhost(Transform ghostTransform)
     {
@@ -380,7 +364,16 @@ public class FirstPersonController : MonoBehaviour
         if (hasCollidedWithGhost)
         {
             LoseScene loseScene = FindObjectOfType<LoseScene>();
-            loseScene.PlayerCollidedWithGhost();
+            LoseScene2 loseScene2 = FindObjectOfType<LoseScene2>();
+            if (loseScene != null)
+            {
+                loseScene.PlayerCollidedWithGhost();
+            }
+            else if (loseScene2 != null)
+            {
+                loseScene2.PlayerCollidedWithGhost();
+            }
+            
             // SceneManager.LoadScene("LoseScreen");
         }
     }
