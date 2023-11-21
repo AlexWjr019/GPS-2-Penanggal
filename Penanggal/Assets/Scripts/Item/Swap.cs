@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Swap : MonoBehaviour
@@ -20,6 +21,8 @@ public class Swap : MonoBehaviour
     public float moveSpeed = 3.0f;
     private Vector3 targetPosition;
     private bool puzzleCompleted = false;
+    public bool startSwap = false, objective = false;
+    private bool hasMouseUpExecuted = false;
 
     //public GameObject weddingSpawn;
     //public GameObject cursePaper;
@@ -32,14 +35,16 @@ public class Swap : MonoBehaviour
         originalPosition = transform.position;
     }
 
-    //private void Update()
-    //{
-    //    if (cursePaper != null && canTp)
-    //    {
-    //        player.transform.position = new Vector3(-9.67962f, -2.085497f, -1.609497f);
-    //        canTp = false;
-    //    }
-    //}
+    private void Update()
+    {
+        Debug.Log("objective : " + objective);
+        Debug.Log("start swap : "  + startSwap);
+
+    }
+    private void touchPuzzle()
+    {
+        ObjectiveManager2.objective = true;
+    }
 
     private void OnMouseDown()
     {
@@ -48,6 +53,13 @@ public class Swap : MonoBehaviour
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             isDragging = true;
+        }
+
+        if (startSwap == true && objective == false && hasMouseUpExecuted == false)
+        {
+            touchPuzzle();
+            hasMouseUpExecuted = true;
+            objective = true;
         }
     }
 
@@ -62,7 +74,11 @@ public class Swap : MonoBehaviour
                 transform.position = curPosition;
                 weddingPuzzle = true;
             }
+        }
 
+        if (!objective)
+        {
+            startSwap = true;
         }
     }
 
@@ -89,7 +105,6 @@ public class Swap : MonoBehaviour
             // Snap the object back to its original position
             StartCoroutine(SmoothlyMoveToPosition(this.gameObject, originalPosition));
         }
-        
     }
 
 
@@ -170,7 +185,7 @@ public class Swap : MonoBehaviour
         Debug.Log("bottle " + bottle.transform.position);
         Debug.Log("bowl " + bowl.transform.position);
         Debug.Log("flower " + flower.transform.position);
-        if (bottle.transform.position.z < bowl.transform.position.z && bowl.transform.position.z < flower.transform.position.z)
+        if (bottle.transform.position.x > bowl.transform.position.x && bowl.transform.position.x > flower.transform.position.x)
         {
             Debug.Log("Correct Order");
             puzzleCompleted = true;
@@ -185,7 +200,6 @@ public class Swap : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         cursePaper.SetActive(true);
+        ObjectiveManager2.objective = true;
     }
-
-
 }

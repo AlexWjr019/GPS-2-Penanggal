@@ -100,8 +100,8 @@ public class FlameObject : MonoBehaviour
                                     }
                                     if(clickedObject.name == "LastCursePaper")
                                     {
+                                        ObjectiveManager2.objective = true;
                                         spawn.Invoke("OnPenanggal", 3f);
-
                                         //SceneManager.LoadScene("WinScreen");
                                     }
                                     return; // Exit the loop
