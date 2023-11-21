@@ -202,6 +202,8 @@ public class Enemy : MonoBehaviour
             Debug.Log("Playing Attack Anim - Penanggal");
 
             agent.speed = 0;
+
+            StopChasing();
             FindObjectOfType<AudioManager>().PlaySFX("PenaggalDeath");
             StartAnim();
         }
