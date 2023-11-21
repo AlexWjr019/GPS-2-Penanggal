@@ -40,8 +40,8 @@ public class Pinboard : MonoBehaviour
                     else
                     {
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                        if (selectedSlot != null)
-                        {
+                        //if (selectedSlot != null)
+                        //{
                             if ((selectedSlot != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
                             {
                                 itemNotice.ShowPinboardNotice();
@@ -50,7 +50,7 @@ public class Pinboard : MonoBehaviour
                             {
                                 Debug.LogError("ItemNotice not found!");
                             }
-                        }
+                        //}
                     }
                 }
             }
