@@ -51,6 +51,7 @@ public class LockControl : MonoBehaviour
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3])
         {
             Debug.Log("Opened!");
+            cursepaper.SetActive(true);
             cursepaper.layer = itemsMask;
             FindObjectOfType<AudioManager>().PlaySFX("LockUnlock");
             safeOpen.Play("OpenSafe");
