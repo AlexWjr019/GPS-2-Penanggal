@@ -6677,6 +6677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c9292ee529001468fbd6a67bc6a31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
   Button: {fileID: 1852881219}
 --- !u!114 &222162706
 MonoBehaviour:
@@ -26636,7 +26637,7 @@ Transform:
   m_GameObject: {fileID: 1617786138}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1623456, y: -0.68821794, z: 0.16234565, w: 0.68821794}
-  m_LocalPosition: {x: 33.495, y: 60.011875, z: -3.2428937}
+  m_LocalPosition: {x: 33.619, y: 60.074, z: -3.2428937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
