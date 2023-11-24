@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class ObjectiveManager : MonoBehaviour
 
     public static bool objective;
     public Animation objectiveFade;
+
+    public GameObject objText;
+    private bool objTextActive = true;
 
     void Start()
     {
@@ -95,5 +99,19 @@ public class ObjectiveManager : MonoBehaviour
             objective = false;
         }
 
+    }
+
+    public void HideObjective()
+    {
+        if (objTextActive)
+        {
+            objText.SetActive(false);
+            objTextActive = false;
+        }
+        else if (!objTextActive)
+        {
+            objText.SetActive(true);
+            objTextActive = true;
+        }
     }
 }
