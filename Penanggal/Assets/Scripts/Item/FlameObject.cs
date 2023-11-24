@@ -186,46 +186,71 @@ public class FlameObject : MonoBehaviour
                 {
                     // Check if the clicked object matches the current curse paper
                     if (cursepapers[i] == clickedObject)
-                    {
-                        // Destroy the matching curse paper
-                        FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
-                        Destroy(cursepapers[i]);
-                        cursepapers.RemoveAt(i); // Remove it from the list
-                        cursePapernum--;
+                    {   
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                        if (itemNotice != null)
-                        {
-                            itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
-                        }
+
                         if (clickedObject.name == "TornCursePaper")
                         {
                             Pinboard.cursePaperburn = true;
                         }
                         if (clickedObject.name == "Curse Paper_1")
                         {
+                            // Destroy the matching curse paper
+                            FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
+                            Destroy(cursepapers[i]);
+                            cursepapers.RemoveAt(i); // Remove it from the list
                             toiletCursepaper = true;
                             number4.SetActive(false);
                             number3.SetActive(true);
+                            cursePapernum--;
+                            if (itemNotice != null)
+                            {
+                                itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
+                            }
 
                         }
                         if (clickedObject.name == "Curse Paper_2")
                         {
-                            toiletCursepaper = true;
-                            number3.SetActive(false);
-                            number2.SetActive(true);
-                            nurseryKey.SetActive(true);
-                            ObjectiveManager.objective = true;
-
+                            if(LockControl.safeIsOpen)
+                            {
+                                // Destroy the matching curse paper
+                                FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
+                                Destroy(cursepapers[i]);
+                                cursepapers.RemoveAt(i); // Remove it from the list
+                                toiletCursepaper = true;
+                                number3.SetActive(false);
+                                number2.SetActive(true);
+                                nurseryKey.SetActive(true);
+                                ObjectiveManager.objective = true;
+                                cursePapernum--;
+                                if (itemNotice != null)
+                                {
+                                    itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
+                                }
+                            }
                         }
                         if (clickedObject.name == "TornCursePaper")
                         {
+                            // Destroy the matching curse paper
+                            FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
+                            Destroy(cursepapers[i]);
+                            cursepapers.RemoveAt(i); // Remove it from the list
                             toiletCursepaper = true;
                             number3.SetActive(false);
                             number2.SetActive(true);
+                            cursePapernum--;
+                            if (itemNotice != null)
+                            {
+                                itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
+                            }
 
                         }
                         if (clickedObject.name == "LastCursePaper")
                         {
+                            // Destroy the matching curse paper
+                            FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
+                            Destroy(cursepapers[i]);
+                            cursepapers.RemoveAt(i); // Remove it from the list
                             ObjectiveManager2.objective = true;
                             scriptedEvent7.PlayScriptedEvent7();
                             //SceneManager.LoadScene("WinScreen");
