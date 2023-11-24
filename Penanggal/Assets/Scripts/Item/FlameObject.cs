@@ -31,6 +31,107 @@ public class FlameObject : MonoBehaviour
 
     private void Update()
     {
+        //if (Input.touchCount > 0)
+        //{
+        //    Touch touch = Input.GetTouch(0);
+
+        //    if (touch.phase == TouchPhase.Began)
+        //    {
+        //        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+        //        RaycastHit hit;
+
+        //        // Check if the ray hits any GameObject
+        //        if (Physics.Raycast(ray, out hit, raycastDistance))
+        //        {
+        //            InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
+        //            GameObject clickedObject2 = hit.collider.gameObject;
+        //            if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
+        //            {
+        //                Debug.Log("Item matches the required item: " + requiredItemName);
+        //                GameObject clickedObject = hit.collider.gameObject;
+        //                // Check if the clicked GameObject is the cursePaper
+        //                if (clickedObject.CompareTag("CursePaper"))
+        //                {
+        //                    // Iterate through the list of curse papers
+        //                    for (int i = 0; i < cursepapers.Count; i++)
+        //                    {
+        //                        // Check if the clicked object matches the current curse paper
+        //                        if (cursepapers[i] == clickedObject)
+        //                        {
+        //                            // Destroy the matching curse paper
+        //                            FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
+        //                            Destroy(cursepapers[i]);
+        //                            cursepapers.RemoveAt(i); // Remove it from the list
+        //                            cursePapernum--;
+        //                            ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+        //                            if (itemNotice != null)
+        //                            {
+        //                                itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
+        //                            }
+        //                            if (clickedObject.name == "TornCursePaper")
+        //                            {
+        //                                Pinboard.cursePaperburn = true;
+        //                            }
+        //                            if(clickedObject.name == "Curse Paper_1")
+        //                            {
+        //                                toiletCursepaper = true;
+        //                                number4.SetActive(false);
+        //                                number3.SetActive(true);
+
+        //                            }
+        //                            if (clickedObject.name == "Curse Paper_2")
+        //                            {
+        //                                toiletCursepaper = true;
+        //                                number3.SetActive(false);
+        //                                number2.SetActive(true);
+        //                                nurseryKey.SetActive(true);
+        //                                ObjectiveManager.objective = true;
+
+        //                            }
+        //                            if (clickedObject.name == "TornCursePaper")
+        //                            {
+        //                                toiletCursepaper = true;
+        //                                number3.SetActive(false);
+        //                                number2.SetActive(true);
+
+        //                            }
+        //                            if(clickedObject.name == "LastCursePaper")
+        //                            {
+        //                                ObjectiveManager2.objective = true;
+        //                                scriptedEvent7.PlayScriptedEvent7();
+        //                                //SceneManager.LoadScene("WinScreen");
+        //                            }
+        //                            return; // Exit the loop
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //            else
+        //            {
+        //                if ((clickedObject2.CompareTag("CursePaper") && selectedSlot == null) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
+        //                {
+        //                    // Player does not have the required item, show the notice
+        //                    ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+        //                    if (itemNotice != null)
+        //                    {
+        //                        itemNotice.ShowFlameNotice();
+        //                    }
+        //                }
+
+        //                if ((clickedObject2.CompareTag("Candle") && selectedSlot == null) || (clickedObject2.CompareTag("Candle") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("Candle") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
+        //                {
+        //                    // Player does not have the required item, show the notice
+        //                    ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+        //                    if (itemNotice != null)
+        //                    {
+        //                        itemNotice.ShowFlameNotice();
+        //                    }
+        //                }
+        //            }
+        //        }
+
+        //    }
+        //}
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -40,96 +141,21 @@ public class FlameObject : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
                 RaycastHit hit;
 
-                // Check if the ray hits any GameObject
                 if (Physics.Raycast(ray, out hit, raycastDistance))
                 {
-                    InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
-                    GameObject clickedObject2 = hit.collider.gameObject;
-                    if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
-                    {
-                        Debug.Log("Item matches the required item: " + requiredItemName);
-                        GameObject clickedObject = hit.collider.gameObject;
-                        // Check if the clicked GameObject is the cursePaper
-                        if (clickedObject.CompareTag("CursePaper"))
-                        {
-                            // Iterate through the list of curse papers
-                            for (int i = 0; i < cursepapers.Count; i++)
-                            {
-                                // Check if the clicked object matches the current curse paper
-                                if (cursepapers[i] == clickedObject)
-                                {
-                                    // Destroy the matching curse paper
-                                    FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
-                                    Destroy(cursepapers[i]);
-                                    cursepapers.RemoveAt(i); // Remove it from the list
-                                    cursePapernum--;
-                                    ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                                    if (itemNotice != null)
-                                    {
-                                        itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
-                                    }
-                                    if (clickedObject.name == "TornCursePaper")
-                                    {
-                                        Pinboard.cursePaperburn = true;
-                                    }
-                                    if(clickedObject.name == "Curse Paper_1")
-                                    {
-                                        toiletCursepaper = true;
-                                        number4.SetActive(false);
-                                        number3.SetActive(true);
-
-                                    }
-                                    if (clickedObject.name == "Curse Paper_2")
-                                    {
-                                        toiletCursepaper = true;
-                                        number3.SetActive(false);
-                                        number2.SetActive(true);
-                                        nurseryKey.SetActive(true);
-                                        ObjectiveManager.objective = true;
-
-                                    }
-                                    if (clickedObject.name == "TornCursePaper")
-                                    {
-                                        toiletCursepaper = true;
-                                        number3.SetActive(false);
-                                        number2.SetActive(true);
-
-                                    }
-                                    if(clickedObject.name == "LastCursePaper")
-                                    {
-                                        ObjectiveManager2.objective = true;
-                                        scriptedEvent7.PlayScriptedEvent7();
-                                        //SceneManager.LoadScene("WinScreen");
-                                    }
-                                    return; // Exit the loop
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if ((clickedObject2.CompareTag("CursePaper") && selectedSlot == null) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
-                        {
-                            // Player does not have the required item, show the notice
-                            ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                            if (itemNotice != null)
-                            {
-                                itemNotice.ShowFlameNotice();
-                            }
-                        }
-
-                        if ((clickedObject2.CompareTag("Candle") && selectedSlot == null) || (clickedObject2.CompareTag("Candle") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("Candle") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
-                        {
-                            // Player does not have the required item, show the notice
-                            ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                            if (itemNotice != null)
-                            {
-                                itemNotice.ShowFlameNotice();
-                            }
-                        }
-                    }
+                    HandleInteraction(hit);
                 }
+            }
+        }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, raycastDistance))
+            {
+                HandleInteraction(hit);
             }
         }
 
@@ -140,6 +166,95 @@ public class FlameObject : MonoBehaviour
             {
                 event6.PlayWindowShatter();
                 toiletCursepaper = false;
+            }
+        }
+    }
+
+    private void HandleInteraction(RaycastHit hit)
+    {
+        InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
+        GameObject clickedObject2 = hit.collider.gameObject;
+        if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
+        {
+            Debug.Log("Item matches the required item: " + requiredItemName);
+            GameObject clickedObject = hit.collider.gameObject;
+            // Check if the clicked GameObject is the cursePaper
+            if (clickedObject.CompareTag("CursePaper"))
+            {
+                // Iterate through the list of curse papers
+                for (int i = 0; i < cursepapers.Count; i++)
+                {
+                    // Check if the clicked object matches the current curse paper
+                    if (cursepapers[i] == clickedObject)
+                    {
+                        // Destroy the matching curse paper
+                        FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
+                        Destroy(cursepapers[i]);
+                        cursepapers.RemoveAt(i); // Remove it from the list
+                        cursePapernum--;
+                        ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                        if (itemNotice != null)
+                        {
+                            itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
+                        }
+                        if (clickedObject.name == "TornCursePaper")
+                        {
+                            Pinboard.cursePaperburn = true;
+                        }
+                        if (clickedObject.name == "Curse Paper_1")
+                        {
+                            toiletCursepaper = true;
+                            number4.SetActive(false);
+                            number3.SetActive(true);
+
+                        }
+                        if (clickedObject.name == "Curse Paper_2")
+                        {
+                            toiletCursepaper = true;
+                            number3.SetActive(false);
+                            number2.SetActive(true);
+                            nurseryKey.SetActive(true);
+                            ObjectiveManager.objective = true;
+
+                        }
+                        if (clickedObject.name == "TornCursePaper")
+                        {
+                            toiletCursepaper = true;
+                            number3.SetActive(false);
+                            number2.SetActive(true);
+
+                        }
+                        if (clickedObject.name == "LastCursePaper")
+                        {
+                            ObjectiveManager2.objective = true;
+                            scriptedEvent7.PlayScriptedEvent7();
+                            //SceneManager.LoadScene("WinScreen");
+                        }
+                        return; // Exit the loop
+                    }
+                }
+            }
+        }
+        else
+        {
+            if ((clickedObject2.CompareTag("CursePaper") && selectedSlot == null) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("CursePaper") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
+            {
+                // Player does not have the required item, show the notice
+                ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                if (itemNotice != null)
+                {
+                    itemNotice.ShowFlameNotice();
+                }
+            }
+
+            if ((clickedObject2.CompareTag("Candle") && selectedSlot == null) || (clickedObject2.CompareTag("Candle") && selectedSlot.IsEmpty()) || (clickedObject2.CompareTag("Candle") && selectedSlot.GetCurrentItem().itemName != "Lighter"))
+            {
+                // Player does not have the required item, show the notice
+                ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                if (itemNotice != null)
+                {
+                    itemNotice.ShowFlameNotice();
+                }
             }
         }
     }
