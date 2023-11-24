@@ -34,7 +34,7 @@ public class SpawnPenanggal : MonoBehaviour
         journeyLength = Vector3.Distance(startPos.position, endPos.position);
     }
 
-    /*private void Update()
+    private void Update()
     {
         if (destroyObjSpawn)
         {
@@ -54,9 +54,9 @@ public class SpawnPenanggal : MonoBehaviour
                 SpawnGhost();
             }
         }
-    }*/
+    }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
@@ -66,7 +66,7 @@ public class SpawnPenanggal : MonoBehaviour
                 isSpawned = true;
             }
         }
-    }
+    }*/
 
     public void SpawnGhost()
     {
