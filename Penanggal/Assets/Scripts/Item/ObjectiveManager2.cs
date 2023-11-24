@@ -19,6 +19,9 @@ public class ObjectiveManager2 : MonoBehaviour
     public static bool objective;
     public Animation objectiveFade;
 
+    public GameObject objText;
+    private bool objTextActive = true;
+
     void Start()
     {
         objective = false;
@@ -89,5 +92,19 @@ public class ObjectiveManager2 : MonoBehaviour
             objective = false;
         }
 
+    }
+
+    public void HideObjective()
+    {
+        if (objTextActive)
+        {
+            objText.SetActive(false);
+            objTextActive = false;
+        }
+        else if(!objTextActive)
+        {
+            objText.SetActive(true);
+            objTextActive = true;
+        }
     }
 }
