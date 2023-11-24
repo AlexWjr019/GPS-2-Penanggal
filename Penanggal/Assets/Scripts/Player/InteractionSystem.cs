@@ -22,66 +22,139 @@ public class InteractionSystem : MonoBehaviour
     {
         //x
     }
+    //private void Update()
+    //{
+    //    if (Input.touchCount > 0)
+    //    {
+    //    Touch touch = Input.GetTouch(0);
+    //    if (touch.phase == TouchPhase.Began)
+    //    {
+    //        touchStartPosition = touch.position;
+    //        touchStartTime = Time.time;
+    //    }
+    //    else if (touch.phase == TouchPhase.Ended && IsTouchAClick(touch.position, touchStartTime))
+    //    {
+    //        Debug.Log("Touch ended - processing raycast.");
+
+    //        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+    //        RaycastHit hit;
+
+    //        // Check for interactable objects first
+    //        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+    //        {
+    //            GameObject hitObject = hit.collider.gameObject;
+    //            Debug.Log("Raycast on interactable layer hit: " + hitObject.name);
+
+    //            if (hitObject != currentInteractable)
+    //            {
+    //                Debug.Log("New interactable object detected.");
+    //                currentInteractable = hitObject;
+    //                InteractWithCurrentObject();
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("Same interactable object detected - possible second click.");
+    //            }
+    //        }
+    //        else
+    //        {
+    //            if (currentInteractable != null)
+    //            {
+    //                Debug.Log("Current interactable is no longer hit, it was: " + currentInteractable.name);
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("No previous interactable to clear.");
+    //            }
+    //            currentInteractable = null; // Clear current interactable as nothing was hit on the interactable layer
+    //        }
+
+    //        // Now check for any other hits that should be processed regardless of the layer
+    //        if (Physics.Raycast(ray, out hit, raycastDistance))
+    //        {
+    //            Debug.Log("Raycast on any layer hit: " + hit.collider.gameObject.name);
+    //            ProcessHit(hit); // This function needs to handle hits on non-interactable objects
+    //        }
+    //    }
+    //        if (Input.GetMouseButtonDown(0))
+    //        {
+    //            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //            RaycastHit hit;
+
+    //            if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+    //            {
+    //                ProcessHit(hit);
+    //            }
+    //        }
+    //        DetectBabyPenanggal();
+    //}
+
+    //}
     private void Update()
     {
         if (Input.touchCount > 0)
         {
-        Touch touch = Input.GetTouch(0);
-        if (touch.phase == TouchPhase.Began)
-        {
-            touchStartPosition = touch.position;
-            touchStartTime = Time.time;
-        }
-        else if (touch.phase == TouchPhase.Ended && IsTouchAClick(touch.position, touchStartTime))
-        {
-            Debug.Log("Touch ended - processing raycast.");
-
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);
-            RaycastHit hit;
-
-            // Check for interactable objects first
-            if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
-                GameObject hitObject = hit.collider.gameObject;
-                Debug.Log("Raycast on interactable layer hit: " + hitObject.name);
+                touchStartPosition = touch.position;
+                touchStartTime = Time.time;
+            }
+            else if (touch.phase == TouchPhase.Ended && IsTouchAClick(touch.position, touchStartTime))
+            {
+                ProcessInteraction(touch.position);
+            }
+        }
 
-                if (hitObject != currentInteractable)
-                {
-                    Debug.Log("New interactable object detected.");
-                    currentInteractable = hitObject;
-                    InteractWithCurrentObject();
-                }
-                else
-                {
-                    Debug.Log("Same interactable object detected - possible second click.");
-                }
+        if (Input.GetMouseButtonDown(0))
+        {
+            ProcessInteraction(Input.mousePosition);
+        }
+
+        DetectBabyPenanggal();
+    }
+
+    private void ProcessInteraction(Vector2 position)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(position);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
+        {
+            GameObject hitObject = hit.collider.gameObject;
+            if (hitObject != currentInteractable)
+            {
+                Debug.Log("New interactable object detected.");
+                currentInteractable = hitObject;
+                InteractWithCurrentObject();
             }
             else
             {
-                if (currentInteractable != null)
-                {
-                    Debug.Log("Current interactable is no longer hit, it was: " + currentInteractable.name);
-                }
-                else
-                {
-                    Debug.Log("No previous interactable to clear.");
-                }
-                currentInteractable = null; // Clear current interactable as nothing was hit on the interactable layer
-            }
-
-            // Now check for any other hits that should be processed regardless of the layer
-            if (Physics.Raycast(ray, out hit, raycastDistance))
-            {
-                Debug.Log("Raycast on any layer hit: " + hit.collider.gameObject.name);
-                ProcessHit(hit); // This function needs to handle hits on non-interactable objects
+                Debug.Log("Same interactable object detected - possible second click.");
             }
         }
-       DetectBabyPenanggal();
+        else
+        {
+            if (currentInteractable != null)
+            {
+                Debug.Log("Current interactable is no longer hit, it was: " + currentInteractable.name);
+                currentInteractable = null;
+            }
+            else
+            {
+                Debug.Log("No previous interactable to clear.");
+            }
+        }
+
+        if (Physics.Raycast(ray, out hit, raycastDistance))
+        {
+            Debug.Log("Raycast on any layer hit: " + hit.collider.gameObject.name);
+            ProcessHit(hit);
+        }
     }
 
-    }
 
-        private bool IsTouchAClick(Vector2 touchEndPosition, float startTime)
+    private bool IsTouchAClick(Vector2 touchEndPosition, float startTime)
     {
         float touchDuration = Time.time - startTime;
         return Vector2.Distance(touchEndPosition, touchStartPosition) < 30f && touchDuration <= clickDurationThreshold;

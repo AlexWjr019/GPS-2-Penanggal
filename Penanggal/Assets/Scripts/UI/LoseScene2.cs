@@ -34,6 +34,8 @@ public class LoseScene2 : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
         Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 
@@ -49,6 +51,8 @@ public class LoseScene2 : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         loseUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }

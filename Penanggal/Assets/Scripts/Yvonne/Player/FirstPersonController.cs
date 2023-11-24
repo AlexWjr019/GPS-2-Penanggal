@@ -306,7 +306,8 @@ public class FirstPersonController : MonoBehaviour
         if (!isMobile)
         {
             float mouseX = Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * verticalCameraSensitivity * Time.deltaTime;
+            float increasedVerticalSensitivity = verticalCameraSensitivity * 4;
+            float mouseY = Input.GetAxis("Mouse Y") * increasedVerticalSensitivity * Time.deltaTime;
 
             cameraPitch -= mouseY;
             cameraPitch = Mathf.Clamp(cameraPitch, minClamp, maxClamp);
@@ -315,6 +316,7 @@ public class FirstPersonController : MonoBehaviour
             transform.Rotate(Vector3.up * mouseX);
         }
     }
+
     void Gravity()
     {
         // calculate yRotation (vertical) movement

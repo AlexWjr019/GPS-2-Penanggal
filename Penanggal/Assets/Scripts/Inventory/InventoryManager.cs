@@ -39,6 +39,22 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
+        //foreach (InventorySlot slot in inventorySlots)
+        //{
+        //    if (slot != selectedSlot && slot.isSelected)
+        //    {
+        //        slot.Deselected();
+        //    }
+        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1) && inventorySlots.Length > 0)
+        {
+            UpdateSelectedSlot(inventorySlots[0]);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && inventorySlots.Length > 1)
+        {
+            UpdateSelectedSlot(inventorySlots[1]);
+        }
+
         foreach (InventorySlot slot in inventorySlots)
         {
             if (slot != selectedSlot && slot.isSelected)

@@ -60,6 +60,8 @@ public class LoseScene : MonoBehaviour
                 Debug.LogError("Ghost Missing");
             }
         }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 
@@ -75,6 +77,8 @@ public class LoseScene : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         loseUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }
