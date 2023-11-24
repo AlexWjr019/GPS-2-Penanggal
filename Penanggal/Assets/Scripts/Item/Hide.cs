@@ -34,7 +34,7 @@ public class Hide : MonoBehaviour
 
     private void Update()
     {
-        if (!isTransitioning && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) && FirstPersonController.canHide) // Check for touch or left mouse button click
+        if (!isTransitioning && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) && FirstPersonController.canHide)
         {
             Vector2 inputPosition;
 
@@ -42,11 +42,12 @@ public class Hide : MonoBehaviour
             {
                 Touch touch = Input.GetTouch(0);
                 inputPosition = touch.position;
+                Debug.Log("Touch detected at position: " + inputPosition);
             }
             else
             {
                 inputPosition = Input.mousePosition;
-                Debug.Log(Input.mousePosition);
+                Debug.Log("Mouse button down detected at position: " + inputPosition);
             }
 
             if (isHide == false)

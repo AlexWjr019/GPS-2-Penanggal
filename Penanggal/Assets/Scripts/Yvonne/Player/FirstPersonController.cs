@@ -154,6 +154,15 @@ public class FirstPersonController : MonoBehaviour
     }
     void GetTouchInput()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            canHide = true;
+        }
+        else
+        {
+            canHide = false;
+        }
+
         for (int touches = 0; touches < Input.touchCount; touches++)
         {
             Touch t = Input.GetTouch(touches);
