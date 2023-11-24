@@ -34,7 +34,7 @@ public class SpawnPenanggal : MonoBehaviour
         journeyLength = Vector3.Distance(startPos.position, endPos.position);
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (destroyObjSpawn)
         {
@@ -52,6 +52,18 @@ public class SpawnPenanggal : MonoBehaviour
             if (!isSpawned)
             {
                 SpawnGhost();
+            }
+        }
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            if(cursePaper == null)
+            {
+                OnPenanggal();
+                isSpawned = true;
             }
         }
     }
