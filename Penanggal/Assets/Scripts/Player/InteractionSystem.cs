@@ -105,8 +105,7 @@ public class InteractionSystem : MonoBehaviour
                 ProcessInteraction(touch.position);
             }
         }
-
-        if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0))
         {
             ProcessInteraction(Input.mousePosition);
         }

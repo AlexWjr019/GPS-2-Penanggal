@@ -12,7 +12,6 @@ public class Hide : MonoBehaviour
     private float raycastDistance = 3f;
     private int playerMask, playerMask2;
     public GameObject player;
-    public Vector2 inputPosition = Vector2.zero;
 
     public Animation cupBoardDoorAnima, cupboardDoorAnima2, hideInLivingCupboard, moveOutLivingCupboard, 
         hideInHallwayCupboard, moveOutHallwayCupboard, hallwayDoorAnima, hallwayDoorAnima2, 
@@ -35,323 +34,156 @@ public class Hide : MonoBehaviour
 
     private void Update()
     {
-        if (!isTransitioning && Input.GetMouseButtonDown(0) && FirstPersonController.canHide && !isHide)
+        if (!isTransitioning && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) && FirstPersonController.canHide) // Check for touch or left mouse button click
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            Vector2 inputPosition;
 
-            if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
+            if (Input.touchCount > 0)
             {
-                HandleInteraction(hit);
+                Touch touch = Input.GetTouch(0);
+                inputPosition = touch.position;
             }
-        }
-
-        if (!isTransitioning && Input.touchCount > 0 && FirstPersonController.canHide && !isHide)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            else
             {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
+                inputPosition = Input.mousePosition;
+                Debug.Log(Input.mousePosition);
+            }
 
+            if (isHide == false)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(inputPosition);
+                RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
                 {
-                    HandleInteraction(hit);
-                }
-            }
-        }
-        //if (!isTransitioning && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)) && FirstPersonController.canHide) // Check for touch or left mouse button click
-        //{
-        //    Vector2 inputPosition;
+                    currentInteractable = hit.collider.gameObject;
 
-        //    if (Input.touchCount > 0)
-        //    {
-        //        Touch touch = Input.GetTouch(0);
-        //        inputPosition = touch.position;
-        //    }
-        //    else
-        //    {
-        //        inputPosition = Input.mousePosition;
-        //    }
-
-        //    if (isHide == false)
-        //    {
-        //        Ray ray = Camera.main.ScreenPointToRay(inputPosition);
-        //        RaycastHit hit;
-        //        if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
-        //        {
-        //            currentInteractable = hit.collider.gameObject;
-
-        //            if (currentInteractable.CompareTag("Hide") && hit.collider.gameObject.name != "InnerWalls")
-        //            {
-        //                // Disable Player Camera
-        //                //player.SetActive(false);
+                    if (currentInteractable.CompareTag("Hide") && hit.collider.gameObject.name != "InnerWalls")
+                    {
+                        // Disable Player Camera
+                        //player.SetActive(false);
                         
-        //                isTransitioning = true;
+                        isTransitioning = true;
 
-        //                //Tutorial tutorial = FindObjectOfType<Tutorial>();
-        //                //tutorial.hideCupboardText.gameObject.SetActive(false);
-        //                //Destroy(pointToCupBoard);
+                        //Tutorial tutorial = FindObjectOfType<Tutorial>();
+                        //tutorial.hideCupboardText.gameObject.SetActive(false);
+                        //Destroy(pointToCupBoard);
 
-        //                if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || currentInteractable.gameObject.name == "Bedroom_Cupboard" || currentInteractable.gameObject.name == "Kitchen_Cupboard" || currentInteractable.gameObject.name == "Livingroom_Cupboard2")
-        //                {
-        //                    if(currentInteractable.gameObject.name == "Livingroom_Cupboard")
-        //                    {
-        //                        livingCupboard = true;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "Hallway_Cupboard")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = true;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "Bedroom_Cupboard")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = true;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "Kitchen_Cupboard")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = true;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "Livingroom_Cupboard2")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = true;
-        //                    }
-        //                    isHide = true;
-        //                    player.layer = playerMask;
-        //                }
-        //                StartCoroutine(PlayHideInCupboardThenCloseDoors());
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Ray ray = Camera.main.ScreenPointToRay(inputPosition);
-        //        RaycastHit hit;
-        //        if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
-        //        {
-        //            currentInteractable = hit.collider.gameObject;
-
-        //            if (currentInteractable.CompareTag("Hide"))
-        //            {
-
-        //                isHide = false;
-        //                isTransitioning = true;
-        //                player.layer = playerMask2;
-
-        //                if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2" || currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2" || currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2" || currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2" || currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
-        //                {
-        //                    if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2")
-        //                    {
-        //                        livingCupboard = true;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = true;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = true;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = true;
-        //                        livingCupboard2 = false;
-        //                    }
-        //                    else if (currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
-        //                    {
-        //                        livingCupboard = false;
-        //                        hallwayCupboard = false;
-        //                        bedroomCupboard = false;
-        //                        kitchenCupboard = false;
-        //                        livingCupboard2 = true;
-        //                    }
-        //                    StartCoroutine(PlayMoveOutCupboard());
-        //                }
-
-        //            }
-        //        }
-        //    }
-        //}
-    }
-
-    private void HandleInteraction(RaycastHit hit)
-    {
-        currentInteractable = hit.collider.gameObject;
-
-        if (currentInteractable.CompareTag("Hide") && hit.collider.gameObject.name != "InnerWalls")
-        {
-            ExecuteHideLogic();
-        }
-    }
-
-    private void ExecuteHideLogic()
-    {
-        if (isHide == false)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(inputPosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
-            {
-                currentInteractable = hit.collider.gameObject;
-
-                if (currentInteractable.CompareTag("Hide") && hit.collider.gameObject.name != "InnerWalls")
-                {
-                    // Disable Player Camera
-                    //player.SetActive(false);
-
-                    isTransitioning = true;
-
-                    //Tutorial tutorial = FindObjectOfType<Tutorial>();
-                    //tutorial.hideCupboardText.gameObject.SetActive(false);
-                    //Destroy(pointToCupBoard);
-
-                    if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || currentInteractable.gameObject.name == "Bedroom_Cupboard" || currentInteractable.gameObject.name == "Kitchen_Cupboard" || currentInteractable.gameObject.name == "Livingroom_Cupboard2")
-                    {
-                        if (currentInteractable.gameObject.name == "Livingroom_Cupboard")
+                        if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || currentInteractable.gameObject.name == "Bedroom_Cupboard" || currentInteractable.gameObject.name == "Kitchen_Cupboard" || currentInteractable.gameObject.name == "Livingroom_Cupboard2")
                         {
-                            livingCupboard = true;
-                            hallwayCupboard = false;
-                            bedroomCupboard = false;
-                            kitchenCupboard = false;
-                            livingCupboard2 = false;
+                            if(currentInteractable.gameObject.name == "Livingroom_Cupboard")
+                            {
+                                livingCupboard = true;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "Hallway_Cupboard")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = true;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "Bedroom_Cupboard")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = true;
+                                kitchenCupboard = false;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "Kitchen_Cupboard")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = true;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "Livingroom_Cupboard2")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = true;
+                            }
+                            isHide = true;
+                            player.layer = playerMask;
                         }
-                        else if (currentInteractable.gameObject.name == "Hallway_Cupboard")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = true;
-                            bedroomCupboard = false;
-                            kitchenCupboard = false;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "Bedroom_Cupboard")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = false;
-                            bedroomCupboard = true;
-                            kitchenCupboard = false;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "Kitchen_Cupboard")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = false;
-                            bedroomCupboard = false;
-                            kitchenCupboard = true;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "Livingroom_Cupboard2")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = false;
-                            bedroomCupboard = false;
-                            kitchenCupboard = false;
-                            livingCupboard2 = true;
-                        }
-                        isHide = true;
-                        player.layer = playerMask;
+                        StartCoroutine(PlayHideInCupboardThenCloseDoors());
                     }
-                    StartCoroutine(PlayHideInCupboardThenCloseDoors());
                 }
             }
-        }
-        else
-        {
-            Ray ray = Camera.main.ScreenPointToRay(inputPosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
+            else
             {
-                currentInteractable = hit.collider.gameObject;
-
-                if (currentInteractable.CompareTag("Hide"))
+                Ray ray = Camera.main.ScreenPointToRay(inputPosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, raycastDistance, interacLayer))
                 {
+                    currentInteractable = hit.collider.gameObject;
 
-                    isHide = false;
-                    isTransitioning = true;
-                    player.layer = playerMask2;
-
-                    if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2" || currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2" || currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2" || currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2" || currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
+                    if (currentInteractable.CompareTag("Hide"))
                     {
-                        if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2")
-                        {
-                            livingCupboard = true;
-                            hallwayCupboard = false;
-                            bedroomCupboard = false;
-                            kitchenCupboard = false;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = true;
-                            bedroomCupboard = false;
-                            kitchenCupboard = false;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = false;
-                            bedroomCupboard = true;
-                            kitchenCupboard = false;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = false;
-                            bedroomCupboard = false;
-                            kitchenCupboard = true;
-                            livingCupboard2 = false;
-                        }
-                        else if (currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
-                        {
-                            livingCupboard = false;
-                            hallwayCupboard = false;
-                            bedroomCupboard = false;
-                            kitchenCupboard = false;
-                            livingCupboard2 = true;
-                        }
-                        StartCoroutine(PlayMoveOutCupboard());
-                    }
 
+                        isHide = false;
+                        isTransitioning = true;
+                        player.layer = playerMask2;
+
+                        if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2" || currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2" || currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2" || currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2" || currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
+                        {
+                            if (currentInteractable.gameObject.name == "LivingDoor1" || currentInteractable.gameObject.name == "LivingDoor2")
+                            {
+                                livingCupboard = true;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "HallwayDoor1" || currentInteractable.gameObject.name == "HallwayDoor2")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = true;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "BedroomDoor1" || currentInteractable.gameObject.name == "BedroomDoor2")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = true;
+                                kitchenCupboard = false;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "KitchenDoor1" || currentInteractable.gameObject.name == "KitchenDoor2")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = true;
+                                livingCupboard2 = false;
+                            }
+                            else if (currentInteractable.gameObject.name == "LivingDoor3" || currentInteractable.gameObject.name == "LivingDoor4")
+                            {
+                                livingCupboard = false;
+                                hallwayCupboard = false;
+                                bedroomCupboard = false;
+                                kitchenCupboard = false;
+                                livingCupboard2 = true;
+                            }
+                            StartCoroutine(PlayMoveOutCupboard());
+                        }
+
+                    }
                 }
             }
         }
     }
+
+
     IEnumerator PlayHideInCupboardThenCloseDoors()
     {
         if (isHide)
