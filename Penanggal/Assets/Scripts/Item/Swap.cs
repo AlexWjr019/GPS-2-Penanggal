@@ -24,12 +24,15 @@ public class Swap : MonoBehaviour
     public bool startSwap = true;
     public bool objective = false;
 
+    private bool isBottle = false;
+    private bool isBowl = false;
+    private bool isFlower = false;
+
     //public GameObject weddingSpawn;
     //public GameObject cursePaper;
     //public GameObject player;
     private bool objectiveActive = true;
     private bool puzzleStart = false;
-    public Camera alterCamera;
 
     public GameObject cursePaper;
     public Animator curtainAnimator;
@@ -43,11 +46,10 @@ public class Swap : MonoBehaviour
     {
         if (!puzzleCompleted && gameObject.CompareTag("Swap"))
         {
-            screenPoint = alterCamera.WorldToScreenPoint(gameObject.transform.position);
-            offset = gameObject.transform.position - alterCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             isDragging = true;
         }
-
     }
 
     private void OnMouseDrag()
@@ -57,7 +59,7 @@ public class Swap : MonoBehaviour
             if (gameObject.CompareTag("Swap"))
             {
                 Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-                Vector3 curPosition = alterCamera.ScreenToWorldPoint(curScreenPoint) + offset;
+                Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
                 transform.position = curPosition;
                 weddingPuzzle = true;
             }
@@ -167,15 +169,22 @@ public class Swap : MonoBehaviour
         Debug.Log("bottle " + bottle.transform.position);
         Debug.Log("bowl " + bowl.transform.position);
         Debug.Log("flower " + flower.transform.position);
-        if (bottle.transform.position.x > bowl.transform.position.x && bowl.transform.position.x > flower.transform.position.x)
+        float tolerance = 0.01f;
+
+        if (bottle.transform.position.x > bowl.transform.position.x && bowl.transform.position.x > flower.transform.position.x
+            /*&& bottle.transform.position.z < bowl.transform.position.z && bowl.transform.position.z > flower.transform.position.z*/)
         {
-            Debug.Log("Correct Order");
-            puzzleCompleted = true;
-            bowl.tag = "Unmovable";
-            bottle.tag = "Unmovable";
-            flower.tag = "Unmovable";
-            curtainAnimator.SetBool("OpenCurtain", true);
-            StartCoroutine(SpawnCursepaper());
+            if (Mathf.Abs(bottle.transform.position.y - bowl.transform.position.y) < tolerance)
+            {
+                Debug.Log("Correct Order");
+                puzzleCompleted = true;
+                bowl.tag = "Unmovable";
+                bottle.tag = "Unmovable";
+                flower.tag = "Unmovable";
+                curtainAnimator.SetBool("OpenCurtain", true);
+                StartCoroutine(SpawnCursepaper());
+            }
+
         }
     }
 

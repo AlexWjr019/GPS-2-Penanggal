@@ -200,27 +200,24 @@ public class FirstPersonController : MonoBehaviour
                     break;
 
                 case TouchPhase.Moved:
-                    if (!Swap.weddingPuzzle)
+                    if (t.fingerId == rightFingerId)
                     {
-                        if (t.fingerId == rightFingerId)
-                        {
-                            lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
-                            canHide = false;
-                        }
-                        if (t.fingerId == leftFingerId)
-                        {
-                            moveInput = t.position - moveTouchStartPosition;
+                        lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
+                        canHide = false;
+                    }
+                    if (t.fingerId == leftFingerId)
+                    {
+                        moveInput = t.position - moveTouchStartPosition;
 
-                            if (moveInput.magnitude > 100f && !isRecoveringStamina)
-                            {
-                                moveSpeed = sprintSpeed;
-                            }
-                            else
-                            {
-                                moveSpeed = initialMoveSpeed;
-                            }
-                            canHide = false;
+                        if (moveInput.magnitude > 100f && !isRecoveringStamina)
+                        {
+                            moveSpeed = sprintSpeed;
                         }
+                        else
+                        {
+                            moveSpeed = initialMoveSpeed;
+                        }
+                        canHide = false;
                     }
                     break;
 

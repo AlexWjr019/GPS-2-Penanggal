@@ -69,6 +69,5 @@ public class PuzzleActive : MonoBehaviour
         playerCamera.SetActive(true);
         button.SetActive(false);
         alterPuzzleActivated = false;
-        //interacionItem.enabled = false;
     }
 }
