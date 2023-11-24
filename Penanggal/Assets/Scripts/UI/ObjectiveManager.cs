@@ -43,11 +43,6 @@ public class ObjectiveManager : MonoBehaviour
         objectives[8].description = "Hang up the drawing";
         objectives[9].description = "Burn the cursed paper";
         objectives[10].description = "Investigate the mysterious area";
-        objectives[11].description = "Investigate the items";
-        objectives[12].description = "Rearrange the item in order";
-        objectives[13].description = "Burn the curse paper";
-        objectives[14].description = "leave the wedding alter area";
-        objectives[15].description = "Leave the house";
 
         // Set the first objective as active
         objectives[currentObjectiveIndex].isCompleted = false;

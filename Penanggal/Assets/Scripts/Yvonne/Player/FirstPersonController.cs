@@ -249,7 +249,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
         {
-            if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
+            if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {
                 // vertical (pitch) rotation
                 cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y * verticalCameraSensitivity, minClamp, maxClamp);
@@ -266,7 +266,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
         {
-            if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle)
+            if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {
                 // don't move if the touch delta is shorter than the designated dead zone
                 if (moveInput.sqrMagnitude <= moveInputDeadZone)

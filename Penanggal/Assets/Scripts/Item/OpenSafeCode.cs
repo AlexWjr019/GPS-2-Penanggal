@@ -9,6 +9,7 @@ public class OpenSafeCode : MonoBehaviour
     //public GameObject ObjectCamera;
     public static bool openSafe;
     public GameObject playerHead;
+    private bool objectiveActive = true;
 
     //For Mouse Testing
     private void OnMouseDown()
@@ -22,7 +23,12 @@ public class OpenSafeCode : MonoBehaviour
             safeCodeWheel.SetActive(true);
             playerHead.SetActive(false);
             openSafe = true;
-            ObjectiveManager.objective = true;
+            if(objectiveActive)
+            {
+                ObjectiveManager.objective = true;
+                objectiveActive = false;
+            }
+            
             //ObjectCamera.SetActive(true);
         }
         //if (safeCodeScript == null)

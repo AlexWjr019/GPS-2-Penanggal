@@ -14,6 +14,7 @@ public class TornPuzzleControl : MonoBehaviour
     public GameObject wholePic;
     private int itemsMask;
     private bool puzzleCompleted;
+    private bool objectiveActive = true;
 
     private void Awake()
     {
@@ -66,7 +67,12 @@ public class TornPuzzleControl : MonoBehaviour
                         isTornPuzzle = true;
                         playerCamera.SetActive(false);
                         tornPuzzleActivated = true;
-                        ObjectiveManager.objective = true;
+                        if(objectiveActive)
+                        {
+                            ObjectiveManager.objective = true;
+                            objectiveActive = false;
+                        }
+                        
                     }
                 }
             }

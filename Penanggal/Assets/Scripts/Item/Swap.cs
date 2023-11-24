@@ -21,12 +21,15 @@ public class Swap : MonoBehaviour
     public float moveSpeed = 3.0f;
     private Vector3 targetPosition;
     private bool puzzleCompleted = false;
-    public bool startSwap = false, objective = false;
-    private bool hasMouseUpExecuted = false;
+    public bool startSwap = true;
+    public bool objective = false;
 
     //public GameObject weddingSpawn;
     //public GameObject cursePaper;
     //public GameObject player;
+    private bool objectiveActive = true;
+    private bool puzzleStart = false;
+    public Camera alterCamera;
 
     public GameObject cursePaper;
     public Animator curtainAnimator;
@@ -36,32 +39,15 @@ public class Swap : MonoBehaviour
         originalPosition = transform.position;
     }
 
-    private void Update()
-    {
-        Debug.Log("objective : " + objective);
-        Debug.Log("start swap : "  + startSwap);
-
-    }
-    private void touchPuzzle()
-    {
-        ObjectiveManager2.objective = true;
-    }
-
     private void OnMouseDown()
     {
         if (!puzzleCompleted && gameObject.CompareTag("Swap"))
         {
-            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+            screenPoint = alterCamera.WorldToScreenPoint(gameObject.transform.position);
+            offset = gameObject.transform.position - alterCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             isDragging = true;
         }
 
-        if (startSwap == true && objective == false && hasMouseUpExecuted == false)
-        {
-            touchPuzzle();
-            hasMouseUpExecuted = true;
-            objective = true;
-        }
     }
 
     private void OnMouseDrag()
@@ -71,15 +57,10 @@ public class Swap : MonoBehaviour
             if (gameObject.CompareTag("Swap"))
             {
                 Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-                Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+                Vector3 curPosition = alterCamera.ScreenToWorldPoint(curScreenPoint) + offset;
                 transform.position = curPosition;
                 weddingPuzzle = true;
             }
-        }
-
-        if (!objective)
-        {
-            startSwap = true;
         }
     }
 
