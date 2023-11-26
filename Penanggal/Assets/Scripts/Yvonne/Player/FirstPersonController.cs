@@ -122,10 +122,16 @@ public class FirstPersonController : MonoBehaviour
         {
             HandleSprintTimer();
 
-            //GetKeyboardInput();
-            CameraMovement();
+            if (!keyboard)
+            {
+                GetTouchInput();
+            }
+            else
+            {
+                GetKeyboardInput();
+            }
 
-            GetTouchInput();
+            CameraMovement();
 
             Gravity();
         }
@@ -142,7 +148,7 @@ public class FirstPersonController : MonoBehaviour
 
         if (moveInput.x != 0.0f && leftFingerId != -1)
         {
-            if (Time.timeSinceLevelLoad - lastPlayedFootstepSoundTime > timeBetweenFootsteps)
+            if (Time.timeSinceLevelLoad - lastPlayedFootstepSoundTime > timeBetweenFootsteps && Hide.isHide == false)
             {
                 FindObjectOfType<AudioManager>().PlaySFX("Footsteps");
                 lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
@@ -357,6 +363,7 @@ public class FirstPersonController : MonoBehaviour
             canLookAround = false;
             Debug.Log("entered");
             playerCamera.enabled = false;
+            //ghostCamera.enabled = true;
             Debug.Log("player cam off");
             LookAtGhost(hit.transform);
             StartCoroutine(ShowLoseUIAfterDelay());
@@ -422,11 +429,13 @@ public class FirstPersonController : MonoBehaviour
 
     public void ResetPlayerState()
     {
+        Enemy enemy = FindObjectOfType<Enemy>();
         hasCollidedWithGhost = false;
         playerAnimator.SetBool("Dead", false);
-        enemy.playerDied = false;
+        //enemy.playerDied = false;
         canMove = true;
         canLookAround = true;
+        enemy.playerDied = false;
 
         if (playerCamera != null)
         {
