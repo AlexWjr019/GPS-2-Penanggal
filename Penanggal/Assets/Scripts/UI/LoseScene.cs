@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,7 +7,6 @@ public class LoseScene : MonoBehaviour
     public Button Restart;
     public Button mainMenu;
     public GameObject loseUI;
-
     public Penanggal penanggal;
 
     private void Awake()
@@ -75,8 +72,8 @@ public class LoseScene : MonoBehaviour
 
     public void PlayerCollidedWithGhost()
     {
-        Time.timeScale = 0.0f;
-        loseUI.SetActive(true);
+        //Time.timeScale = 0.0f;
+        //loseUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

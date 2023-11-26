@@ -83,7 +83,10 @@ public class FirstPersonController : MonoBehaviour
     public Camera ghostCamera;
     private bool canMove = true;
     private bool canLookAround = true;
+    //[HideInInspector] public bool playerIsDead = false;
 
+    public Animator playerAnimator;
+    public Enemy enemy;
 
     private void Awake()
     {
@@ -119,7 +122,7 @@ public class FirstPersonController : MonoBehaviour
         {
             HandleSprintTimer();
 
-            GetKeyboardInput();
+            //GetKeyboardInput();
             CameraMovement();
 
             GetTouchInput();
@@ -146,7 +149,7 @@ public class FirstPersonController : MonoBehaviour
             }
             canHide = false;
         }
-        //Debug.Log(moveInput.sqrMagnitude);
+        //Debug.Log(hasCollidedWithGhost);
     }
     void FixedUpdate()
     {
@@ -224,6 +227,7 @@ public class FirstPersonController : MonoBehaviour
                         }
                         else
                         {
+                            Debug.Log("walk");
                             moveSpeed = initialMoveSpeed;
                         }
                         canHide = false;
@@ -288,6 +292,7 @@ public class FirstPersonController : MonoBehaviour
             }
         }
     }
+
     void GetKeyboardInput()
     {
         float x = Input.GetAxis("Horizontal");
@@ -305,7 +310,6 @@ public class FirstPersonController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * moveSpeed * Time.deltaTime);
     }
-
 
     void CameraMovement()
     {
@@ -341,18 +345,19 @@ public class FirstPersonController : MonoBehaviour
 
     }
 
+    //code doesnt run unless player runs into the ai
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+
         if ((hit.gameObject.CompareTag("Ghost") || hit.gameObject.CompareTag("BabyPenanggal")) && !hasCollidedWithGhost)
         {
             hasCollidedWithGhost = true;
 
             canMove = false;
             canLookAround = false;
-
+            Debug.Log("entered");
             playerCamera.enabled = false;
-            ghostCamera.enabled = true;
-
+            Debug.Log("player cam off");
             LookAtGhost(hit.transform);
             StartCoroutine(ShowLoseUIAfterDelay());
         }
@@ -396,7 +401,7 @@ public class FirstPersonController : MonoBehaviour
                 moveSpeed = initialMoveSpeed;
                 isRecoveringStamina = true;
             }
-            //FindObjectOfType<AudioManager>().PlaySFX("HeartBeat");
+
         }
         if (isRecoveringStamina || moveSpeed == initialMoveSpeed)
         {
@@ -418,7 +423,8 @@ public class FirstPersonController : MonoBehaviour
     public void ResetPlayerState()
     {
         hasCollidedWithGhost = false;
-
+        playerAnimator.SetBool("Dead", false);
+        enemy.playerDied = false;
         canMove = true;
         canLookAround = true;
 

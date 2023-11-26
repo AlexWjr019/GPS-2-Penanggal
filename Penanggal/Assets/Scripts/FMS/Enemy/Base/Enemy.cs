@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -26,6 +27,10 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     [HideInInspector]
     public ParticleSystem blood;
+
+    public Camera aiCam;
+    public Camera playerCam;
+    [HideInInspector] public bool playerDied = false;
 
     #region State Machine Variables
 
@@ -90,6 +95,8 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         StateMachine.CurrentEnemyState.FrameUpdate();
+
+        Debug.Log(playerDied);
     }
 
     private void FixedUpdate()
@@ -185,14 +192,12 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Playing Attack Anim - Penanggal");
         animator.SetBool("isAttacking", true);
-        blood.Play();
     }
 
     public void StopAnim()
     {
         Debug.Log("Stopping Attack Anim - Penanggal");
         animator.SetBool("isAttacking", false);
-        blood.Stop();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -200,6 +205,14 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Playing Attack Anim - Penanggal");
+
+            if(!playerDied)
+            {
+                playerCam.enabled = false;
+                playerDied = true;
+            }
+            Debug.Log("ai cam is on");
+            aiCam.enabled = true;
 
             agent.speed = 0;
 
