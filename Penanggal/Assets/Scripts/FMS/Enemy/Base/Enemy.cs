@@ -95,8 +95,6 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         StateMachine.CurrentEnemyState.FrameUpdate();
-
-        Debug.Log(playerDied);
     }
 
     private void FixedUpdate()

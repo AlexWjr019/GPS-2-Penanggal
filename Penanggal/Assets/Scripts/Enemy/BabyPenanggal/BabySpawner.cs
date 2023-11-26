@@ -21,6 +21,8 @@ public class BabySpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> spawnPoints = new List<GameObject>();
 
+    public GameObject activeObject;
+
     private void Awake()
     {
         if (Instance == null)
@@ -37,15 +39,24 @@ public class BabySpawner : MonoBehaviour
     {
         while (spawnBaby)
         {
-            int ran = Random.Range(0, spawnPoints.Count);
+            if ((activeObject == null))
+            {
+                int ran = Random.Range(0, spawnPoints.Count);
 
-            GameObject newSpawn = Instantiate(prefab, spawnPoints[ran].transform.position, Quaternion.identity);
-            newSpawn.GetComponent<BabyPenanggal>().spawnPoint = spawnPoints[ran].transform.position;
-            newSpawn.GetComponent<BabyPenanggal>().playerPosition = player.transform.position;
+                GameObject newSpawn = Instantiate(prefab, spawnPoints[ran].transform.position, Quaternion.identity);
+                newSpawn.GetComponent<BabyPenanggal>().spawnPoint = spawnPoints[ran].transform.position;
+                newSpawn.GetComponent<BabyPenanggal>().playerPosition = player.transform.position;
 
-            float ranTime = Random.Range(minSpawnDelay, maxSpawnDelay);
+                activeObject = newSpawn;
 
-            yield return new WaitForSeconds(ranTime);
+                float ranTime = Random.Range(minSpawnDelay, maxSpawnDelay);
+
+                yield return new WaitForSeconds(ranTime);
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
         }
     }
 }

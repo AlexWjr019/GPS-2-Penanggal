@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -55,18 +51,6 @@ public class SpawnPenanggal : MonoBehaviour
             }
         }
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            if(cursePaper == null)
-            {
-                OnPenanggal();
-                isSpawned = true;
-            }
-        }
-    }*/
 
     public void SpawnGhost()
     {
