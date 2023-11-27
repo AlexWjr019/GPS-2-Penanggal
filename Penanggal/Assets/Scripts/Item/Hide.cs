@@ -58,7 +58,7 @@ public class Hide : MonoBehaviour
                 {
                     currentInteractable = hit.collider.gameObject;
 
-                    if (currentInteractable.CompareTag("Hide") && hit.collider.gameObject.name != "InnerWalls")
+                    if (currentInteractable.CompareTag("Hide"))
                     {
                         // Disable Player Camera
                         //player.SetActive(false);
@@ -69,7 +69,7 @@ public class Hide : MonoBehaviour
                         //tutorial.hideCupboardText.gameObject.SetActive(false);
                         //Destroy(pointToCupBoard);
 
-                        if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || currentInteractable.gameObject.name == "Bedroom_Cupboard" || currentInteractable.gameObject.name == "Kitchen_Cupboard" || currentInteractable.gameObject.name == "Livingroom_Cupboard2")
+                        if (currentInteractable.gameObject.name == "Livingroom_Cupboard" || currentInteractable.gameObject.name == "Hallway_Cupboard" || (currentInteractable.gameObject.name == "Bedroom_Cupboard" && BedroomHidingArea.isTriggered) || currentInteractable.gameObject.name == "Kitchen_Cupboard" || currentInteractable.gameObject.name == "Livingroom_Cupboard2")
                         {
                             if(currentInteractable.gameObject.name == "Livingroom_Cupboard")
                             {

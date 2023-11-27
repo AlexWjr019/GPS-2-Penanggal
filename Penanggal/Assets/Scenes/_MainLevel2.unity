@@ -8828,6 +8828,9 @@ MonoBehaviour:
   defaultSpeed: 0
   animator: {fileID: 0}
   blood: {fileID: 0}
+  aiCam: {fileID: 0}
+  playerCam: {fileID: 0}
+  playerDied: 0
   points:
   - {fileID: 553220736}
   destPoint: 0
@@ -15118,6 +15121,53 @@ MonoBehaviour:
   endPos: {fileID: 0}
   penanggal: {fileID: 487017977}
   cursePaper: {fileID: 952680381}
+--- !u!1 &627972731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627972732}
+  - component: {fileID: 627972733}
+  m_Layer: 0
+  m_Name: OutlineSelect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627972732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627972731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1912847331}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627972733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627972731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1a6ccb1a2069742b09f94298d9facf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1599180527}
+  sphereCastRadius: 0.5
+  maxDistance: 20
 --- !u!1001 &663280527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25060,6 +25110,8 @@ MonoBehaviour:
   airborneGravity: 10
   playerCamera: {fileID: 0}
   ghostCamera: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!143 &1236224930
 CharacterController:
   m_ObjectHideFlags: 0
@@ -27717,6 +27769,8 @@ MonoBehaviour:
   airborneGravity: 10
   playerCamera: {fileID: 1599180527}
   ghostCamera: {fileID: 324510243}
+  playerAnimator: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!143 &1747119297
 CharacterController:
   m_ObjectHideFlags: 0
@@ -29159,6 +29213,7 @@ Transform:
   - {fileID: 1485360777}
   - {fileID: 2069087381}
   - {fileID: 1304692614}
+  - {fileID: 627972732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1912847332
