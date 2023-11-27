@@ -20,6 +20,7 @@ public class FlameObject : MonoBehaviour
     public GameObject nurseryKey;
 
     public ScriptedEvent_7 scriptedEvent7;
+    public ScriptedEvent_8 ScriptedEvent8;
 
     private void Start()
     {
