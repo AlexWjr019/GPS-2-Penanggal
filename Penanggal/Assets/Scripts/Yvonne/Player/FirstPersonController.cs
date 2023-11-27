@@ -91,12 +91,12 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         //PositionManager.Instance.SetPlayerStartPosition(transform.position);
-        isMobile = Application.isMobilePlatform;
-        if (!isMobile)
-        {
+        //isMobile = Application.isMobilePlatform;
+        //if (!isMobile)
+        //{
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-        }
+        //}
     }
     void Start()
     {
@@ -437,6 +437,10 @@ public class FirstPersonController : MonoBehaviour
         canLookAround = true;
         enemy.playerDied = false;
 
+        Debug.Log("ResetPlayerState called");
+        Debug.Log("canMove: " + canMove);
+        Debug.Log("canLookAround: " + canLookAround);
+
         if (playerCamera != null)
         {
             playerCamera.enabled = true;
@@ -446,6 +450,7 @@ public class FirstPersonController : MonoBehaviour
         {
             ghostCamera.enabled = false;
         }
+        Debug.Log("playerCamera enabled after reset: " + playerCamera.enabled);
     }
 
 }

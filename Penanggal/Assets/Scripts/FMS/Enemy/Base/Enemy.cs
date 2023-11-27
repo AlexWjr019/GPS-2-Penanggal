@@ -207,10 +207,11 @@ public class Enemy : MonoBehaviour
             if(!playerDied)
             {
                 playerCam.enabled = false;
+                aiCam.enabled = true;
                 playerDied = true;
             }
             Debug.Log("ai cam is on");
-            aiCam.enabled = true;
+            
 
             agent.speed = 0;
 

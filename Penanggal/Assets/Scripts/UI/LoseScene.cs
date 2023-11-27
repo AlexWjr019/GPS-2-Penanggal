@@ -36,16 +36,21 @@ public class LoseScene : MonoBehaviour
         if (player != null && ghost != null)
         {
             PositionManager.Instance.ResetPlayerToStartPosition(player);
+            PenanggalKillPlayer killPlayerScript = FindObjectOfType<PenanggalKillPlayer>();
+            FirstPersonController playerController = player.GetComponent<FirstPersonController>();
 
             Time.timeScale = 1.0f;
             loseUI.SetActive(false);
-
             penanggal.StopAnim();
-
-            FirstPersonController playerController = player.GetComponent<FirstPersonController>();
+            
             if (playerController != null)
             {
                 playerController.ResetPlayerState();
+            }
+            
+            if (killPlayerScript != null)
+            {
+                killPlayerScript.ResetKillPlayer();
             }
         }
         else
