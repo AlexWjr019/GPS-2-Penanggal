@@ -110,6 +110,11 @@ public class Swap : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        CheckOrder();
+    }
+
     private IEnumerator SmoothlyMoveToPosition(GameObject obj, Vector3 target)
     {
         if (obj == null)
@@ -166,25 +171,36 @@ public class Swap : MonoBehaviour
 
     private void CheckOrder()
     {
-        Debug.Log("bottle " + bottle.transform.position);
-        Debug.Log("bowl " + bowl.transform.position);
-        Debug.Log("flower " + flower.transform.position);
-        float tolerance = 0.01f;
+        //Debug.Log("bottle " + bottle.transform.position);
+        //Debug.Log("bowl " + bowl.transform.position);
+        //Debug.Log("flower " + flower.transform.position);
+        //float tolerance = 0.01f;
 
-        if (bottle.transform.position.x > bowl.transform.position.x && bowl.transform.position.x > flower.transform.position.x
-            /*&& bottle.transform.position.z < bowl.transform.position.z && bowl.transform.position.z > flower.transform.position.z*/)
+        //if (bottle.transform.position.x > bowl.transform.position.x && bowl.transform.position.x > flower.transform.position.x
+        //    /*&& bottle.transform.position.z < bowl.transform.position.z && bowl.transform.position.z > flower.transform.position.z*/)
+        //{
+        //    if (Mathf.Abs(bottle.transform.position.y - bowl.transform.position.y) < tolerance)
+        //    {
+        //        Debug.Log("Correct Order");
+        //        puzzleCompleted = true;
+        //        bowl.tag = "Unmovable";
+        //        bottle.tag = "Unmovable";
+        //        flower.tag = "Unmovable";
+        //        curtainAnimator.SetBool("OpenCurtain", true);
+        //        StartCoroutine(SpawnCursepaper());
+        //    }
+
+        //}
+
+        if(PuzzleDetect1.isTriggered && PuzzleDetect2.isTriggered && PuzzleDetect3.isTriggered)
         {
-            if (Mathf.Abs(bottle.transform.position.y - bowl.transform.position.y) < tolerance)
-            {
-                Debug.Log("Correct Order");
-                puzzleCompleted = true;
-                bowl.tag = "Unmovable";
-                bottle.tag = "Unmovable";
-                flower.tag = "Unmovable";
-                curtainAnimator.SetBool("OpenCurtain", true);
-                StartCoroutine(SpawnCursepaper());
-            }
-
+            Debug.Log("Correct Order");
+            puzzleCompleted = true;
+            bowl.tag = "Unmovable";
+            bottle.tag = "Unmovable";
+            flower.tag = "Unmovable";
+            curtainAnimator.SetBool("OpenCurtain", true);
+            StartCoroutine(SpawnCursepaper());
         }
     }
 
