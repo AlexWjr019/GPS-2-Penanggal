@@ -988,9 +988,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 794880ceba4464c47b92e33495b329c3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2092513226}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 794880ceba4464c47b92e33495b329c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2092513229}
   m_SourcePrefab: {fileID: 100100000, guid: 794880ceba4464c47b92e33495b329c3, type: 3}
 --- !u!1 &124712619
 GameObject:
@@ -21893,21 +21890,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.08652859, y: 0.08652859, z: 0.029739195}
   m_Center: {x: 0.0000009536743, y: 0.0000000013968885, z: 0.023435319}
---- !u!114 &891909607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891909599}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ab72871939a2a4da185a4e28fb5093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alterCamera: {fileID: 1617786138}
-  playerCamera: {fileID: 1599180523}
-  button: {fileID: 2113158939}
 --- !u!1 &901135595
 GameObject:
   m_ObjectHideFlags: 0
@@ -25940,6 +25922,7 @@ MonoBehaviour:
   alterCamera: {fileID: 1617786138}
   playerCamera: {fileID: 1599180523}
   button: {fileID: 2113158939}
+  pauseButton: {fileID: 1852881218}
 --- !u!1 &1275392838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7147721196012792791, guid: 37a570424b6b38245af9fb568f4334cf, type: 3}
@@ -29434,10 +29417,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 222162704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94, y: -83}
-  m_SizeDelta: {x: 73.893, y: 73.893}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -230, y: -126}
+  m_SizeDelta: {x: 73.89307, y: 73.893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1854430002
 GameObject:
@@ -29777,7 +29760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -148, y: -121.1}
+  m_AnchoredPosition: {x: -230, y: -126}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860219763
@@ -29835,6 +29818,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1852881218}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1860219764
 MonoBehaviour:
@@ -30158,6 +30153,7 @@ MonoBehaviour:
   alterCamera: {fileID: 1617786138}
   playerCamera: {fileID: 1599180523}
   button: {fileID: 2113158939}
+  pauseButton: {fileID: 0}
 --- !u!65 &1912847333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30292,21 +30288,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1918311835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918311831}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ab72871939a2a4da185a4e28fb5093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alterCamera: {fileID: 1617786138}
-  playerCamera: {fileID: 1599180523}
-  button: {fileID: 2113158939}
 --- !u!1001 &1920677207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31822,21 +31803,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.18075085, z: 0.2}
   m_Center: {x: 0, y: 0.07831168, z: 0}
---- !u!114 &2092513229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691319748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ab72871939a2a4da185a4e28fb5093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alterCamera: {fileID: 1617786138}
-  playerCamera: {fileID: 1599180523}
-  button: {fileID: 2113158939}
 --- !u!1 &2093242004
 GameObject:
   m_ObjectHideFlags: 0
@@ -32826,9 +32792,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8625499654324998425, guid: f8d5bc56153a84e46bb54a4eaa94c437, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1918311832}
-    - targetCorrespondingSourceObject: {fileID: 8625499654324998425, guid: f8d5bc56153a84e46bb54a4eaa94c437, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1918311835}
   m_SourcePrefab: {fileID: 100100000, guid: f8d5bc56153a84e46bb54a4eaa94c437, type: 3}
 --- !u!1001 &5138278055197824879
 PrefabInstance:
@@ -32907,9 +32870,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7640590111280697585, guid: 486a31c59deaafb4aa3e384784b4d5ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 891909602}
-    - targetCorrespondingSourceObject: {fileID: 7640590111280697585, guid: 486a31c59deaafb4aa3e384784b4d5ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 891909607}
   m_SourcePrefab: {fileID: 100100000, guid: 486a31c59deaafb4aa3e384784b4d5ea, type: 3}
 --- !u!4 &6058001514493787889
 Transform:

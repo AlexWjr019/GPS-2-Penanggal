@@ -33,6 +33,7 @@ public class Swap : MonoBehaviour
     //public GameObject player;
     private bool objectiveActive = true;
     private bool puzzleStart = false;
+    public static bool objectiveTrue = false;
 
     public GameObject cursePaper;
     public Animator curtainAnimator;
@@ -208,6 +209,6 @@ public class Swap : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         cursePaper.SetActive(true);
-        ObjectiveManager2.objective = true;
+        objectiveTrue = true;
     }
 }

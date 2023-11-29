@@ -15,6 +15,7 @@ public class TornPuzzleControl : MonoBehaviour
     private int itemsMask;
     private bool puzzleCompleted;
     private bool objectiveActive = true;
+    public GameObject pauseButton;
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class TornPuzzleControl : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("TornDrawing"))
                     {
                         tornPuzzle.SetActive(true);
+                        pauseButton.SetActive(false);
                         isTornPuzzle = true;
                         playerCamera.SetActive(false);
                         tornPuzzleActivated = true;
@@ -97,6 +99,7 @@ public class TornPuzzleControl : MonoBehaviour
         isTornPuzzle = false;
         playerCamera.SetActive(true);
         tornPuzzleActivated = false;
+        pauseButton.SetActive(true);
         //interacionItem.enabled = false;
     }
 }

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -14,6 +16,7 @@ public class PuzzleActive : MonoBehaviour
     private bool puzzleCompleted;
     private bool objectiveActive = true;
     public GameObject button;
+    public GameObject pauseButton;
 
     void Update()
     {
@@ -23,11 +26,7 @@ public class PuzzleActive : MonoBehaviour
             isAlterPuzzle = false;
         }
 
-        if (isAlter)
-        {
-            //TornPuzzleCompleted();
-            isAlter = false;
-        }
+        Complete();
     }
 
     private void CheckPuzzleActivated()
@@ -49,6 +48,7 @@ public class PuzzleActive : MonoBehaviour
                         isAlterPuzzle = true;
                         playerCamera.SetActive(false);
                         button.SetActive(true);
+                        pauseButton.SetActive(false);
                         alterPuzzleActivated = true;
                         if (objectiveActive)
                         {
@@ -69,5 +69,14 @@ public class PuzzleActive : MonoBehaviour
         playerCamera.SetActive(true);
         button.SetActive(false);
         alterPuzzleActivated = false;
+    }
+
+    public void Complete()
+    {
+        if (Swap.objectiveTrue)
+        {
+            ObjectiveManager2.objective = true;
+            Swap.objectiveTrue = false;
+        }
     }
 }

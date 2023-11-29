@@ -7,13 +7,17 @@ public class ItemNotice : MonoBehaviour
 {
     public TMP_Text lighterNoticeText;
     public TMP_Text burnNoticeText;
+    public TMP_Text lightUpNoticeText; 
     public TMP_Text doorNoticeText;
+    public TMP_Text nurseryDoorNoticeText; 
     public TMP_Text pinboardNoticeText;
     public TMP_Text teachingNoticeText;
     public TMP_Text NoteText;
     public string lighterMessage = "Select the lighter and use on the candle";
-    public string burnMessage = "I need to find something to burn this";
-    public string doorMessage = "Perhaps I could find a key to unlock it";
+    public string burnCursepaperMessage = "I need to find something to burn this"; 
+    public string lightUpMessage = "I need to find something to light up this"; 
+    public string doorMessage = "Perhaps I could find the bedroom key";
+    public string nurseryDoorMessage = "Perhaps I could find the nursery room key"; 
     public string pinboardMessage = "I need to place something here";
     public string teachingMessage = "Tap to interact with highlighted objects";
     public string noteMessage = "Please put up the drawing once\n" +
@@ -32,6 +36,8 @@ public class ItemNotice : MonoBehaviour
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
         ShowTeachingNotice();
     }
 
@@ -53,19 +59,53 @@ public class ItemNotice : MonoBehaviour
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideTeachingMessage());
     }
 
+    public void ShowLightUpNotice()
+    {
+        lightUpNoticeText.text = lightUpMessage;
+        lightUpNoticeText.gameObject.SetActive(true);
+        burnNoticeText.gameObject.SetActive(false);
+        lighterNoticeText.gameObject.SetActive(false);
+        teachingNoticeText.gameObject.SetActive(false);
+        doorNoticeText.gameObject.SetActive(false);
+        NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
+
+        StartCoroutine(HideMessage());
+    }
+
+    public void ShowNurseryDoorNotice()
+    {
+        nurseryDoorNoticeText.text = nurseryDoorMessage;
+        nurseryDoorNoticeText.gameObject.SetActive(true);
+        lightUpNoticeText.gameObject.SetActive(false);
+        burnNoticeText.gameObject.SetActive(false);
+        lighterNoticeText.gameObject.SetActive(false);
+        teachingNoticeText.gameObject.SetActive(false);
+        doorNoticeText.gameObject.SetActive(false);
+        NoteText.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
+
+        StartCoroutine(HideMessage());
+    }
+
     public void ShowFlameNotice()
     {
-        burnNoticeText.text = burnMessage;
+        burnNoticeText.text = burnCursepaperMessage;
         burnNoticeText.gameObject.SetActive(true);
         lighterNoticeText.gameObject.SetActive(false);
         teachingNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
     }
@@ -79,6 +119,8 @@ public class ItemNotice : MonoBehaviour
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
     }
@@ -110,6 +152,8 @@ public class ItemNotice : MonoBehaviour
         teachingNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
     }
@@ -123,6 +167,8 @@ public class ItemNotice : MonoBehaviour
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideTeachingMessage());
     }
@@ -136,6 +182,8 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
     }
 
     public void ShowPinboardNotice()
@@ -147,7 +195,9 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         teachingNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
-        
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
+
 
         StartCoroutine(HideMessage());
     }
@@ -170,6 +220,16 @@ public class ItemNotice : MonoBehaviour
         {
             pinboardNoticeText.text = "";
             pinboardNoticeText.gameObject.SetActive(false);
+        }
+        if (lightUpNoticeText.gameObject.activeSelf)
+        {
+            lightUpNoticeText.text = "";
+            lightUpNoticeText.gameObject.SetActive(false);
+        }
+        if (nurseryDoorNoticeText.gameObject.activeSelf)
+        {
+            nurseryDoorNoticeText.text = "";
+            nurseryDoorNoticeText.gameObject.SetActive(false);
         }
     }
 

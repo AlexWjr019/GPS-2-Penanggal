@@ -70,7 +70,7 @@ public class OpenDoor : MonoBehaviour
             }
             else if (!nurseryDoorUnlocked || (!nurseryDoorUnlocked && selectedSlot.GetCurrentItem().itemName != "NurseryKey"))
             {
-                ShowDoorNotice("NurseryDoor");
+                ShowNurseryDoorNotice("NurseryDoor");
             }
         }
     }
@@ -82,6 +82,20 @@ public class OpenDoor : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().PlaySFX("DoorLocked");
             itemNotice.ShowDoorNotice();
+        }
+        else
+        {
+            Debug.LogError("ItemNotice not found!");
+        }
+    }
+
+    private void ShowNurseryDoorNotice(string doorName)
+    {
+        ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+        if (itemNotice != null)
+        {
+            FindObjectOfType<AudioManager>().PlaySFX("DoorLocked");
+            itemNotice.ShowNurseryDoorNotice();
         }
         else
         {

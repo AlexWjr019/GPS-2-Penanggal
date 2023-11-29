@@ -12,6 +12,7 @@ public class LockControl : MonoBehaviour
     public static bool safeIsOpen;
     public GameObject cursepaper;
     private int itemsMask;
+    
 
     private void Awake()
     {

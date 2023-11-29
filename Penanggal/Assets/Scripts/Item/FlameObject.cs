@@ -279,7 +279,7 @@ public class FlameObject : MonoBehaviour
                 ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
                 if (itemNotice != null)
                 {
-                    itemNotice.ShowFlameNotice();
+                    itemNotice.ShowLightUpNotice();
                 }
             }
         }

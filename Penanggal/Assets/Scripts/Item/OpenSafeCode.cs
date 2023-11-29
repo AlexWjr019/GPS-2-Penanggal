@@ -10,6 +10,7 @@ public class OpenSafeCode : MonoBehaviour
     public static bool openSafe;
     public GameObject playerHead;
     private bool objectiveActive = true;
+    public GameObject pauseButton;
 
     //For Mouse Testing
     private void OnMouseDown()
@@ -21,6 +22,7 @@ public class OpenSafeCode : MonoBehaviour
             // Activate the canvas
             //oriSafeCodeWheel.SetActive(false);
             safeCodeWheel.SetActive(true);
+            pauseButton.SetActive(false);
             playerHead.SetActive(false);
             openSafe = true;
             if(objectiveActive)
@@ -46,6 +48,7 @@ public class OpenSafeCode : MonoBehaviour
         {
             // Activate the canvas
             safeCodeWheel.SetActive(true);
+            pauseButton.SetActive(false);
             playerHead.SetActive(false);
             openSafe = true;
         }
