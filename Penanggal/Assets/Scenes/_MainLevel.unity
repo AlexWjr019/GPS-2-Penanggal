@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6405,10 +6405,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 29787036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94, y: -83}
-  m_SizeDelta: {x: 73.893, y: 73.893}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -130, y: -100}
+  m_SizeDelta: {x: 73.892944, y: 73.893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35808370
 MonoBehaviour:
@@ -21644,7 +21644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -120.513916, y: -86.170044}
+  m_AnchoredPosition: {x: -279, y: -202}
   m_SizeDelta: {x: 243.66, y: 266.535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &625402146
@@ -28672,7 +28672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8732083, y: 0.844741}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1766, y: 0}
+  m_AnchoredPosition: {x: -1735, y: 10}
   m_SizeDelta: {x: -97.5357, y: -72.9526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997040623
@@ -40911,7 +40911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5473959, y: 0.844741}
   m_AnchorMax: {x: 0.8732083, y: 1}
-  m_AnchoredPosition: {x: -463.0437, y: 0}
+  m_AnchoredPosition: {x: -535, y: 0}
   m_SizeDelta: {x: 804.7164, y: -72.952}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1424402056
@@ -47150,7 +47150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -139.03, y: -105.124}
+  m_AnchoredPosition: {x: -248, y: -232}
   m_SizeDelta: {x: 779.604, y: 43.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504980206
