@@ -129,10 +129,8 @@ public class FirstPersonController : MonoBehaviour
             else
             {
                 GetKeyboardInput();
+                CameraMovement();
             }
-
-            CameraMovement();
-
             Gravity();
         }
 
