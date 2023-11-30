@@ -306,7 +306,7 @@ public class InteractionSystem : MonoBehaviour
                 {
                     HandleLighterPickUp();
                 }
-                else if(itemName == "NurseryKey")
+                else if (itemName == "NurseryKey")
                 {
                     HandleNurseryKeyPickUp();
                 }
@@ -375,7 +375,6 @@ public class InteractionSystem : MonoBehaviour
         scriptedEvent.event1();
         Debug.Log("Lighter has been picked up!");
         ItemNotice.ligterPickup = true;
-        ObjectiveManager.objective = true;
     }
 
     private void HandleNurseryKeyPickUp()

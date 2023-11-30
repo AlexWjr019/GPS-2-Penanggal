@@ -101,7 +101,7 @@ public class ObjectiveManager2 : MonoBehaviour
             objText.SetActive(false);
             objTextActive = false;
         }
-        else if(!objTextActive)
+        else if (!objTextActive)
         {
             objText.SetActive(true);
             objTextActive = true;

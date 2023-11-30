@@ -173,8 +173,11 @@ public class FirstPersonController : MonoBehaviour
                     canHide = false;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
-                        leftFingerId = t.fingerId;
-                        moveTouchStartPosition = t.position;
+                        if (!Hide.isHide && !Note.noteIsSeen && !Note2.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
+                        {
+                            leftFingerId = t.fingerId;
+                            moveTouchStartPosition = t.position;
+                        }
                     }
                     else if (t.position.x > halfScreenWidth && rightFingerId == -1)
                     {
@@ -264,7 +267,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void LookAround()
     {
-        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
+        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {
@@ -281,7 +284,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Move()
     {
-        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
+        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {

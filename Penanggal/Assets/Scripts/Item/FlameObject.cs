@@ -22,6 +22,8 @@ public class FlameObject : MonoBehaviour
     public ScriptedEvent_7 scriptedEvent7;
     public ScriptedEvent_8 ScriptedEvent8;
 
+    private bool objectiveActive = true;
+
     private void Start()
     {
         // Find all curse paper objects with the "CursePaper" tag and add them to the list.
@@ -187,7 +189,7 @@ public class FlameObject : MonoBehaviour
                 {
                     // Check if the clicked object matches the current curse paper
                     if (cursepapers[i] == clickedObject)
-                    {   
+                    {
                         ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
 
                         if (clickedObject.name == "TornCursePaper")
@@ -208,11 +210,16 @@ public class FlameObject : MonoBehaviour
                             {
                                 itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
                             }
+                            if (objectiveActive)
+                            {
+                                ObjectiveManager.objective = true;
+                                objectiveActive = false;
+                            }
 
                         }
                         if (clickedObject.name == "Curse Paper_2")
                         {
-                            if(LockControl.safeIsOpen)
+                            if (LockControl.safeIsOpen)
                             {
                                 // Destroy the matching curse paper
                                 FindObjectOfType<AudioManager>().PlaySFX("BurningPaperSound");
