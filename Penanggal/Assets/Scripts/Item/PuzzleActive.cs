@@ -4,6 +4,7 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using Vector2 = UnityEngine.Vector2;
 
 public class PuzzleActive : MonoBehaviour
 {
@@ -34,34 +35,42 @@ public class PuzzleActive : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-
             if (touch.phase == TouchPhase.Began)
             {
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                ActivatePuzzle(touch.position);
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            ActivatePuzzle(Input.mousePosition);
+        }
+    }
 
-                if (Physics.Raycast(ray, out hit, raycastDistance))
+    private void ActivatePuzzle(Vector2 position)
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(position);
+
+        if (Physics.Raycast(ray, out hit, raycastDistance))
+        {
+            if (hit.collider.gameObject.CompareTag("AlterPuzzle"))
+            {
+                alterCamera.SetActive(true);
+                isAlterPuzzle = true;
+                playerCamera.SetActive(false);
+                button.SetActive(true);
+                pauseButton.SetActive(false);
+                alterPuzzleActivated = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                if (objectiveActive)
                 {
-                    if (hit.collider.gameObject.CompareTag("AlterPuzzle"))
-                    {
-                        alterCamera.SetActive(true);
-                        isAlterPuzzle = true;
-                        playerCamera.SetActive(false);
-                        button.SetActive(true);
-                        pauseButton.SetActive(false);
-                        alterPuzzleActivated = true;
-                        if (objectiveActive)
-                        {
-                            ObjectiveManager2.objective = true;
-                            objectiveActive = false;
-                        }
-
-                    }
+                    ObjectiveManager2.objective = true;
+                    objectiveActive = false;
                 }
             }
         }
     }
-
     public void AlterPuzzleReturn()
     {
         alterCamera.SetActive(false);
@@ -69,6 +78,8 @@ public class PuzzleActive : MonoBehaviour
         playerCamera.SetActive(true);
         button.SetActive(false);
         alterPuzzleActivated = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Complete()
