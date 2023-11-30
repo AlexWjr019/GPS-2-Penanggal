@@ -128,6 +128,7 @@ public class FirstPersonController : MonoBehaviour
             }
             else
             {
+                KeyBoardGetMouseDown();
                 GetKeyboardInput();
                 CameraMovement();
             }
@@ -161,15 +162,6 @@ public class FirstPersonController : MonoBehaviour
     }
     void GetTouchInput()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            canHide = true;
-        }
-        else
-        {
-            canHide = false;
-        }
-
         for (int touches = 0; touches < Input.touchCount; touches++)
         {
             Touch t = Input.GetTouch(touches);
@@ -259,6 +251,17 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    void KeyBoardGetMouseDown()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            canHide = true;
+        }
+        else
+        {
+            canHide = false;
+        }
+    }
     void LookAround()
     {
         if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
@@ -353,7 +356,7 @@ public class FirstPersonController : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
 
-        if ((hit.gameObject.CompareTag("Ghost") || hit.gameObject.CompareTag("BabyPenanggal")) && !hasCollidedWithGhost)
+        if (hit.gameObject.CompareTag("Ghost") && !hasCollidedWithGhost)
         {
             hasCollidedWithGhost = true;
 
@@ -361,6 +364,19 @@ public class FirstPersonController : MonoBehaviour
             canLookAround = false;
             Debug.Log("entered");
             playerCamera.enabled = false;
+            //ghostCamera.enabled = true;
+            Debug.Log("player cam off");
+            LookAtGhost(hit.transform);
+            StartCoroutine(ShowLoseUIAfterDelay());
+        }
+        else if (hit.gameObject.CompareTag("BabyPenanggal") && !hasCollidedWithGhost)
+        {
+            hasCollidedWithGhost = true;
+
+            canMove = false;
+            canLookAround = false;
+            Debug.Log("entered");
+            //playerCamera.enabled = false;
             //ghostCamera.enabled = true;
             Debug.Log("player cam off");
             LookAtGhost(hit.transform);

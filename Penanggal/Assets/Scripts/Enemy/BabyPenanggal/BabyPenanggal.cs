@@ -23,6 +23,9 @@ public class BabyPenanggal : MonoBehaviour
     public AudioSource bPSpawn;
     public AudioSource bPDespawn;
 
+    //public Camera playerCamera;
+    //public Camera aiCamera;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,6 +37,30 @@ public class BabyPenanggal : MonoBehaviour
 
         bPSpawn.Play();
         //FindObjectOfType<AudioManager>().PlaySFX("BabyPenSpeak1");
+
+        //GameObject player = GameObject.Find("Player");
+        //if (player != null)
+        //{
+        //    Transform mainCameraTransform = player.transform.Find("Head/Main Camera");
+        //    if (mainCameraTransform != null)
+        //    {
+        //        playerCamera = mainCameraTransform.GetComponent<Camera>();
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Main Camera not found under Player/Head!");
+        //    }
+        //}
+
+        //GameObject babyPenanggalObj = GameObject.Find("BabyPenanggal");
+        //if (babyPenanggalObj != null)
+        //{
+        //    aiCamera = babyPenanggalObj.GetComponentInChildren<Camera>();
+        //}
+        //else
+        //{
+        //    Debug.LogError("BabyPenanggal object not found in the scene!");
+        //}
     }
 
     void Update()
@@ -73,7 +100,8 @@ public class BabyPenanggal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Playing Attack Anim - Baby");
-
+            //aiCamera.enabled = true;
+            //playerCamera.enabled = false;
             bPSpawn.Play();
             //FindObjectOfType<AudioManager>().PlaySFX("BabyPenSpeak1");
             animator.SetBool("isAttacking", true);
