@@ -490,7 +490,10 @@ MonoBehaviour:
   bowl: {fileID: 901880628}
   flower: {fileID: 0}
   moveSpeed: 5
+  startSwap: 1
+  objective: 0
   cursePaper: {fileID: 0}
+  curtainAnimator: {fileID: 0}
 --- !u!54 &3556874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1910,6 +1913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   safeCodeWheel: {fileID: 276275561}
   playerHead: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &136889072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,6 +2497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standFrame: {fileID: 2014077590}
   playerCamera: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!4 &178971363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 880d4e839501dda4e8d5d5239c6c13d4, type: 3}
@@ -3139,6 +3144,9 @@ MonoBehaviour:
   number3: {fileID: 0}
   number2: {fileID: 0}
   number1: {fileID: 0}
+  nurseryKey: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
+  ScriptedEvent8: {fileID: 0}
 --- !u!65 &249575286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6694,6 +6702,10 @@ MonoBehaviour:
   volumeObject: {fileID: 0}
   groundedGravity: 10
   airborneGravity: 10
+  playerCamera: {fileID: 0}
+  ghostCamera: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!143 &431646161
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6826,7 +6838,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveText: {fileID: 382523522}
-  textCanvasGroup: {fileID: 382523524}
+  objectiveFade: {fileID: 0}
+  objText: {fileID: 0}
 --- !u!1 &459194261
 GameObject:
   m_ObjectHideFlags: 0
@@ -7596,7 +7609,10 @@ MonoBehaviour:
   bowl: {fileID: 901880628}
   flower: {fileID: 0}
   moveSpeed: 5
+  startSwap: 1
+  objective: 0
   cursePaper: {fileID: 0}
+  curtainAnimator: {fileID: 0}
 --- !u!54 &523181632
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10402,6 +10418,9 @@ MonoBehaviour:
   number3: {fileID: 0}
   number2: {fileID: 0}
   number1: {fileID: 0}
+  nurseryKey: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
+  ScriptedEvent8: {fileID: 0}
 --- !u!65 &835930005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11393,7 +11412,10 @@ MonoBehaviour:
   bowl: {fileID: 901880628}
   flower: {fileID: 0}
   moveSpeed: 5
+  startSwap: 1
+  objective: 0
   cursePaper: {fileID: 0}
+  curtainAnimator: {fileID: 0}
 --- !u!54 &901880634
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12525,6 +12547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   safeCodeWheel: {fileID: 2121742203}
   playerHead: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!64 &1006658888
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20949,6 +20972,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1312809899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 485.726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.294
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 499.626
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
+      propertyPath: m_Name
+      value: Curse Paper_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a63b2d03591d79241978d034ee15ea78, type: 3}
 --- !u!1 &1321149894
 GameObject:
   m_ObjectHideFlags: 0
@@ -26778,14 +26858,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lighterNoticeText: {fileID: 1321149895}
   burnNoticeText: {fileID: 1847208342}
+  lightUpNoticeText: {fileID: 0}
   doorNoticeText: {fileID: 0}
+  nurseryDoorNoticeText: {fileID: 0}
+  pinboardNoticeText: {fileID: 0}
   teachingNoticeText: {fileID: 0}
   NoteText: {fileID: 0}
+  NoteText2: {fileID: 0}
   lighterMessage: Maybe this can be useful for something
-  burnMessage: I need something to burn this
+  burnCursepaperMessage: I need to find something to burn this
+  lightUpMessage: I need to find something to light up this
   doorMessage: I need somting to open this door
+  nurseryDoorMessage: Perhaps I could find the nursery room key
+  pinboardMessage: I need to place something here
   teachingMessage: Tap to interact with highlighted objects
   noteMessage: Please put up the drawing onceyou are done with it
+  noteMessage2: 'I need to find a way to bind her to me. The cursed paper should
+    do the job. This will protect me from her.
+
+
+    Oh my dear ain, you will never
+    leave me ever again. Your eternal beauty shall last forever and so will you'
   noticeDisplayTime: 3
 --- !u!114 &1405499040
 MonoBehaviour:
@@ -28240,6 +28333,7 @@ MonoBehaviour:
   tornPuzzle: {fileID: 853990463}
   playerCamera: {fileID: 28591907}
   wholePic: {fileID: 1507662387}
+  pauseButton: {fileID: 0}
 --- !u!1 &1530074136
 GameObject:
   m_ObjectHideFlags: 0
@@ -28365,6 +28459,9 @@ MonoBehaviour:
   number3: {fileID: 0}
   number2: {fileID: 0}
   number1: {fileID: 0}
+  nurseryKey: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
+  ScriptedEvent8: {fileID: 0}
 --- !u!1 &1558474680
 GameObject:
   m_ObjectHideFlags: 0
@@ -32466,6 +32563,7 @@ MonoBehaviour:
   tornPuzzle: {fileID: 1212690807}
   playerCamera: {fileID: 28591907}
   wholePic: {fileID: 1852217758}
+  pauseButton: {fileID: 0}
 --- !u!114 &1852217760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32773,6 +32871,9 @@ MonoBehaviour:
   number3: {fileID: 0}
   number2: {fileID: 0}
   number1: {fileID: 0}
+  nurseryKey: {fileID: 0}
+  scriptedEvent7: {fileID: 0}
+  ScriptedEvent8: {fileID: 0}
 --- !u!65 &1916667504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36212,3 +36313,4 @@ SceneRoots:
   - {fileID: 1595728953}
   - {fileID: 314106054}
   - {fileID: 196337987}
+  - {fileID: 1312809899}

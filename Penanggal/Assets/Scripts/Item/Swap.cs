@@ -31,9 +31,9 @@ public class Swap : MonoBehaviour
     //public GameObject weddingSpawn;
     //public GameObject cursePaper;
     //public GameObject player;
-    private bool objectiveActive = true;
+    private bool objectiveActive = false;
     private bool puzzleStart = false;
-    public static bool objectiveTrue = false;
+    private bool objectiveTrue = true;
 
     public GameObject cursePaper;
     public Animator curtainAnimator;
@@ -78,7 +78,6 @@ public class Swap : MonoBehaviour
             {
                 StartCoroutine(SmoothlyMoveToPosition(collidingObject, originalPosition));
             }
-
             if (this.gameObject != null)
             {
                 StartCoroutine(SmoothlyMoveToPosition(this.gameObject, collidingObject.transform.position));
@@ -114,6 +113,12 @@ public class Swap : MonoBehaviour
     private void Update()
     {
         CheckOrder();
+
+        if (objectiveActive)
+        {
+            ObjectiveManager2.objective = true;
+            objectiveActive = false;
+        }
     }
 
     private IEnumerator SmoothlyMoveToPosition(GameObject obj, Vector3 target)
@@ -193,7 +198,7 @@ public class Swap : MonoBehaviour
 
         //}
 
-        if(PuzzleDetect1.isTriggered && PuzzleDetect2.isTriggered && PuzzleDetect3.isTriggered)
+        if (PuzzleDetect1.isTriggered && PuzzleDetect2.isTriggered && PuzzleDetect3.isTriggered)
         {
             Debug.Log("Correct Order");
             puzzleCompleted = true;
@@ -201,6 +206,12 @@ public class Swap : MonoBehaviour
             bottle.tag = "Unmovable";
             flower.tag = "Unmovable";
             curtainAnimator.SetBool("OpenCurtain", true);
+            if (objectiveTrue)
+            {
+                objectiveActive = true;
+                objectiveTrue = false;
+            }
+
             StartCoroutine(SpawnCursepaper());
         }
     }
@@ -209,6 +220,5 @@ public class Swap : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         cursePaper.SetActive(true);
-        objectiveTrue = true;
     }
 }
