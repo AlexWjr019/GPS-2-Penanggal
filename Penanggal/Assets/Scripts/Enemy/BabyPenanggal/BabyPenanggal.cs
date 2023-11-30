@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BabyPenanggal : MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     public Vector3 playerPosition;
     [SerializeField]
     private float returnSpeed;
