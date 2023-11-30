@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         Button.onClick.AddListener(Pause);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; ;
         //pauseUI.SetActive(false);
     }
     void Update()

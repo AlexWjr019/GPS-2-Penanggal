@@ -25,7 +25,10 @@ public class OpenSafeCode : MonoBehaviour
             pauseButton.SetActive(false);
             playerHead.SetActive(false);
             openSafe = true;
-            if(objectiveActive)
+            Debug.Log("OnMouseDown triggered. Setting cursor state.");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            if (objectiveActive)
             {
                 ObjectiveManager.objective = true;
                 objectiveActive = false;
@@ -51,6 +54,8 @@ public class OpenSafeCode : MonoBehaviour
             pauseButton.SetActive(false);
             playerHead.SetActive(false);
             openSafe = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }

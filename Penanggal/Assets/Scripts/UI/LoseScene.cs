@@ -19,8 +19,6 @@ public class LoseScene : MonoBehaviour
         //fps = FindObjectOfType<FirstPersonController>();
         Restart.onClick.AddListener(RestartGame);
         mainMenu.onClick.AddListener(GoToMainMenu);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     void Update()

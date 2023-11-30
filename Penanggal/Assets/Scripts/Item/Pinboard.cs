@@ -18,42 +18,12 @@ public class Pinboard : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-
-                if (Physics.Raycast(ray, out hit, raycastDistance))
-                {
-                    InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
-
-                    if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
-                    {
-                        // Check if the raycast hit the pinboard
-                        if (hit.collider.gameObject == gameObject)
-                        {
-                            pinPaper.SetActive(true);
-                            Destroy(selectedSlot.GetCurrentItem().gameObject);
-                            selectedSlot.ClearSlot();
-                            ObjectiveManager.objective = true;
-                            StartCoroutine(SpawnCursepaper());
-                        }
-                    }
-                    else
-                    {
-                        ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-                        //if (selectedSlot != null)
-                        //{
-                            if ((selectedSlot != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
-                            {
-                                itemNotice.ShowPinboardNotice();
-                            }
-                            else
-                            {
-                                Debug.LogError("ItemNotice not found!");
-                            }
-                        //}
-                    }
-                }
+                HandleInput(touch.position);
             }
+        }
+        else if(Input.GetMouseButtonDown(0))
+        {
+            HandleInput(Input.mousePosition);
         }
 
         if (cursePaperburn)
@@ -70,6 +40,44 @@ public class Pinboard : MonoBehaviour
         
     }
 
+    private void HandleInput(Vector2 position)
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(position);
+
+        if (Physics.Raycast(ray, out hit, raycastDistance))
+        {
+            InventorySlot selectedSlot = InventoryManager.Instance.selectedSlot;
+
+            if (selectedSlot != null && !selectedSlot.IsEmpty() && selectedSlot.GetCurrentItem().itemName == requiredItemName)
+            {
+                // Check if the raycast hit the pinboard
+                if (hit.collider.gameObject == gameObject)
+                {
+                    pinPaper.SetActive(true);
+                    Destroy(selectedSlot.GetCurrentItem().gameObject);
+                    selectedSlot.ClearSlot();
+                    ObjectiveManager.objective = true;
+                    StartCoroutine(SpawnCursepaper());
+                }
+            }
+            else
+            {
+                ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                //if (selectedSlot != null)
+                //{
+                if ((selectedSlot != null && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.IsEmpty() && hit.collider.gameObject.CompareTag("Pinboard")) || (selectedSlot.GetCurrentItem().itemName != "PinPaper" && hit.collider.gameObject.CompareTag("Pinboard")))
+                {
+                    itemNotice.ShowPinboardNotice();
+                }
+                else
+                {
+                    Debug.LogError("ItemNotice not found!");
+                }
+                //}
+            }
+        }
+    }
     IEnumerator SpawnCursepaper()
     {
         yield return new WaitForSeconds(1.0f);

@@ -16,6 +16,8 @@ public class ObjectInteract : MonoBehaviour
         playerCamera.SetActive(false);
         pauseButton.SetActive(false);
         picIsRotate = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Return()
@@ -23,5 +25,7 @@ public class ObjectInteract : MonoBehaviour
         playerCamera.SetActive(true);
         pauseButton.SetActive(true);
         picIsRotate = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

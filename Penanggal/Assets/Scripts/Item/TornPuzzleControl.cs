@@ -69,12 +69,38 @@ public class TornPuzzleControl : MonoBehaviour
                         isTornPuzzle = true;
                         playerCamera.SetActive(false);
                         tornPuzzleActivated = true;
-                        if(objectiveActive)
+                        Cursor.lockState = CursorLockMode.None;
+                        Cursor.visible = true;
+                        if (objectiveActive)
                         {
                             ObjectiveManager.objective = true;
                             objectiveActive = false;
                         }
-                        
+
+                    }
+                }
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, raycastDistance))
+            {
+                if (hit.collider.gameObject.CompareTag("TornDrawing"))
+                {
+                    tornPuzzle.SetActive(true);
+                    pauseButton.SetActive(false);
+                    isTornPuzzle = true;
+                    playerCamera.SetActive(false);
+                    tornPuzzleActivated = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    if (objectiveActive)
+                    {
+                        ObjectiveManager.objective = true;
+                        objectiveActive = false;
                     }
                 }
             }
@@ -91,6 +117,8 @@ public class TornPuzzleControl : MonoBehaviour
         //interacionItem.enabled = true;
         wholePic.layer = itemsMask;
         ObjectiveManager.objective = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void TornPuzzleReturn()
@@ -101,5 +129,7 @@ public class TornPuzzleControl : MonoBehaviour
         tornPuzzleActivated = false;
         pauseButton.SetActive(true);
         //interacionItem.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
