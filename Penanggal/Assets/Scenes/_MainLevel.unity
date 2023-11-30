@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -64898,8 +64898,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1289670729}
-        m_TargetAssemblyTypeName: Note2, Assembly-CSharp
+      - m_Target: {fileID: 1497306733}
+        m_TargetAssemblyTypeName: Note, Assembly-CSharp
         m_MethodName: Return
         m_Mode: 1
         m_Arguments:
@@ -78574,7 +78574,7 @@ Transform:
   m_GameObject: {fileID: 6458679909817866453}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -1.34, y: 0.19, z: 8.6867}
+  m_LocalPosition: {x: -1.332, y: 0.16975565, z: 8.6867}
   m_LocalScale: {x: 2.577888, y: 2.5364034, z: 2.5399997}
   m_ConstrainProportionsScale: 0
   m_Children: []
