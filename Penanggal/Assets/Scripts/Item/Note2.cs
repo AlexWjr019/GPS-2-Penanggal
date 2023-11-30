@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Note : MonoBehaviour
+public class Note2 : MonoBehaviour
 {
     public static bool noteSeen;
     public static bool noteIsSeen;
@@ -21,7 +21,7 @@ public class Note : MonoBehaviour
             ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
             if (itemNotice != null)
             {
-                itemNotice.ShowNoteText();
+                itemNotice.ShowNoteText2();
                 noteSeen = false;
                 noteIsSeen = true;
                 pauseButton.SetActive(false);

@@ -39815,12 +39815,12 @@ GameObject:
   - component: {fileID: 1289670728}
   - component: {fileID: 1289670727}
   - component: {fileID: 1289670726}
-  - component: {fileID: 1289670725}
   - component: {fileID: 1289670724}
   - component: {fileID: 1289670723}
+  - component: {fileID: 1289670729}
   m_Layer: 13
   m_Name: Note_1
-  m_TagString: Note
+  m_TagString: Note2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39873,21 +39873,6 @@ MonoBehaviour:
   playerCamera: {fileID: 161513708}
   sphereCastRadius: 0.5
   maxDistance: 5
---- !u!114 &1289670725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289670721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35be16bd0323dbc428d301884de5c7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseButton: {fileID: 35808368}
-  note: 0
-  note2: 1
 --- !u!65 &1289670726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39959,6 +39944,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289670721}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1289670729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289670721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60f24dbbb3780947b0d684eacd69efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseButton: {fileID: 35808368}
 --- !u!4 &1290904929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3548791012278867050, guid: 80bc831a7324c8949a6d6f60f55ecc6a, type: 3}
@@ -47761,8 +47759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 35808368}
-  note: 1
-  note2: 0
 --- !u!65 &1497306734
 BoxCollider:
   m_ObjectHideFlags: 0

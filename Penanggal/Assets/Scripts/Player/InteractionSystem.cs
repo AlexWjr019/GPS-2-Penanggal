@@ -187,6 +187,10 @@ public class InteractionSystem : MonoBehaviour
         {
             Note.noteSeen = true;
         }
+        else if (hit.collider.CompareTag("Note2"))
+        {
+            Note2.noteSeen = true;
+        }
         else if (hit.collider.CompareTag("Door") && hit.collider.gameObject.name == "NurseryDoor")
         {
             OpenDoor.touchNurseryDoor = true;
