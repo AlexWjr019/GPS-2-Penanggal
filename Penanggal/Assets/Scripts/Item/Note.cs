@@ -7,6 +7,7 @@ public class Note : MonoBehaviour
     public static bool noteSeen;
     public static bool noteIsSeen;
     public GameObject pauseButton;
+    public bool note, note2;
 
     private void Start()
     {
@@ -18,14 +19,29 @@ public class Note : MonoBehaviour
     {
         if (noteSeen)
         {
-            ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
-            if (itemNotice != null)
+            if (note)
             {
-                itemNotice.ShowNoteText();
-                noteSeen = false;
-                noteIsSeen = true;
-                pauseButton.SetActive(false);
+                ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                if (itemNotice != null)
+                {
+                    itemNotice.ShowNoteText();
+                    noteSeen = false;
+                    noteIsSeen = true;
+                    pauseButton.SetActive(false);
+                }
             }
+            if (note2)
+            {
+                ItemNotice itemNotice = FindObjectOfType<ItemNotice>();
+                if (itemNotice != null)
+                {
+                    itemNotice.ShowNoteText2();
+                    noteSeen = false;
+                    noteIsSeen = true;
+                    pauseButton.SetActive(false);
+                }
+            }
+
         }
     }
 

@@ -7,21 +7,23 @@ public class ItemNotice : MonoBehaviour
 {
     public TMP_Text lighterNoticeText;
     public TMP_Text burnNoticeText;
-    public TMP_Text lightUpNoticeText; 
+    public TMP_Text lightUpNoticeText;
     public TMP_Text doorNoticeText;
-    public TMP_Text nurseryDoorNoticeText; 
+    public TMP_Text nurseryDoorNoticeText;
     public TMP_Text pinboardNoticeText;
     public TMP_Text teachingNoticeText;
     public TMP_Text NoteText;
+    public TMP_Text NoteText2;
     public string lighterMessage = "Select the lighter and use on the candle";
-    public string burnCursepaperMessage = "I need to find something to burn this"; 
-    public string lightUpMessage = "I need to find something to light up this"; 
+    public string burnCursepaperMessage = "I need to find something to burn this";
+    public string lightUpMessage = "I need to find something to light up this";
     public string doorMessage = "Perhaps I could find the bedroom key";
-    public string nurseryDoorMessage = "Perhaps I could find the nursery room key"; 
+    public string nurseryDoorMessage = "Perhaps I could find the nursery room key";
     public string pinboardMessage = "I need to place something here";
     public string teachingMessage = "Tap to interact with highlighted objects";
     public string noteMessage = "Please put up the drawing once\n" +
                                 "you are done with it";
+    public string noteMessage2 = "I need to find a way to bind her to me. The cursed paper should do the job. This will protect me from her.\n" + "\nOh my dear ain, you will never leave me ever again. Your eternal beauty shall last forever and so will you";
 
     public float noticeDisplayTime = 3f;
     public static bool ligterPickup;
@@ -35,6 +37,7 @@ public class ItemNotice : MonoBehaviour
         burnNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
@@ -58,6 +61,7 @@ public class ItemNotice : MonoBehaviour
         burnNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
@@ -74,6 +78,7 @@ public class ItemNotice : MonoBehaviour
         teachingNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
 
@@ -90,6 +95,7 @@ public class ItemNotice : MonoBehaviour
         teachingNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
 
         StartCoroutine(HideMessage());
@@ -103,6 +109,7 @@ public class ItemNotice : MonoBehaviour
         teachingNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
@@ -118,6 +125,7 @@ public class ItemNotice : MonoBehaviour
         teachingNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
@@ -151,6 +159,7 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         teachingNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
@@ -166,6 +175,7 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         doorNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         pinboardNoticeText.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
@@ -177,6 +187,21 @@ public class ItemNotice : MonoBehaviour
     {
         NoteText.text = noteMessage;
         NoteText.gameObject.SetActive(true);
+        teachingNoticeText.gameObject.SetActive(false);
+        burnNoticeText.gameObject.SetActive(false);
+        lighterNoticeText.gameObject.SetActive(false);
+        doorNoticeText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
+        pinboardNoticeText.gameObject.SetActive(false);
+        lightUpNoticeText.gameObject.SetActive(false);
+        nurseryDoorNoticeText.gameObject.SetActive(false);
+    }
+
+    public void ShowNoteText2()
+    {
+        NoteText2.text = noteMessage2;
+        NoteText2.gameObject.SetActive(true);
+        NoteText.gameObject.SetActive(false);
         teachingNoticeText.gameObject.SetActive(false);
         burnNoticeText.gameObject.SetActive(false);
         lighterNoticeText.gameObject.SetActive(false);
@@ -195,6 +220,7 @@ public class ItemNotice : MonoBehaviour
         lighterNoticeText.gameObject.SetActive(false);
         teachingNoticeText.gameObject.SetActive(false);
         NoteText.gameObject.SetActive(false);
+        NoteText2.gameObject.SetActive(false);
         lightUpNoticeText.gameObject.SetActive(false);
         nurseryDoorNoticeText.gameObject.SetActive(false);
 
