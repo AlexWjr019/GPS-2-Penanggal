@@ -26,8 +26,6 @@ public class PuzzleActive : MonoBehaviour
             CheckPuzzleActivated();
             isAlterPuzzle = false;
         }
-
-        Complete();
     }
 
     private void CheckPuzzleActivated()
@@ -80,14 +78,5 @@ public class PuzzleActive : MonoBehaviour
         alterPuzzleActivated = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
-
-    public void Complete()
-    {
-        if (Swap.objectiveTrue)
-        {
-            ObjectiveManager2.objective = true;
-            Swap.objectiveTrue = false;
-        }
     }
 }

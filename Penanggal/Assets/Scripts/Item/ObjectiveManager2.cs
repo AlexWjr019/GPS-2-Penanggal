@@ -38,7 +38,7 @@ public class ObjectiveManager2 : MonoBehaviour
         objectives[0].description = "Investigate the items";
         objectives[1].description = "Rearrange the item in order";
         objectives[2].description = "Burn the curse paper";
-        objectives[3].description = "leave the wedding alter area";
+        objectives[3].description = "Burn the curse paper";
         objectives[4].description = "Leave the house";
 
         // Set the first objective as active
