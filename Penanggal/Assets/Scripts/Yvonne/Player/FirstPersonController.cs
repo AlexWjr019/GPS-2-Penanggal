@@ -173,7 +173,7 @@ public class FirstPersonController : MonoBehaviour
                     canHide = false;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
-                        if (!Hide.isHide && !Note.noteIsSeen && !Note2.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
+                        if (!Hide.isHide && !Note.noteIsSeen && !Note2.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated && !Note3.noteIsSeen && !Note4.noteIsSeen && !Note5.noteIsSeen && !Note6.noteIsSeen)
                         {
                             leftFingerId = t.fingerId;
                             moveTouchStartPosition = t.position;
@@ -267,7 +267,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void LookAround()
     {
-        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen)
+        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen && !Note3.noteIsSeen && !Note4.noteIsSeen && !Note5.noteIsSeen && !Note6.noteIsSeen)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {
@@ -284,7 +284,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Move()
     {
-        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen)
+        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen && !Note3.noteIsSeen && !Note4.noteIsSeen && !Note5.noteIsSeen && !Note6.noteIsSeen)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {

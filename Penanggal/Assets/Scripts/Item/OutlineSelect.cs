@@ -27,7 +27,7 @@ public class OutlineSelect : MonoBehaviour
         {
             Transform newHighlight = hit.transform;
 
-            if (newHighlight.CompareTag("CursePaper"))
+            if (newHighlight.CompareTag("CursePaper") || newHighlight.CompareTag("Note") || newHighlight.CompareTag("Note2") || newHighlight.CompareTag("Note3") || newHighlight.CompareTag("Note4") || newHighlight.CompareTag("Note5") || newHighlight.CompareTag("Note6"))
             {
                 // Activate outline if it already exists, otherwise create a new one
                 Outline outline = newHighlight.gameObject.GetComponent<Outline>();
