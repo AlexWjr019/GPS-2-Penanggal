@@ -37,17 +37,16 @@ public class ObjectiveManager : MonoBehaviour
 
         // Initialize objectives with their descriptions
         objectives[0].description = "Find your sister";
-        objectives[1].description = "Burn the cursed paper";
-        objectives[2].description = "Find the bedroom key";
-        objectives[3].description = "Investigate the bedroom";
-        objectives[4].description = "Unlock the safe";
-        objectives[5].description = "Burn the cursed paper";
-        objectives[6].description = "Find the nursery room key";
-        objectives[7].description = "Investigate the nursery room";
-        objectives[8].description = "Rearrange the drawing until it’s complete";
-        objectives[9].description = "Hang up the drawing";
-        objectives[10].description = "Burn the cursed paper";
-        objectives[11].description = "Investigate the mysterious area";
+        objectives[1].description = "Find the bedroom key";
+        objectives[2].description = "Investigate the bedroom";
+        objectives[3].description = "Unlock the safe";
+        objectives[4].description = "Burn the cursed paper";
+        objectives[5].description = "Find the nursery room key";
+        objectives[6].description = "Investigate the nursery room";
+        objectives[7].description = "Rearrange the drawing until it’s complete";
+        objectives[8].description = "Hang up the drawing";
+        objectives[9].description = "Burn the cursed paper";
+        objectives[10].description = "Investigate the mysterious area";
 
         // Set the first objective as active
         objectives[currentObjectiveIndex].isCompleted = false;

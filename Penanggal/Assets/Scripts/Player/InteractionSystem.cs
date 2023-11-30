@@ -375,6 +375,7 @@ public class InteractionSystem : MonoBehaviour
         scriptedEvent.event1();
         Debug.Log("Lighter has been picked up!");
         ItemNotice.ligterPickup = true;
+        ObjectiveManager.objective = true;
     }
 
     private void HandleNurseryKeyPickUp()

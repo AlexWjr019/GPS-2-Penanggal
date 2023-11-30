@@ -146,15 +146,11 @@ public class FirstPersonController : MonoBehaviour
 
         if (moveInput.x != 0.0f && leftFingerId != -1)
         {
-            if(!Hide.isHide && !Note.noteIsSeen && !Note2.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
+            if (Time.timeSinceLevelLoad - lastPlayedFootstepSoundTime > timeBetweenFootsteps && Hide.isHide == false)
             {
-                if (Time.timeSinceLevelLoad - lastPlayedFootstepSoundTime > timeBetweenFootsteps && Hide.isHide == false)
-                {
-                    FindObjectOfType<AudioManager>().PlaySFX("Footsteps");
-                    lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
-                }
+                FindObjectOfType<AudioManager>().PlaySFX("Footsteps");
+                lastPlayedFootstepSoundTime = Time.timeSinceLevelLoad;
             }
-
             canHide = false;
         }
         //Debug.Log(hasCollidedWithGhost);
@@ -185,11 +181,8 @@ public class FirstPersonController : MonoBehaviour
                     canHide = false;
                     if (t.position.x < halfScreenWidth && leftFingerId == -1)
                     {
-                        if (!Hide.isHide && !Note.noteIsSeen && !Note2.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
-                        {
-                            leftFingerId = t.fingerId;
-                            moveTouchStartPosition = t.position;
-                        }
+                        leftFingerId = t.fingerId;
+                        moveTouchStartPosition = t.position;
                     }
                     else if (t.position.x > halfScreenWidth && rightFingerId == -1)
                     {
@@ -258,7 +251,7 @@ public class FirstPersonController : MonoBehaviour
             }
             else
             {
-                if (!Hide.isHide || !Note.noteIsSeen || !Note2.noteIsSeen || !ObjectInteract.picIsRotate || !OpenSafeCode.openSafe || !TornPuzzleControl.tornPuzzleActivated || !Swap.weddingPuzzle || !PuzzleActive.alterPuzzleActivated)
+                if (!Hide.isHide && !Note.noteIsSeen)
                 {
                     headBob.isWalking = true;
                 }
@@ -268,7 +261,7 @@ public class FirstPersonController : MonoBehaviour
 
     void LookAround()
     {
-        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen)
+        if (!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {
@@ -285,7 +278,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Move()
     {
-        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe && !Note2.noteIsSeen)
+        if(!Hide.isHide && !Note.noteIsSeen && !ObjectInteract.picIsRotate && !OpenSafeCode.openSafe)
         {
             if (!TornPuzzleControl.tornPuzzleActivated && !Swap.weddingPuzzle && !PuzzleActive.alterPuzzleActivated)
             {

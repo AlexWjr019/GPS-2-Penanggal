@@ -4,7 +4,6 @@ public class ScriptedEvent_2 : MonoBehaviour
 {
     public AudioSource womenCrying;
     public bool isTriggered = false;
-    private bool objectiveActive = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,12 +11,6 @@ public class ScriptedEvent_2 : MonoBehaviour
         {
             womenCrying.Play();
             isTriggered = true;
-            if (objectiveActive)
-            {
-                ObjectiveManager.objective = true;
-                objectiveActive = false;
-            }
         }
-
     }
 }

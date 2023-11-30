@@ -22,8 +22,6 @@ public class FlameObject : MonoBehaviour
     public ScriptedEvent_7 scriptedEvent7;
     public ScriptedEvent_8 ScriptedEvent8;
 
-    private bool objectiveActive = true;
-
     private void Start()
     {
         // Find all curse paper objects with the "CursePaper" tag and add them to the list.
@@ -209,11 +207,6 @@ public class FlameObject : MonoBehaviour
                             if (itemNotice != null)
                             {
                                 itemNotice.ShowBurnedCursePaperNotice(cursePapernum);
-                            }
-                            if (objectiveActive)
-                            {
-                                ObjectiveManager.objective = true;
-                                objectiveActive = false;
                             }
 
                         }
