@@ -449,6 +449,7 @@ public class FirstPersonController : MonoBehaviour
         Enemy enemy = FindObjectOfType<Enemy>();
         hasCollidedWithGhost = false;
         playerAnimator.SetBool("Dead", false);
+        playerAnimator.enabled = false;
         //enemy.playerDied = false;
         canMove = true;
         canLookAround = true;

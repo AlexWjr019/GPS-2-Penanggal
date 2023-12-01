@@ -12,10 +12,11 @@ public class PlayerDies : MonoBehaviour
         loseSceneCanvas.SetActive(true);
         Time.timeScale = 0.0f;
         //enemy.playerDied = true;
+        playerAnimator.SetBool("Dead", false);
     }
 
     public void TurnOffAnimator()
     {
-        playerAnimator.enabled = false;
+        //playerAnimator.enabled = false;
     }
 }
