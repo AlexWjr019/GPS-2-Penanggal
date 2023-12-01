@@ -83,6 +83,7 @@ public class FirstPersonController : MonoBehaviour
     public Camera ghostCamera;
     private bool canMove = true;
     private bool canLookAround = true;
+    public GameObject TomPuzzle;
     //[HideInInspector] public bool playerIsDead = false;
 
     public Animator playerAnimator;
@@ -379,9 +380,6 @@ public class FirstPersonController : MonoBehaviour
             canMove = false;
             canLookAround = false;
             Debug.Log("entered");
-            //playerCamera.enabled = false;
-            //ghostCamera.enabled = true;
-            Debug.Log("player cam off");
             LookAtGhost(hit.transform);
             StartCoroutine(ShowLoseUIAfterDelay());
         }
