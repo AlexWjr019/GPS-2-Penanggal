@@ -6,6 +6,7 @@ public class ScriptedEvent_8 : MonoBehaviour
 {
     [SerializeField] public AudioSource chairTurning;
     [SerializeField] public BoxCollider boxCollider;
+    
 
     public GameObject lastCursePaper;
 
@@ -48,6 +49,8 @@ public class ScriptedEvent_8 : MonoBehaviour
                 deadBodiesRight[r].transform.Rotate(0, 0, rightRotation);
             }
         }
+
+        
     }   
 
     public void StopEvent()

@@ -18,6 +18,7 @@ public class FlameObject : MonoBehaviour
     private bool toiletCursepaper;
     public GameObject number4, number3, number2, number1;
     public GameObject nurseryKey;
+    public GameObject bedroomKey;
 
     public ScriptedEvent_7 scriptedEvent7;
     public ScriptedEvent_8 ScriptedEvent8;
@@ -205,6 +206,7 @@ public class FlameObject : MonoBehaviour
                             toiletCursepaper = true;
                             number4.SetActive(false);
                             number3.SetActive(true);
+                            bedroomKey.SetActive(true);
                             cursePapernum--;
                             if (itemNotice != null)
                             {
