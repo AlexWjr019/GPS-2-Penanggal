@@ -23,10 +23,8 @@ public class BabyPenanggal : MonoBehaviour
     public AudioSource bPSpawn;
     public AudioSource bPDespawn;
 
-    public Camera playerCamera;
-    public GameObject playerCam;
-    public Camera aiCamera;
-    public GameObject TomPuzzle;
+    //public Camera playerCamera;
+    //public Camera aiCamera;
 
     void Start()
     {
@@ -40,62 +38,29 @@ public class BabyPenanggal : MonoBehaviour
         bPSpawn.Play();
         //FindObjectOfType<AudioManager>().PlaySFX("BabyPenSpeak1");
 
-        GameObject player = GameObject.Find("Player");
-        if (player != null)
-        {
-            Transform mainCameraTransform = player.transform.Find("Head/Main Camera");
-            if (mainCameraTransform != null)
-            {
-                playerCamera = mainCameraTransform.GetComponent<Camera>();
-            }
-            else
-            {
-                Debug.LogError("Main Camera not found under Player/Head!");
-            }
-        }
+        //GameObject player = GameObject.Find("Player");
+        //if (player != null)
+        //{
+        //    Transform mainCameraTransform = player.transform.Find("Head/Main Camera");
+        //    if (mainCameraTransform != null)
+        //    {
+        //        playerCamera = mainCameraTransform.GetComponent<Camera>();
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Main Camera not found under Player/Head!");
+        //    }
+        //}
 
-        GameObject player1 = GameObject.Find("Player");
-        if (player1 != null)
-        {
-            Transform mainCameraTransform = player1.transform.Find("Head/Main Camera");
-            if (mainCameraTransform != null)
-            {
-                playerCam = mainCameraTransform.gameObject;
-            }
-        }
-
-        GameObject cursedPaperPuzzles = GameObject.Find("CursedPaperPuzzles");
-        if (cursedPaperPuzzles != null)
-        {
-            Transform tornDrawingTransform = cursedPaperPuzzles.transform.Find("TornDrawing");
-            if (tornDrawingTransform != null)
-            {
-                Transform tornCameraTransform = tornDrawingTransform.Find("TornCamera");
-                if (tornCameraTransform != null)
-                {
-                    TomPuzzle = tornCameraTransform.gameObject;
-                }
-                else
-                {
-                    Debug.LogError("TornCamera not found under TornDrawing!");
-                }
-            }
-            else
-            {
-                Debug.LogError("TornDrawing not found under CursedPaperPuzzles!");
-            }
-        }
-        else
-        {
-            Debug.LogError("CursedPaperPuzzles object not found in the scene!");
-        }
-
-        aiCamera = GetComponentInChildren<Camera>();
-
-        if (aiCamera == null)
-        {
-            Debug.LogError("No Camera component found in the children of " + gameObject.name);
-        }
+        //GameObject babyPenanggalObj = GameObject.Find("BabyPenanggal");
+        //if (babyPenanggalObj != null)
+        //{
+        //    aiCamera = babyPenanggalObj.GetComponentInChildren<Camera>();
+        //}
+        //else
+        //{
+        //    Debug.LogError("BabyPenanggal object not found in the scene!");
+        //}
     }
 
     void Update()
@@ -134,15 +99,10 @@ public class BabyPenanggal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerCam.SetActive(true);
             Debug.Log("Playing Attack Anim - Baby");
+            //aiCamera.enabled = true;
+            //playerCamera.enabled = false;
             bPSpawn.Play();
-            playerCamera.enabled = false;
-            aiCamera.enabled = true;
-            if (TomPuzzle.activeSelf == true)
-            {
-                TomPuzzle.SetActive(false);
-            }
             //FindObjectOfType<AudioManager>().PlaySFX("BabyPenSpeak1");
             animator.SetBool("isAttacking", true);
         }

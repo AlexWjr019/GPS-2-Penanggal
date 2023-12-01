@@ -36,7 +36,6 @@ public class LoseScene : MonoBehaviour
             PositionManager.Instance.ResetPlayerToStartPosition(player);
             PenanggalKillPlayer killPlayerScript = FindObjectOfType<PenanggalKillPlayer>();
             FirstPersonController playerController = player.GetComponent<FirstPersonController>();
-            BabyKillPlayer babyKill = FindObjectOfType<BabyKillPlayer>();
 
             Time.timeScale = 1.0f;
             loseUI.SetActive(false);
@@ -51,12 +50,6 @@ public class LoseScene : MonoBehaviour
             {
                 killPlayerScript.ResetKillPlayer();
             }
-
-            if (babyKill != null)
-            {
-                babyKill.ResetKillPlayer();
-            }
-
         }
         else
         {

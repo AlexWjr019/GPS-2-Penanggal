@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0032027883, g: 0.006342389, b: 0.014481347, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032028765, g: 0.0063423906, b: 0.014481477, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7408,7 +7408,6 @@ MonoBehaviour:
   airborneGravity: 10
   playerCamera: {fileID: 161513708}
   ghostCamera: {fileID: 1982055073}
-  TomPuzzle: {fileID: 711428534}
   playerAnimator: {fileID: 88731672}
   enemy: {fileID: 0}
 --- !u!143 &88731667
@@ -50933,7 +50932,14 @@ MonoBehaviour:
   - {fileID: 707280262}
   - {fileID: 1609462738}
   - {fileID: 1518514933}
-  lightTubes: []
+  lightTubes:
+  - {fileID: 1582042513}
+  - {fileID: 1460996964}
+  - {fileID: 934488537}
+  - {fileID: 1559238522}
+  - {fileID: 1585189812}
+  - {fileID: 1136474259}
+  - {fileID: 1825436861}
   lightbulbBreaking: {fileID: 1490265001}
   isTriggered: 0
 --- !u!82 &1490265001

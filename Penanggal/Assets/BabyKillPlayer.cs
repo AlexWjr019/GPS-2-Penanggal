@@ -9,19 +9,19 @@ public class BabyKillPlayer : MonoBehaviour
     public Animator playerAnimator;
     public LoseScene loseScene;
     private bool hasKilledPlayer = false;
-    private Animator animator;
-    void Start()
+    public Animator animator;
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
-        GameObject babyPenanggalObj = GameObject.Find("BabyPenanggal");
-        if (babyPenanggalObj != null)
-        {
-            aiCamera = babyPenanggalObj.GetComponentInChildren<Camera>();
-        }
-        else
-        {
-            Debug.LogError("BabyPenanggal object not found in the scene!");
-        }
+        //GameObject babyPenanggalObj = GameObject.Find("BabyPenanggal");
+        //if (babyPenanggalObj != null)
+        //{
+        //    //aiCamera = babyPenanggalObj.GetComponentInChildren<Camera>();
+        //    //animator = babyPenanggalObj.GetComponent<Animator>();
+        //}
+        //else
+        //{
+        //    Debug.LogError("BabyPenanggal object not found in the scene!");
+        //}
 
         GameObject player = GameObject.Find("Player");
         if (player != null)
@@ -61,9 +61,8 @@ public class BabyKillPlayer : MonoBehaviour
        // aiCamera.enabled = false;
         playerCamera.enabled = true;
         playerAnimator.enabled = true;
-        aiCamera.enabled = false;
-        animator.SetBool("isAttacking", false);
         playerAnimator.SetBool("Dead", true);
+        //animator.SetBool("isAttacking", false);
         Debug.Log("aiCamera enabled: " + aiCamera.enabled);
         Debug.Log("playerCamera enabled: " + playerCamera.enabled);
 
@@ -73,22 +72,5 @@ public class BabyKillPlayer : MonoBehaviour
     public void ResetKillPlayer()
     {
         hasKilledPlayer = false;
-        GameObject babyPenanggalObj = GameObject.Find("BabyPenanggal");
-        if (babyPenanggalObj != null)
-        {
-            Transform parentObj = babyPenanggalObj.transform.parent;
-            if (parentObj != null)
-            {
-                Destroy(parentObj.gameObject);
-            }
-            else
-            {
-                Debug.LogError("BabyPenanggal's parent object not found in the scene!");
-            }
-        }
-        else
-        {
-            Debug.LogError("BabyPenanggal object not found in the scene!");
-        }
     }
 }

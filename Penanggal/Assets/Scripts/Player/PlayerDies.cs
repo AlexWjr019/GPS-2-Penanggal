@@ -9,7 +9,6 @@ public class PlayerDies : MonoBehaviour
     public void PlayerGetsKilled()
     {
         //enemy.playerDied = false;
-        playerAnimator.SetBool("Dead", false);
         loseSceneCanvas.SetActive(true);
         Time.timeScale = 0.0f;
         //enemy.playerDied = true;
