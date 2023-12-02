@@ -59,6 +59,7 @@ public class InteractCandle : MonoBehaviour
                 LightmapSettings.lightmaps = brightLightmap;
                 isOn[candleIndex] = true;
                 Debug.Log("bright");
+                particleSystems[candleIndex].Play();
             }
         }
         else
@@ -67,6 +68,7 @@ public class InteractCandle : MonoBehaviour
             LightmapSettings.lightmaps = darkLightmap;
             isOn[candleIndex] = false;
             Debug.Log("dark");
+            particleSystems[candleIndex].Stop();
         }
     }
 }

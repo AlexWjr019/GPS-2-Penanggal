@@ -43,6 +43,7 @@ public class FirstPersonController : MonoBehaviour
     [Range(0f, 50f)]
     public float cameraSensitivity;
     public float verticalCameraSensitivity;
+    public float PCCameraSensitivity;
     public float maxClamp;
     public float minClamp;
     Vector2 lookInput;
@@ -325,8 +326,9 @@ public class FirstPersonController : MonoBehaviour
     {
         if (!isMobile)
         {
-            float mouseX = Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
-            float increasedVerticalSensitivity = verticalCameraSensitivity * 4;
+            float increasedVerticalSensitivity = (verticalCameraSensitivity * 2) * PCCameraSensitivity;
+            float increaseHorizontalSensitivity =  PCCameraSensitivity;
+            float mouseX = Input.GetAxis("Mouse X") * increaseHorizontalSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * increasedVerticalSensitivity * Time.deltaTime;
 
             cameraPitch -= mouseY;

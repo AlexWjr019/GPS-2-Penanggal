@@ -169,13 +169,13 @@ public class ItemNotice : MonoBehaviour
         switch (remainingCursePapers)
         {
             case 3:
-                ShowFlameNotice2("The number on the door change to 3");
+                //ShowFlameNotice2("The number on the door change to 3");
                 break;
             case 2:
-                ShowFlameNotice2("The number on the door change to 2");
+                //ShowFlameNotice2("The number on the door change to 2");
                 break;
             case 1:
-                ShowFlameNotice2("The number on the door change to 1");
+                //ShowFlameNotice2("The number on the door change to 1");
                 break;
             default:
                 break;

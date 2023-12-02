@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008940446, g: 0.013081815, b: 0.0204233, a: 1}
+  m_IndirectSpecularColor: {r: 0.008958812, g: 0.013101446, b: 0.02045097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9414,8 +9414,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 190.30005, y: -80.7998}
-  m_SizeDelta: {x: 295.6526, y: 116.020905}
+  m_AnchoredPosition: {x: 86.4, y: -90.6}
+  m_SizeDelta: {x: 234.074, y: 116.021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509176126
 MonoBehaviour:
@@ -22883,6 +22883,7 @@ MonoBehaviour:
   number2: {fileID: 0}
   number1: {fileID: 0}
   nurseryKey: {fileID: 0}
+  bedroomKey: {fileID: 0}
   scriptedEvent7: {fileID: 1553724698}
   ScriptedEvent8: {fileID: 0}
 --- !u!65 &952680384
@@ -26164,6 +26165,7 @@ MonoBehaviour:
   keyboard: 0
   cameraSensitivity: 15
   verticalCameraSensitivity: 0.5
+  PCCameraSensitivity: 0
   maxClamp: 60
   minClamp: -40
   sprintDuration: 4
@@ -29714,9 +29716,10 @@ MonoBehaviour:
   sprintSpeed: 4
   initialMoveSpeed: 0
   moveInputDeadZone: 50
-  keyboard: 0
+  keyboard: 1
   cameraSensitivity: 15
   verticalCameraSensitivity: 0.5
+  PCCameraSensitivity: 200
   maxClamp: 60
   minClamp: -40
   sprintDuration: 4

@@ -25,6 +25,6 @@ public class BedroomHidingArea : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isTriggered);
+        //Debug.Log(isTriggered);
     }
 }
